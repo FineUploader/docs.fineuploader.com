@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Paste to Upload | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,52 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#paste">paste</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#pasteReceived">pasteReceived</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +240,42 @@
                 
 
                 
+<h1 class="page-header" id="paste-to-upload">Paste to Upload</h1>
+<p>Before some of the latest HTML5 features came out, in order to upload an image
+from another web page, you must save the image to your local file system and
+then either drop it into an uploader instance or select it from the
+“choose files” dialog. Certainly copying and pasting is a much more efficient
+way to do this. Note that you can also use this feature to upload any image
+currently present in your clipboard. For example, suppose you take a screenshot
+and add it directly to your clipboard. You can then paste it into your Fine
+Uploader instance.</p>
+<h2 id="handling-pasted-images-in-core-mode">Handling pasted images in Core mode</h2>
+<p>In order to enable this feature, you must provide a <code>paste.targetElement</code> option value. This is the element that should
+receive pasted images. This target element must have focus before the paste event can be handled. This is normally
+accomplished by clicking on the element before pasting the image from the clipboard, or by programmatically giving it focus.</p>
+<p>Once the image has been pasted, the <code>onPasteReceived</code> callback will be invoked with the associated <code>Blob</code> as a parameter.
+This is a promissory callback, and a <code>qq.Promise</code> MUST be returned if you provide your own implementation of this callback.
+Via the promise object, you can return a string that determines the name of the associated image. This will be passed along
+with the upload request. Fine Uploader will also append an extension to the name, based on the image type. This callback
+can be used if you need to make an ajax call to determine the name of the pasted image, or if you need to display a
+(blocking or non-blocking) modal dialog to ask the user for this information. If you do not contribute a custom implementation
+for this callback, the <code>paste.defaultName</code> configuration property, along with an appropriate extension, will be used to
+name the pasted image.</p>
+<h2 id="handling-pasted-images-in-ui-mode">Handling pasted images in UI mode</h2>
+<p>Everything in the above previous section also applies to UI mode, but a small nicety in the form of an overridable name
+prompt is available. In other words, if you want a basic prompt dialog to ask the user for a name after an image has been pasted,
+you can do so simply by setting the <code>paste.promptForName</code> configuration option. If you want to ask the user to name a
+pasted image, you don’t have to worry about the <code>onPasteReceived</code> callback at all. You can also use a more appropriate
+prompt dialog by overriding the <code>paste.showPrompt</code> option function. A simple example of this, using a bootbox modal prompt,
+is described <a href="async-tasks-and-promises.html#example">at the end of the promises documentation</a>.</p>
 <div class="alert alert-block alert-info">
 
-<h4 class="alert-heading">Note</h4>
+<h4 class="alert-heading">Note:</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>The filename will be sent with the request as the <code>qqfilename</code> parameter.
+   Be sure to read this parameter when naming your file server-side.</p>
 
 </div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
 
 
                 

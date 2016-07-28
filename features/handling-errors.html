@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Handling Errors | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,69 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#messages">messages</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#log">log</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#error">error</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,76 +257,106 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<h1 class="page-header" id="handling-errors">Handling Errors</h1>
+<p>Fine Uploader has a wealth of ways to respond to error messages. By default, Fine Uploader assumes an error when the
+server response does not have a key of <code>success</code> set to <code>true</code>. If any error is thrown, then the <code>onError</code> callback will be invoked.</p>
+<h2 id="debugging-errors">Debugging Errors</h2>
+<p>Sometimes errors are not intended, or unexpected. Fine Uploader provides the
+<code>debug</code> option which will make the plugin spit out logging messages to the
+browser's developer tools console.</p>
+<p>To enable debug mode, set the <code>debug</code> option of Fine Uploader to <code>true</code>
+and open the developer console in your browser. Interact with Fine Uploader
+and notice that it is logging specifically what is happening. These messages
+can be crucial in determining why something is not working as expected.</p>
+<h2 id="handling-errors_1">Handling Errors</h2>
+<p>Handling error messages and errors can take place inside of the <code>onError</code>
+callback. <code>onError</code> is triggered whenever Fine Uploader encounters an error.
+The text to be displayed in the case of an error is passed in as the <code>errorReason</code>
+parameter.</p>
+<p>The following code snippet shows how one might display a custom alert on the
+event of an error.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* other required config options left out for brevity */</span>
 
-<h4 class="alert-heading">Note</h4>
+    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">,</span> <span class="nx">xhrOrXdr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">&quot;Error on file number {} - {}.  Reason: {}&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
 
-</div>
+<h2 id="the-error-response-property">The Error Response Property</h2>
+<p>By default, if Fine Uploader does <em>not</em> receive a successful server response,
+it will look for the <code>error</code> property of the response body and will pass
+that value to the <code>onError</code> callback.</p>
+<p>If the server indicates failure in the response, but does not include an
+<code>error</code> property and the response status indicates failure, then the
+<code>defaultResponseError</code> property will be used as the error message.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* other required config options left out for brevity */</span>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+    <span class="nx">text</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">defaultResponseError</span><span class="o">:</span> <span class="s1">&#39;An unknown upload error occurred.&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="changing-error-messages">Changing Error Messages</h2>
+<p>The <a href="../api/options.html#messages"><code>messages</code> property in the core Fine Uploader options</a> provides a
+handful of properties one can override to display custom error messages.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* other required config options left out for brevity */</span>
+
+    <span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;{file} has an invalid extension. Valid extension(s): {extensions}.&#39;</span>
+        <span class="c1">// other messages can go here as well ...</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="error-messages">Error Messages</h3>
+<p>Error messages include primitive <code>String</code> interpolation that allows integrators
+to inject variable data into error messages. For example, the <code>typeError</code>
+message could be modified:</p>
+<div class="codehilite"><pre><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;Invalid extension detected in file, {file}.&#39;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The filename of the file which the error was thrown on will be injected
+instead of the <code>"{file}"</code> <code>String</code>.</p>
+<h2 id="modifying-the-text-for-failed-uploads">Modifying the Text for Failed Uploads</h2>
+<p>The <code>failedUploadTextDisplay</code> option defines properties used for displaying
+text when an upload fails.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* other required config options left out for brevity */</span>
+
+    <span class="c1">// These are all the DEFAULT values...</span>
+    <span class="nx">failedUploadTextDisplay</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+        <span class="nx">responseProperty</span><span class="o">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>The <code>mode</code> property has three settings, each of which determine how failed
+upload errors are displayed.</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li><code>'default'</code> will display the <code>failUploadText</code> defined in the <code>text</code> option
+properties next to each item.</li>
+<li><code>'none'</code> will <strong>not</strong> display any text next to a failed item.</li>
+<li><code>'custom'</code> will display an error response text from the server next to each
+failed item).<ul>
+<li><code>'custom'</code> mode will use the provided <code>responseProperty</code> (which defaults
+to <code>'error'</code>) as its text</li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
+</li>
 </ul>
 
 

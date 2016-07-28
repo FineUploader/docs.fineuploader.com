@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Deleting Files | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,93 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#deleteFile">deleteFile</a></li>
+            
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-ui.html#deleteFile">deleteFile (UI)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#deleteFile">deleteFile</a></li>
+            
+        
+            
+                    <li><a href="../api/methods.html#setDeleteFileEndpoint">setDeleteFileEndpoint</a></li>
+            
+        
+            
+                    <li><a href="../api/methods.html#setDeleteFileParams">setDeleteFileParams</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#delete">delete</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#deleteComplete">deleteComplete</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#submitDelete">submitDelete</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +281,65 @@
                 
 
                 
+<h1 class="page-header" id="deleting-files_1">Deleting Files</h1>
+<p>Enabling the deletion of files means your users can delete files after they have been uploaded.
+If you upload a file, leave the page, and come back then you cannot delete that file
+through Fine Uploader <em>unless</em> you have enabled the <a href="../features/session.html">initial file list feature</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>A file is eligible for deletion only after it has been successfully uploaded. In UI mode, if this feature is enabled,
+a customizable delete link will appear next to the file after it has successfully uploaded.</p>
+<p>When the user clicks on this link, first, your <a href="../api/events.html#submitDelete"><code>onSubmitDelete</code> callback</a> will be invoked.
+You may return <code>false</code> in your callback handler if you want to abort the request (or <a href="async-tasks-and-promises.html">a promise</a>
+that you may resolve later). If not the user will see a (customizable) confirm dialog (if the <code>deleteFile.forceConfirm</code> property has been set).
+If they click “ok” (or if the <code>deleteFile.forceConfirm</code> option has been disabled), a DELETE request will be sent to the server
+after Fine Uploader invokes <a href="../api/events.html#delete">your onDelete callback</a>.</p>
+<p>In UI mode, a status message, along with a spinner, will appear next to the file while Fine Uploader is waiting for the server response.
+Once the response is received, Fine Uploader will invoke <a href="../api/events#deleteComplete">your onDeleteComplete callback</a>.
+If the server indicates success in its response, the file will be removed from the UI and <a href="statistics-and-status-updates.html">its status</a>
+will be updated. If the server indicates failure, a failure status message will be displayed next to the file (in UI mode).
+If an error has been detected in the response, <a href="../api/events.html#error">your <code>onError</code> callback</a> will also be invoked.</p>
+<p>In core mode, you can order a delete request via the new <code>deleteFile</code> API function. All of the callbacks invoked while
+in UI mode will also be invoked in core mode if you order a delete via this API function.</p>
+<h2 id="the-request-and-server-side-handling">The Request (and server-side handling)</h2>
+<p>Fine Uploader sends a separate DELETE request for each file marked for deletion. The UUID of the file is passed as the
+last item in the request URI. For example, if the UUID of a file, ordered for deletion, is “6a9955d3-8f1e-4c70-ae47-b01b35dd1562″,
+and the endpoint property specified in the deleteFile option object is “/server/upload” and the domain is http://mysite.com,
+Fine Uploader will send a DELETE request to the following endpoint:</p>
+<blockquote>
+<p>http://mysite.com/server/upload/6a9955d3-8f1e-4c70-ae47-b01b35dd1562.</p>
+</blockquote>
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>Fine Uploader appends a <code>_method</code> parameter to the request object with a value of DELETE when the HTTP method is
+POST instead of DELETE.  This makes it easier to determine the intended semantics of the request server-side.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<p>Note that you can specify custom parameter and additional headers that are sent along with this request as well.
+If you specify custom parameters, they will be sent as part of the query string, NOT the request payload.
+This is due to the fact that many servers will either rip out any request body associated with a DELETE request, or simply
+throw an error/reject the request. In other words, a DELETE request is much like a GET request.</p>
+<h2 id="the-expected-response">The (Expected) Response</h2>
+<p>You may return any response you like, as the <code>XMLHttpRequest</code> object will be passed to your <code>onDeleteComplete</code> handler
+for further examination. However, the response code you return is important to Fine Uploader, as it uses this to determine
+if the delete has succeeded or not. The following response codes indicate success for this specific request: 200, 202, and 204.
+Any other response code indicates a failure.</p>
+<h2 id="enabling-the-feature">Enabling the Feature</h2>
+<p>The following is an example of a VERY basic setup that enables you to use the new delete files feature.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myUploader&#39;</span><span class="p">),</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;server/upload&#39;</span>
+    <span class="p">}</span>
+    <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">forceConfirm</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;server/file&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
 
 
                 

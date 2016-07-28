@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Editing Filenames | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,39 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#getName">getName</a></li>
+            
+        
+            
+                <li><a href="../api/options.html#setName">setName</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +227,59 @@
                 
 
                 
+<h1 class="page-header" id="filename-editing">Filename Editing</h1>
+<p>Fine Uploader provides methods and options to enable client-side editing
+of filenames before upload. In core mode, integrators can use the API methods <code>getName</code> and <code>setName</code> for
+this. In UI mode, if the feature is enabled via the template, then when a user
+clicks a file that they have submitted to the uploader the text will become
+an input element that they can use to change the name.</p>
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>You will need to have the <code>autoUpload</code> option disabled when using the edit filename feature.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<h2 id="turning-on-the-edit-filename-feature-in-ui-mode">Turning on the edit filename feature in UI mode</h2>
+<p>In order to enable this feature, you must disabled <code>autoUpload</code> and include the following elements in your template:</p>
+<div class="codehilite"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;qq-edit-filename-icon-selector qq-edit-filename-icon&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Edit filename&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+
+<p>You can read more about templates in the <a href="styling.html">styling</a> section of the documentation. Also, a live demo of the
+edit feature, along with the needed code, can be found in <a href="http://fineuploader.com/demos#manually-trigger-uploads">the demo section of the home page</a>.</p>
+<h2 id="editing-a-file-name">Editing a file name</h2>
+<p>When this feature is properly enabled, you will notice an edit icon next to each submitted file in the UI, assuming the
+filename is editable at the time. Also, notice the cursor will be set to “pointer” in this case. A filename is editable
+only while the upload status is SUBMITTED. This means that you may edit your file after submitting it, before calling the
+<a href="../api/methods.html#uploadStoredFiles"><code>uploadStoredFiles</code> API method</a>.</p>
+<p>When an editable file name is clicked/touched, a text input will appear. Here, the filename can be changed. Note that the
+extension is not modifiable. The original extension will always be appended to the filename after the name edit is complete.
+The extension is not editable to ensure that any validation rules surrounding file type are not violated.</p>
+<p>After editing a filename, you have a few options:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li>Press ENTER to save the change.</li>
+<li>Click or touch some other area on the page to save the change.</li>
+<li>Hit TAB to edit the name of the next file in the UI (and save the name entered into the current input box).</li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
+<p>Note that an empty file name is not an acceptable value. In this case, the original or previously overridden file name will be used instead.</p>
+<h2 id="things-to-be-aware-of">Things to be aware of</h2>
+<p>When a file name has been modified, please keep the following in mind:</p>
 <ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
+<li>Fine Uploader cannot change the filename listed in the header of the associated file’s multipart boundary. The new file name is sent as a parameter along with the request. See the server-side section below for more details.</li>
+<li>The <a href="statistics-and-status-updates.html"><code>getUploads</code> API method</a> can be used to obtain the original file name.
+All objects returned by this method will include an <code>originalName</code> property. The name property will be set to the
+current file name.</li>
+<li>The <a href="../api/methods.html#getName"><code>getName</code> API method</a> will return the current file name, not the original file name.</li>
+<li>All name parameters passed to callback handlers will equal the new file name, not the original file name.</li>
+<li>The resume feature will key on the most current (not necessarily the original) file name when deciding if a submitted
+file is resumable. This determination is made by Fine Uploader just before the first upload request for the file request is sent. If you submit a previously interrupted file with an overridden name, you must ensure the file name is again changed to ensure the file is properly resumed.</li>
 </ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h2 id="handling-an-overridden-new-file-name-server-side">Handling an overridden / new file name server-side</h2>
+<p>The filename will be sent with the request as the <code>qqfilename</code> parameter. Be sure to read this parameter when naming
+your file server-side.</p>
 
 
                 

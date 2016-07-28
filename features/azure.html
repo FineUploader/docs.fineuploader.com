@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Uploading Directly to Azure Blob Storage | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,7 @@
 
                 <div class="span2 sidebar">
                 
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +195,54 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
+<h1 class="page-header" id="uploading-directly-to-azure-blob-storage">Uploading Directly to Azure Blob Storage</h1>
+<h3 id="summary">Summary</h3>
+<p>Fine Uploader Azure allows your users to upload files directly to your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs-20/">Azure Blob Storage</a> container without the need
+to send the file through one of your servers first.  This will, among other things, allow your application to be a bit
+more efficient and scalable.</p>
+<h3 id="how-do-uploads-work">How do uploads work?</h3>
+<p>When a user submits a file to Fine Uploader Azure, the following occurs:</p>
 <ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
+<li>Fine Uploader constructs a URL that will represent the file as a blob once it is in the blob storage container.</li>
+<li>Fine Uploader sends a GET request to your <a href="../endpoint_handlers/azure.html">signature server</a>.  Your server must then create a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">Shared Access Signature</a>
+URI for that specific operation and blob.  This URI must be returned in your server's response.</li>
+<li>Fine Uploader sends a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179451.aspx">Put Blob</a> request to Azure and includes the file bytes in the request payload.  The URL for this
+request is the SAS URI returned by your server in step 2.</li>
+<li>If the file uploaded successfully, Fine Uploader will send a POST request to your server with the blob details if
+you have specified an <a href="../api/options-azure.html#uploadSuccess"><code>uploadSuccess.endpoint</code></a> in your <a href="../api/options-azure.html">Fine Uploader Azure options configuration</a>.
+If the upload failed, start over at step 2 automatically if the <a href="../api/options.html#retry"><code>retry.enableAuto</code> option</a> is set to <code>true</code>.</li>
 </ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<p><strong>The above steps are slightly different if Fine Uploader is <a href="../features/chunking.html">chunking</a> the file.</strong>  Instead of a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179451.aspx">Put Blob</a>
+request, Fine Uploader will send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd135726.aspx">Put Block</a> request to Azure for each piece of the file.
+Once all pieces have been successfully uploaded, Fine Uploader will then send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179467.aspx">Put Block List</a> request,
+which asks Azure to combine all the blocks into a blob. Fine Uploader will call your <a href="../endpoint_handlers/azure.html">signature server</a>
+before each and every request, asking for a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI.</p>
+<h3 id="how-do-delete-file-requests-work">How do delete file requests work?</h3>
+<p>If this feature is enabled, Fine Uploader will send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179413.aspx">Delete Blob</a> request directly to Azure when
+asked to delete a file.  As usual, your <a href="../endpoint_handlers/azure.html">signature server</a> will be called on to provide a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI
+before this request is sent to Azure.  Note that even if this feature is disabled, Fine Uploader will issue a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179413.aspx">Delete Blob</a>
+request to Azure if a user cancels an in-progress <a href="../features/chunking.html">chunked</a> upload.  This is necessary to ensure that the
+uncommitted blocks are cleaned up by Azure.</p>
+<h3 id="which-features-are-available">Which features are available?</h3>
+<p><strong>All features present in the traditional endpoint uploader are also available in Fine Uploader Azure</strong>, with one notable
+omission.  <strong>Fine Uploader Azure does not support IE9 and older</strong>.  This is due to the fact that Azure's API does
+not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
+If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
+handler if the value of <a href="../browser-support.html#feature-detection"><code>qq.supportedFeatures.ajaxUploading</code></a> is <code>false</code>.</p>
+<h3 id="is-this-secure">Is this secure?</h3>
+<p>There is nothing inherently insecure about this workflow, provided you take appropriate precautions. For example:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li>Ensure your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URIs are short-lived.  An expiration date of a few minutes or seconds is appropriate.</li>
+<li>When constructing your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI, only attach the required permission(s) to the URI.</li>
+<li>Examine the blob URI before generating a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a>.  It is potentially unwise to blindly generate signatures.</li>
+<li>Keep your Azure storage account key a secret.  Do not commit it to any public repository.
+Ensure it is never sent to the client in a response or cookie.</li>
+<li>When creating CORS rules for your container, only authorize your domain(s), the expected request headers, and
+the expected request methods.  Avoid using wildcards as values whenever possible.  Also, keep in mind that CORS
+is NOT a security mechanism.</li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h3 id="how-do-i-use-this">How do I use this?</h3>
+<p>Please see the getting started guides on <a href="../quickstart/01-getting-started.html">the home page of this documentation site</a>.</p>
 
 
                 

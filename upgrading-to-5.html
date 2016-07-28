@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Upgrading to 5.x | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,77 +194,67 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<h1 class="page-header" id="upgrading-to-5x">Upgrading to 5.x</h1>
+<p>The 5.0 version brings some breaking changes, mostly surrounding upload requests.</p>
+<p>If you are upgrading from a 3.x version, be sure to also read the <a href="upgrading-to-4.html">Upgrading to 4.x document</a>.</p>
+<h3 id="resume-data-persisted-using-localstorage-for-traditional-endpoints">Resume data persisted using localStorage for traditional endpoints</h3>
+<p>Fine Uploader no longer uses cookies to persist auto-resume data for traditional endpoints.  Now, all auto-resume
+data is persisted to <code>localStorage</code> for all endpoint handlers.</p>
+<p>This means that any existing auto-resume records will be lost when you switch to a 5.x version if you utilize
+a traditional endpoint handler.</p>
+<h3 id="persisted-resume-data-format-changed-for-s3-and-azure-upload-endpoints">Persisted resume data format changed for S3 and Azure upload endpoints</h3>
+<p>This means that any existing resume records will be ignored.  This format change was required to
+support the new concurrent chunking feature.</p>
+<h3 id="most-xhr-requests-will-now-contain-an-accept-header">Most XHR requests will now contain an Accept header</h3>
+<p>This is probably not technically a breaking change, but it should be mentioned here just in case your
+server, for some reason, is not expecting this header on requests from Fine Uploader.  This change
+affects all <code>XMLHttpRequest</code> originated requests sent to local servers
+(i.e. not requests sent to S3/Azure).</p>
+<p>Your can look at this header to programmatically determine the correct Content-Type for your response,
+but you should <strong>NOT</strong> rely on this value for upload requests in IE9 and older since the Accept header
+is set by the browser and is not reflective of the expected response Content-Type.  Also, ajax requests
+sent in IE9 and IE8 in a cross-origin environment will not contain this header, since
+the <code>XDomainRequest</code> transport is used and does not allow headers to be specified.</p>
+<h3 id="removed-all-utility-functions-that-deal-with-cookies">Removed all utility functions that deal with cookies</h3>
+<p>As a result of the switch from cookies to <code>localStorage</code>, we removed these cookie-related utility
+functions as they are no longer needed by Fine Uploader.  If you were utilizing these utility functions for your app,
+consider importing a cookie library as a replacement, such as <a href="https://github.com/carhartl/jquery-cookie">jquery-cookie</a> or <a href="https://github.com/ScottHamper/Cookies">Cookies</a>.</p>
+<p>The specific removed util functions were:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li><code>qq.areCookiesEnabled</code></li>
+<li><code>qq.getCookie</code></li>
+<li><code>qq.setCookie</code></li>
+<li><code>qq.deleteCookie</code></li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h3 id="changes-to-resume-option">Changes to <code>resume</code> option</h3>
+<p>The <code>id</code> property of the <code>resume</code> option was removed.  Very few integrators, if any, were making use of this option.
+If you were making use of this option property, any existing resume records will be lost when you upgrade to 5.x.</p>
+<p>Also, for traditional endpoints, the <code>cookiesExpireIn</code> option has changed to <code>recordsExpireIn</code>.  This is related to
+the switch from cookies to <code>localStorage</code>.</p>
+<h3 id="onresume-callback-is-no-longer-promissory">onResume callback is no longer promissory</h3>
+<p>A promise is no longer an acceptable return type from an <code>onResume</code> callback.  It was unclear what benefit this
+provided, and supporting this made the code more complicated.  Due to a long-standing oversight in the code,
+promises were only accepted from <code>onResume</code> callbacks when using the traditional endpoint handler anyway.</p>
+<h3 id="chunked-request-only-sent-for-traditional-endpoints-if-necessary">Chunked request only sent for traditional endpoints if necessary</h3>
+<p>If the chunking.partSize value is greater than or equal to the size of the
+file, no chunking will occur. Note that a chunked request is different from
+a non-chunked request due to differing headers, and the fact that the
+message-body of a chunked request contains a Blob, while a non-chunked request
+message-body contains a File (assuming the file is not a scaled version and
+the original file is not a Blob itself).</p>
+<p>This means that, even if chunking is enabled, a chunked upload request is
+only sent to traditional endpoints if the associated file can be broken into
+more than 1 chunk.  This behavior is consistent with the way all other
+endpoints have functioned.  Previously, a chunked request would always be
+sent for traditional endpoints if chunking was supported and enabled.</p>
+<h3 id="drawthumbnail-api-method-only-passes-one-argument-to-rejected-promise-callback"><code>drawThumbnail</code> API method only passes one argument to rejected promise callback</h3>
+<p>This was done to bring the API that Fine Uploader exposes in compliance with the A+ promises spec.  While
+<code>qq.Promise</code> is not A+ compliant, use of other promise implementations when communicating with Fine Uploader
+is now supported.  Since the spec indicates that only one argument can be passed to a resolve or reject callback,
+the promise returned by the <a href="api/methods.html#drawThumbnail"><code>drawThumbnail</code> API method</a> had to be modified.  The resolve callback
+already was only passed one argument (the container element), this breaking change only affects the reject callback.
+Previously, two arguments were passed, in the event of an error, to the reject callback: the container element, and
+an error message.  Now, an object with <code>container</code> and <code>error</code> properties is the only argument.</p>
 
 
                 

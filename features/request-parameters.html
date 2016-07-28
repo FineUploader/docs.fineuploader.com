@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Request Parameters | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,89 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#request">request</a></li>
+            
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-s3.html#request">request (S3)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#setParams">setParams</a></li>
+            
+        
+            
+                    <li><a href="../api/methods.html#setDeleteFileParams">setDeleteFileParams</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#upload">upload</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#manualRetry">manualRetry</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#autoRetry">autoRetry</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +277,101 @@
                 
 
                 
+<h1 class="page-header" id="request-parameters">Request Parameters</h1>
+<p>The requests that Fine Uploader makes to your server are arguably the most
+ crucial part of the uploading process. Fortunately, modifying the request
+is a fairly trivial task thanks to a few helpful options and methods
+provided by Fine Uploader.</p>
+<p>Request parameters can be modified foremost by changing the values of the
+following options found in the <code>request</code> option:</p>
+<h3 id="fine-uploader-s3s-request-option">Fine Uploader S3's <code>request</code> option</h3>
+<p>The request option properties are a bit different if you are using Fine Uploader S3.  Here are the only properties of
+the <code>request</code> option used by Fine Uploader S3.</p>
+<hr>
+<p>The <code>params</code> option is used to define request parameters when you instantiate a
+new Fine Uploader instance. Parameters defined this way are set on the request
+at the very last minute before it is sent to the server. Parameters can also
+be set for delete file requests. Simply modify the <code>params</code> property of the
+<code>deleteFile</code> option. Either of these properties are capable of handling a
+variety of JavaScript objects.</p>
+<h4 id="simple-objects">Simple Objects</h4>
+<div class="codehilite"><pre><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;mark&quot;</span><span class="p">,</span>
+    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="nested-objects">Nested Objects</h4>
+<div class="codehilite"><pre><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">user</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;mark&#39;</span><span class="p">,</span>
+        <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span>
+        <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Twain&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="functions">Functions</h4>
+<p>Yes, even functions! (They are first-class citizens in JS world)</p>
+<p>Each function will be evaluated <strong>for each</strong> file that is submitted. The following code snippet
+demonstrates how one would track the current number of uploaded files.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">fileNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+    <span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fileNum</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">fileNum</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>Any params with a function value <strong>must</strong> return either a number or a string.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<p><a href="http://blog.fineuploader.com/2012/12/09/setparams-is-now-much-more-useful-in-3-1/">For more information, see the associated blog post</a></p>
+<h2 id="methods_1">Methods</h2>
+<p>The <code>setParams</code> and <code>setDeleteFileParams</code> methods can be used to change parameters
+passed at any point in the upload process (well, at any point up until the file
+is uploaded). For the current file, you can adjust the passed parameters along
+with the request as late as when the <code>upload</code> event is fired. Parameters can
+also be modified for a file in the <code>manualRetry</code> and <code>autoRetry</code> events.</p>
+<p><code>setParams</code> can change the parameters for a all files, or for a single file by
+providing an optional <code>id</code> parameter.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Once you change parameters for a specific file, subsequent calls to <code>setParams</code> without an <code>id</code> will <strong>not</strong> affect this file.
+To change parameters again, call <code>setParams</code> again with the associated <code>id</code>.</p>
+
+</div>
+
+<h2 id="url-query-string-parameters">URL Query String Parameters</h2>
+<p>Sometimes it may prove useful to send request parameters in the URL
+query string, and fortunately Fine Uploader supports this right out of the
+box. By disabling the <code>request.paramsInBody</code> option, you can pass parameters
+through the query string rather than the request body.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>All parameters in the query string are <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/encodeURIComponent">URI Component Encoded</a>.
+This means that you must decode the parameter keys and values server-side. JavaScript's <code>encodeURIComponent</code> function
+uses the UTF-8 encoding scheme so make sure that your server is using the same encoding. Lastly,
+be sure to the meta tag in your HTML: <code>&lt;meta charset='utf-8'&gt;</code></p>
+
+</div>
+
+<p><a href="http://blog.fineuploader.com/2012/12/05/include-params-in-the-request-body-or-the-query-string/">For more information, see the associated blog post</a></p>
 
 
                 

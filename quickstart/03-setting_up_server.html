@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Server Set-Up | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,77 +194,97 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<h1 class="page-header" id="server-set-up">Server Set-Up</h1>
+<div class="alert alert-block alert-warn">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>This section of the tutorial is aimed at beginners looking to create their
+own upload server. Note that this example does not apply to S3 uploads. For
+more information on uploading to Amazon's Simple Storage Service,
+read the <a href="../endpoint_handlers/amazon-s3.html">Fine Uploader S3 server documentation</a>.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
+<p>For this tutorial we are going to use PHP to develop a simple server which will accept uploads from our Fine Uploader instance.</p>
+<p>If PHP is not your style, then feel free to browse the other
+<a href="http://github.com/Widen/fine-uploader-server">server-side demos repository</a>.  <strong>It's quite important for you to read
+the <a href="../endpoint_handlers/traditional.html">traditional server-side integration instructions</a> before you do any of this,
+though</strong>.</p>
+<h3 id="getting-started_3">Getting Started</h3>
+<h4 id="step-1-download-the-example-php-server">Step 1: Download the example PHP server</h4>
+<p>We've <a href="https://packagist.org/packages/fineuploader/php-traditional-server">published a traditional endpoint PHP server for Fine Uploader to Packagist</a>, which means you can easily download
+it to your project using <a href="https://getcomposer.org/">composer</a>!</p>
+<p>Follow these simple steps to get a copy of the PHP traditional endpoint using Composer:</p>
 <ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
+<li>Download Composer: <code>curl -sS https://getcomposer.org/installer | php</code>.</li>
+<li>Create a composer.json file and place it in the root of your project. See below for an example file.</li>
+<li>Install the Fine Uploader endpoint code: <code>php composer.phar install</code>.</li>
 </ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<p>An example composer.json file may look like this:</p>
+<div class="codehilite"><pre><span class="p">{</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;fineuploader/php-traditional-server&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Be sure to update the version with the appropriate version of Fine Uploader's traditional PHP server.</p>
+<h4 id="step-2-prepare-your-environment">Step 2: Prepare your environment</h4>
+<p>Be sure to include <a href="http://php.net/manual/en/configuration.file.php">a php.ini file</a> in the root of your web server with sensible request limits.
+An example php.ini file looks like this:</p>
+<div class="codehilite"><pre><span class="x">upload_max_filesize = 10M</span>
+<span class="x">post_max_size = 10M</span>
+</pre></div>
+
+
+<h4 id="step-3-start-the-php-server">Step 3: Start the PHP server</h4>
+<p>You can easily start up a simple HTTP server using PHP. Run the following command in the root of your web server:</p>
+<div class="codehilite"><pre>php -S 0.0.0.0:8080 -t . -c php.ini
+</pre></div>
+
+
+<p>The above command will spawn a server on port 8080.</p>
+<h4 id="step-4-verify-your-fine-uploader-client-side-configuration">Step 4: Verify your Fine Uploader client-side configuration</h4>
+<p>Ensure all configuration options are pointing to the path of the downloaded traditional endpoint server. For example,
+if you placed composer.json in the root of your web server, the path to your PHP server will be
+<code>/vendor/fineuploader/php-traditional-server/endpoint.php</code>. You'll need to be aware of this endpoint when setting
+the <a href="../api/options.html#request.endpoint"><code>request.endpoint</code></a>, <a href="../api/options.html#deleteFile.endpoint"><code>deleteFile.endpoint</code></a>,
+and <a href="../api/options.html#chunking.success.endpoint"><code>chunking.success.endpoint</code></a> configuration options.</p>
+<p>A typical configuration may look like this:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">manualUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+        <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;fineuploader-container&quot;</span><span class="p">),</span>
+        <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/vendor/fineuploader/php-traditional-server/endpoint.php&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/vendor/fineuploader/php-traditional-server/endpoint.php&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">chunking</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">concurrent</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">},</span>
+            <span class="nx">success</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/vendor/fineuploader/php-traditional-server/endpoint.php?done&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">resume</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">showButton</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</pre></div>
+
+
+<h4 id="step-5-start-uploading">Step 5: Start uploading!</h4>
+<p>You're all set! If you do run into any problems you can ask a question on <a href="http://stackoverflow.com/questions/tagged/fine-uploader">Stack Overflow under the fine-uploader tag</a>.
+Server example bugs should be reported in the <a href="https://github.com/FineUploader/php-traditional-server">php-traditional-server GitHub repository</a>.</p>
 
 
                 

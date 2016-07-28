@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Getting Started | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,76 +194,113 @@
                 
 
                 
+<h1 class="page-header" id="getting-started-with-fine-uploader">Getting Started with Fine Uploader</h1>
+<p>This tutorial will serve as a step-by-step walkthrough for getting starting with
+Fine Uploader. It is geared towards those who have minimal experience with
+Javascript, server-side concepts, or the web.</p>
+<p>The tutorial is not comprehensive or meant to cover all aspects of Fine Uploader.
+For more information, make sure to read through the list of features as well
+as the API documentation.</p>
+<h3 id="1-download">1. Download</h3>
+<p>You can get Fine Uploader in the <a href="http://fineuploader.com/downloads.html">downloads</a>
+section. The download comes bundled with all required scripts and modules.</p>
+<h3 id="2-decide-which-fine-uploader-to-use">2. Decide which Fine Uploader to use</h3>
+<h4 id="modes">Modes</h4>
+<p>Fine Uploader comes with two different modes pertaining to the user interface.</p>
+<h5 id="core-mode_2"><a href="../modes/core.html">Core Mode</a></h5>
+<p>The most basic Fine Uploader mode.  Core mode assumes that the developer will code their own UI
+but still make use of Fine Uploader's API. Core mode is suggested for advanced developers
+who wish to heavily customize the uploader's user interface. To use Core Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
+</pre></div>
+
+
+<h5 id="ui-mode_2"><a href="../modes/ui.html">UI Mode</a></h5>
+<p>Inherits everything from Core mode. UI mode also comes with a fully functional
+user interface which includes, but is not limited to: a default upload button,
+progress bars, retry/cancel/delete buttons, proper display of error messages,
+and more. UI mode is recommended for beginning developers or for those who
+are pleased with the default Fine Uploader interface or can customize the default Fine Uploader
+UI via CSS. To use UI Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>If you are using Fine Uploader UI, you MUST include a template in your document/markup.  You can
+use the <code>default.html</code> file in the <code>templates</code> directory bundled with the library and customize it as desired.  See the
+<a href="../features/styling.html">styling documentation page</a> for more details.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
+<h4 id="endpoint-handlers_1">Endpoint Handlers</h4>
+<h5 id="traditional"><a href="../endpoint_handlers/traditional.html">Traditional</a></h5>
+<p>To use the traditional endpoint handler, simply declare Fine Uploader as you
+normally would.</p>
+<h5 id="amazon-s3"><a href="../endpoint_handlers/amazon-s3.html">Amazon S3</a></h5>
+<p>Amazon's S3 is currently the most popular cloud service.
+Fine Uploader comes with built in support that allows all files to be uploaded directly to S3 via the browser.
+To make use of Fine Uploader S3:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
+<h5 id="azure-blob-storage"><a href="../endpoint_handlers/azure.html">Azure Blob Storage</a></h5>
+<p>Fine Uploader comes with built in support that allows all files to be uploaded directly to Azure via the browser.
+To make use of Fine Uploader Azure:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
+If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
+handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
+
+</div>
+
+<h4 id="callbacks_1">Callbacks</h4>
+<p>Like many other JavaScript libraries, Fine Uploader implements a event system
+that uses callbacks to execute user-provided functions at runtime, based on
+specific events. These <a href="../api/events.html">events are listed here</a>.</p>
+<p>Callbacks are defined in the <code>callbacks</code> option
+property. The parameters for the callbacks are the same as listed in the
+<a href="../api/events.html">documentation</a>.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="c1">// options</span>
+    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">onUpload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+        <span class="nx">onSubmitted</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="3-determine-how-you-would-like-to-import-fine-uploader">3. Determine how you would like to import Fine Uploader</h3>
+<p>You have the following options available to pull Fine Uploader into your project:</p>
 <ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
+<li>CommonJS (<code>require</code>).</li>
+<li>ES6 Modules (<code>import</code>).</li>
+<li>Globally scoped (<code>&lt;script src="..."&gt;</code>)</li>
 </ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<p>For more information on how you can load Fine Uploader into your project, please see the
+<a href="../features/modules.html">modules feature page</a>.</p>
+<p>Next, let's check out some of Fine Uploader's options.</p>
+<p>Proceed by selecting either:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
+<li><a href="02-setting_options.html">Traditional endpoint</a></li>
+<li><a href="02-setting_options-s3.html">Amazon S3 endpoint</a></li>
+<li><a href="02-setting_options-azure.html">Azure Blob Storage endpoint</a></li>
 </ul>
 
 

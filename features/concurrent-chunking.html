@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Concurrent Chunking | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,56 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#chunking">chunking</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#uploadChunk">uploadChunk</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#uploadChunkSuccess">uploadChunkSuccess</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +244,86 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<h1 class="page-header" id="concurrent-chunking">Concurrent Chunking</h1>
+<div class="alert alert-block alert-default">
 
-<h4 class="alert-heading">Note</h4>
+<h4 class="alert-heading">Note:</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>For details on the concept of chunking, start with the <a href="chunking.html">chunking feature page</a>.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<p>The concurrent chunking feature allows multiple chunks for each file to be uploaded simultaneously.  The
+traditional chunking feature only sends one chunk at a time per file.  The number of chunks sent at once
+will always equal the maximum number of available connections (see the <a href="../api/options.html#maxConnections"><code>maxConnections</code> option</a>).</p>
+<p>For example, if one file is submitted, and it can be broken up into 3 chunks, and <code>maxConnections</code> is set
+to 3, all 3 chunks of the file will be uploaded simultaneously.  With this feature disabled, the first
+chunk will be uploaded, the second chunk will be submitted only after the first chunk completes, and the
+third chunk will be uploaded only after the second chunk completes.</p>
+<h3 id="benefits">Benefits</h3>
+<p>There is a clear benefit in terms of upload speed when sending multiple chunks at once.  The concurrent
+chunks feature is primarily in place to maximize bandwidth usage for single large file uploads.</p>
+<p>Our internal tests that involved uploading multiple chunks for a specific file concurrently
+showed significant improvements in bandwidth utilization.  For example, on our internal network,
+sending a 110 MB file to S3 with chunk sizes of 5 MB took about 22 seconds when chunks were
+uploaded one-at-a-time (with concurrent chunking disabled). When maxing out the default maxConnections
+for that file (3 chunks at once, concurrent chunking enabled) the same file uploaded in about 12 seconds.</p>
+<h3 id="server-side-implications-traditional-endpoints-only">Server-side Implications (traditional endpoints only)</h3>
+<p><strong>There are only server-side implications for traditional endpoints.  If you using Fine Uploader S3, or
+Fine Uploader Azure, for example, you can skip this section entirely.</strong></p>
+<p>If you specify a path for the <code>chunking.success.endpoint</code> option, Fine Uploader (traditional) will send
+a POST request, giving your server an opportunity to combine all parts into a single file.  This option
+is required when concurrent chunking is enabled, and you may also take advantage of this request if
+you are not using the concurrent chunking feature.</p>
+<p>The POST request described above is necessary to ensure your server does not have to maintain state information
+about an in-progress upload.  Without this POST, your server would have to determine, with each chunk
+upload, if all chunks have been successfully uploaded and persisted.  This can be tricky with multiple
+chunks uploading simultaneously for a single file.  To avoid this complexity, the <code>chunking.success.endpoint</code>
+option is required when making use of the concurrent chunking feature.</p>
+<h4 id="headers-for-the-chunking-success-post">Headers for the chunking success POST</h4>
+<p>Any custom headers you have specified via the <code>request.customHeaders</code> option will also be included
+in this request.</p>
+<h4 id="payload-body-for-the-chunking-success-post">Payload (body) for the chunking success POST</h4>
+<p>The request body will be a URL-encoded string of parameters.</p>
+<p>Any parameters you have specified for the upload request (either via options or the API) will also be passed
+along with this request.</p>
+<p>Fine Uploader will also include the following parameters that describe the underlying file:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li>qquuid: the UUID of the underlying file.</li>
+<li>qqfilename: the name of the underlying file.</li>
+<li>qqtotalfilesize: the size, in bytes, of the underlying file.</li>
+<li>qqtotalparts: the total number of parts that make up the underlying file.</li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h4 id="expected-response-for-the-chunking-success-post">Expected response for the chunking success POST</h4>
+<p>For successful responses, you may return an empty body with a status of 200-204.  Any
+other status code is determined to be a failure.  You can also return a JSON response with
+any data your would like passed to your <code>onComplete</code> handler.  Furthermore, you can include
+an <code>error</code> property in your response with the error message you would like to have displayed
+next to the failed file (if you are using Fine Uploader UI).</p>
+<h3 id="endpoint-support">Endpoint Support</h3>
+<p>All endpoint types are supported by this feature.  Note that the <code>chunking.success.endpoint</code> option is required
+for traditional endpoints when this feature is enabled.</p>
+<h3 id="enabling">Enabling</h3>
+<p>You simply must set the <code>chunking.concurrent.enabled</code> flag.  If using a traditional upload endpoint
+(i.e. not S3 or Azure) you must also specify a <code>chunking.success.endpoint</code> path, where Fine Uploader will
+send a POST after all chunks have been successfully uploaded for each file.</p>
+<p>For example:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myUploader&quot;</span><span class="p">),</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/upload/receiver&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">chunking</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">concurrent</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/chunksdone&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
 
 
                 

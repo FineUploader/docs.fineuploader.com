@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Azure Options | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,8 @@
         
 
         
+<script src="/branch/master/_static/js/sidebar.js"></script>
+
 
     </head>
     <body>
@@ -186,6 +188,9 @@
 
                 <div class="span2 sidebar">
                 
+<div id="sidebar-accordion" class="accordion">
+</div>
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +199,639 @@
                 
 
                 
+<div class="all-options">
+<div class="options-azure-core">
+<h1 class="page-header" id="options-azure">Options <small>Azure</small></h1>
+<p>If you are using the Azure uploader, many of Fine Uploader's options are still
+present, and most of them still function the same way. However, some of the
+options are slightly different. This page will list any new or different options
+for the Azure uploader. Any option not listed here can be assumed to have the same
+behavior for the Traditional or Azure uploader.</p>
+<h2 id="core_1">Core</h2>
+
+
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>The <a href="options.html#chunking"><code>chunking.paramNames</code> option</a> does <strong>not</strong> apply to Azure.</p>
+
+</div>
+<div class="option-parent row-fluid">
+    <h3 id="chunking"><a style="color: #00ABC7;" href="#chunking">chunking</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.partSize"><a style="color: #f87436" href="#chunking.partSize">partSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum size of each part, in bytes.  It is not recommenced you increase this value, as Azure will not accept parts larger than 4 MB.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">4000000</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.minFileSize"><a style="color: #f87436" href="#chunking.minFileSize">minFileSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>Files smaller than this value will not be chunked.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">4000001</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="cors"><a style="color: #00ABC7;" href="#cors">cors</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.allowXdr"><a style="color: #f87436" href="#cors.allowXdr">allowXdr</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enables or disables cross-domain ajax calls (if <a href="options.html#core.expected"><code>expected</code> property</a> is true) in IE9 and older.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="blobProperties"><a style="color: #00ABC7;" href="#blobProperties">blobProperties</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="blobProperties.name"><a style="color: #f87436" href="#blobProperties.name">name</a></h4>
+    <span class="option-description row-fluid">
+        <p>Describes the blob name used to identify the file in your Azure Blob Storage container. Possible values are 'uuid', 'filename' or a function.  If the value is a function, Fine Uploader Azure will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return one of a <a href="../features/async-tasks-and-promises.html"><code>qq.Promise</code></a> or a <code>String</code>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">uuid</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <a href="options.html#resume"><code>resume.paramNames</code> option</a> does <strong>not</strong> apply to Azure.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <a href="options.html#request.customHeaders"><code>request.customHeaders</code> option</a> does <strong>not</strong> apply to Azure.</p>
+
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="request"><a style="color: #00ABC7;" href="#request">request</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="request.endpoint"><a style="color: #f87436" href="#request.endpoint">containerUrl</a></h4>
+    <span class="option-description row-fluid">
+        <p>URL for your Azure Blob Storage container.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.params"><a style="color: #f87436" href="#request.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Parameters passed along with each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
+    <span class="option-description row-fluid">
+        <p>Part of the parameter name that contains the name of the associated file which may differ from the blob name. Prefixed with 'x-ms-meta-' by Fine Uploader.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfilename</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="signature"><a style="color: #00ABC7;" href="#signature">signature</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.customHeaders"><a style="color: #f87436" href="#signature.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.  If you declare a function as the value, the associated file's ID will be passed to your function when it is invoked.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label- function"> Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.endpoint"><a style="color: #f87436" href="#signature.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>The endpoint that Fine Uploader can use to send GET for a SAS before sending requests off to S3.  The blob URL and underlying method type associated with the underlying REST request will be included in the query string.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="uploadSuccess"><a style="color: #00ABC7;" href="#uploadSuccess">uploadSuccess</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.customHeaders"><a style="color: #f87436" href="#uploadSuccess.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.endpoint"><a style="color: #f87436" href="#uploadSuccess.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>An endpoint that Fine Uploader should POST to when a file has been successfully uploaded to Azure Blob Storage.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.method"><a style="color: #f87436" href="#uploadSuccess.method">method</a></h4>
+    <span class="option-description row-fluid">
+        <p>The request method (i.e. POST/PUT).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">POST</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.params"><a style="color: #f87436" href="#uploadSuccess.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional parameters to attach to upload success file requests. Note that Fine Uploader will still send the blob name, container URL, filename, and UUID as well</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+</div>
+
+
+<div class="options-azure-ui">
+<h2 id="ui_1">UI</h2>
+<div class="option-parent row-fluid">
+    <h3 id="failedUploadTextDisplay"><a style="color: #00ABC7;" href="#failedUploadTextDisplay">failedUploadTextDisplay</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.mode"><a style="color: #f87436" href="#failedUploadTextDisplay.mode">mode</a></h4>
+    <span class="option-description row-fluid">
+        <p>You will most likely want to keep this at the default value of 'custom'. See the UI options documentation for more info on this option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">custom</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+</div>
+</div>
+
 
 
                 
@@ -321,8 +888,13 @@ to the API documentation section.</p>
         <script src="/branch/master/_static/js/main.js"></script>
 
         
-        
-        
+<script>
+$(document).ready(function() {
+    console.log('herro')
+    renderOptionsSidebarNav(['azure-core', 'azure-ui']);
+});
+</script>
+
 
 
     </body>

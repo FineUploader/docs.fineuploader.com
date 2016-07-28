@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Chunking | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,56 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#chunking">chunking</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#uploadChunk">uploadChunk</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#uploadChunkSuccess">uploadChunkSuccess</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +244,83 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<p>[postmaxsize[: http://php.net/manual/en/ini.core.php#ini.post-max-size</p>
+<h1 class="page-header" id="chunking-partitioning">Chunking &amp; Partitioning</h1>
+<div class="alert alert-block alert-default">
 
-<h4 class="alert-heading">Note</h4>
+<h4 class="alert-heading">Note:</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p><a href="concurrent-chunking.html">Concurrent chunking</a> is also supported!</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<p>With the advent of the File API, modern browsers now are capable of dividing
+files into "chunks". This feature is a crucial
+component to the <a href="resume.html">resume</a> feature, and makes the <a href="retry.html">retry</a> feature
+more useful.  File chunking also provides a workaround for request size limits
+put in place by browsers (e.g., Firefox and Chrome limit upload request
+sizes to about 4GB) and servers (e.g. [PHP's <code>post_max_size</code>][postmaxsize]).</p>
+<div class="alert alert-block alert-default">
+
+<h4 class="alert-heading">Amazon S3 Specific Note:</h4>
+
+<p>The default chunk size for Fine Uploader S3 is 5 MiB. If your file is smaller than that size,
+the upload will be <em>not</em> be chunked.</p>
+
+</div>
+
+<p>Chunking is made possible by the File API, and is supported in Chrome, Firefox,
+Safari (iOS 6+ and OS X), Internet Explorer 10+, Opera 15+, and Microsoft Edge 13.10586+. Chunking is disabled in
+Android's stock browser due to a bug in the browser's ability to upload Blobs.</p>
+<p>Each chunk is sent as a separate request, and each chunked request
+should be acknowledged just as you would for a non-chunked request.
+The response to each chunked upload request is checked to determine success. If the
+server responds with a failure response, the uploader will attempt to retry,
+sending the file starting with the last failed chunk (if the <code>autoRetry</code> option
+is enabled).</p>
+<p>The details of chunking are largely invisible to your servers when using Fine Uploader S3 or Fine Uploader Azure. However
+if sending files to an endpoint you control, there are some details you must be aware of.</p>
+<h2 id="traditional-endpointsservers-not-s3-or-azure">Traditional endpoints/servers (not S3 or Azure)</h2>
+<p>The parameters on a chunked request will contain <em>at least</em> the following information. Consider a sample file
+with named "NSA_PRISM.ppt" with a total file size of about 15 MB and a configured chunk size of 2 MB for the following example:</p>
+<div class="codehilite"><pre><span class="p">{</span>
+    <span class="nt">&quot;qquuid&quot;</span><span class="p">:</span> <span class="s2">&quot;380d6893-b98b-4189-9938-93d265dfab5d&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;qqpartindex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;qqpartbyteoffset&quot;</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span>
+    <span class="nt">&quot;qqtotalfilesize&quot;</span><span class="p">:</span> <span class="mi">15092995</span><span class="p">,</span>
+    <span class="nt">&quot;qqtotalparts&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="nt">&quot;qqfilename&quot;</span><span class="p">:</span> <span class="s2">&quot;NSA_PRISM.ppt&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;qqchunksize&quot;</span><span class="p">:</span> <span class="mi">2000000</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p><code>qqpartindex</code> is 0-indexed!</p>
+
+</div>
+
+<p>The <code>qqfilename</code> parameter is only sent along with chunked requests that are
+multipart encoded. This is because multipart encoded uploads report the filename
+in the Content-Disposition header as "blob" or the empty string when a <code>Blob</code>
+is included in the request. When a file is chunked, it is split up into <code>Blob</code> pieces.
+So, to determine the original filename when dealing with a multipart encoded request, you must read the <code>qqfilename</code> property.</p>
+<p>Since each chunk comes in as a separate request, the server should save the chunk
+to a temporary location. The filename should be saved using the <code>qquuid</code> parameter
+to guarantee there are no collisions with other chunks. After all chunks have
+been received for a file (i.e., <code>qqpartindex == qqtotalparts - 1</code>) then you should
+combine all the chunks (in order) to recreate the original file.</p>
+<p>Fine Uploader will also keep an eye out for a <code>reset</code> JSON property in the
+server's response. When this property is present Fine Uploader will
+fail the upload and then restart the upload with the first chunk again on the
+next attempt (assuming auto or manual retry has been enabled).</p>
+<h3 id="post-when-all-chunks-have-successfully-uploaded_1">POST when all chunks have successfully uploaded</h3>
+<p>You may specify a <code>chunking.success.endpoint</code> if you'd like your server to be called when all chunks
+have been successfully uploaded.  Note that this only applies to traditional endpoint.  See the section on
+the <a href="concurrent-chunking.html#server-side-implications">chunking success call</a> for more details.</p>
 
 
                 

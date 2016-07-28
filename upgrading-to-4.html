@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Upgrading to 4.x | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,77 +194,97 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h1 class="page-header" id="upgrading-to-4x">Upgrading to 4.x</h1>
+<p>The 4.0 version brings some breaking changes, mostly surrounding <a href="features/styling.html">templating</a>
+in <a href="modes/ui.html">Fine Uploader UI</a>.  If you are not using Fine Uploader UI or the <a href="features/drag-and-drop.html#drag-and-drop-standalone-module">standalone drag &amp; drop module</a>,
+you will not be affected by these changes.</p>
+<p>Be sure to read about templating in the <a href="features/styling.html">styling guide</a>.</p>
+<h2 id="fine-uploader-ui-breaking-changes-upgrade-instructions">Fine Uploader UI breaking changes &amp; upgrade instructions</h2>
+<p>Templating has been a mess in Fine Uploader UI for quite some time, arguably since day 1.  The goal was to clean up
+this mess in 4.0 so that integrators/designers could more easily customize the look and feel of UI mode without
+resorting to core mode and developing a custom UI from scratch.  There will likely still be some cases where it makes
+more sense to drop back to Fine Uploader Core and develop a new UI from scratch, but the improvements to templating
+in UI mode should make that scenario much less likely.</p>
+<p>At a high level, the template markup was moved out of the
+javascript source and into the document.  You will need to, at least, include the default template bundled with Fine
+Uploader in your document.  This step made many <code>classes</code> and <code>text</code> option properties redundant as well, so appropriate
+properties were removed.  What follows is a more detailed description of these breaking changes, along with instructions
+that should make the upgrade process from a 3.x build a bit easier.</p>
+<h3 id="changed-template-option-to-take-an-id-string-or-element-pointing-to-script-tag-containing-template">Changed <code>template</code> option to take an ID (string) or element (pointing to script tag containing template)</h3>
+<p>Previously, the <code>template</code> option contained the top-level template markup (sans the file list markup) as a string.
+If you wanted to change this, you needed to copy and paste this unwieldy string into your glue code and make appropriate
+changes.  You also had to be careful about changing any of the CSS classes assigned to these template items.  If any
+CSS class was removed/renamed, you had to be sure to update the associated <code>classes</code> option property, since Fine Uploader
+UI used the same CSS classes for selection and styling.</p>
+<p>In version 4.0, the <code>template</code> option expects either a string or an <code>Element</code> as a value (or a <code>jQuery</code> object if using
+the jQuery plug-in wrapper).  You may either specify the ID of the container element in your document that contains
+the template markup, or you may select the container element yourself.  The default value is a string: "qq-template".</p>
+<p>The default template HTML file that is bundled with Fine Uploader contains a <code>&lt;script&gt;</code> with an ID of "qq-template" along
+with all supported template items.  You can drop this into your document without any changes, and Fine Uploader UI
+will work just as it did before.  If you want to further customize the template, you can make appropriate changes to
+the markup in the <code>&lt;script&gt;</code> template contents.  You can remove almost any item in the template if you don't want it
+to be rendered in the DOM.  Note that each template item has a CSS class that ends in "-selector" which is used internally
+for selecting the item.  A second CSS class may be present on the item, used only for styling.  You can remove this second
+CSS class without fear of breaking the uploader.  If you remove the "-selector" CSS class, Fine Uploader will simply
+ignore the item, though it will still render in the DOM.</p>
+<h3 id="removed-the-filetemplate-option">Removed the <code>fileTemplate</code> option</h3>
+<p>The contents of the old <code>template</code> and <code>fileTemplate</code> options have been combined into one template, which must be
+included as a <code>&lt;script&gt;</code> tag with a type of "text/template" in your document (or any hidden container element).
+You can use the template contained in the included <code>default.html</code> file in the <code>templates</code> directory as-is,
+or modify it to match your application.</p>
+<h3 id="template-must-be-included-in-document-script-tag-for-fine-uploader-ui">Template must be included in document script tag for Fine Uploader UI</h3>
+<p>As mentioned previously, even if you did not make any adjustments to the default <code>template</code> or <code>fileTemplate</code> options
+in older versions of Fine Uploader UI, you still must include a template in your document.  A default template is
+now bundled with Fine Uploader.  You can use the bundled HTML file, or copy and paste the template <code>&lt;script&gt;</code> tag
+into your document.</p>
+<h3 id="various-changes-to-the-bundled-css-file">Various changes to the bundled CSS file</h3>
+<p>There were a few styling-related changes made to the CSS file that ships with the library.</p>
+<p>A <code>.qq-hide</code> style, which defaults to <code>display: none;</code> was also added.  You can override this default style
+via increased specificity, or you can contribute a new value for this CSS class that Fine Uploader will assign
+to any element that it needs to hide.  See the <code>classes</code> option in the <a href="features/styling.html">styling guide</a>
+for more details.</p>
+<p>The <code>.qq-upload-finished</code> style was removed, as this did not appear to serve a useful purpose anymore.</p>
+<h3 id="removed-retryshowbutton">Removed <code>retry.showButton</code></h3>
+<p>If you do not want the retry button displayed next to each file automatically when a manual retry is possible,
+simply omit the retry-related element from your template.</p>
+<h3 id="removed-editfilenameenabled">Removed <code>editFilename.enabled</code></h3>
+<p>If you do not want to utilize the edit filename feature, either ensure the <code>autoUpload</code> option is set to true
+(this is the default) or remove the edit-filename related elements from your template.  Currently, this involves removing
+the "qq-edit-filename-icon-selector" and "qq-edit-filename-selector" elements.</p>
+<h3 id="removed-all-classes-option-properties-other-than-the-ones-listed-in-styling-doc">Removed all <code>classes</code> option properties, other than the ones listed in styling doc</h3>
+<p>In most cases, there is no longer any need to define options for each class associated with a UI-mode template item.
+Remember, Fine Uploader UI 4.0's default template includes a "-selector" class on each template item specifically for
+selecting the item, and another for styling.  You can remove or rename the styling class without fear of breaking the
+uploader.  In fact, omitting most template items is possible as well.  The only <code>classes</code> properties that remain are
+ones that are added by Fine Uploader dynamically/on-demand.  You can override any of these default values if you'd like
+to use one of your own custom CSS classes instead.</p>
+<h3 id="added-classeshide">Added <code>classes.hide</code></h3>
+<p>Part of the 4.0 template rework included a push to stop assigning/changing style attributes on template items in the
+javascript code directly.  Previously, if Fine Uploader UI wanted to hide an element, it would add a <code>display: none;</code>
+style attribute value to the element, and then change this <code>display</code> property to a variable appropriate value when
+it was time to display the element again.  As of 4.0, to hide an element, Fine Uploader adds a <code>qq-hide</code> CSS class to
+the element, which is defined with a default style of <code>display: none;</code> in the bundled CSS file.  When the element must
+be visible again, this class is removed.  You can override the default CSS class name for hiding elements via
+<code>classes.hide</code>.</p>
+<p>Note that the standalone drag &amp; drop module (which is also used internally by Fine Uploader UI) still sets a <code>display: none;</code>
+style directly on drop zones when they must be hidden, and changes this to <code>display: block;</code> to make them visible again.
+This was left alone, as we didn't want to break all Fine Uploader Core mode apps that do not include Fine Uploader UI's
+default CSS file (since there has never been a dependency on this file when using core mode).</p>
+<h3 id="removed-all-text-option-properties-except-for-failupload-formatprogress-and-waitingforresponse">Removed all <code>text</code> option properties, except for <code>failUpload</code>, <code>formatProgress</code> and <code>waitingForResponse</code></h3>
+<p>Similar to the changes to the <code>classes</code> option, there is no longer a need to have options dedicated to text that
+appears with template items in most cases.  You can easily change the default text in your template.  In cases where
+Fine Uploader UI dynamically changes text based on conditions, <code>text</code> options remain for you to adjust if desired.</p>
+<h3 id="removed-draganddropdisabledefaultdropzone">Removed <code>dragAndDrop.disableDefaultDropzone</code></h3>
+<p>If you want to disable the default drop zone, simply remove the drop zone related element(s) from your template.</p>
+<h3 id="removed-draganddrophidedropzones">Removed <code>dragAndDrop.hideDropzones</code></h3>
+<p>If you want an extra or default drop zone to remain invisible until an item approaches the drop area, simply include
+a <code>qq-hide-dropzone</code> attribute on the drop zone container.  The attribute is present on the drop area in the
+default template, but it can be removed, of course.</p>
+<h2 id="standalone-drag-drop-module-breaking-changes-upgrade-instructions">Standalone drag &amp; drop module breaking changes &amp; upgrade instructions</h2>
+<h3 id="removed-hidedropzonesbeforeenter-option-in-standalone-dnd-module-replaced-w-qq-hide-dropzone-attr">Removed <code>hideDropZonesBeforeEnter</code> option in standalone DnD module (replaced w/ qq-hide-dropzone attr)</h3>
+<p>This is the only breaking change to the standalone drag &amp; drop module.  Instead of specifying a value for a
+<code>hideDropZonesBeforeEnter</code> option that either hides all drop zones until an item approaches (or not) you can now control
+visibility in this respect per-dropzone via a <code>qq-hide-dropzone</code> attribute on the drop zone container.</p>
 
 
                 

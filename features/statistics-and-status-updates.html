@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Statistics and Status Updates | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,52 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#getUploads">getUploads</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#statusChange">statusChange</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +240,148 @@
                 
 
                 
+<h1 class="page-header" id="statistics-and-status-updates">Statistics and Status Updates</h1>
+<p>Fine Uploader provides API methods and other options to facilitate statistics
+and status updates on your uploads.</p>
+<p>With this, we can register a callback that allows us to be notified
+when any submitted item changes status.  The concept is simple: this will be
+invoked whenever any submitted file changes state. The ID, old status, and the
+new status will be included in the callback parameters.</p>
+<p>The status values correspond to those found in the <code>qq.status</code> object.
+For reference, here are valid status values:</p>
+<ul>
+<li><code>SUBMITTING</code> - Selected file is in the process of being submitted to the uploader.  Validation checks occur during this phase.</li>
+<li><code>SUBMITTED</code> - Selected file has been successfully submitted to the uploader.  In UI mode, it is also now represented in the DOM.</li>
+<li><code>QUEUED</code> - Uploads are in progress, but this one has not yet started due to lack of available connections.   It is waiting in line for an available connection before an attempt is made to upload it.</li>
+<li><code>UPLOADING</code> - File is currently uploading (in progress).</li>
+<li><code>UPLOAD_RETRYING</code> - The state when an upload retry is about to occur, just before the upload retry it attempted.  The file will likely only be in this state for a brief moment.</li>
+<li><code>UPLOAD_FAILED</code> - The upload has officially failed to upload, after all auto-retry attempts have been exhausted.</li>
+<li><code>UPLOAD_SUCCESSFUL</code> - The upload has officially succeeded.</li>
+<li><code>CANCELED</code> - The upload has been canceled.</li>
+<li><code>REJECTED</code> - The submitted file has failed validation, either via the internal validation checks, or via a <code>validate</code>, <code>validateBatch</code>, or <code>submit</code> event callback.</li>
+<li><code>DELETED</code> - The file has been successfully deleted from the server.</li>
+<li><code>DELETING</code> - A delete attempt is in progress.</li>
+<li><code>DELETE_FAILED</code> - The last delete attempt failed.</li>
+<li><code>PAUSED</code> - The file was in progress, but is now paused.</li>
+</ul>
+<hr>
+<h3 id="examples">Examples</h3>
+<h4 id="simple-status-query">Simple status query</h4>
+<p>The API method allows you the retrieve information about all items submitted to
+the uploader. If you invoke this method without any arguments, information on
+all items will be returned.  For example, suppose we have submitted only two
+files to the uploader, and both have uploaded successfully. If we wanted to retrieve
+information about these files, the following code should be executed.  Note that I
+have illustrated the expected return value as well:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p>Now, suppose we delete the second files via Fine Uploader. If we invoke a new-argument getUploads() again,
+we receive the following in return:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<h4 id="filtering-results">Filtering results</h4>
+<p>Note that you can filter by ID(s) OR UUID(s) OR status.  You can include multiple
+ID, UUID, or status values as an array as well. All valid status values
+are defined in the <code>qq.status</code> object. Also, please note that the <code>size</code> property
+will only be included if the user agent supports the File API (that is, if
+qq.supportedFeatures.canDetermineSize evaluates to true).</p>
+<p>Suppose we only want to compile a list of all deleted files for this instance, we can do this:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span>
+<span class="p">});</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p>Now, suppose we have submitted another file, but we have canceled it.  Maybe we only want
+information about canceled OR deleted items:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="p">[</span><span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span><span class="p">,</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">CANCELED</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name_2&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">11111</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid2&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;canceled&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
 <div class="alert alert-block alert-info">
 
-<h4 class="alert-heading">Note</h4>
+<h4 class="alert-heading">Note:</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>getUploads returns an array only when there is a potential for the operation to return more than
+one file in the result set. This excludes queries for a specific, single ID or UUID. All other queries will
+return an array.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h4 id="determine-if-all-submitted-files-are-done">Determine if all submitted files are "done"</h4>
+<p>How can I determine if all of my uploads are complete?  This is very much a frequently asked question.
+Luckily, is quite simple to make this determination by contributing <a href="../api/events.html#allComplete">an <code>onAllComplete</code> event handler</a>.</p>
 
 
                 

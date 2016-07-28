@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Initial File List | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,77 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#deleteFile.endpoint">deleteFile.endpoint</a></li>
+            
+        
+            
+                <li><a href="../api/options.html#deleteFile.params">deleteFile.params</a></li>
+            
+        
+            
+                <li><a href="../api/options.html#session">session</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#addInitialFiles">addInitialFiles</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#sessionRequestComplete">sessionRequestComplete</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,76 +265,54 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<h1 class="page-header" id="initial-file-list">Initial File List</h1>
+<h3 id="summary_3">Summary</h3>
+<p>This feature is targeted at integrators with an application that requires a list of files from a previous session to be
+fed into the uploader during initialization.  If enabled, Fine Uploader will ask your server for metadata about file items
+previously uploaded.  All items returned from your server will be loaded into Fine Uploader, and you will be able to
+optionally delete these files.  All relevant API methods can be used on these pre-loaded files.  If you are using
+Fine Uploader UI, they will be displayed as successfully uploaded files as well.</p>
+<p>The API includes a <a href="../api/options.html#session"><code>session</code> option</a>
+and a <a href="../api/events.html#sessionRequestComplete"><code>sessionRequestComplete</code> event</a>, and an <a href="../api/methods.html#addInitialFiles"><code>adInitialFiles</code> method</a>.</p>
+<h3 id="fine-uploader-core-support">Fine Uploader Core Support</h3>
+<p>After the array of file items has been retrieved from the server, all valid items will be loaded into the uploader
+instance.  Internal data structures will be updated with this data, making all relevant API methods possible, such as
+<code>getName</code>, <code>getUuid</code>, <code>getUploads</code>, <code>deleteFile</code>, etc.</p>
+<p>All loaded file items will include a <a href="statistics-and-status-updates.html">status of <code>qq.status.UPLOAD_SUCCESSFUL</code></a>.
+Fine Uploader will assign IDs to each file item as well.  Also note that file items loaded into Fine Uploader will be
+counted when determining if you have reached your <a href="validation.html"><code>validation.itemLimit</code></a>.</p>
+<h3 id="fine-uploader-ui-support_1">Fine Uploader UI Support</h3>
+<p>In addition to everything described in the above core session, all files loaded into Fine Uploader on startup
+(or after a reset) will be displayed in Fine Uploader UI as successfully uploaded files.  If the <a href="delete.html">delete file feature</a>
+is enabled, a delete button will appear next to each file as well.</p>
+<h3 id="file-uploader-s3-support">File Uploader S3 Support</h3>
+<p>Support for S3 with or without UI mode is the same, except an additional property for each file item is required: <code>s3Key</code>.
+The value of this property must be the current key of the file in your S3 bucket.</p>
+<h3 id="file-uploader-azure-support">File Uploader Azure Support</h3>
+<p>Support for Azure with or without UI mode is the same, except an additional property for each file item is required: <code>blobName</code>.
+The value of this property must be the current name of the Azure blob.</p>
+<h3 id="server">Server</h3>
+<p>If you have specified a value for the <code>session.endpoint</code> option, Fine Uploader will send a GET request to your endpoint
+on startup (and optionally when the instance is reset).  The response to this request must be valid JSON.  More
+specifically, it must be a JSON array containing <code>Object</code>s for each file to be fed into the uploader.</p>
+<p>Here are the following properties of each <code>Object</code> that Fine Uploader recognizes (* = required):</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
+<li>*name: <code>String</code> - Name of the file.</li>
+<li>*uuid: <code>String</code> - UUID of the file.</li>
+<li>size: <code>Number</code> - Size of the file, in bytes.</li>
+<li>deleteFileEndpoint: <code>String</code> - Endpoint for the associated delete file request.  If omitted, the <code>deleteFile.endpoint</code> is used.</li>
+<li>deleteFileParams: <code>Object</code> - Parameters to send along with the associated delete file request.  If omitted, <code>deleteFile.params</code> is used.</li>
+<li>thumbnailUrl: <code>String</code> - URL of an image to display next to the file.</li>
+<li>*s3Key: <code>String</code> - Key of the file in your S3 bucket.  Only required if using Fine Uploader S3.</li>
+<li>*s3Bucket: <code>String</code> - Name of the bucket where the file is stored in S3.  Only required if using Fine Uploader S3 and if the bucket cannot be determined by examining the endpoint URL (such as when routing through a CDN).</li>
+<li>*blobName: <code>String</code> - Name of the file in your Azure Blob Storage container.  Only required if using Fine Uploader Azure.</li>
 </ul>
-<h3 id="plug-ins">Plug-ins</h3>
+<p>The response will be converted into a JavaScript <code>Array</code> and passed to your <code>sessionRequestComplete</code> event handler.
+So, any non-standard object properties passed with your server response will also be passed to your event handler.</p>
+<p>Additionally:</p>
 <ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
+<li>Cross-origin endpoints are supported in all browsers.</li>
+<li>Your server must respond with a status of 200.</li>
 </ul>
 
 

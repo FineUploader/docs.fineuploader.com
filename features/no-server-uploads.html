@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>No-Server Uploads | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,81 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-s3.html#credentials">credentials (S3)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                
+                
+                    
+                    <li><a href="../api/methods-s3.html#setCredentials">setCredentials (S3)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                
+                
+                    
+                    <li><a href="../api/events-s3.html#credentialsExpired">credentialsExpired (S3)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,76 +269,34 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
+<h1 class="page-header" id="upload-without-a-server">Upload Without a Server</h1>
+<h3 id="summary_1">Summary</h3>
+<p>Enabling file uploads for your web application is easier than ever with Fine Uploader S3's client-side
+request signing support.  With this feature, you don't need to worry about server-side languages.  In fact,
+you only need a server to host your HTML and JavaScript files.  You can even delegate this task to an Amazon
+S3 bucket, such as in the <a href="https://fineuploader-s3-client-demo.s3.amazonaws.com/index.html">official Fine Uploader S3 no-server example</a>.</p>
+<h3 id="api">API</h3>
+<p>A <a href="../api/options-s3.html#credentials-option"><code>credentials</code> option</a> has been created for Fine Uploader S3 to support this workflow.  It allows you to
+pass temporary credentials (secret &amp; public AWS keys) to Fine Uploader S3 during initialization.  An <code>expiration</code> date
+for the credentials must also be provided.  Additionally, if you are using temporary credentials from the
+AWS Security Token Service, you will also need to provide a <code>sessionToken</code>. If you would like to use version 4
+signatures, instead the default version 2, be sure to set <a href="../api/options-s3.html#signature.version">the <code>signature.version</code> option</a> to <code>4</code>.</p>
+<p>When your credentials expire, your <a href="../api/events-s3.html#credentialsexpired"><code>credentialsExpired</code> event handler</a> will be invoked.  You must then return a
+<a href="async-tasks-and-promises.html">promise</a> and fulfill it by passing the new credentials via the <code>success</code> method on the promise.  The
+validity of credentials is checked internally by Fine Uploader S3 just before a request is sent to S3.  If the
+credentials have expired, the request will be held up until your event handler specifies a new set of credentials or
+fails its attempt to do so.</p>
+<p>An <a href="../api/methods-s3.html">API method, <code>setCredentials</code></a>, also exists if you would like to update initial credentials after
+Fine Uploader S3 has been initialized.  You can also utilize this method to tell Fine Uploader S3 about
+temporary credentials for the first time at some point after the uploader instance has been created.</p>
+<h3 id="best-practices">Best Practices</h3>
+<p>In light of the fact that this workflow requires you expose an AWS secret key client-side (making it easy for
+malicious users to gain access to your secret key), there are some precautionary measure you should take:</p>
 <ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
+<li>Do not hard-code your credentials client-side.  Your credentials should be <strong>temporary</strong>, with a reasonable expiration date.</li>
+<li>Communication between your page and the entity that provides temporary credentials should be secured in some fashion (i.e. SSL).</li>
+<li>Communication between your Fine Uploader S3 instance and your S3 bucket should be secured via SSL.</li>
+<li>Consider use of an established identity provider along with AWS STS to obtain temporary credentials.  An example of this can be seen in the <a href="https://fineuploader-s3-client-demo.s3.amazonaws.com/index.html">official Fine Uploader S3 no-server upload example</a>.</li>
 </ul>
 
 

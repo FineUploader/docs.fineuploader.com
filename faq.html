@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,77 +194,84 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h2>
+<p><strong>Q</strong>: Are multiple instances of Fine Uploader on a single page supported?</p>
+<p><strong>A</strong>: Absolutely! In fact, our internal development page has 4 different instances of Fine Uploader running at all times. <a href="http://fineuploader.com/demos">The demo page</a> is another example where multiple instances of the library are running side-by-side.</p>
+<p><br/>
+<strong>Q</strong>: Why can't I select multiple files at once in Android?</p>
+<p><strong>A</strong>: Android doesn't officially support the multiple attribute on file input elements.  I believe
+some builds of Android unofficially supported this, but I can't recall which specific versions.
+See case <a href="https://github.com/Widen/fine-uploader/issues/840">#840</a> for more details.</p>
+<p><br/>
+<strong>Q</strong>: I'm using core mode, but I don't want to write my own code to handle dropped files and folders.  Can
+I use the DnD module used by UI mode?</p>
+<p><strong>A</strong>: Certainly, and it's quite easy to do so!  Head on over to the <a href="features/drag-and-drop.html">DnD Module Documentation</a> for more information.</p>
+<p><br/>
+<strong>Q</strong>: In IE, when my server returns its response to an upload request, I see a "Save As..." dialog box on the client.  What am I doing wrong?</p>
+<p><strong>A</strong>: Your server's response content-type MUST be "text/plain".  IE does not handle the "application/json" mime-type.  You have
+probably read advice from others that claim "text/html" is also safe.  This is not always true.  You will run into problems with a content-type
+of "text/html" if your JSON response contains HTML.</p>
+<p><br/>
+<strong>Q:</strong> I like UI mode, but I don't want to allow my users to utilize the drag &amp; drop feature.  How can I do this?</p>
+<p><strong>A:</strong> Simply remove the drop zone elements from the template.</p>
+<p><br/>
+<strong>Q:</strong> Using the jQuery plug-in in core mode, I can't seem to get my upload button to appear.</p>
+<p><strong>A:</strong> It is important to understand that the target of your plug-in should be an existing container element for your upload
+component, <em>not</em> the button element.  Your button element must be specified separately via the <code>button</code> option.</p>
+<p><br/>
+<strong>Q:</strong> Why am I seeing an "Access Denied" error in IE's javascript console?</p>
+<p><strong>A:</strong> There are two common causes.  One cause is triggering the "select files" dialog via javascript.  IE does not permit this
+and will throw a security error when Fine Uploader attempts to submit the underlying form.  Another cause is returning a
+response code that is not 200.  The error occurs when Fine Uploader attempts to parse the response in the hidden iframe.
+See the <a href="browser-support.html#internet-explorer">Internet Explorer Limitations</a> for more details.</p>
+<p><br/>
+<strong>Q:</strong> Why can't I use a progress bar, drag and drop, multiple file selection, chunking, or auto-resume in some browsers?</p>
+<p><strong>A:</strong> Some browsers (IE9 and older, along with Android 2.3.x and older) do not support the File API the <code>multiple</code> attribute on file input elements.
+These are all required to give you the best possible experience.</p>
+<p><br/>
+<strong>Q:</strong> Why isn't Safari for Windows supported?</p>
+<p><strong>A:</strong> There is really no reason to use Safari for Windows.   Webkit is better represented on that platform in Chrome.
+Apple doesn't appear to be interested in maintaining Safari for Windows anymore either.  Switch to Chrome.</p>
+<p><br/>
+<strong>Q:</strong> Why isn't folder drag &amp; drop uploading supported in any browser other than Chrome 21+ &amp; Opera 15+?</p>
+<p><strong>A:</strong> Chrome 21 was the first browser version to implement the HTML5 Filesystem API.  This is required to handle dropped folders.
+Currently, no other browsers support this API.  Opera 15+ is based on Chromium as well, giving it feature parity with
+Chrome.</p>
+<p><br/>
+<strong>Q:</strong> I have created a <code>&lt;button&gt;</code> element for my uploader button, but this doesn't seem to work in IE.  Why?</p>
+<p><strong>A:</strong> In IE, the button element receives the click event, instead of the child input element.  Use a <code>&lt;div&gt;</code> or a <code>&lt;span&gt;</code> or an <code>&lt;a&gt;</code> instead. Be sure to add a <code>role</code> attribute with a value of "button" to this element for accessibility reasons.</p>
+<p><br/>
+<strong>Q:</strong> Why do I only see a "Processing..." message next to a file (in UI mode for the traditional uploader)
+in Chrome, Safari, &amp; Opera after the last byte has been sent but the server has yet to respond?</p>
+<p><strong>A:</strong> The implementation of the onProgress notification that tells us the status of the bytes sent to the server varies from browser to browser, unfortunately.
+Webkit browsers have elected to follow the "spirit" of the W3C spec, while Firefox, and (I believe) IE10, obey the spec in the most strict sense.  I have discussed
+this in some detail <a href="https://github.com/Widen/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
+<p><br/>
+<strong>Q:</strong> When chunking and multipart encoded are both enabled, why must I determine the original file's name by parsing the qqfilename parameter?</p>
+<p><strong>A:</strong> The file data is stored in one of the multipart boundaries contained in the request payload.  Normally, the
+content-disposition header for this boundary contains the actual file name.  However, when the file is split up into parts
+client-side, we are sending a <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">Blob</a> to represent a different part of the
+<a href="http://www.w3.org/TR/FileAPI/#dfn-file">File</a> in each request.  A <a href="http://www.w3.org/TR/2010/WD-XMLHttpRequest2-20100907/#the-fo.htmlata-interface">FormData</a> object is used to construct these
+requests.  When a Blob is added to a Fo.htmlata object, the user agent sets the content-disposition header for the associated
+multipart boundary in the request to "blob" (or sometimes an empty or random string).  As a result, we must
+pass the original file name in a parameter.</p>
+<p><br/>
+<strong>Q:</strong> How can I prevent users from dropping folders into browsers that do not support folder uploading?</p>
+<p><strong>A:</strong> There is no reliable way to prevent users from dropping folders into the drop zone of any browser other than
+Chrome 21+ &amp; Opera 15+, currently.  This is due to the fact that there is no way to reliably detect if a folder has been dropped
+unless the user agent implements the <a href="http://www.w3.org/TR/file-system-api/">Filesystem API</a>. Folder dropping is only
+supported in Chrome 21+ &amp; Opera 15+, since these are the only browsers that implement the Filesystem API.  You can parse the user
+agent string to determine if folder dropping is supported, and then inform your users in your application's UI.
+Theoretically, you could check for the appropriate function on the <a href="http://www.w3.org/TR/2011/WD-html5-20110113/dnd.html#the-datatransfer-interface">DataTransfer</a>
+object prototype, but this would not work cross-browser, since webkit does not expose this interface, unfortunately.</p>
+<p><br/>
+<strong>Q:</strong> Why are <code>&lt;input type="file"&gt;</code> elements I pass into the <code>addFiles</code> method removed from the DOM in IE9 and older?</p>
+<p><strong>A:</strong> Internally, Fine Uploader must move these input elements to a <code>&lt;form&gt;</code> that targets a hidden <code>&lt;iframe&gt;</code>.  This form is then
+submitted to simulate a non-page-reloading upload.  The act of moving the input to the form removes it from its original
+position in the DOM.  This is unavoidable as it is not possible to clone a file input element.  You should  clone
+or re-create the <code>&lt;input type="file"&gt;</code> after submitting it via addFiles, or simply attach the input element to
+Fine Uploader via the <a href="api/options.html#button">button</a> or <a href="api/options.html#extraButtons">extraButtons</a> options.</p>
+<p><br/></p>
 
 
                 

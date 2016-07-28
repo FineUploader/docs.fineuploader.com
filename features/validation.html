@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Validation | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,77 @@
 
                 <div class="span2 sidebar">
                 
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#validation">validation</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#setItemLimit">setItemLimit</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#submit">submit</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#validate">validate</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#validateBatch">validateBatch</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +265,37 @@
                 
 
                 
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<h1 class="page-header" id="validation_1">Validation</h1>
+<p>Fine Uploader's validation abilities allow integrators to strictly define
+what sorts of files can and can not be uploaded.</p>
+<p>For each file, the <code>validate</code> event callback is invoked, allowing you to enforce your own custom rules.  Then, Fine
+Uploader's built-in validators (defined in the options) execute.  If you need access to more information
+(such as the actual file), you can declare a <code>submit</code> event callback handler instead. When <code>submit</code> is called,
+an ID is available for the file, and you can address it using any of the other API methods that require a file ID.</p>
+<p>If the <code>validation.stopOnFirstInvalidFile</code> option is enabled, Fine Uploader will stop processing files once an invalid
+file has been encountered.</p>
+<p>Fine Uploader's built-in validators allow you to limit based on file extension, number of files, file size, and
+image dimensions.  See the <code>validation</code> option for more details about these built-in validators.</p>
+<h2 id="validation-on-file-size">Validation on File Size</h2>
+<p>Size validation is available in File API browsers only. Size can be restricted
+via the <code>sizeLimit</code> or <code>minSizeLimit</code> options in the <code>validation</code> settings.</p>
+<h2 id="image-validation">Image Validation</h2>
+<p>As of 4.1, the ability to restrict submitted images based on width and height is possible.  See the <code>validation.image</code>
+option for specifics.  Keep in mind that this feature was created with processed images in mind, and not images
+sent directly from a camera.  Some browsers may natively report width and height swapped for JPEGs (from cameras) based
+on the orientation of the camera.  Those uploading pictures directly from cameras have no control over the
+dimensions of the image, so it doesn't seem to make much sense to impose these restrictions if you expect your users
+to upload images directly via a camera.  In that case, it likely makes more sense to allow the user to scale the image
+first (before submitting the file) or simply impose a file size restriction.</p>
+<p>Also, this feature is dependant on the preview generation feature, and therefore is only supported in modern browsers.
+Check the browser support matrix or the <code>qq.supportedFeatures.imageValidation</code> flag for more specific information.
+If image dimension validation is important to your application, you will also need a server-side fallback to account
+for older browsers and TIFFs (if allowed, since TIFFs are only previewable in Safari).</p>
+<h2 id="custom-validation-rules">Custom Validation Rules</h2>
+<p>You can further limit files using your own custom rules by including validation logic in a <code>validate</code> or <code>validateBatch</code>
+callback event handler.  Your handlers can return <code>false</code> to reject the file or files outright.  If you need to perform an
+async operation to determine if the file is valid, you can return a promise, and either resolve or reject the promise
+once the validity of the file is known.  See the <code>validate</code> and <code>validateBatch</code> documentation for more details.</p>
 
 
                 

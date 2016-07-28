@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>S3 Methods | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,8 @@
         
 
         
+<script src="/branch/master/_static/js/sidebar.js"></script>
+
 
     </head>
     <body>
@@ -186,6 +188,9 @@
 
                 <div class="span2 sidebar">
                 
+<div id="sidebar-accordion" class="accordion">
+</div>
+
                 </div>
 
                 <div class="span9 content">
@@ -194,77 +199,408 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<h1 class="page-header" id="methods-s3">Methods <small>S3</small></h1>
 
-<h4 class="alert-heading">Note</h4>
+<div class="all-methods" data-spy="" data-target="">
+<div class="methods-s3">
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<h2 id="s3">S3</h2>
+<p>The S3 uploader provides many of the same API methods as the traditional
+uploader, but there are a few crucial differences to take into account.
+If you plan to use the S3 uploader, then use the following table as your API
+reference.  All methods outlined in the core or UI documentation are also available
+in Fine Uploader S3, unless otherwise noted here.</p>
+
+
+    <span class="method row-fluid">
+    <h4 id="getBucket"><a style="color: #f87436;" href="#getBucket">getBucket (fileId)</a></h4>
+    <span class="method-description">
+        <p>Retrieve the S3 bucket name associated with the passed file (id).  Note that the bucket name is not available before the file has started uploading.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>fileId</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">The S3 bucket name associated with the passed file (id)</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getKey"><a style="color: #f87436;" href="#getKey">getKey (fileId)</a></h4>
+    <span class="method-description">
+        <p>Retrieve the S3 object key associated with the passed file (id).  Note that the key is not available before the file has started uploading.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>fileId</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">The S3 object key associated with the passed file (id)</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getResumableFilesData"><a style="color: #f87436;" href="#getResumableFilesData">getResumableFilesData ()</a></h4>
+    <span class="method-description">
+        <p>Returns an array of potentially resumable items. Each resumable is represented by an object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>filename</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td>the unique id</td>
+</tr>
+<tr>
+<td><code>partIdx</code></td>
+<td>the index of the part where the resume will start from</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>The associated object's S3 key</td>
+</tr>
+</tbody>
+</table>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dd class="method-return-description span8">An array of resumable items. </dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setAcl"><a style="color: #f87436;" href="#setAcl">setAcl (newAcl[, id])</a></h4>
+    <span class="method-description">
+        <p>Set/update the ACL to be used for one or all file uploads.  If the ID is omitted, the new ACL targets all future files that have not yet been uploaded.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newAcl</em></dt>
+    <dd class="method-param-description span8"><p>Canned ACL value to be sent with the upload request.  Used by S3.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>File ID to target the ACL.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setCredentials"><a style="color: #f87436;" href="#setCredentials">setCredentials (newCredentials)</a></h4>
+    <span class="method-description">
+        <p>Pass new or initial credentials.  This is used to support the no-server workflow.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newCredentials</em></dt>
+    <dd class="method-param-description span8"><p>The new or initial credentials to set for server-less uploads</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setEndpoint"><a style="color: #f87436;" href="#setEndpoint">setEndpoint (endpoint[, id])</a></h4>
+    <span class="method-description">
+        <p>Modify the endpoint URL where upload requests should be directed. The endpoint for a specific file or blob can be changed by passing in an optional <code>id</code> parameter. An <code>id</code> will always be a number and refers to a single file. All valid bucket URLs documented by Amazon are supported, including custom domains. SSL is also supported.  If you specify a CDN endpoint URL, be sure that you are specifying a bucket as well via the <code>objectProperties.bucket</code> option.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>endpoint</em></dt>
+    <dd class="method-param-description span8"><p>A URL for the S3 bucket or a CDN that forwards the request on to S3.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setUploadSuccessEndpoint"><a style="color: #f87436;" href="#setUploadSuccessEndpoint">setUploadSuccessEndpoint (endpoint[, id])</a></h4>
+    <span class="method-description">
+        <p>Modify the endpoint that Fine Uploader should POST to when a file has been successfully uploaded to S3.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>endpoint</em></dt>
+    <dd class="method-param-description span8"><p>An endpoint that Fine Uploader should POST to when a file has been successfully uploaded to S3.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setUploadSuccessParams"><a style="color: #f87436;" href="#setUploadSuccessParams">setUploadSuccessParams (newParams[, id])</a></h4>
+    <span class="method-description">
+        <p>Set additional parameters for the upload success request. Note that Fine Uploader will still send the bucket name, key, filename, UUID, and etag (if available) as well.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newParams</em></dt>
+    <dd class="method-param-description span8"><p>The additional parameters set for the upload request.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>A file id to apply these upload success parameters to.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
 
 </div>
+</div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
 
 
                 
@@ -321,8 +657,12 @@ to the API documentation section.</p>
         <script src="/branch/master/_static/js/main.js"></script>
 
         
-        
-        
+<script type="text/javascript">
+$(document).ready(function() {
+    renderMethodsSidebarNav(['s3']);
+});
+</script>
+
 
 
     </body>

@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>jQuery Plugin | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,77 +194,130 @@
                 
 
                 
+<h1 class="page-header" id="jquery-plugin-wrapper">jQuery Plugin Wrapper</h1>
+<p><strong>While Fine Uploader provides wrapper code that integrates with jQuery while still allowing the integrator to choose
+between Core and UI modes, <a href="https://github.com/FineUploader/fine-uploader/issues/1310">there is no common benefit to using jQuery in the context of Fine Uploader</a>.</strong>
+However, if you prefer to use the jQuery wrapper, this page will serve as a guide, explaining the syntax differences between
+the jQuery wrapper and the core library (sans jQuery).</p>
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
+<p>You must include jQuery and the jQuery wrapped version of Fine Uploader on your page if you wish to use jQuery-wrapped Fine Uploader.</p>
 
 </div>
 
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="quickstart/01-getting-started.html">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-Features reference or API documentation (see the navigation menu bar at the top).
-For assistance in getting your upload server set up, check out the docs in
-the Servers section (also available via the navigation menu).</p>
-<h2 id="getting-started_1">Getting Started</h2>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the API documentation section.</p>
-<h3 id="quick-start">Quick-start</h3>
-<h4 id="traditional-generic-endpoint-uploader">Traditional / Generic Endpoint Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
-</ol>
-<h4 id="amazon-s3-uploader">Amazon S3 Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
-</ol>
-<h4 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h4>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h3 id="fine-uploader-modes">Fine Uploader Modes</h3>
-<ul>
-<li><a href="modes/core.html">Core</a> - Most API methods and options available, build your own UI from scratch</li>
-<li><a href="modes/ui.html">UI</a> - Inherits from core, provides additional UI-specific options and API methods. Default customizable UI.</li>
-</ul>
-<h3 id="plug-ins">Plug-ins</h3>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a> - <em>Not</em> required to use <em>any</em> feature of Fine Uploader. Simply wraps the library as a jQuery plug-in.</li>
-</ul>
-<h3 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h3>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a> - For upload servers that you control and build.</li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a> - For uploads directly to S3 from the browser.</li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a> - For uploads directly to Azure from the browser.</li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a> - GitHub repo of server-side examples to handle all types of Fine Uploader requests.</li>
-</ul>
-<h3 id="additional-information">Additional Information</h3>
-<ul>
-<li><a href="browser-support.html">Browser Support</a> - Matrix of support for all major features. Also contains information on how to determine features support via JavaScript at runtime using Fine Uploader's API.</li>
-<li><a href="https://github.com/FineUploader/fine-uploader#contributing">Contributing</a> - Guidelines and options for contributing back to this free open source library.</li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a> - High-level summary of all releases.</li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="http://fineuploader.com">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="http://fineuploader.com/support">Support</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repository</a></li>
-</ul>
+<p>The Fine Uploader jQuery wrapper has a couple of syntactical differences compared to the the unwrapped library.
+Also, some of the options are defined differently.  Note that all conventions commonly associated with jQuery
+plug-ins are followed faithfully here, so if you have worked with jQuery plug-ins before, this should all be quite intuitive.</p>
+<h2 id="working-with-html-elements">Working With HTML elements</h2>
+<p>When using the Fine Uploader jQuery plugin there is no need to specify <a href="../api/options-ui.html#element">the <code>element</code> option</a>. Instead,
+using the jQuery plugin syntax, you simply provide the element (or elements) you would like to associate with your
+Fine Uploader instance, like so:</p>
+<div class="codehilite"><pre><span class="c1">// This will instantiate an instance of Fine Uploader on the page element</span>
+<span class="c1">// that has an `id` of &quot;fine-uploader&quot;.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="cm">/* options go here */</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>Fine Uploader's jQuery wrapper is smart enough to know you are using jQuery and allows you to
+pass in <code>jQuery</code> objects instead of <code>HTMLElement</code>s or <code>Node</code>s. In fact, the wrapper intercepts these jQuery objects
+and converts them to HTML <code>Element</code>s for use by the library.</p>
+<p>For example, if you specify <a href="../api/options.html#button">the <code>button</code> option</a>, the value can be <code>$("#myButton")</code>
+rather than <code>$("#myButton")[0]</code> or <code>document.getElementById("button")</code>.</p>
+<p>If the option takes an array of <code>HTMLElements</code>, any item in the array that is a jQuery object will be evaluated and
+all <code>HTMLElements</code> associated with that jQuery object will be added to the array when it is passed to Fine Uploader.
+For instance, if you specify a value for <a href="../api/options-ui.html#dragAndDrop.extraDropzones"><code>extraDropzones</code></a> which is <code>[$(".myExtraDropzone")]</code>, and the element
+contains three child elements, then the plugin will pass all three elements to Fine Uploader.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="cm">/* ... */</span>
+    <span class="nx">button</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#button&quot;</span><span class="p">),</span>
+    <span class="nx">dragAndDrop</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">extraDropzones</span><span class="o">:</span> <span class="p">[</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.dropzones&quot;</span><span class="p">)]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="uploader-type">Uploader Type</h2>
+<p>The Fine Uploader jQuery wrapper still provides integrators with a way to specify whether they are using core or
+UI mode by specifying an <code>uploaderType</code> option on instantiation. When the type is <code>'basic'</code> then core/basic mode
+is used, otherwise UI mode is assumed.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="callbacks-and-events">Callbacks and Events</h2>
+<p>The biggest syntactical difference between the jQuery and non-jQuery plugin is the callback syntax.
+All callbacks defined in Fine Uploader are available to jQuery plugin users.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>When using the jQuery plugin, <strong>all</strong> event function handlers are passed an <code>event</code> parameter
+ as the <strong>first</strong> argument to your callback function.</p>
+
+</div>
+
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/upload/endpoint&#39;</span>
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">responseJSON</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>You may use traditional callback handler functions with the jQuery plug-in if you wish.
+If you do contribute traditional callback functions via <a href="../api/events.html">the <code>callbacks</code> option</a>, you should disregard everything on this
+page when writing code inside of your callback functions as this will bypass the jQuery plug-in entirely.
+Also, while it is possible to contribute two callbacks of the same type via a jQuery event handler and a <code>callbacks</code>
+option, you should be aware that the <code>callbacks</code> function will always be evaluated first, and the return value from
+the <code>callbacks</code> function will be accepted instead of the return value from the jQuery event handler if the return
+value of the <code>callbacks</code> function is non-null.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>When passing a jQuery object as the value for an option or API method parameter, all elements represented by the selector will
+be resolved IFF the expected data type is an array. Otherwise, only the first element matched by the selector will be used.
+For an example of the latter situation please see <a href="https://github.com/FineUploader/fine-uploader/issues/1375">case #1375 in the issue tracker</a>.</p>
+
+</div>
+
+<h2 id="api-methods">API Methods</h2>
+<p>All public API methods are also accessible when using the jQuery plugin, but, as with callbacks,
+there are a few syntactical differences.</p>
+<div class="codehilite"><pre><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
+<span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;getStoredFiles&#39;</span><span class="p">)</span><span class="o">:</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cancel-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Trivial example to check if the 1st file registered with the uploader</span>
+    <span class="kd">var</span> <span class="nx">exists</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;doesExist&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="endpoint-handlers">Endpoint Handlers</h2>
+<p>The jQuery plugin cares not about what your endpoint is, but if you plan to use
+the S3 uploader rather than the traditional uploader, ensure that you are using
+the right plugin name:</p>
+<div class="codehilite"><pre><span class="c1">// Fine Uploader</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+
+<span class="c1">// Fine Uploader S3</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+
+<span class="c1">// Fine Uploader Azure</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+</pre></div>
 
 
                 
