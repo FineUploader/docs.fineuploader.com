@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>Methods | Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,13 +33,13 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
 
         
-<script src="/tag/5.0.0/_static/js/sidebar.js"></script>
+<script src="/tag/5.0.0/_static/js/main.js"></script>
 
 
     </head>
@@ -47,113 +52,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -169,10 +165,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -193,78 +196,21 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
                 
 <h1 class="page-header" id="methods-traditional">Methods <small>Traditional</small></h1>
 
-<div class="all-methods" data-spy="scroll" data-target="">
+<div class="all-methods data-spy="scroll" data-target="">
 <div class="methods-core">
 <h2 id="core">Core</h2>
-
-
-<div class="alert alert-block alert-info">
-
-<h4 class="alert-heading">Note</h4>
-
-<p>If you pass a large <code>Blob</code> that was created using JavaScript in the browser into <code>addFiles</code>, you should consider calling the <a href="#removeFileRef"><code>removeFileRef</code> method</a> after the file has been successfully uploaded to free up any memory consumed by the Blob.</p>
-
-</div>
-
 
     <span class="method row-fluid">
     <h4 id="addFiles"><a style="color: #f87436;" href="#addFiles">addFiles (files[, params[, endpoint]])</a></h4>
     <span class="method-description">
-        <p>Submit one or more files to the uploader.</p>
-<p>A <code>BlobWrapper</code> object:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>blob</td>
-<td align="left">the bytes of the <code>Blob</code> object being uploaded</td>
-</tr>
-<tr>
-<td>name</td>
-<td align="left">the name of the <code>Blob</code></td>
-</tr>
-</tbody>
-</table>
-<p><br/>
-A <code>CanvasWrapper</code> object:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>canvas</td>
-<td align="left">the <code>&lt;canvas&gt;</code> to be converted to a file &amp; then uploaded</td>
-</tr>
-<tr>
-<td>name</td>
-<td align="left">the name to assign to the created file</td>
-</tr>
-<tr>
-<td>quality</td>
-<td align="left">1-100 value indicating the desired quality of the converted file (only for image/jpeg)</td>
-</tr>
-<tr>
-<td>type</td>
-<td align="left">MIME type of the file to create from this <code>&lt;canvas&gt;</code></td>
-</tr>
-</tbody>
-</table>
+        <p>Submit one or more File objects to the uploader</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -281,7 +227,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>files</em></dt>
-    <dd class="method-param-description span8"><p>An array of <code>File</code>s, <code>&lt;input&gt;</code>s, <code>Blob</code>s, <code>BlobWrapper</code> objects, <code>&lt;canvas&gt;</code>es, or <code>CanvasWrapper</code> objects. You may also pass in a <code>FileList</code>.</p></dd>
+    <dd class="method-param-description span8"><p>An array of <code>File</code>s or <code>&lt;input&gt;</code> <code>HTMLElements</code></p></dd>
 </span>
 <hr/>
             
@@ -327,9 +273,28 @@ A <code>CanvasWrapper</code> object:</p>
 
 
     <span class="method row-fluid">
-    <h4 id="addInitialFiles"><a style="color: #f87436;" href="#addInitialFiles">addInitialFiles (initialFiles)</a></h4>
+    <h4 id="addBlobs"><a style="color: #f87436;" href="#addBlobs">addBlobs (blobs[, params[, endpoint]])</a></h4>
     <span class="method-description">
-        <p>Submit one or more canned/initial files to the uploader. See the <a href="../features/session.html">Initial File List feature page</a> for more details.</p>
+        <p>Submit one or more Blob objects to the uploader.</p>
+<p>A <code>BlobData</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td align="left">the name of the <code>Blob</code></td>
+</tr>
+<tr>
+<td>blob</td>
+<td align="left">the bytes of the <code>Blob</code> object being uploaded</td>
+</tr>
+</tbody>
+</table>
     </span>
     
     <h5>Parameters: </h5>
@@ -345,8 +310,40 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="label label-array">Array</span>
 
 </dd>
-    <dt class="method-param-name span2"><em>initialFiles</em></dt>
-    <dd class="method-param-description span8"><p>An array of objects that describe files already on the server.</p></dd>
+    <dt class="method-param-name span2"><em>blobs</em></dt>
+    <dd class="method-param-description span8"><p>An array of <code>Blob</code> or <code>BlobData</code> objects.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>params</em></dt>
+    <dd class="method-param-description span8"><p>A set of parameters to send with the file to be added</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>endpoint</em></dt>
+    <dd class="method-param-description span8"><p>The endpoint to send this file to</p></dd>
 </span>
 <hr/>
             
@@ -410,7 +407,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="clearStoredFiles"><a style="color: #f87436;" href="#clearStoredFiles">clearStoredFiles ()</a></h4>
     <span class="method-description">
-        <p>Clears the internal list of stored items. Only applies when <a href="options.html#autoUpload"><code>autoUpload</code></a> is <code>false</code></p>
+        <p>Clears the internal list of stored items. Only applies when <code>autoUpload</code> is <code>false</code></p>
     </span>
     
     </dl>
@@ -507,7 +504,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 
     <span class="method row-fluid">
-    <h4 id="drawThumbnail"><a style="color: #f87436;" href="#drawThumbnail">drawThumbnail (id, targetContainer[, maxSize[, fromServer[, customResizer]]])</a></h4>
+    <h4 id="drawThumbnail"><a style="color: #f87436;" href="#drawThumbnail">drawThumbnail (id, targetContainer[, maxSize[, fromServer]])</a></h4>
     <span class="method-description">
         <p>Draws a thumbnail.</p>
     </span>
@@ -575,31 +572,6 @@ A <code>CanvasWrapper</code> object:</p>
 </dd>
     <dt class="method-param-name span2"><em>fromServer</em></dt>
     <dd class="method-param-description span8"><p><code>true</code> if the image data will come as a response from the server rather than be generated client-side.</p></dd>
-</span>
-<hr/>
-            
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-function">function</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>customResizer</em></dt>
-    <dd class="method-param-description span8"><p>Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</p>
-<p>A <code>resizeInfo</code> object, which will be passed to the supplied function, contains the following properties:</p>
-<ul>
-<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
-<li><code>height</code> - Desired height of the image after the resize operation.</li>
-<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
-<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
-<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
-<li><code>width</code> - Desired width of the image after the resize operation.</li>
-</ul></dd>
 </span>
 <hr/>
             
@@ -756,42 +728,9 @@ A <code>CanvasWrapper</code> object:</p>
 
 
     <span class="method row-fluid">
-    <h4 id="getEndpoint"><a style="color: #f87436;" href="#getEndpoint">getEndpoint ([id])</a></h4>
-    <span class="method-description">
-        <p>Returns the endpoint associated with a particular file, or the current catch-all endpoint for all files (if no ID is specified).</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The ID of the associated file.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
     <h4 id="getInProgress"><a style="color: #f87436;" href="#getInProgress">getInProgress ()</a></h4>
     <span class="method-description">
-        <p>Returns the number of items that are either currently uploading or waiting for an available connection (<code>qq.status.QUEUED</code>). If called inside of <a href="events.html#cancel">a <code>cancel</code> event</a> handler, then this method will return a value that includes the upload associated with the <code>cancel</code> event handler. This is because the upload will not be canceled until the event handler returns.</p>
+        <p>Returns the number of items that are either currently uploading or waiting for an available connection (<code>qq.status.QUEUED</code>). If called inside of a <code>cancel</code> event handler, then this method will return a value that includes the upload associated with the <code>cancel</code> event handler. This is because the upload will not be canceled until the event handler returns.</p>
     </span>
     
     </dl>
@@ -955,7 +894,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="getRemainingAllowedItems"><a style="color: #f87436;" href="#getRemainingAllowedItems">getRemainingAllowedItems ()</a></h4>
     <span class="method-description">
-        <p>Returns the numer of remaining allowed items that may be submitted for upload based on <a href="options.html#validation.itemLimit"><code>validation.itemLimit</code></a>.</p>
+        <p>Returns the numer of remaining allowed items that may be submitted for upload based on <code>validation.itemLimit</code>.</p>
     </span>
     
     </dl>
@@ -1284,7 +1223,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The file id.</p></dd>
+    <dd class="method-param-description span8"><p>The fild id.</p></dd>
 </span>
 <hr/>
             
@@ -1304,43 +1243,10 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="label label-boolean">Boolean</span>
 
 </dd>
-    <dd class="method-return-description span8">`true` if the attempt was successful. `false` otherwise.</dd>
+    <dd class="method-return-description span8">`true` if the attempt was succesful. `false` otherwise.</dd>
 </span>
 <hr/>
         
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
-    <h4 id="removeFileRef"><a style="color: #f87436;" href="#removeFileRef">removeFileRef (id)</a></h4>
-    <span class="method-description">
-        
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>Remove internal reference to the associated Blob/File object. For Blobs that are created via JavaScript in the browser, this will free up all consumed memory.</p></dd>
-</span>
-<hr/>
-            
-        
-    
     </dl>
     
     
@@ -1432,24 +1338,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>options</em></dt>
-    <dd class="method-param-description span8"><p>Information about the scaled image to generate.  The following properties are supported:</p>
-<ul>
-<li><code>maxSize</code> (<strong>required</strong>) (integer).</li>
-<li><code>orient</code> (boolean, defaults to true)</li>
-<li><code>type</code> (string, defaults to the type of the reference image)</li>
-<li><code>quality</code> (number between 0 and 100, defaults to 80)</li>
-<li><code>includeExif</code> (boolean, defaults to <code>false</code>).</li>
-<li><code>customResizer</code> (function) - Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</li>
-</ul>
-<p>A <code>resizeInfo</code> object, which will be passed to your (optional) <code>customResizer</code> function, contains the following properties:</p>
-<ul>
-<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
-<li><code>height</code> - Desired height of the image after the resize operation.</li>
-<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
-<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
-<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
-<li><code>width</code> - Desired width of the image after the resize operation.</li>
-</ul></dd>
+    <dd class="method-param-description span8"><p>Information about the scaled image to generate.  The <code>maxSize</code> property is required (integer).  Optional properties are: <code>orient</code> (boolean, defaults to true), <code>type</code> (string, defaults to the type of the reference image), and <code>quality</code> (number between 0 and 100, defaults to 80), and <code>includeExif</code> (boolean, defaults to <code>false</code>).</p></dd>
 </span>
 <hr/>
             
@@ -1532,7 +1421,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="setEndpoint"><a style="color: #f87436;" href="#setEndpoint">setEndpoint (path[, identifier])</a></h4>
     <span class="method-description">
-        <p>Modify the location where upload requests should be directed. Pass in a file id to change the endpoint for that specific item.</p>
+        <p>Modify the location where upload requests should be directed. Pass in a file id or <code>HTMLElement</code> to change the endpoint for that specific item.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1589,7 +1478,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>identifier</em></dt>
-    <dd class="method-param-description span8"><p>An integer corresponding to a file.</p></dd>
+    <dd class="method-param-description span8"><p>Either an integer corresponding to a file, or an <code>HTMLElement</code> corresponding to an upload button.</p></dd>
 </span>
 <hr/>
             
@@ -1654,7 +1543,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="setDeleteFileEndpoint"><a style="color: #f87436;" href="#setDeleteFileEndpoint">setDeleteFileEndpoint (path[, identifier])</a></h4>
     <span class="method-description">
-        <p>Modify the location where <a href="../features/delete.html">delete requests</a> should be directed. Pass in a file id to change the endpoint for that specific item.</p>
+        <p>Modify the location where upload requests should be directed. Pass in a file id or <code>HTMLElement</code> to change the endpoint for that specific item.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1671,7 +1560,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>path</em></dt>
-    <dd class="method-param-description span8"><p>A valid URI where delete requests will be sent.</p></dd>
+    <dd class="method-param-description span8"><p>A valid URI where deleterequests will be sent.</p></dd>
 </span>
 <hr/>
             
@@ -1711,7 +1600,7 @@ A <code>CanvasWrapper</code> object:</p>
 
 </dd>
     <dt class="method-param-name span2"><em>identifier</em></dt>
-    <dd class="method-param-description span8"><p>An integer corresponding to a file.</p></dd>
+    <dd class="method-param-description span8"><p>Either an integer corresponding to a file, or an <code>HTMLElement</code> corresponding to an upload button.</p></dd>
 </span>
 <hr/>
             
@@ -1727,7 +1616,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="setDeleteFileParams"><a style="color: #f87436;" href="#setDeleteFileParams">setDeleteFileParams (params[, id])</a></h4>
     <span class="method-description">
-        <p>Set the parameters for <a href="../features/delete.html">a delete request</a>. Pass in a file id to make the parameters specific to that file.</p>
+        <p>Set the parameters for a delete request. Pass in a file id to make the parameters specific to that file.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1761,96 +1650,6 @@ A <code>CanvasWrapper</code> object:</p>
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
     <dd class="method-param-description span8"><p>The file id.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
-    <h4 id="setItemLimit"><a style="color: #f87436;" href="#setItemLimit">setItemLimit (newItemLimit)</a></h4>
-    <span class="method-description">
-        <p>Change <a href="options.html#validation.itemLimit">the <code>validation.itemLimit</code> option</a> set during construction/initialization.</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>newItemLimit</em></dt>
-    <dd class="method-param-description span8"><p>The new file count limit.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
-    <h4 id="setForm"><a style="color: #f87436;" href="#setForm">setForm (formElementOrId)</a></h4>
-    <span class="method-description">
-        <p>Bind a <code>&lt;form&gt;</code> to Fine Uploader dynamically. See the <a href="../features/forms.html">form support feature page</a> for more details.</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-        
-            
-                
-
-
-    
-    
-    <span class="label label-htmlformelement">HTMLFormElement</span>
-
-
-                or
-            
-        
-            
-                
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-
-            
-        
-    
-
-</dd>
-    <dt class="method-param-name span2"><em>formElementOrId</em></dt>
-    <dd class="method-param-description span8"><p>A form element or a form element's ID.</p></dd>
 </span>
 <hr/>
             
@@ -1998,60 +1797,6 @@ A <code>CanvasWrapper</code> object:</p>
 </dd>
     <dt class="method-param-name span2"><em>uuid</em></dt>
     <dd class="method-param-description span8"><p>The new file UUID.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
-    <h4 id="setStatus"><a style="color: #f87436;" href="#setStatus">setStatus (id, newStatus)</a></h4>
-    <span class="method-description">
-        <p>Modify the status of an file.</p>
-<p>The status values correspond to those found in the <code>qq.status</code> object. Currently, the following status values may be set via this method:</p>
-<ul>
-<li><code>qq.status.DELETED</code></li>
-<li><code>qq.status.DELETE_FAILED</code></li>
-</ul>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The file id.</p></dd>
-</span>
-<hr/>
-            
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>newStatus</em></dt>
-    <dd class="method-param-description span8"><p>The new <code>qq.status</code> value.</p></dd>
 </span>
 <hr/>
             
@@ -2272,7 +2017,7 @@ A <code>CanvasWrapper</code> object:</p>
     <span class="method row-fluid">
     <h4 id="removeExtraDropzone"><a style="color: #f87436;" href="#removeExtraDropzone">removeExtraDropzone (element)</a></h4>
     <span class="method-description">
-        <p>Used to un-mark an <code>element</code> as a drop zone.</p>
+        <p>Uesd to un-mark an <code>element</code> as a drop zone.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -2312,7 +2057,7 @@ A <code>CanvasWrapper</code> object:</p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -2356,8 +2101,6 @@ A <code>CanvasWrapper</code> object:</p>
             <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
             
         
-
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
 
         
 <script type="text/javascript">

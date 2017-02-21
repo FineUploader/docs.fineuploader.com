@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>qq API | Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,7 +33,7 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
@@ -45,113 +50,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -167,10 +163,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -188,13 +191,13 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
                 
-<h1 class="page-header" id="utilities">Utilities</h1>
-<p>Fine Uploader contains a number of utility functions and shims to keep
+<h1 class="page-header" id="qq-utilities">qq Utilities</h1>
+<p>Fine Uploader contains a number of utility functions and polyfills to keep
 it dependency free and lightweight. These functions are found in the same
 namespace as Fine Uploader, <code>qq</code>.</p>
 <h2 id="qquery">qQuery</h2>
@@ -242,7 +245,7 @@ DOM manipulation, then qQuery will be your friend.</p>
     <span class="label label-qq instance">qq instance</span>
 
 </dd>
-    <dd class="method-return-description span8">A wrapped DOM object with a variety of cross-browser shims as methods.</dd>
+    <dd class="method-return-description span8">A 'wrapped' DOM object with a variety of cross-browser polyfills and shims as methods.</dd>
 </span>
 <hr/>
         
@@ -269,7 +272,7 @@ in the <code>qq</code> function as such:</p>
 
 
 <p>Once you've wrapped an element, you have access to a wealth of cross-browser
-shims that will let you manipulate the DOM and CSS as you please. Just make
+polyfills that will let you manipulate the DOM and CSS as you please. Just make
 sure to wrap any elements before calling these methods on them.</p>
 <h3 id="dom-selection-and-traversal">DOM Selection and Traversal</h3>
 
@@ -520,7 +523,7 @@ sure to wrap any elements before calling these methods on them.</p>
 </span>
 
 
-<h3 id="css-operations">CSS Operations</h3>
+<h3 id="css-manipulation">CSS Manipulation</h3>
 
     <span class="method row-fluid">
     <h4 id="qq.addClass"><a style="color: #f87436;" href="#qq.addClass">addClass (className)</a></h4>
@@ -609,7 +612,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="method row-fluid">
     <h4 id="qq.getByClass"><a style="color: #f87436;" href="#qq.getByClass">getByClass (className)</a></h4>
     <span class="method-description">
-        <p>Returns an array of all descendants of this element that contain a specific class name.</p>
+        <p>Returns an array of all descendants of this element that contain the passed in class name.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -933,7 +936,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="method row-fluid">
     <h4 id="qq.bind"><a style="color: #f87436;" href="#qq.bind">bind (oldFunc, context)</a></h4>
     <span class="method-description">
-        <p>Shim for <code>Function.prototype.bind</code>. Creates a new function that, when called, has its <code>this</code> keyword set to the provided <code>context</code>. Pass comma-separated values after the `context parameter for all arguments to be passed into the new function (when invoked). you can still pass in additional arguments during invocation.</p>
+        <p>polyfill for <code>Function.prototype.bind</code>. Creates a new function that, when called, has its <code>this</code> keyword set to the provided <code>context</code>. Pass comma-separated values after the `context parameter for all arguments to be passed into the new function (when invoked). you can still pass in additional arguments during invocation.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1000,7 +1003,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="method row-fluid">
     <h4 id="qq.each"><a style="color: #f87436;" href="#qq.each">each (iterable, callback)</a></h4>
     <span class="method-description">
-        <p>Iterates through a collection, passing the key and value into the provided callback. <code>return false;</code> to stop iteration.</p>
+        <p>polyfill iterator. iterates through a collection, passing the key and value into the provided callback. <code>return false;</code> to stop iteration.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1041,7 +1044,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>iterable</em></dt>
-    <dd class="method-param-description span8"><p>The array or object containing items/properties to loop through.</p></dd>
+    <dd class="method-param-description span8"><p>The context the function will assume.</p></dd>
 </span>
 <hr/>
             
@@ -1073,7 +1076,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="method row-fluid">
     <h4 id="qq.extend"><a style="color: #f87436;" href="#qq.extend">extend (firstObj, secondObj[, extendNested])</a></h4>
     <span class="method-description">
-        <p>Shallowly copies the parameters of <code>secondobj</code> to <code>firstobj</code>. if <code>extendnested</code> is true then a deep-copy is performed.</p>
+        <p>shallowly copies the parameters of <code>secondobj</code> to <code>firstobj</code>. if <code>extendnested</code> is true then a deep-copy is performed.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1122,7 +1125,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>extendNested</em></dt>
-    <dd class="method-param-description span8"><p>If <code>true</code> then a deep-copy is performed, else a shallow copy.</p></dd>
+    <dd class="method-param-description span8"><p>If <code>true</code> then a deep-copy is performed, else a shallow-copy is.</p></dd>
 </span>
 <hr/>
             
@@ -1156,7 +1159,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="method row-fluid">
     <h4 id="qq.format"><a style="color: #f87436;" href="#qq.format">format (message)</a></h4>
     <span class="method-description">
-        <p>Returns a string, swapping argument values with the associated occurrence of {} in the passed string.</p>
+        <p>returns a string, swapping argument values with the associated occurrence of {} in the passed string.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1205,91 +1208,9 @@ sure to wrap any elements before calling these methods on them.</p>
 
 
     <span class="method row-fluid">
-    <h4 id="qq.getextension"><a style="color: #f87436;" href="#qq.getextension">getExtension (filename)</a></h4>
-    <span class="method-description">
-        <p>Return the extension for the filename, if any.</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>filename</em></dt>
-    <dd class="method-param-description span8"><p>The file's name to rip the extension off of.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    <dl class="method-return row-fluid">
-        
-            <span class="method-return row-fluid">
-    <dt class="span2"><b>Returns:</b></dt>
-    <dd class="method-return-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dd class="method-return-description span8">The new filename</dd>
-</span>
-<hr/>
-        
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
-    <h4 id="qq.getUniqueId ()"><a style="color: #f87436;" href="#qq.getUniqueId ()">getUniqueId</a></h4>
-    <span class="method-description">
-        <p>Returns a version4 uuid</p>
-    </span>
-    
-    </dl>
-    
-    <dl class="method-return row-fluid">
-        
-            <span class="method-return row-fluid">
-    <dt class="span2"><b>Returns:</b></dt>
-    <dd class="method-return-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dd class="method-return-description span8">A version 4 unique identifier</dd>
-</span>
-<hr/>
-        
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
     <h4 id="qq.indexof"><a style="color: #f87436;" href="#qq.indexof">indexOf (array, item[, startingIndex])</a></h4>
     <span class="method-description">
-        <p>Returns the index of <code>item</code> in the <code>Array</code> starting the search from <code>startingindex</code>.</p>
+        <p>returns the index of <code>item</code> in the <code>array</code> starting the search from <code>startingindex</code>.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1370,57 +1291,6 @@ sure to wrap any elements before calling these methods on them.</p>
 
 
     <span class="method row-fluid">
-    <h4 id="qq.isfunction"><a style="color: #f87436;" href="#qq.isfunction">isFunction (func)</a></h4>
-    <span class="method-description">
-        <p><code>true</code> if the parameter is a function.</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-object">Object</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>func</em></dt>
-    <dd class="method-param-description span8"><p>The Object to test.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    <dl class="method-return row-fluid">
-        
-            <span class="method-return row-fluid">
-    <dt class="span2"><b>Returns:</b></dt>
-    <dd class="method-return-type span2">
-
-
-    
-    
-    <span class="label label-boolean">Boolean</span>
-
-</dd>
-    <dd class="method-return-description span8">The result of the `isfunction` test.</dd>
-</span>
-<hr/>
-        
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
     <h4 id="qq.isobject"><a style="color: #f87436;" href="#qq.isobject">isObject (obj)</a></h4>
     <span class="method-description">
         <p><code>true</code> if the parameter is a 'simple' object.</p>
@@ -1461,6 +1331,57 @@ sure to wrap any elements before calling these methods on them.</p>
 
 </dd>
     <dd class="method-return-description span8">Result of the `isobject` test</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="qq.isfunction"><a style="color: #f87436;" href="#qq.isfunction">isFunction (func)</a></h4>
+    <span class="method-description">
+        <p><code>true</code> if the parameter is a function.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>func</em></dt>
+    <dd class="method-param-description span8"><p>The Object to test.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dd class="method-return-description span8">The result of the `isfunction` test.</dd>
 </span>
 <hr/>
         
@@ -1523,58 +1444,9 @@ sure to wrap any elements before calling these methods on them.</p>
 
 
     <span class="method row-fluid">
-    <h4 id="qq.log"><a style="color: #f87436;" href="#qq.log">log (logMessage[, logLevel])</a></h4>
-    <span class="method-description">
-        <p>Log a message to the console. no-op if console logging is not supported. shim for <code>console.log</code>.</p>
-    </span>
-    
-    <h5>Parameters: </h5>
-    <dl class="method-params row-fluid">
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>logmessage</em></dt>
-    <dd class="method-param-description span8"><p>The message to log.</p></dd>
-</span>
-<hr/>
-            
-        
-            
-                <span class="method-param row-fluid">
-    <dd class="method-param-type span2">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-    <dt class="method-param-name span2"><em>logLevel</em></dt>
-    <dd class="method-param-description span8"><p>The logging level, such as 'warn' and 'info'. If <code>null</code>, then 'info' is assumed.</p></dd>
-</span>
-<hr/>
-            
-        
-    
-    </dl>
-    
-    
-</span>
-
-
-
-    <span class="method row-fluid">
     <h4 id="qq.preventdefault"><a style="color: #f87436;" href="#qq.preventdefault">preventDefault (event)</a></h4>
     <span class="method-description">
-        <p>Prevent the browser's default action on an event.</p>
+        <p>prevent the user agent's default action on an event. useful inside of event handlers.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1591,7 +1463,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>event</em></dt>
-    <dd class="method-param-description span8"><p>The name of the default event to prevent.</p></dd>
+    <dd class="method-param-description span8"></dd>
 </span>
 <hr/>
             
@@ -1605,9 +1477,60 @@ sure to wrap any elements before calling these methods on them.</p>
 
 
     <span class="method row-fluid">
+    <h4 id="qq.trimstr"><a style="color: #f87436;" href="#qq.trimstr">trimstr (str)</a></h4>
+    <span class="method-description">
+        <p>removes whitespace from the ends of a string. poylfill for <code>String.prototype.trim</code>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>str</em></dt>
+    <dd class="method-param-description span8"><p>The string to remove whitespace from.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">The new string sans whitespace.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
     <h4 id="qq.toelement"><a style="color: #f87436;" href="#qq.toelement">toElement (str)</a></h4>
     <span class="method-description">
-        <p>Creates and returns a new <code>&lt;div&gt;</code> element</p>
+        <p>creates and returns a new <code>div</code> element</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1656,9 +1579,9 @@ sure to wrap any elements before calling these methods on them.</p>
 
 
     <span class="method row-fluid">
-    <h4 id="qq.trimstr"><a style="color: #f87436;" href="#qq.trimstr">trimstr (str)</a></h4>
+    <h4 id="qq.log"><a style="color: #f87436;" href="#qq.log">log (logMessage[, logLevel])</a></h4>
     <span class="method-description">
-        <p>Removes whitespace from the ends of a string. Shim for <code>String.prototype.trim</code>.</p>
+        <p>log a message to the console. no-op if console logging is not supported. polyfill for th user-agent's logging function corresponding to that passed logging level. generally delegates to <code>console.log</code></p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1674,8 +1597,88 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="label label-string">String</span>
 
 </dd>
-    <dt class="method-param-name span2"><em>str</em></dt>
-    <dd class="method-param-description span8"><p>The string to remove whitespace from.</p></dd>
+    <dt class="method-param-name span2"><em>logmessage</em></dt>
+    <dd class="method-param-description span8"><p>The message to log.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>logLevel</em></dt>
+    <dd class="method-param-description span8"><p>The logging level. Supports native browser levels (such as 'info' and 'error'), and custom levels.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="qq.getUniqueId ()"><a style="color: #f87436;" href="#qq.getUniqueId ()">getUniqueId</a></h4>
+    <span class="method-description">
+        <p>returns a version4 uuid</p>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">A version 4 unique identifier</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="qq.getextension"><a style="color: #f87436;" href="#qq.getextension">getExtension (filename)</a></h4>
+    <span class="method-description">
+        <p>return the extension for the filename, if any.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>filename</em></dt>
+    <dd class="method-param-description span8"><p>The file's name to rip the extension off of.</p></dd>
 </span>
 <hr/>
             
@@ -1695,7 +1698,7 @@ sure to wrap any elements before calling these methods on them.</p>
     <span class="label label-string">String</span>
 
 </dd>
-    <dd class="method-return-description span8">The new string sans whitespace.</dd>
+    <dd class="method-return-description span8">The new filename</dd>
 </span>
 <hr/>
         
@@ -1713,7 +1716,7 @@ sure to wrap any elements before calling these methods on them.</p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -1757,8 +1760,6 @@ sure to wrap any elements before calling these methods on them.</p>
             <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
             
         
-
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
 
         
         

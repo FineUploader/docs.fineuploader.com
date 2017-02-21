@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>S3 Options | Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,13 +33,13 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
 
         
-<script src="/tag/5.0.0/_static/js/sidebar.js"></script>
+<script src="/tag/5.0.0/_static/js/main.js"></script>
 
 
     </head>
@@ -47,113 +52,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -169,10 +165,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -193,7 +196,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
@@ -205,7 +208,7 @@
 present, and most of them still function the same way. However, some of the
 options are slightly different. This page will list any new or different options
 for the S3 uploader. Any option not listed here can be assumed to have the same
-behavior as the traditional endpoint uploader.</p>
+behavior for the Traditional or S3 uploader.</p>
 <h2 id="core_2">Core</h2>
 
 <div class="option-parent row-fluid">
@@ -386,7 +389,7 @@ behavior as the traditional endpoint uploader.</p>
 
 <h4 class="alert-heading">Note</h4>
 
-<p>The <a href="options.html#chunking"><code>chunking.paramNames</code> option</a> does <strong>not</strong> apply to S3.</p>
+<p>The <code>chunking.paramNames</code> option does <strong>not</strong> apply to S3.</p>
 
 </div>
 <div class="option-parent row-fluid">
@@ -440,7 +443,7 @@ behavior as the traditional endpoint uploader.</p>
     <div class="option row-fluid">
     <h4 id="cors.allowXdr"><a style="color: #f87436" href="#cors.allowXdr">allowXdr</a></h4>
     <span class="option-description row-fluid">
-        <p>Enables or disables cross-domain ajax calls (if <a href="options.html#cors.expected">the <code>expected</code> property</a> is true) in IE9 and older.</p>
+        <p>Enables or disables cross-domain ajax calls (if <code>expected</code> property is true) in IE9 and older.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -555,136 +558,6 @@ behavior as the traditional endpoint uploader.</p>
 </div>
     
     <div class="option row-fluid">
-    <h4 id="objectProperties.bucket"><a style="color: #f87436" href="#objectProperties.bucket">bucket</a></h4>
-    <span class="option-description row-fluid">
-        <p>Describes the name of the bucket used to house the file in S3.  This is required if the bucket cannot be determined by examining the endpoint (such as if you are using a CDN as an endpoint).  Possible values are a string representing the bucket name, or a function.  If the value is a function, Fine Uploader S3 will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return a promise or a <code>String</code>.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-        
-            
-                
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-
-                or
-            
-        
-            
-                
-
-
-    
-    
-    <span class="label label-function">Function</span>
-
-
-            
-        
-    
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-        
-
-
-    
-    
-    <span class="label label-string">(assumes the bucket can be determined by parsing the endpoint string)</span>
-
-
-    
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="objectProperties.host"><a style="color: #f87436" href="#objectProperties.host">host</a></h4>
-    <span class="option-description row-fluid">
-        <p>The hostname of your S3 bucket.  This is required if you are using version 4 signatures and sending files through a CDN. Possible values are a string representing the host name, or a function.  If the value is a function, Fine Uploader S3 will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return a promise or a <code>String</code>.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-        
-            
-                
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-
-                or
-            
-        
-            
-                
-
-
-    
-    
-    <span class="label label-function">Function</span>
-
-
-            
-        
-    
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-        
-
-
-    
-    
-    <span class="label label-string">(uses the request endpoint to determine the hostname)</span>
-
-
-    
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
     <h4 id="objectProperties.key"><a style="color: #f87436" href="#objectProperties.key">key</a></h4>
     <span class="option-description row-fluid">
         <p>Describes the object key used to identify the file in your S3 bucket. Possible values are 'uuid', 'filename' or a function.  If the value is a function, Fine Uploader S3 will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return one of a promise or a <code>String</code>.</p>
@@ -783,39 +656,6 @@ behavior as the traditional endpoint uploader.</p>
 </div>
     
     <div class="option row-fluid">
-    <h4 id="objectProperties.region"><a style="color: #f87436" href="#objectProperties.region">region</a></h4>
-    <span class="option-description row-fluid">
-        <p>Version 4 signatures only: The <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">S3 region identifier</a> for the target bucket.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-string">us-east-1</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
     <h4 id="objectProperties.serverSideEncryption"><a style="color: #f87436" href="#objectProperties.serverSideEncryption">serverSideEncryption</a></h4>
     <span class="option-description row-fluid">
         <p>Set this to true if you would like all uploaded files to be encrypted by AWS.</p>
@@ -856,7 +696,7 @@ behavior as the traditional endpoint uploader.</p>
 
 <h4 class="alert-heading">Note</h4>
 
-<p>The <a href="options.html#resume"><code>resume.paramNames</code> option</a> does <strong>not</strong> apply to S3.</p>
+<p>The <code>resume.paramNames</code> option does <strong>not</strong> apply to S3.</p>
 
 </div>
 
@@ -865,10 +705,9 @@ behavior as the traditional endpoint uploader.</p>
 
 <h4 class="alert-heading">Note</h4>
 
-<p>The <a href="options.html#request.customHeaders"><code>request.customHeaders</code> option</a> does <strong>not</strong> apply to S3.</p>
+<p><code>request.customHeaders</code> does <strong>not</strong> apply to S3.</p>
 
 </div>
-
 <div class="option-parent row-fluid">
     <h3 id="request"><a style="color: #00ABC7;" href="#request">request</a></h3>
     <span class="option-description row-fluid">
@@ -878,7 +717,7 @@ behavior as the traditional endpoint uploader.</p>
     <div class="option row-fluid">
     <h4 id="request.accessKey"><a style="color: #f87436" href="#request.accessKey">accessKey</a></h4>
     <span class="option-description row-fluid">
-        <p>Your AWS public key. <strong>NOT YOUR SECRET KEY</strong>. Ignored if <a href="#credentials"><code>credentials</code></a> have been set.</p>
+        <p>Your AWS public key. <strong>NOT YOUR SECRET KEY</strong>. Ignored if <code>credentials</code> have been set.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -901,39 +740,6 @@ behavior as the traditional endpoint uploader.</p>
     
     
     <span class="label label-string">null</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="request.clockDrift"><a style="color: #f87436" href="#request.clockDrift">clockDrift</a></h4>
-    <span class="option-description row-fluid">
-        <p>Number of milliseconds to add to the <code>x-amz-date</code> header and the policy expiration date to account for clock drift on the browser/client machine.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-long">Long</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-long">0</span>
 
 </dd>
         </div>
@@ -944,7 +750,7 @@ behavior as the traditional endpoint uploader.</p>
     <div class="option row-fluid">
     <h4 id="request.endpoint"><a style="color: #f87436" href="#request.endpoint">endpoint</a></h4>
     <span class="option-description row-fluid">
-        <p>URL for your S3 bucket or the URL of a CDN that forwards the request to S3.  All valid bucket URLs documented by Amazon are supported, including custom domains.  SSL is also supported.  If you use a CDN address, be sure to specify the bucket via <a href="#objectProperties.bucket">the <code>objectProperties.bucket</code> option</a>.</p>
+        <p>URL for your S3 bucket.  All valid bucket URLs documented by Amazon are supported, including custom domains.  SSL is also supported.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -967,39 +773,6 @@ behavior as the traditional endpoint uploader.</p>
     
     
     <span class="label label-string">null</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
-    <span class="option-description row-fluid">
-        <p>Part of the parameter name that contains the name of the associated file which may differ from the key name. Prefixed with 'x-amz-meta-' by Fine Uploader.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-string">qqfilename</span>
 
 </dd>
         </div>
@@ -1040,6 +813,39 @@ behavior as the traditional endpoint uploader.</p>
 <hr>
 </div>
     
+    <div class="option row-fluid">
+    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
+    <span class="option-description row-fluid">
+        <p>Part of the parameter name that contains the name of the associated file which may differ from the key name. Prefixed with 'x-amz-meta-' by Fine Uploader.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfilename</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
 </div>
 
 
@@ -1052,7 +858,7 @@ behavior as the traditional endpoint uploader.</p>
     <div class="option row-fluid">
     <h4 id="signature.customHeaders"><a style="color: #f87436" href="#signature.customHeaders">customHeaders</a></h4>
     <span class="option-description row-fluid">
-        <p>Additional headers sent along with each signature request.  If you declare a function as the value, the associated file's ID will be passed to your function when it is invoked.</p>
+        <p>Additional headers sent along with each signature request.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -1062,31 +868,7 @@ behavior as the traditional endpoint uploader.</p>
 
     
     
-        
-            
-                
-
-
-    
-    
     <span class="label label-object">Object</span>
-
-
-                or
-            
-        
-            
-                
-
-
-    
-    
-    <span class="label label- function"> Function</span>
-
-
-            
-        
-    
 
 </dd>
         </div>
@@ -1098,15 +880,7 @@ behavior as the traditional endpoint uploader.</p>
 
     
     
-        
-
-
-    
-    
     <span class="label label-object">{}</span>
-
-
-    
 
 </dd>
         </div>
@@ -1140,39 +914,6 @@ behavior as the traditional endpoint uploader.</p>
     
     
     <span class="label label-string">null</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="signature.version"><a style="color: #f87436" href="#signature.version">version</a></h4>
-    <span class="option-description row-fluid">
-        <p>The AWS/S3 signature version to use. Currently supported values are <code>2</code> and <code>4</code>. Directly related to <a href="#objectProperties.region"><code>objectProperties.region</code></a>.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-integer">2</span>
 
 </dd>
         </div>
@@ -1248,39 +989,6 @@ behavior as the traditional endpoint uploader.</p>
     
     
     <span class="label label-string">null</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="uploadSuccess.method"><a style="color: #f87436" href="#uploadSuccess.method">method</a></h4>
-    <span class="option-description row-fluid">
-        <p>The request method (i.e. POST/PUT).</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-string">String</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-string">POST</span>
 
 </dd>
         </div>
@@ -1381,7 +1089,7 @@ behavior as the traditional endpoint uploader.</p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -1426,11 +1134,10 @@ behavior as the traditional endpoint uploader.</p>
             
         
 
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
-
         
 <script>
 $(document).ready(function() {
+    console.log('herro')
     renderOptionsSidebarNav(['s3-core', 's3-ui']);
 });
 </script>

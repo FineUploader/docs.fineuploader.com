@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,7 +33,7 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
@@ -45,113 +50,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -167,10 +163,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -188,7 +191,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
@@ -196,15 +199,21 @@
 <h1 class="page-header" id="browser-support">Browser Support</h1>
 <p>Currently, Fine Uploader supports the following browsers:</p>
 <ul>
-<li>Chrome</li>
+<li>Internet Explorer 7+</li>
 <li>Firefox</li>
-<li>Microsoft Edge 13.10586+</li>
+<li>Chrome</li>
+<li>Chrome mobile (iOS &amp; Android)</li>
 <li>Opera 15+</li>
 <li>Android 2.3.x+</li>
 <li>iOS 6+</li>
 <li>Safari 5+ (OS X)</li>
-<li>Chrome mobile (iOS &amp; Android)</li>
-<li>Internet Explorer 8+</li>
+</ul>
+<p>We plan on supporting the following browsers/OSes in the very near future:</p>
+<ul>
+<li>Mobile Firefox (probably already works)</li>
+<li>Opera Mini</li>
+<li>Firefox OS</li>
+<li>Dolphin</li>
 </ul>
 <h2 id="feature-support-matrix">Feature Support Matrix</h2>
 <p>Note: Any features not listed here are supported in all browsers.</p>
@@ -213,7 +222,6 @@
         <tr>
             <th><strong>Browser</strong></th>
             <th>XHR2</th>
-            <th>Multiple File Selection</th>
             <th>File Drop</th>
             <th>Folder Drop</th>
             <th>Folder Selection</th>
@@ -250,18 +258,16 @@
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
         </tr>
         <tr>
-            <td>Chrome iOS 6+</td>
+            <td>Chrome for iOS 6+</td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span><a style="font-size: 24px" href="#ios-multiple">*</a></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -273,15 +279,14 @@
             <td><span class="label label-success">√</span></td>
         </tr>
         <tr>
-            <td>Chrome Android 4+</td>
+            <td>Chrome for Android 4+</td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
@@ -310,31 +315,9 @@
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
         </tr>
         <tr>
             <td>Firefox</td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
-        </tr>
-        <tr>
-            <td>Edge 13.10586+</td>
-            <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -356,7 +339,6 @@
             <td>IE 11</td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-success">√</span></td>
@@ -374,7 +356,6 @@
         </tr>
         <tr>
             <td>IE 10</td>
-            <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -401,7 +382,6 @@
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
-            <td><span class="label label-important">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
@@ -421,7 +401,6 @@
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
-            <td><span class="label label-important">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
@@ -433,13 +412,31 @@
             <td><span class="label label-important">x</span></td>
         </tr>
         <tr>
-            <td>Android
-                4+ stock</td>
+            <td>IE 7</td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
+            <td><span class="label label-important">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
+        </tr>
+        <tr>
+            <td>Android
+                4 stock</td>
+            <td><span class="label label-success">√</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -457,10 +454,9 @@
             <td>Android
                 2.3.x stock</td>
             <td><span class="label label-important">x</span></td>
-            <td><span class="label label-important">x</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
@@ -478,10 +474,9 @@
             <td>iOS
                 6+</td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span><a style="font-size: 24px" href="#ios-multiple">*</a></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
-            <td><span class="label label-">-</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
+            <td><span class="label label-">x</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -497,8 +492,7 @@
         </tr>
         <tr>
             <td>Safari
-                6+</td>
-            <td><span class="label label-success">√</span></td>
+                6</td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
@@ -521,7 +515,6 @@
                 5.1</td>
             <td><span class="label label-success">√</span></td>
             <td><span class="label label-success">√</span></td>
-            <td><span class="label label-success">√</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
             <td><span class="label label-important">x</span></td>
@@ -540,11 +533,10 @@
     </tbody>
 </table>
 
-<p><small><a style="font-size: 24px" name="ios-multiple">*</a> - Some iOS browsers are unable to upload multiple files when video files are allowed to be uploaded due to a long-standing iOS bug. See case <a href="https://github.com/Widen/fine-uploader/issues/990">#990</a> on our bug tracker for more details.</small></p>
 <h3 id="upload-size-limitations">Upload size Limitations</h3>
 <p>Upload size limitations are present in all browsers, but are most likely to affect the users of older browsers
 which do not support the <a href="http://caniuse.com/fileapi">File API</a>. Fine Uploader uses <a href="/tag/5.0.0/features/chunking.html">chunking</a> to work around
-the maximum upload size limit in browsers that do support the File API. When you are designing your upload form
+the maxiumum upload size limit in browsers that do support the File API. When you are designing your upload form
 for users of these older browsers, or if you are not using chunking, make sure you keep the imposed file size limits in mind:</p>
 <table class='table table-condensed table-hover table-striped'>
     <thead>
@@ -555,6 +547,10 @@ for users of these older browsers, or if you are not using chunking, make sure y
     </thead>
 
     <tbody>
+        <tr>
+            <td>IE7</td>
+            <td>2GB</td>
+        </tr>
         <tr>
             <td>IE8</td>
             <td>2GB</td>
@@ -569,7 +565,6 @@ for users of these older browsers, or if you are not using chunking, make sure y
 
 <p><a href="http://blogs.msdn.com/b/ieinternals/archive/2011/03/10/wininet-internet-explorer-file-download-and-upload-maximum-size-limits.aspx">Source</a></p>
 <h1 id="feature-detection">Feature Detection</h1>
-<p>You can programmatically detect support for all of Fine Uploader's features at runtime by checking the bundled <code>qq.supportedFeatures</code> object.</p>
 <h2 id="feature-flags">Feature Flags</h2>
 <p>Fine Uploader provides a set of flags that can be used to determine which
 features are supported in the current browser. These flags are set during
@@ -603,10 +598,6 @@ current user agent supports dropping folders, call <code>qq.supportedFeatures.fo
 <td>Is chunking supported?</td>
 </tr>
 <tr>
-<td><code>dialogElement</code></td>
-<td>Does this browser support the <code>&lt;dialog&gt;</code> element?</td>
-</tr>
-<tr>
 <td><code>fileDrop</code></td>
 <td>Is dragging and dropping files supported?</td>
 </tr>
@@ -625,10 +616,6 @@ current user agent supports dropping folders, call <code>qq.supportedFeatures.fo
 <tr>
 <td><code>imageValidation</code></td>
 <td>Can we validate image properties client-side?</td>
-</tr>
-<tr>
-<td><code>limitedScaledImageSize</code></td>
-<td>Does the browser have an upper limit on the size of a <code>&lt;canvas&gt;</code>?  Directly related to the maximum allowable dimensions of a scaled image.</td>
 </tr>
 <tr>
 <td><code>itemSizeValidation</code></td>
@@ -655,10 +642,6 @@ current user agent supports dropping folders, call <code>qq.supportedFeatures.fo
 <td>Can TIFFs be rendered natively in the current browser?</td>
 </tr>
 <tr>
-<td><code>unlimitedScaledImageSize</code></td>
-<td><code>true</code> if there is no known upper limit for <code>&lt;canvas&gt;</code> (used to scale images).  Will be <code>false</code> for iOS and scaled images may be further downsampled by Fine Uploader to work around this limit.</td>
-</tr>
-<tr>
 <td><code>uploadCors</code></td>
 <td>Are cross-domain uploads supported?</td>
 </tr>
@@ -680,15 +663,16 @@ current user agent supports dropping folders, call <code>qq.supportedFeatures.fo
 </tr>
 </tbody>
 </table>
-<h2 id="ios-iphone-ipad-ipod-etc-browsers">iOS (iPhone, iPad, iPod, etc) Browsers</h2>
-<p>Fine Uploader supports mobile Safari and mobile Chrome found on iOS 6+. One caveat to take into
+<h2 id="mobile-safari-ios">Mobile Safari (iOS)</h2>
+<p>Fine Uploader supports mobile Safari found on iOS 6+. One caveat to take into
 account is that iOS saves all image files on the camera roll is "image.jpg".
 Ensure that your server is saving files with some sort of unique identifier appended to the path
 because otherwise your iOS users will be overwriting each others' images.
 Fine Uploader automatically generates a Level 4 UUID per file and sends that
 UUID along with the request to the server in the <code>qquuid</code> parameter.</p>
 <h2 id="internet-explorer">Internet Explorer</h2>
-<p>IE10 finally competes with existing modern browsers. For those of you with customers suffering with IE9 and older, here are some of the limitations
+<p>IE continues to lag far behind all other browsers in terms of features. IE10 finally competes
+with existing modern browsers. For those of you with customers suffering with IE9 and older, here are some of the limitations
 you may want to be aware of when using Fine Uploader. The limitations that are overcome
 by upgrading to IE10 are listed as well.</p>
 <table class="table table-bordered table-striped">
@@ -738,7 +722,7 @@ by upgrading to IE10 are listed as well.</p>
         <tr>
             <td>No logging
             </td>
-            <td><code>console.log</code> is not available unless developer tools are open (IE9 and older).
+            <td><code>console.log</code> is not implemented (IE8 and older only)
             </td>
             <td>
                 <span class="label label-success">Yes</span>
@@ -825,7 +809,7 @@ by upgrading to IE10 are listed as well.</p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -869,8 +853,6 @@ by upgrading to IE10 are listed as well.</p>
             <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
             
         
-
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
 
         
         

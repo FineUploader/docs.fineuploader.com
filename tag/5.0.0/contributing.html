@@ -8,7 +8,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
-        <title>Overview | Fine Uploader Documentation</title>
+        <title>Contributing | Fine Uploader Documentation</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -196,80 +196,59 @@
                 
 
                 
-<div class="alert alert-block alert-info">
+<h1 id="contributing">Contributing</h1>
+<h2 id="build-status">Build status</h2>
+<table class='table table-condensed' style="width: 300px;">
+    <thead>
+        <tr>
+            <th>Branch</th>
+            <th>Travis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Master</td>
+            <td><a href="https://travis-ci.org/Widen/fine-uploader"><img src="https://travis-ci.org/Widen/fine-uploader.png?branch=master"></a></td>
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td><a href="https://travis-ci.org/Widen/fine-uploader"><img src="https://travis-ci.org/Widen/fine-uploader.png?branch=develop"></a></td>
+        </tr>
+    </tbody>
+</table>
 
-<h4 class="alert-heading">Note</h4>
-
-<p>Version 5.0 brings some breaking changes.  See the <a href="upgrading-to-5.html">upgrading to 5.x page</a>
-for help on upgrading from a 4.x version.</p>
-
-</div>
-
-<h1 class="page-header" id="documentation-overview">Documentation Overview</h1>
-<p>Welcome to Fine Uploader's documentation. This documentation is divided into
-different parts. It's recommended that you first check out the
-<a href="#quickstart">quickstart</a> for Fine Uploader. If you’d rather dive into the
-internals of Fine Uploader, check out the exhaustive
-<a href="#features">feature reference</a> or <a href="#api-reference">API documentation</a>.
-For assistance in getting your upload server set up, check out the docs on
-the <a href="#endpoint-handlers_2">server-side</a>.</p>
-<h3 id="getting-started_1">Getting Started</h3>
-<p>This area of the documentation is mostly prose and examples. It is meant to be
-human-readable and accessible to those looking to get started with Fine Uploader.
-For experts, or developers looking to view more technical documentation, refer
-to the <a href="#api-reference">API docs</a>.</p>
-<h4 id="quickstart">Quickstart</h4>
-<h5 id="traditional-uploader">Traditional Uploader</h5>
+<h2 id="building">Building</h2>
+<p>If you are developing an open-source project, are comfortable with the GPL v3 license, and are not using
+Fine Uploader for commercial purposes, you can build your own version-stamped copy of Fine Uploader's
+combined source code using the build file located in the root of the repository.  Please see <a href="http://fineuploader.com/faq">our licensing FAQ</a>
+for more details on Fine Uploader's commercial license.</p>
+<p>The following instructions are aimed at *nix OSes, such as OSX, Linux, BSD, etc.  If you are using Windows,
+you'll need to make the appropriate adjustments to the following steps.</p>
+<p>To build Fine Uploader, you must:</p>
 <ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server.html">Creating an upload server</a></li>
+<li>Install <a href="http://git-scm.com/downloads">git</a>.</li>
+<li>Install <a href="http://nodejs.org/">node.js</a>.</li>
+<li>Install <a href="http://gruntjs.com/">grunt</a>:  <code>sudo npm install -g grunt-cli</code>.</li>
+<li>Clone the repository: <code>git clone git://github.com/Widen/fine-uploader</code>.</li>
+<li>Change to the new fine-uploader directory: <code>cd fine-uploader</code>.</li>
+<li>Ensure all Fine Uploader build dependencies are installed: <code>npm install</code>.</li>
+<li>Build Fine Uploader: <code>grunt package</code>.</li>
 </ol>
-<h5 id="amazon-s3-uploader">Amazon S3 Uploader</h5>
+<p>The last step will generate various .zip files that correspond to all of the high-level types of Fine Uploader,
+such as Fine Uploader S3, Fine Uploader UI, etc.  These zip files will be located in the <code>./_dist/</code> directory.</p>
+<h2 id="contributing-changes">Contributing Changes</h2>
+<p>To contribute to development <a href="https://github.com/Widen/fine-uploader/fork">fork it</a>, and make sure to submit any pull requests against the "develop" branch.  See <a href="http://stackoverflow.com/questions/4384776/how-do-i-contribute-to-others-code-in-github">How do I contribute to other's code in GitHub?</a>.</p>
+<p>Pull requests <strong>MUST</strong> be against the "develop" branch!</p>
 <ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-s3.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-s3.html">Creating an upload server</a></li>
+<li>Follow all steps in the Building section above, up until (and including) step 5.</li>
+<li>Checkout the "develop" branch. It's where in-progress versions are staged: <code>git checkout develop</code>.</li>
+<li>Ensure all Fine Uploader build dependencies are installed: <code>npm install</code>.</li>
+<li>From the develop branch, create a branch based off of develop that describes your proposed changes,
+such as <code>git checkout -b feature/more-efficient-scaling</code>.</li>
+<li>Run <code>grunt dev</code>.  This will prepare the development environment.</li>
+<li><code>grunt build</code> will build the latest version from the source code into <code>./_build/</code>.</li>
+<li>Before you open up a pull request, be sure to run all unit tests: <code>grunt test:headless</code>.</li>
 </ol>
-<h5 id="azure-blob-storage-uploader">Azure Blob Storage Uploader</h5>
-<ol>
-<li><a href="quickstart/01-getting-started.html">Getting Started with Fine Uploader</a></li>
-<li><a href="quickstart/02-setting_options-azure.html">Setting Fine Uploader options</a></li>
-<li><a href="quickstart/03-setting_up_server-azure.html">Creating an upload server</a></li>
-</ol>
-<h4 id="fine-uploader-modes">Fine Uploader Modes</h4>
-<ul>
-<li><a href="modes/core.html">Core</a></li>
-<li><a href="modes/ui.html">UI</a></li>
-</ul>
-<h4 id="plugins">Plugins</h4>
-<ul>
-<li><a href="integrating/jquery.html">jQuery</a></li>
-</ul>
-<h4 id="endpoint-handlers-server-side-guidelines">Endpoint Handlers (server-side guidelines)</h4>
-<ul>
-<li><a href="endpoint_handlers/traditional.html">Traditional Server</a></li>
-<li><a href="endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-<li><a href="endpoint_handlers/azure.html">Azure Blob Storage</a></li>
-<li><a href="https://github.com/Widen/fine-uploader-server">Examples</a></li>
-</ul>
-<h4 id="additional-information">Additional Information</h4>
-<ul>
-<li><a href="browser-support.html">Browser Support</a></li>
-<li><a href="contributing.html">Build Your Own</a></li>
-<li><a href="https://github.com/Widen/fine-uploader/blob/master/CONTRIBUTING.md">Contributing</a></li>
-<li><a href="http://blog.fineuploader.com/category/changelog/">Changelog</a></li>
-<li><a href="support.html">Support</a></li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<h4 id="links">Links</h4>
-<ul>
-<li><a href="http://fineuploader.com/index.html">Official Site</a></li>
-<li><a href="http://blog.fineuploader.com/">Blog</a></li>
-<li><a href="https://github.com/Widen/fine-uploader/issues">Issue Tracker</a></li>
-<li><a href="http://stackoverflow.com/questions/tagged/fine-uploader">Support Forum</a></li>
-<li><a href="https://github.com/Widen/fine-uploader">GitHub repo</a></li>
-</ul>
 
 
                 

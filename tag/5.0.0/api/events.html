@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>Events | Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,13 +33,13 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
 
         
-<script src="/tag/5.0.0/_static/js/sidebar.js"></script>
+<script src="/tag/5.0.0/_static/js/main.js"></script>
 
 
     </head>
@@ -47,113 +52,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -169,10 +165,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -192,7 +195,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
@@ -203,21 +206,36 @@ almost any point in the upload process. Knowing how these callbacks work, and
 when they are called, is crucial to unlocking the full potential of
 Fine Uploader.</p>
 <h3 id="syntax_1">Syntax</h3>
-<p>The following syntax is the correct way to define event handlers:</p>
+<p>There is a significant difference in the way events are defined between the jQuery and non-jQuery uploaders.</p>
+<p>When using the non-jQuery version, events are defined as functions in the <code>callbacks</code> option object.</p>
+<p>There are two things to keep in mind when using the jQuery plugin version. First, event handlers are defined by calling the <a href="http://api.jquery.com/on/">jQuery <code>.on()</code></a> function which will bind a function to an event. Secondly, event handler parameters are passed an extra <a href="http://api.jquery.com/category/events/event-object/">jQuery <code>Event</code></a> object. If using the jQuery plugin, this Event object will precede all arguments listed.</p>
+<p>See the <a href="../integrating/jquery">Integrating jQuery</a> page for code examples and more details.</p>
+<h4 id="non-jquery_1">non-jQuery</h4>
+<p>When using the non-jQuery uploader, the following syntax is the correct way to define event handlers:</p>
 <div class="codehilite"><pre><span></span>callbacks: {
     onDelete: function(id) {
-        // ...
+    // ...
     },
     onDeleteComplete: function(id, xhr, isError) {
-        //...
+    //...
     }
 }
+</pre></div>
+
+
+<h4 id="jquery_1">jQuery</h4>
+<p>The syntax below is only acceptable when using the jQuery plugin for the uploader:</p>
+<div class="codehilite"><pre><span></span>$(&quot;#my_uploader&quot;).on(&quot;deleteComplete&quot;, function(event, id, xhr, isError) {
+    //...
+}).on(&quot;delete&quot;, function(event, id) {
+    // ...
+});
 </pre></div>
 <div class="events-all">
 
 
     <span class="event row-fluid">
-    <h4 id="autoRetry"><a style="color: #f87436;" href="#autoRetry">onAutoRetry</a></h4>
+    <h4 id="autoRetry"><a style="color: #f87436;" href="#autoRetry">autoRetry</a></h4>
     <span class="event-description">
         <p>Called before each automatic retry attempt for a failed item.</p>
     </span>
@@ -282,7 +300,7 @@ Fine Uploader.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="cancel"><a style="color: #f87436;" href="#cancel">onCancel</a></h4>
+    <h4 id="cancel"><a style="color: #f87436;" href="#cancel">cancel</a></h4>
     <span class="event-description">
         <p>Called when the item has been canceled. Return <code>false</code> to prevent the
 upload from being canceled. Also can return a promise if non-blocking
@@ -337,7 +355,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 
     <span class="event row-fluid">
-    <h4 id="complete"><a style="color: #f87436;" href="#complete">onComplete</a></h4>
+    <h4 id="complete"><a style="color: #f87436;" href="#complete">complete</a></h4>
     <span class="event-description">
         <p>Called when the item has finished uploading.</p>
 <p>The <code>responseJSON</code> will contain the raw response from the server including the
@@ -444,7 +462,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 
     <span class="event row-fluid">
-    <h4 id="allComplete"><a style="color: #f87436;" href="#allComplete">onAllComplete</a></h4>
+    <h4 id="allComplete"><a style="color: #f87436;" href="#allComplete">allComplete</a></h4>
     <span class="event-description">
         <p>Called when all submitted items have reached a point of termination.  A file has reached a point of termination
 if it has been cancelled, rejected, or uploaded (failed or successful).  For example, if a file in the group is paused,
@@ -498,9 +516,9 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="delete"><a style="color: #f87436;" href="#delete">onDelete</a></h4>
+    <h4 id="delete"><a style="color: #f87436;" href="#delete">delete</a></h4>
     <span class="event-description">
-        <p>Called just before a delete request is sent for the associated item. Note that this is <em>not</em> the correct callback to influence the delete request. To do that, use the <a href="#submitDelete">onSubmitDelete callback</a> instead.</p>
+        <p>Called just before a delete request is sent for the associated item.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -531,7 +549,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="deleteComplete"><a style="color: #f87436;" href="#deleteComplete">onDeleteComplete</a></h4>
+    <h4 id="deleteComplete"><a style="color: #f87436;" href="#deleteComplete">deleteComplete</a></h4>
     <span class="event-description">
         <p>Called just after receiving a response from the server for a delete file request.</p>
     </span>
@@ -620,7 +638,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="error"><a style="color: #f87436;" href="#error">onError</a></h4>
+    <h4 id="error"><a style="color: #f87436;" href="#error">error</a></h4>
     <span class="event-description">
         <p>Called whenever an exceptional condition occurs (see <a href="../features/handling-errors.html">Handling Errors</a>)</p>
     </span>
@@ -725,10 +743,10 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="manualRetry"><a style="color: #f87436;" href="#manualRetry">onManualRetry</a></h4>
+    <h4 id="manualRetry"><a style="color: #f87436;" href="#manualRetry">manualRetry</a></h4>
     <span class="event-description">
         <p>Called before each manual retry attempt.</p>
-<p>Return <code>false</code> to prevent this and all future retry attempts on the associated item.</p>
+<p>Return <code>false</code> to prevent this an all future retry attempts on the associated item.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -775,7 +793,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="pasteReceived"><a style="color: #f87436;" href="#pasteReceived">onPasteReceived</a></h4>
+    <h4 id="pasteReceived"><a style="color: #f87436;" href="#pasteReceived">pasteReceived</a></h4>
     <span class="event-description">
         <p>Called when a pasted image has been received (before upload).</p>
 <p>The pasted image is represented as a <code>Blob</code>. Also can return a promise if non-blocking work is required here. If using a Promise the value of the success parameter must be the name to associate with the pasted image. If the associated attempt is marked a failure then you should include a string explaining the reason in your failure callback for the Promise.</p>
@@ -811,7 +829,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="progress"><a style="color: #f87436;" href="#progress">onProgress</a></h4>
+    <h4 id="progress"><a style="color: #f87436;" href="#progress">progress</a></h4>
     <span class="event-description">
         <p>Called during the upload, as it progresses, but only for the AJAX uploader.</p>
 <p>For chunked uploads, this will be called for each chunk.</p>
@@ -894,7 +912,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="resume"><a style="color: #f87436;" href="#resume">onResume</a></h4>
+    <h4 id="resume"><a style="color: #f87436;" href="#resume">resume</a></h4>
     <span class="event-description">
         <p>Called just before an upload is resumed. See the <a href="#uploadChunk"><code>uploadChunk</code></a>
  event for more info on the <code>chunkData</code> object.</p>
@@ -960,7 +978,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 
     <span class="event row-fluid">
-    <h4 id="sessionRequestComplete"><a style="color: #f87436;" href="#sessionRequestComplete">onSessionRequestComplete</a></h4>
+    <h4 id="sessionRequestComplete"><a style="color: #f87436;" href="#sessionRequestComplete">sessionRequestComplete</a></h4>
     <span class="event-description">
         <p>Invoked when a session request has completed.  The <code>response</code> will be either an <code>Array</code> containing the response data
 or <code>null</code> if the response did not contain valid JSON.  The <code>success</code> parameter will be <code>false</code> if ANY of the file items
@@ -1052,7 +1070,7 @@ represented in the response could not be parsed (due to bad syntax, missing name
 
 
     <span class="event row-fluid">
-    <h4 id="statusChange"><a style="color: #f87436;" href="#statusChange">onStatusChange</a></h4>
+    <h4 id="statusChange"><a style="color: #f87436;" href="#statusChange">statusChange</a></h4>
     <span class="event-description">
         <p>Invoked whenever the status changes for any item submitted by the uploader.</p>
 <p>The status values correspond to those found in the <code>qq.status</code> object. For reference:</p>
@@ -1132,7 +1150,7 @@ represented in the response could not be parsed (due to bad syntax, missing name
 
 
     <span class="event row-fluid">
-    <h4 id="submit"><a style="color: #f87436;" href="#submit">onSubmit</a></h4>
+    <h4 id="submit"><a style="color: #f87436;" href="#submit">submit</a></h4>
     <span class="event-description">
         <p>Called when the item has been selected and is a candidate for uploading.</p>
 <p>This does not mean the item is going to be uploaded. Return <code>false</code> to prevent
@@ -1185,15 +1203,13 @@ If a promise is returned, a call to failure is the same as returning <code>false
 
 
     <span class="event row-fluid">
-    <h4 id="submitDelete"><a style="color: #f87436;" href="#submitDelete">onSubmitDelete</a></h4>
+    <h4 id="submitDelete"><a style="color: #f87436;" href="#submitDelete">submitDelete</a></h4>
     <span class="event-description">
         <p>Called before an item has been marked for deletion has been submitted to
 the uploader.</p>
 <p>A promise can be used if non-blocking work is required. Processing of
 this item is deferred until the promise is fullfilled. If a promise is
 returned, a call to failure is the same as returning <code>false</code>.</p>
-<p>Use this callback to influence the delete request. For example, you can change the
-custom parameters sent with the underlying delete request using the <a href="methods.html#setDeleteFileParams"><code>setDeleteParams</code> API method</a>.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1224,7 +1240,7 @@ custom parameters sent with the underlying delete request using the <a href="met
 
 
     <span class="event row-fluid">
-    <h4 id="submitted"><a style="color: #f87436;" href="#submitted">onSubmitted</a></h4>
+    <h4 id="submitted"><a style="color: #f87436;" href="#submitted">submitted</a></h4>
     <span class="event-description">
         <p>Called when the item has been successfully submitted to the uploader.</p>
 <p>The file will upload immediately if there is a) at least one free connection
@@ -1280,7 +1296,7 @@ been added to the DOM immediately before this callback is invoked.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="totalProgress"><a style="color: #f87436;" href="#totalProgress">onTotalProgress</a></h4>
+    <h4 id="totalProgress"><a style="color: #f87436;" href="#totalProgress">totalProgress</a></h4>
     <span class="event-description">
         <p>Called during a batch of uploads, as they progress, but only for the AJAX uploader.  This represents the total
 progress of all files in the batch.</p>
@@ -1331,7 +1347,7 @@ progress of all files in the batch.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="upload"><a style="color: #f87436;" href="#upload">onUpload</a></h4>
+    <h4 id="upload"><a style="color: #f87436;" href="#upload">upload</a></h4>
     <span class="event-description">
         <p>Called just before an item begins uploading to the server.</p>
     </span>
@@ -1380,7 +1396,7 @@ progress of all files in the batch.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="uploadChunk"><a style="color: #f87436;" href="#uploadChunk">onUploadChunk</a></h4>
+    <h4 id="uploadChunk"><a style="color: #f87436;" href="#uploadChunk">uploadChunk</a></h4>
     <span class="event-description">
         <p>Called just before a chunk request is sent.</p>
 <p>The <code>chunkData</code> object, which is passed into the 'uploadChunk' event handler, has 4 properties:</p>
@@ -1452,7 +1468,7 @@ progress of all files in the batch.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="uploadChunkSuccess"><a style="color: #f87436;" href="#uploadChunkSuccess">onUploadChunkSuccess</a></h4>
+    <h4 id="uploadChunkSuccess"><a style="color: #f87436;" href="#uploadChunkSuccess">uploadChunkSuccess</a></h4>
     <span class="event-description">
         <p>This is similar to the <a href="#complete"><code>complete</code> event</a>, except it is invoked after each chunk
 has been <strong>successfully</strong> uploaded.</p>
@@ -1559,9 +1575,10 @@ has been <strong>successfully</strong> uploaded.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="validate"><a style="color: #f87436;" href="#validate">onValidate</a></h4>
+    <h4 id="validate"><a style="color: #f87436;" href="#validate">validate</a></h4>
     <span class="event-description">
-        <p>Called once for each selected, dropped, or <code>addFiles</code> submitted file.</p>
+        <p>Called once for each selected, dropped, or <code>addFiles</code> submitted file and for
+each <code>addBlobs</code> submitted <code>Blob</code>.</p>
 <p>This callback is always invoked before the default Fine Uploader validators
 execute.</p>
 <p>This event will not be called if you return <code>false</code> in your <code>validateBatch</code> event
@@ -1585,11 +1602,35 @@ submitted using a Fine Uploader tracked button.</p>
 
     
     
-    <span class="label label-object">Object</span>
+        
+            
+                
+
+
+    
+    
+    <span class="label label-file">File</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-blob">Blob</span>
+
+
+            
+        
+    
 
 </dd>
     <dt class="method-param-name span2"><em>data</em></dt>
-    <dd class="method-param-description span8"><p>An object with a <code>name</code> and <code>size</code> property.</p></dd>
+    <dd class="method-param-description span8"><p>A <code>File</code> or <code>Blob</code>.</p></dd>
 </span>
 <hr/>
             
@@ -1619,7 +1660,7 @@ submitted using a Fine Uploader tracked button.</p>
 
 
     <span class="event row-fluid">
-    <h4 id="validateBatch"><a style="color: #f87436;" href="#validateBatch">onValidateBatch</a></h4>
+    <h4 id="validateBatch"><a style="color: #f87436;" href="#validateBatch">validateBatch</a></h4>
     <span class="event-description">
         <p>This callback is always invoked before the default Fine Uploader validators
 execute.</p>
@@ -1648,7 +1689,7 @@ submitted using a Fine Uploader tracked button.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>fileOrBlobDataArray</em></dt>
-    <dd class="method-param-description span8"><p>An array of <code>Objects</code> with <code>name</code> and <code>size</code> properties.</p></dd>
+    <dd class="method-param-description span8"><p>An array of <code>File</code>'s or <code>Blob</code>'s.</p></dd>
 </span>
 <hr/>
             
@@ -1686,7 +1727,7 @@ submitted using a Fine Uploader tracked button.</p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -1730,8 +1771,6 @@ submitted using a Fine Uploader tracked button.</p>
             <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
             
         
-
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
 
         
 <script type="text/javascript">

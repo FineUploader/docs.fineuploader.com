@@ -2,8 +2,10 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <title>UI Options | Fine Uploader Documentation</title>
@@ -16,11 +18,14 @@
         
 
         
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/tag/5.0.0/_static/css/main.css" />
@@ -28,13 +33,13 @@
         
 
         
-        
+
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         
 
         
-<script src="/tag/5.0.0/_static/js/sidebar.js"></script>
+<script src="/tag/5.0.0/_static/js/main.js"></script>
 
 
     </head>
@@ -47,113 +52,104 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-
-            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
-                <span class="hide">mobile navigation menu</span>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
-                    <li><a href="/tag/5.0.0">Docs</a></li>
-                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
 
                     <li class="dropdown">
-                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/CORS.html">CORS</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/delete.html">Delete</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/modules.html">ES6 & CommonJS Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/forms.html">Form Support</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/request-parameters.html">Request Parameters</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/resume.html">Resuming</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/retry.html">Retrying</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/styling.html">Styling</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/validation.html">Validation</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.0/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.0/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.0/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.0/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.0/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.0/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.0/features/validation.html">Validation</a></li>
                         </ul>
                     </li>
 
+
                     <li class="dropdown">
-                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
-                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
                                 <li><b>Options</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options.html">Core</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-ui.html">UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.0/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/options-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Methods</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
+                                <li><a href="/tag/5.0.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/methods-azure.html">Azure</a></li>
                                 <li class="divider"></li>
                                 <li><b>Events</b></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events.html">Core & UI</a></li>
-                                <li role="presentation"><a role="menuitem" href="/tag/5.0.0/api/events-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.0/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.0/api/events-s3.html">S3</a></li>
                                 <li class="divider"></li>
-                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.0.0/api/qq.html">Utilities</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.0/api/qq.html">Utilities</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.0/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
-                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/faq.html">FAQ</a></li>
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0/features/handling-errors.html">Handling Errors</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/tag/5.0.0/support.html">Support</li></a>
 
                     
                         
                     
                     
                     <li class="dropdown">
-                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/tag/5.0.0">Current: 5.14.0</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.0">Current: 5.0.0</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                                <li><a href="/branch/master">Stable</a></li>
                             
-                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                                <li><a href="/branch/develop">In Progress</a></li>
                             
                         </ul>
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -169,10 +165,17 @@
                     <input type="hidden" name="kx" value="#F87436"/>
                     <!-- Font -->
                     <input type="hidden" name="kt" value="h"/>
-                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
-                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
                 </form>
-            </div>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
@@ -193,7 +196,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.14.0</p></span>
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.0</p></span>
 
                 
 
@@ -202,8 +205,8 @@
 <div class="options-ui">
 <h1 class="page-header" id="options-ui">Options <small>UI</small></h1>
 <h2 id="ui_3">UI</h2>
-<p>Fine Uploader <a href="../modes/ui.html">UI mode</a> has a few different options as well as some options
-pertaining specifically to the UI which <a href="../modes/core.html">core mode</a> does not have.</p>
+<p>Fine Uploader UI mode has a few different options as well as some options
+pertaining specifically to the UI which Core mode does not have.</p>
 <p>Any options that exist in Core mode also exist in UI mode, and, in most cases,
 can be overridden.</p>
 
@@ -331,7 +334,7 @@ can be overridden.</p>
 
     
     
-    <span class="label label-function">function(message) { window.alert(message); }</span>
+    <span class="label label-function"></span>
 
 </dd>
         </div>
@@ -364,7 +367,7 @@ can be overridden.</p>
 
     
     
-    <span class="label label-function">function(message) { window.confirm(message); }</span>
+    <span class="label label-function"></span>
 
 </dd>
         </div>
@@ -397,7 +400,7 @@ can be overridden.</p>
 
     
     
-    <span class="label label-function">function(message, defaultValue) { window.prompt(message, defaultValue); }</span>
+    <span class="label label-function"></span>
 
 </dd>
         </div>
@@ -474,7 +477,8 @@ can be overridden.</p>
 <div class="option-parent row-fluid">
     <h3 id="deleteFile"><a style="color: #00ABC7;" href="#deleteFile">deleteFile</a></h3>
     <span class="option-description row-fluid">
-        <p>This section defines UI specific options for <a href="options.html#deleteFile">the core <code>deleteFile</code> option</a>.</p>
+        <p><code>deleteFile</code> is also in the Core mode options. This section defines UI specific
+options for <code>deleteFile</code>.</p>
     </span>
     
     <div class="option row-fluid">
@@ -579,7 +583,7 @@ can be overridden.</p>
     <div class="option row-fluid">
     <h4 id="deleteFile.forceConfirm"><a style="color: #f87436" href="#deleteFile.forceConfirm">forceConfirm</a></h4>
     <span class="option-description row-fluid">
-        <p>If this value is set to <code>true</code>, the user will be required to confirm the file delete request via a confirmation dialog.</p>
+        <p>Bypass prompting the user for confirmation for file deletion, and continue with delete instead.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -802,6 +806,39 @@ can be overridden.</p>
 </div>
     
     <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.maxChars"><a style="color: #f87436" href="#failedUploadTextDisplay.maxChars">maxChars</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum amount of characters to display next to each item. Ignored unless <code>mode</code> is <code>'custom'</code></p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">50</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
     <h4 id="failedUploadTextDisplay.mode"><a style="color: #f87436" href="#failedUploadTextDisplay.mode">mode</a></h4>
     <span class="option-description row-fluid">
         <p>Set the message to display next to each failed file. One of: <code>'default'</code> which displays the <code>failedUploadText</code>, <code>'custom'</code> which displays the error response from the server, or <code>'none'</code> which displays no text.</p>
@@ -879,7 +916,7 @@ can be overridden.</p>
     <div class="option row-fluid">
     <h4 id="messages.tooManyFilesError"><a style="color: #f87436" href="#messages.tooManyFilesError">tooManyFilesError</a></h4>
     <span class="option-description row-fluid">
-        <p>Text sent to <a href="#showMessage"><code>showMessage</code></a> when <code>multiple</code> is <code>false</code> and more than one file is dropped at once.</p>
+        <p>Text sent to <code>showMessage</code> in the 'error' event handler when <code>multiple</code> is <code>false</code> and more than one file is dropped at once.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -958,7 +995,7 @@ options for <code>messages</code></p>
 <div class="option-parent row-fluid">
     <h3 id="retry"><a style="color: #00ABC7;" href="#retry">retry</a></h3>
     <span class="option-description row-fluid">
-        <p>This section defines UI specific options for <a href="options.html#retry">the core <code>retry</code> option</a></p>
+        
     </span>
     
     <div class="option row-fluid">
@@ -997,7 +1034,7 @@ options for <code>messages</code></p>
     <div class="option row-fluid">
     <h4 id="retry.showButton"><a style="color: #f87436" href="#retry.showButton">showButton</a></h4>
     <span class="option-description row-fluid">
-        <p>Enable or disable the showing of a button/link next to the failed item after all retry attempts have been exhausted. Clicking the button/link will force the uploader to make another attempt.</p>
+        <p>Enable or disable the showing of a button/link nex to the failed item after all retry attempts have been exchausted. Clicking the button/link will force the uploader to make another attempt.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -1063,122 +1100,15 @@ options for <code>messages</code></p>
 </div>
 
 
-<div class="option-parent row-fluid">
-    <h3 id="thumbnails"><a style="color: #00ABC7;" href="#thumbnails">thumbnails</a></h3>
-    <span class="option-description row-fluid">
-        
-    </span>
-    
-    <div class="option row-fluid">
-    <h4 id="thumbnails.customResizer"><a style="color: #f87436" href="#thumbnails.customResizer">customResizer</a></h4>
-    <span class="option-description row-fluid">
-        <p>Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</p>
-<p>A <code>resizeInfo</code> object, which will be passed to the supplied function, contains the following properties:</p>
-<ul>
-<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
-<li><code>height</code> - Desired height of the image after the resize operation.</li>
-<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
-<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
-<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
-<li><code>width</code> - Desired width of the image after the resize operation.</li>
-</ul>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
 
+<div class="alert alert-block alert-info">
 
-    
-    
-    <span class="label label-function">Function</span>
+<h4 class="alert-heading">Note:</h4>
 
-</dd>
-        </div>
+<p><code>retry</code> is also in the Core mode options. This section defines UI specific
+options for <code>retry</code></p>
 
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-function">undefined</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
 </div>
-    
-    <div class="option row-fluid">
-    <h4 id="thumbnails.maxCount"><a style="color: #f87436" href="#thumbnails.maxCount">maxCount</a></h4>
-    <span class="option-description row-fluid">
-        <p>Maximum number of previews to render per Fine Uploader instance.  A call to the reset method resets this value as well.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-integer">0</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-    <div class="option row-fluid">
-    <h4 id="thumbnails.timeBetweenThumbs"><a style="color: #f87436" href="#thumbnails.timeBetweenThumbs">timeBetweenThumbs</a></h4>
-    <span class="option-description row-fluid">
-        <p>The amount of time, in milliseconds, to pause between each preview generation process.  This is in place to prevent the UI thread from locking up for a continuously long period of time, as preview generation can be a resource-intensive process.</p>
-    </span>
-    <dl>
-        <div class="row-fluid">
-            <dt class="span2"><b>Type:</b></dt>
-            <dd class="span10 option-type">
-
-
-    
-    
-    <span class="label label-integer">Integer</span>
-
-</dd>
-        </div>
-
-        <div class="row-fluid">
-            <dt class="span2"><b>Default Value:</b></dt>
-            <dd class="span10 option-default-value">
-
-
-    
-    
-    <span class="label label-integer">750</span>
-
-</dd>
-        </div>
-    </dl>
-<hr>
-</div>
-    
-</div>
-
 
 <div class="option-parent row-fluid">
     <h3 id="thumbnails.placeholders"><a style="color: #00ABC7;" href="#thumbnails.placeholders">thumbnails.placeholders</a></h3>
@@ -1222,7 +1152,7 @@ options for <code>messages</code></p>
     <div class="option row-fluid">
     <h4 id="thumbnails.placeholders.waitingPath"><a style="color: #f87436" href="#thumbnails.placeholders.waitingPath">waitingPath</a></h4>
     <span class="option-description row-fluid">
-        <p>Absolute URL or relative path to the image to display during preview generation (modern browsers) or until the server response has been parsed (older browsers).</p>
+        <p>Absolute URL or relative path to the image to display duringpreview generation (modern browsers) or until the server response has been parsed (older browsers).</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -1297,7 +1227,7 @@ options for <code>messages</code></p>
     <div class="option row-fluid">
     <h4 id="paste.namePromptMessage"><a style="color: #f87436" href="#paste.namePromptMessage">namePromptMessage</a></h4>
     <span class="option-description row-fluid">
-        <p>Text that will appear in <a href="#showPrompt">the <code>showPrompt</code> dialog</a>.</p>
+        <p>Text that will appear in the <code>showPrompt</code> dialog.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -1330,7 +1260,7 @@ options for <code>messages</code></p>
     <div class="option row-fluid">
     <h4 id="paste.promptForName"><a style="color: #f87436" href="#paste.promptForName">promptForName</a></h4>
     <span class="option-description row-fluid">
-        <p>Enable or disable the usage of <a href="#showPrompt"><code>showPrompt</code></a> by Fine Uploader to prompt the user for a filename for a pasted file.</p>
+        <p>Enable or disable the usage of <code>showPrompt</code> by Fine Uploader to prompt the user for a filename for a pasted file.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -1366,7 +1296,7 @@ options for <code>messages</code></p>
 <div class="option-parent row-fluid">
     <h3 id="scaling"><a style="color: #00ABC7;" href="#scaling">scaling</a></h3>
     <span class="option-description row-fluid">
-        <p>See the <a href="../features/scaling.html">Upload Scaled Images feature page</a> for more details.</p>
+        <p>See the <a href="../feature/scaling.html">Upload Scaled Images feature page</a> for more details.</p>
     </span>
     
     <div class="option row-fluid">
@@ -1587,7 +1517,7 @@ options for <code>messages</code></p>
             
             </div>
             <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
 </footer>
 
         </div> <!-- /container -->
@@ -1631,8 +1561,6 @@ options for <code>messages</code></p>
             <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
             
         
-
-        <script src="/tag/5.0.0/_static/js/main.js"></script>
 
         
 <script type="text/javascript">
