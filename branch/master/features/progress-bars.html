@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/master/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/master">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/master/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -142,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.10.1</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.14.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/master"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -222,7 +221,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.10.1</p></span>
+                    <span class="pull-right version-number"><p>5.14.0</p></span>
 
                 
 
@@ -246,9 +245,9 @@ rebuilt and rebranded in Core mode.</p>
 <h3 id="per-file-progress">Per-File Progress</h3>
 <p>If using Fine Uploader UI, a progress bar will be drawn and updated for each file as the upload progresses.  Note that
 you must have the progress element in your template.  Here's what the progress element may look like in your template:</p>
-<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-container-selector&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-progress-bar-container-selector&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemin</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 
 
@@ -260,9 +259,9 @@ Fine Uploader Core.</p>
 and updated automatically for you, provided you have the total progress module included in the source and the total
 progress element is present in your template.  Here's what the total progress element may look like in your
 template:</p>
-<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">class=</span><span class="s">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemin</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 
 

@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/master/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/master">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/master/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -142,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.10.1</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.14.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/master"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -189,7 +188,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.10.1</p></span>
+                    <span class="pull-right version-number"><p>5.14.0</p></span>
 
                 
 
@@ -208,7 +207,7 @@ read the <a href="../endpoint_handlers/amazon-s3.html">Fine Uploader S3 server d
 
 <p>For this tutorial we are going to use PHP to develop a simple server which will accept uploads from our Fine Uploader instance.</p>
 <p>If PHP is not your style, then feel free to browse the other
-<a href="http://github.com/Widen/fine-uploader-server">server-side demos repository</a>.  <strong>It's quite important for you to read
+<a href="https://github.com/FineUploader/server-examples">server-side examples repository</a>.  <strong>It's quite important for you to read
 the <a href="../endpoint_handlers/traditional.html">traditional server-side integration instructions</a> before you do any of this,
 though</strong>.</p>
 <h3 id="getting-started_3">Getting Started</h3>
@@ -222,9 +221,9 @@ it to your project using <a href="https://getcomposer.org/">composer</a>!</p>
 <li>Install the Fine Uploader endpoint code: <code>php composer.phar install</code>.</li>
 </ol>
 <p>An example composer.json file may look like this:</p>
-<div class="codehilite"><pre><span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;fineuploader/php-traditional-server&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="nt">&quot;fineuploader/php-traditional-server&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1.0&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -234,14 +233,14 @@ it to your project using <a href="https://getcomposer.org/">composer</a>!</p>
 <h4 id="step-2-prepare-your-environment">Step 2: Prepare your environment</h4>
 <p>Be sure to include <a href="http://php.net/manual/en/configuration.file.php">a php.ini file</a> in the root of your web server with sensible request limits.
 An example php.ini file looks like this:</p>
-<div class="codehilite"><pre><span class="x">upload_max_filesize = 10M</span>
+<div class="codehilite"><pre><span></span><span class="x">upload_max_filesize = 10M</span>
 <span class="x">post_max_size = 10M</span>
 </pre></div>
 
 
 <h4 id="step-3-start-the-php-server">Step 3: Start the PHP server</h4>
 <p>You can easily start up a simple HTTP server using PHP. Run the following command in the root of your web server:</p>
-<div class="codehilite"><pre>php -S 0.0.0.0:8080 -t . -c php.ini
+<div class="codehilite"><pre><span></span>php -S <span class="m">0</span>.0.0.0:8080 -t . -c php.ini
 </pre></div>
 
 
@@ -253,7 +252,7 @@ if you placed composer.json in the root of your web server, the path to your PHP
 the <a href="../api/options.html#request.endpoint"><code>request.endpoint</code></a>, <a href="../api/options.html#deleteFile.endpoint"><code>deleteFile.endpoint</code></a>,
 and <a href="../api/options.html#chunking.success.endpoint"><code>chunking.success.endpoint</code></a> configuration options.</p>
 <p>A typical configuration may look like this:</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">manualUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">manualUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
         <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;fineuploader-container&quot;</span><span class="p">),</span>
         <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;/vendor/fineuploader/php-traditional-server/endpoint.php&quot;</span>
