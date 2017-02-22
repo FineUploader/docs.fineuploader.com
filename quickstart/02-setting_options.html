@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/master/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/master">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/master/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -142,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.10.1</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.14.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/master"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -189,7 +188,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.10.1</p></span>
+                    <span class="pull-right version-number"><p>5.14.0</p></span>
 
                 
 
@@ -197,7 +196,7 @@
 <h1 class="page-header" id="setting-fine-uploader-options-traditional">Setting Fine Uploader Options <small>Traditional</small></h1>
 <p>At this point in the tutorial you should have an very simple HTML page with a
 Fine Uploader instance. This section will get you started with setting some of
-the more common options of Fine Uploader.</p>
+the more common options of Fine Uploader. To see <em>all</em> supported options, open the "API" menu at the top of this page.</p>
 <div class="alert alert-block alert-info">
 
 <h4 class="alert-heading">Note</h4>
@@ -208,14 +207,14 @@ use the <code>default.html</code> file in the <code>templates</code> directory b
 
 </div>
 
-<h2 id="initial-options_2">Initial Options</h2>
+<h2 id="basic-options_2">Basic Options</h2>
 <p>Fine Uploader comes with a wealth of options. Most importantly, Fine Uploader
 requires you to specify the URL where it should send uploads and server
 requests to. This endpoint can be an absolute path or a relative path.  The meaning of this
 endpoint varies depending on the endpoint handler.  If you are using the traditional uploader,
 this is the path endpoint on your server that will handle upload requests.</p>
 <p>More information on the <a href="../api/options.html"><code>request</code> option here</a>.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/uploads&#39;</span>
     <span class="p">}</span>
@@ -226,7 +225,7 @@ this is the path endpoint on your server that will handle upload requests.</p>
 <h3 id="debug-mode_2">Debug mode</h3>
 <p>Debug mode is used to begin diagnosing any application errors. Debug mode can
 be enabled in the options of Fine Uploader:</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/uploads&#39;</span>
@@ -242,7 +241,7 @@ have this mode on during development.</p>
 <h3 id="retrying-uploads_3">Retrying Uploads</h3>
 <p>Networks can be unreliable, and if your upload fails, Fine Uploader offers the
 ability to retry. The <code>retry</code> option can be set to enable this:</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/uploads&#39;</span>
     <span class="p">},</span>
@@ -262,7 +261,7 @@ In Fine Uploader UI mode, if this feature is enabled, a customizable delete
 link will appear next to the file after it has successfully uploaded.  File deletion can be enabled in the Fine Uploader
 options.</p>
 <p>You can also send a delete request via the <code>deleteFile</code> <a href="../api/methods.html">API method</a>.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/uploads&#39;</span>
     <span class="p">},</span>
@@ -286,20 +285,20 @@ other, better options. Please see <a href="../features/modules.html">modules fea
 
 </div>
 
-<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;fine-uploader-5.10.1-new.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;fine-uploader-5.14.0-new.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
     <span class="c">&lt;!-- The element where Fine Uploader will exist. --&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fine-uploader&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fine-uploader&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
     <span class="c">&lt;!-- Fine Uploader --&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;fine-uploader.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;fine-uploader.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;qq-template&quot;</span><span class="p">&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
@@ -356,9 +355,9 @@ other, better options. Please see <a href="../features/modules.html">modules fea
                 <span class="o">&lt;</span><span class="err">/div&gt;</span>
             <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
         <span class="o">&lt;</span><span class="err">/div&gt;</span>
-    <span class="nt">&lt;/script&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-    <span class="nt">&lt;script&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
             <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;fine-uploader&#39;</span><span class="p">),</span>
@@ -373,9 +372,9 @@ other, better options. Please see <a href="../features/modules.html">modules fea
                <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span>
             <span class="p">}</span>
         <span class="p">});</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 
 

@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/master/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/master">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/master/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -142,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.10.1</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.14.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/master"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -252,7 +251,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.10.1</p></span>
+                    <span class="pull-right version-number"><p>5.14.0</p></span>
 
                 
 
@@ -275,7 +274,7 @@ The text to be displayed in the case of an error is passed in as the <code>error
 parameter.</p>
 <p>The following code snippet shows how one might display a custom alert on the
 event of an error.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="cm">/* other required config options left out for brevity */</span>
 
     <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
@@ -294,7 +293,7 @@ that value to the <code>onError</code> callback.</p>
 <p>If the server indicates failure in the response, but does not include an
 <code>error</code> property and the response status indicates failure, then the
 <code>defaultResponseError</code> property will be used as the error message.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="cm">/* other required config options left out for brevity */</span>
 
     <span class="nx">text</span><span class="o">:</span> <span class="p">{</span>
@@ -307,7 +306,7 @@ that value to the <code>onError</code> callback.</p>
 <h2 id="changing-error-messages">Changing Error Messages</h2>
 <p>The <a href="../api/options.html#messages"><code>messages</code> property in the core Fine Uploader options</a> provides a
 handful of properties one can override to display custom error messages.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="cm">/* other required config options left out for brevity */</span>
 
     <span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
@@ -322,7 +321,7 @@ handful of properties one can override to display custom error messages.</p>
 <p>Error messages include primitive <code>String</code> interpolation that allows integrators
 to inject variable data into error messages. For example, the <code>typeError</code>
 message could be modified:</p>
-<div class="codehilite"><pre><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;Invalid extension detected in file, {file}.&#39;</span>
 <span class="p">}</span>
 </pre></div>
@@ -333,7 +332,7 @@ instead of the <code>"{file}"</code> <code>String</code>.</p>
 <h2 id="modifying-the-text-for-failed-uploads">Modifying the Text for Failed Uploads</h2>
 <p>The <code>failedUploadTextDisplay</code> option defines properties used for displaying
 text when an upload fails.</p>
-<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="cm">/* other required config options left out for brevity */</span>
 
     <span class="c1">// These are all the DEFAULT values...</span>

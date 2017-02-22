@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/master/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/master">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/master/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/master/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -142,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.10.1</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.14.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/master"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -189,7 +188,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.10.1</p></span>
+                    <span class="pull-right version-number"><p>5.14.0</p></span>
 
                 
 
@@ -214,7 +213,7 @@ plug-ins are followed faithfully here, so if you have worked with jQuery plug-in
 <p>When using the Fine Uploader jQuery plugin there is no need to specify <a href="../api/options-ui.html#element">the <code>element</code> option</a>. Instead,
 using the jQuery plugin syntax, you simply provide the element (or elements) you would like to associate with your
 Fine Uploader instance, like so:</p>
-<div class="codehilite"><pre><span class="c1">// This will instantiate an instance of Fine Uploader on the page element</span>
+<div class="codehilite"><pre><span></span><span class="c1">// This will instantiate an instance of Fine Uploader on the page element</span>
 <span class="c1">// that has an `id` of &quot;fine-uploader&quot;.</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="cm">/* options go here */</span>
@@ -231,7 +230,7 @@ rather than <code>$("#myButton")[0]</code> or <code>document.getElementById("but
 all <code>HTMLElements</code> associated with that jQuery object will be added to the array when it is passed to Fine Uploader.
 For instance, if you specify a value for <a href="../api/options-ui.html#dragAndDrop.extraDropzones"><code>extraDropzones</code></a> which is <code>[$(".myExtraDropzone")]</code>, and the element
 contains three child elements, then the plugin will pass all three elements to Fine Uploader.</p>
-<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="cm">/* ... */</span>
     <span class="nx">button</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#button&quot;</span><span class="p">),</span>
     <span class="nx">dragAndDrop</span><span class="o">:</span> <span class="p">{</span>
@@ -245,7 +244,7 @@ contains three child elements, then the plugin will pass all three elements to F
 <p>The Fine Uploader jQuery wrapper still provides integrators with a way to specify whether they are using core or
 UI mode by specifying an <code>uploaderType</code> option on instantiation. When the type is <code>'basic'</code> then core/basic mode
 is used, otherwise UI mode is assumed.</p>
-<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span>
 <span class="p">});</span>
 </pre></div>
@@ -263,7 +262,7 @@ All callbacks defined in Fine Uploader are available to jQuery plugin users.</p>
 
 </div>
 
-<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/upload/endpoint&#39;</span>
     <span class="p">}</span>
@@ -295,7 +294,7 @@ For an example of the latter situation please see <a href="https://github.com/Fi
 <h2 id="api-methods">API Methods</h2>
 <p>All public API methods are also accessible when using the jQuery plugin, but, as with callbacks,
 there are a few syntactical differences.</p>
-<div class="codehilite"><pre><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
+<div class="codehilite"><pre><span></span><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
 <span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;getStoredFiles&#39;</span><span class="p">)</span><span class="o">:</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cancel-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
@@ -309,7 +308,7 @@ there are a few syntactical differences.</p>
 <p>The jQuery plugin cares not about what your endpoint is, but if you plan to use
 the S3 uploader rather than the traditional uploader, ensure that you are using
 the right plugin name:</p>
-<div class="codehilite"><pre><span class="c1">// Fine Uploader</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Fine Uploader</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
 
 <span class="c1">// Fine Uploader S3</span>
