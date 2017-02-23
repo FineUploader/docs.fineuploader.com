@@ -20,7 +20,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         
         
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
         
         
         <link rel="stylesheet" href="/branch/release_6.0.0/_static/css/main.css" />
@@ -55,9 +55,9 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
                     <li><a href="/branch/release_6.0.0">Docs</a></li>
-                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
 
                     <li class="dropdown">
                         <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
@@ -129,7 +129,6 @@
                         <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
                         <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
                             <li role="presentation"><a role="menuitem" href="/branch/release_6.0.0/browser-support.html">Browsers</a></li>
-                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/release_6.0.0/faq.html">FAQ</a></li>
                             <li role="presentation"><a role="menuitem" href="/branch/release_6.0.0/features/handling-errors.html">Handling Errors</a></li>
                         </ul>
@@ -152,7 +151,7 @@
                     </li>
                 </ul>
 
-                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
                     <input type="hidden" name="sites" value="docs.fineuploader.com/branch/release_6.0.0"/>
                     <!-- Header -->
                     <input type="hidden" name="kj" value="#0088CC"/>
@@ -345,13 +344,15 @@ should respond with the following in the body of an 'application/json' response:
 version 4 signing process, have a look at the <a href="https://github.com/FineUploader/php-s3-server">Fine Uploader PHP S3 signature server example</a>. The general process is as
 follows:</p>
 <ol>
-<li>Handle a chunked upload signature request from Fine Uploader. Look at the query string to determine if this is a version 4 request, or not. The presence of a <code>"header"</code> property in the JSON-encoded message body indicates that this is indeed related to a chunked upload request.</li>
-<li>Follow the signing process outlined in the diagram on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html">Amazon's version 4 header-based auth documentation page</a>.</li>
-<li>The <code>"headers"</code> string provided by Fine Uploader corresponds to the "StringToSign" portion of the diagram on the page referenced in the previous step, with one notable difference. Instead of a hashed "canonical request" at the end of the "StringToSign", Fine Uploader S3 will include the raw <a href="http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html">newline-delimited canonical request</a>. This allows you to properly inspect the request before signing it.
-   a. Examine the raw canonical request string at the end of the headers string to verify that the request is valid before signing it.
-   b. Replace the raw canonical request at the end of the "StringToSign" sent by Fine Uploader S3 with a SHA256 hashed version.
-   c. Now generate the signature using this constructed "StringToSign" by following the logic in the third step (titled "Signature") of the above-mentioned AWS document.</li>
-<li>Return a JSON response with the generated signature as the value of a <code>"signature"</code> property.</li>
+<li>Handle a chunked upload signature request from Fine Uploader. Look at the query string to determine if this is a version 4 request, or not. The presence of a <code>"header"</code> property in the JSON-encoded message body indicates that this is indeed related to a chunked upload request.  </li>
+<li>Follow the signing process outlined in the diagram on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html">Amazon's version 4 header-based auth documentation page</a>.  </li>
+<li>The <code>"headers"</code> string provided by Fine Uploader corresponds to the "StringToSign" portion of the diagram on the page referenced in the previous step, with one notable difference. Instead of a hashed "canonical request" at the end of the "StringToSign", Fine Uploader S3 will include the raw <a href="http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html">newline-delimited canonical request</a>. This allows you to properly inspect the request before signing it.  <ol>
+<li>Examine the raw canonical request string at the end of the headers string to verify that the request is valid before signing it.  </li>
+<li>Replace the raw canonical request at the end of the "StringToSign" sent by Fine Uploader S3 with a SHA256 hashed version.  </li>
+<li>Now generate the signature using this constructed "StringToSign" by following the logic in the third step (titled "Signature") of the above-mentioned AWS document.  </li>
+</ol>
+</li>
+<li>Return a JSON response with the generated signature as the value of a <code>"signature"</code> property.  </li>
 </ol>
 <h2 id="supporting-ie9-and-older-and-android-23x-and-older">Supporting IE9 (and older) and Android 2.3.x (and older)</h2>
 <p>For browsers that do not support the File API, Fine Uploader must submit selected files inside of form, targeting a specific
