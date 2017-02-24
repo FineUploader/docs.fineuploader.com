@@ -1,0 +1,465 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Setting Options S3 | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/greenkeeper_karma-spec-reporter-0.0.29">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_karma-spec-reporter-0.0.29">Current: 5.14.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/greenkeeper_karma-spec-reporter-0.0.29"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="setting-fine-uploader-options-amazon-s3">Setting Fine Uploader Options <small>Amazon S3</small></h1>
+<p>At this point in the tutorial you should have an very simple HTML page with a
+Fine Uploader instance. This section will get you started with setting some of
+the more common options of Fine Uploader. To see <em>all</em> supported options, open the "API" menu at the top of this page.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If you are using Fine Uploader UI, you MUST include a template in your document/markup.  You can
+use the <code>default.html</code> file  in the <code>templates</code> directory bundled with the library and customize it as desired.  See the
+<a href="../features/styling.html">styling documentation page</a> for more details.</p>
+
+</div>
+
+<h2 id="basic-options_1">Basic Options</h2>
+<p>Fine Uploader comes with a wealth of options. Most importantly, Fine Uploader
+requires you to specify the URL where it should send uploads and server
+requests to. This endpoint can be an absolute path or a relative path.  The meaning of this
+endpoint varies depending on the endpoint handler. If you are using
+Fine Uploader S3, the endpoint should point to your S3 bucket.</p>
+<p>More information on the <a href="../api/options-s3.html#request-option"><code>request</code> option here</a>.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_BUCKET_NAME }.s3.amazonaws.com&#39;</span>
+        <span class="nx">accessKey</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_ACCESS_KEY }&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">signature</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3/signature&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">uploadSuccess</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3/success&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">iframeSupport</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">localBlankPagePath</span><span class="o">:</span> <span class="s1">&#39;/success.html&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If you wish to send files to an S3 bucket in a region that only supports version 4 signatures, you will
+have to set <a href="../api/options-s3.html#signature.version">the <code>signature.version</code> option</a> to <code>4</code>.</p>
+
+</div>
+
+<h3 id="debug-mode_1">Debug mode</h3>
+<p>Debug mode is used to begin diagnosing any application errors. Debug mode can
+be enabled in the options of Fine Uploader:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="cm">/* ...other options... */</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>With debug mode on, Fine Uploader will spit out log messages to the console.
+This allows you to diagnose any application errors and it is recommended to
+have this mode on during development.</p>
+<p>More information on <a href="../features/handling-errors.html">debugging errors here</a>.</p>
+<h3 id="retrying-uploads_2">Retrying Uploads</h3>
+<p>Networks can be unreliable, and if your upload fails, Fine Uploader offers the
+ability to retry. The <code>retry</code> option can be set to enable this:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* ...other options... */</span>
+    <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+       <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// defaults to false</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>More information on <a href="../features/retry.html">retrying uploads here</a>.</p>
+<h3 id="deleting-files_3">Deleting Files</h3>
+<p>If a user has uploaded a file, but realized it was a mistake before aborting, then Fine Uploader can also help them delete files.</p>
+<p>A file is eligible for deletion only after it has been successfully uploaded.
+In Fine Uploader UI mode, if this feature is enabled, a customizable delete
+link will appear next to the file after it has successfully uploaded.  File deletion can be enabled in the Fine Uploader
+options.</p>
+<p>You can also send a delete request via the <code>deleteFile</code> <a href="../api/methods.html">API method</a>.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* ...other options... */</span>
+    <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// defaults to false</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3handler&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>More information on <a href="../features/delete.html">deleting files here</a>.</p>
+<h2 id="putting-it-together_1">Putting it together</h2>
+<p>Now our Fine Uploader page should look something like this:</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>There are many ways to load Fine Uploader into your project. The code below creates a global <code>qq</code> variable, but there are
+other, better options. Please see <a href="../features/modules.html">modules feature page</a> for more details.</p>
+
+</div>
+
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;fine-uploader-5.14.1-new.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- The element where Fine Uploader will exist. --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fine-uploader&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- Fine Uploader --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;s3.fine-uploader.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;qq-template&quot;</span><span class="p">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-text-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Upload</span> <span class="nx">a</span> <span class="nx">file</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-selector qq-drop-processing&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Processing</span> <span class="nx">dropped</span> <span class="nx">files</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-spinner-selector qq-drop-processing-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-list-selector qq-upload-list&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">live</span><span class="o">=</span><span class="s2">&quot;polite&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">relevant</span><span class="o">=</span><span class="s2">&quot;additions removals&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-container-selector&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-spinner-selector qq-upload-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">img</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-selector&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">max</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">server</span><span class="o">-</span><span class="nx">scale</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-file-selector qq-upload-file&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-icon-selector qq-edit-filename-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Edit filename&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="nx">tabindex</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-size-selector qq-upload-size&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-cancel-selector qq-upload-cancel&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-retry-selector qq-upload-retry&quot;</span><span class="o">&gt;</span><span class="nx">Retry</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-delete-selector qq-upload-delete&quot;</span><span class="o">&gt;</span><span class="nx">Delete</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-status-text-selector qq-upload-status-text&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="err">/li&gt;</span>
+            <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-alert-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Close</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-confirm-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">No</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Yes</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-prompt-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Ok</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;fine-uploader&#39;</span><span class="p">),</span>
+            <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_BUCKET_NAME }.s3.amazonaws.com&#39;</span><span class="p">,</span>
+                <span class="nx">accessKey</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_ACCESS_KEY }&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">signature</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3/signature&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">uploadSuccess</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3/success&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">iframeSupport</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">localBlankPagePath</span><span class="o">:</span> <span class="s1">&#39;/success.html&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+               <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// defaults to false</span>
+            <span class="p">},</span>
+            <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/s3handler&#39;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p><a href="03-setting_up_server-s3.html">Next</a>, you'll learn to use Amazon S3 to handle uploads.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/greenkeeper_karma-spec-reporter-0.0.29/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
