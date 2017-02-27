@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -305,7 +364,7 @@ following options found in the <code>request</code> option:</p>
     </tbody>
 </table>
 
-<h3 id="fine-uploader-s3s-request-option">Fine Uploader S3's <code>request</code> option</h3>
+<h3 id="fine-uploader-s3s-request-option">Fine Uploader S3&#8217;s <code>request</code> option</h3>
 <p>The request option properties are a bit different if you are using Fine Uploader S3.  Here are the only properties of
 the <code>request</code> option used by Fine Uploader S3.</p>
 <table class="table table-striped table-bordered reference-table">
@@ -384,7 +443,7 @@ be set for delete file requests. Simply modify the <code>params</code> property 
 <code>deletFile</code> option. Either of these properties are capable of handling a
 variety of JavaScript objects.</p>
 <h4 id="simple-objects">Simple Objects</h4>
-<div class="codehilite"><pre><span></span><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;mark&quot;</span><span class="p">,</span>
     <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
 <span class="p">}</span>
@@ -392,7 +451,7 @@ variety of JavaScript objects.</p>
 
 
 <h4 id="nested-objects">Nested Objects</h4>
-<div class="codehilite"><pre><span></span><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">user</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;mark&#39;</span><span class="p">,</span>
         <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span>
@@ -406,7 +465,7 @@ variety of JavaScript objects.</p>
 <p>Yes, even functions! (They are first-class citizens in JS world)</p>
 <p>Each function will be evaluated <strong>for each</strong> file that is submitted. The following code snippet
 demonstrates how one would track the current number of uploaded files.</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fileNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">fileNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="c1">// ...</span>
 
@@ -498,7 +557,7 @@ through the query string rather than the request body.</p>
 <h4 class="alert-heading">Note</h4>
 
 <p>All parameters in the query string are <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/encodeURIComponent">URI Component Encoded</a>.
-This means that you must decode the parameter keys and values server-side. JavaScript's <code>encodeURIComponent</code> function
+This means that you must decode the parameter keys and values server-side. JavaScript&#8217;s <code>encodeURIComponent</code> function
 uses the UTF-8 encoding scheme so make sure that your server is using the same encoding. Lastly,
 be sure to the meta tag in your HTML: <code>&lt;meta charset='utf-8'&gt;</code></p>
 

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h3 id="setting-fineuploader-options">Setting FineUploader Options</h3>
+<p>At this point in the tutorial you should have an index.html page with a FineUploader instance. This section will go over setting some of the more common options of FineUploader.</p>
+<h4 id="required-options">Required Options</h4>
+<p>FineUploader comes with a wealth of options. The two most important ones are the endpoint and the element.</p>
+<div class="codehilite"><pre><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span> <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span> <span class="p">}</span>
+    <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"fine-uploader"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><em>Note: if using the jQuery plugin, there is no need to set the element.</em></p>
+<h4 id="debug-mode">Debug mode</h4>
+<p>Set <code>debug: true</code> to enable debug mode. With this mode on, Fine Uploader will spit out log messages to the console. This allows you to diagnose any application errors.</p>
+<h4 id="auto-upload">Auto Upload</h4>
+<p>Setting <code>auto upload: true</code> will mean that Fine Uploader will automatically send files to the server as soon as they&rsquo;re dropped or added to the uploader. If you want to control how and when files are uploaded, then set this option to false.</p>
+<h4 id="retrying-uploads">Retrying Uploads</h4>
+<p>Networks can be unreliable, and if your upload fails, FineUpload offers the ability to retry. The <code>retry</code> option can be set to enable this:</p>
+<div class="codehilite"><pre><span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+   <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// defaults to false</span>
+   <span class="nx">maxAutoAttempts</span><span class="o">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now, user&rsquo;s have 5 attempts to retry their upload.</p>
+<h4 id="deleting-files">Deleting Files</h4>
+<p>If a user has uploaded a file, but realized it was a mistake before aborting, then FineUploder can also help them delete files. FineUploader supports deleting files via POST and across origins.</p>
+<p>You can use the <code>deleteFile</code> option properties to control this feature:</p>
+<div class="codehilite"><pre><span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// defaults to false</span>
+    <span class="nx">forceConfirm</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>A file is eligible for deletion only after it has been successfully uploaded. In FineUploader mode, if this feature is enabled, a customizable delete link will appear next to the file after it has successfully uploaded.</p>
+<p>Upon clicking the delete link, the <code>onSubmitDelete</code> callback is invoked, and a customizable confirmation dialog is presented to the user (if <code>forceConfirm</code> is set to <code>true</code>).</p>
+<p>In FineUploaderBasic mode, you can send a delete request via the <code>deleteFile</code> API method.</p>
+<h4 id="putting-it-together">Putting it together</h4>
+<p>Now our FineUploader instance should look like this:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+        <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'fine-uploader'</span><span class="p">),</span>
+        <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span>
+        <span class="p">},</span>
+        <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+       <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+       <span class="nx">maxAutoAttempts</span><span class="o">:</span> <span class="mi">5</span>
+     <span class="p">},</span>
+        <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p><a href="setting_up_server.html">Next</a>, you&rsquo;ll learn to set up a simple server to handle uploads.</p>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -169,64 +228,64 @@
 
                 
 <h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h2>
-<p><strong>Q</strong>: Why can't I select multiple files at once in Android?
-<strong>A</strong>: Android doesn't officially support the multiple attribute on file input elements.  I believe
-some builds of Android unofficially supported this, but I can't recall which specific versions.
+<p><strong>Q</strong>: Why can&#8217;t I select multiple files at once in Android?
+<strong>A</strong>: Android doesn&#8217;t officially support the multiple attribute on file input elements.  I believe
+some builds of Android unofficially supported this, but I can&#8217;t recall which specific versions.
 See case <a href="https://github.com/Widen/fine-uploader/issues/840">#840</a> for more details.</p>
-<p><strong>Q</strong>: I'm using FineUploaderBasic mode, but I don't want to write my own code to handle dropped files and folders.  Can
+<p><strong>Q</strong>: I&#8217;m using FineUploaderBasic mode, but I don&#8217;t want to write my own code to handle dropped files and folders.  Can
 I use the DnD module used by FineUploader mode?
-<strong>A</strong>: Certainly, and it's quite easy to do so!  Head on over to the <a href="/tag/4.0.0/api/drag-and-drop.html">DnD Module Documentation</a> for more information.</p>
-<p><strong>Q</strong>: In IE, when my server returns its response to an upload request, I see a "Save As..." dialog box on the client.  What am I doing wrong?
-<strong>A</strong>: Your server's response content-type MUST be "text/plain".  IE does not handle the "application/json" mime-type.  You have
-probably read advice from others that claim "text/html" is also safe.  This is not always true.  You will run into problems with a content-type
-of "text/html" if your JSON response contains HTML.</p>
-<p><strong>Q:</strong> I like FineUploader mode, but I don't want to allow my users to utilize the drag &amp; drop feature.  How can I do this?
+<strong>A</strong>: Certainly, and it&#8217;s quite easy to do so!  Head on over to the <a href="/tag/4.0.0/api/drag-and-drop.html">DnD Module Documentation</a> for more information.</p>
+<p><strong>Q</strong>: In IE, when my server returns its response to an upload request, I see a &#8220;Save As&#8230;&#8221; dialog box on the client.  What am I doing wrong?
+<strong>A</strong>: Your server&#8217;s response content-type MUST be &#8220;text/plain&#8221;.  IE does not handle the &#8220;application/json&#8221; mime-type.  You have
+probably read advice from others that claim &#8220;text/html&#8221; is also safe.  This is not always true.  You will run into problems with a content-type
+of &#8220;text/html&#8221; if your JSON response contains HTML.</p>
+<p><strong>Q:</strong> I like FineUploader mode, but I don&#8217;t want to allow my users to utilize the drag &amp; drop feature.  How can I do this?
 <strong>A:</strong> Simply remove the drop zone elements from the template.</p>
-<p><strong>Q:</strong> Using the jQuery plug-in in FineUploaderBasic mode, I can't seem to get my upload button to appear.
+<p><strong>Q:</strong> Using the jQuery plug-in in FineUploaderBasic mode, I can&#8217;t seem to get my upload button to appear.
 <strong>A:</strong> It is important to understand that the target of your plug-in should be an existing container element for your upload
 component, <em>NOT</em> the button element.  Your button element must be specified separately via the <code>button</code> option.</p>
-<p><strong>Q:</strong> Why am I seeing an "Access Denied" error in IE's javascript console?
-<strong>A:</strong> There are two common causes.  One cause is triggering the "select files" dialog via javascript.  IE does not permit this
+<p><strong>Q:</strong> Why am I seeing an &#8220;Access Denied&#8221; error in IE&#8217;s javascript console?
+<strong>A:</strong> There are two common causes.  One cause is triggering the &#8220;select files&#8221; dialog via javascript.  IE does not permit this
 and will throw a security error when Fine Uploader attempts to submit the underlying form.  Another cause is returning a
 response code that is not 200.  The error occurs when Fine Uploader attempts to parse the response in the hidden iframe.
 See the <a href="/tag/4.0.0/integrating/limitations-ie.html">Internet Explorer Limitations</a> for more details.</p>
-<p><strong>Q:</strong> Why can't I use a progress bar, drag and drop, multiple file selection, chunking, or auto-resume in some browsers?
+<p><strong>Q:</strong> Why can&#8217;t I use a progress bar, drag and drop, multiple file selection, chunking, or auto-resume in some browsers?
 <strong>A:</strong> Some browsers (IE9 and older, along with Android 2.3.x and older) do not support the File API the <code>multiple</code> attribute on file input elements.
 These are all required to give you the best possible experience.</p>
-<p><strong>Q:</strong> Why isn't Opera supported?
+<p><strong>Q:</strong> Why isn&#8217;t Opera supported?
 <strong>A:</strong> Market share for Opera is incredibly low, and I have found annoying bugs in Opera that have taken up an unnecessary amount of my
 time in the past.  For such a small minority of users, I have decided that it is not worth my time.  There are many better options as far
 as browsers are concerned.  There are plans to support the newest version of Opera, based on Chromium.  See <a href="https://github.com/Widen/fine-uploader/issues/721">issue #721</a>
 for more details.</p>
-<p><strong>Q:</strong> Why isn't Safari for Windows supported?
+<p><strong>Q:</strong> Why isn&#8217;t Safari for Windows supported?
 <strong>A:</strong> There is really no reason to use Safari for Windows.   Webkit is better represented on that platform in Chrome.
-Apple doesn't appear to be interested in maintaining Safari for Windows anymore either.  Switch to Chrome.</p>
-<p><strong>Q:</strong> Why isn't IOS5 supported?
-<strong>A:</strong> IOS5 doesn't even support file input elements.</p>
-<p><strong>Q:</strong> Why isn't folder drag &amp; drop uploading supported in any browser other than Chrome 21+?
+Apple doesn&#8217;t appear to be interested in maintaining Safari for Windows anymore either.  Switch to Chrome.</p>
+<p><strong>Q:</strong> Why isn&#8217;t IOS5 supported?
+<strong>A:</strong> IOS5 doesn&#8217;t even support file input elements.</p>
+<p><strong>Q:</strong> Why isn&#8217;t folder drag &amp; drop uploading supported in any browser other than Chrome 21+?
 <strong>A:</strong> Chrome 21 was the first browser version to implement the HTML5 Filesystem API.  This is required to handle dropped folders.
 Currently, no other browsers support this API.</p>
-<p><strong>Q:</strong> I have created a \&lt;button> element for my uploader button, but this doesn't seem to work in IE.  Why?
+<p><strong>Q:</strong> I have created a \&lt;button> element for my uploader button, but this doesn&#8217;t seem to work in IE.  Why?
 <strong>A:</strong> In IE, the button element receives the click event, instead of the child input element.  Use a \&lt;div> or a \&lt;span> or an \&lt;a> instead.</p>
-<p><strong>Q:</strong> Why do I only see a "Processing..." message next to a file (in FineUploader mode for the traditional uploader)
+<p><strong>Q:</strong> Why do I only see a &#8220;Processing&#8230;&#8221; message next to a file (in FineUploader mode for the traditional uploader)
 in Chrome &amp; Safari after the last byte has been sent but the server has yet to respond?
 <strong>A:</strong> The implementation of the onProgress notification that tells us the status of the bytes sent to the server varies from browser to browser, unfortunately.
-Webkit browsers have elected to follow the "spirit" of the W3C spec, while Firefox, and (I beleive) IE10, obey the spec in the most strict sense.  I have discussed
-this in some detail <a href="https://github.com/Widen/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
-<p><strong>Q:</strong> When chunking and multipart encoded are both enabled, why must I determine the original file's name by parsing the qqfilename parameter?
+Webkit browsers have elected to follow the &#8220;spirit&#8221; of the W3C spec, while Firefox, and (I beleive) IE10, obey the spec in the most strict sense.  I have discussed
+this in some detail <a href="https://github.com/Widen/fine-uploader/issues/404#issuecomment-10124160">in the &#8220;processing&#8221; status message feature case</a>.</p>
+<p><strong>Q:</strong> When chunking and multipart encoded are both enabled, why must I determine the original file&#8217;s name by parsing the qqfilename parameter?
 <strong>A:</strong> The file data is stored in one of the multipart boundaries contained in the request payload.  Normally, the
 content-disposition header for this boundary contains the actual file name.  However, when the file is split up into parts
 client-side, we are sending a <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">Blob</a> to represent a different part of the
 <a href="http://www.w3.org/TR/FileAPI/#dfn-file">File</a> in each request.  A <a href="http://www.w3.org/TR/2010/WD-XMLHttpRequest2-20100907/#the-fo.htmlata-interface">FormData</a> object is used to construct these
 requests.  When a Blob is added to a Fo.htmlata object, the user agent sets the content-disposition header for the associated
-multipart boundary in the request to "blob" (or sometimes an empty or random string).  As a result, we must
+multipart boundary in the request to &#8220;blob&#8221; (or sometimes an empty or random string).  As a result, we must
 pass the original file name in a parameter.</p>
 <p><strong>Q:</strong> How can I prevent users from dropping folders into browsers that do not support folder uploading?
 <strong>A:</strong> There is no reliable way to prevent users from dropping folders into the drop zone of any browser other than
 Chrome 21+, currently.  This is due to the fact that there is no way to reliably detect if a folder has been dropped
 unless the user agent implements the <a href="http://www.w3.org/TR/file-system-api/">Filesystem API</a>. Folder dropping is only
 supported in Chrome 21+, since this is the only browser that implements the Filesystem API.  You can parse the user
-agent string to determine if folder dropping is supported, and then inform your users in your application's UI.
+agent string to determine if folder dropping is supported, and then inform your users in your application&#8217;s UI.
 Theoretically, you could check for the appropriate function on the <a href="http://www.w3.org/TR/2011/WD-html5-20110113/dnd.html#the-datatransfer-interface">DataTransfer</a>
 object prototype, but this would not work cross-browser, since webkit does not expose this interface, unfortunately.</p>
 

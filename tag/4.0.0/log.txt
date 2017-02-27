@@ -1,0 +1,127 @@
+
+#############################
+      _             __
+     | |           / _|
+   __| | ___   ___| |_ _   _
+  / _` |/ _ \ / __|  _| | | |
+ | (_| | (_) | (__| | | |_| |
+  \__,_|\___/ \___|_|  \__,_|
+
+#############################
+
+2013-10-23 16:01:09
+> Docfu
+uri: https://github.com/Widen/fine-uploader
+root: docs
+dest: /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0
+
+>> Source
+source: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/
+static: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/_static
+templates: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/_templates
+
+>> Dest
+dest: /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0
+static: /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/_static
+
+>> Git ref
+type: tag
+value: 4.0.0 
+{'GIT_REF_TYPE': 'tag', 'URL_ROOT': '/tag/4.0.0', 'TAG': '', 'ASSETS': '/tag/4.0.0/_static', 'BRANCH': 'heads/4.0.0\n', 'ALL_GIT_REFS': {'favicon.ico': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/favicon.ico', 'refs': []}, 'branch': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch', 'refs': [{'ref_val': 'hotfix_bucket-underscores', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/hotfix_bucket-underscores'}, {'ref_val': 'feature_boilerplate', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feature_boilerplate'}, {'ref_val': 'feature_private-function-testing', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feature_private-function-testing'}, {'ref_val': 'site_customize', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/site_customize'}, {'ref_val': 'develop', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/develop'}, {'ref_val': 'feature_4.0-site-update', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feature_4.0-site-update'}, {'ref_val': 'feature_templating-redesign', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feature_templating-redesign'}, {'ref_val': 'feature_thumbnails', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feature_thumbnails'}, {'ref_val': 'gh-pages', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/gh-pages'}, {'ref_val': 'feat_modularize-the-builds', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/feat_modularize-the-builds'}, {'ref_val': 'master', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/branch/master'}]}, 'robots.txt': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/robots.txt', 'refs': []}, 'tag': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag', 'refs': [{'ref_val': '3.7.1', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.7.1'}, {'ref_val': '3.8.0', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.8.0'}, {'ref_val': '3.8.1', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.8.1'}, {'ref_val': '3.8.2', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.8.2'}, {'ref_val': '3.9.0', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.9.0'}, {'ref_val': '3.9.0-3', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.9.0-3'}, {'ref_val': '3.9.1', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/3.9.1'}, {'ref_val': '4.0.0', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0'}]}, 'htaccess-Fri Aug 16 08:08:46 PDT 2013': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/htaccess-Fri Aug 16 08:08:46 PDT 2013', 'refs': []}, 'file': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/file', 'refs': [{'ref_val': 'fine-uploader', 'path': '/home/fineuploaderdocs/docs.fineuploader.com/file/fine-uploader'}]}, 'hook.php': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/hook.php', 'refs': []}, 'favicon.gif': {'path': '/home/fineuploaderdocs/docs.fineuploader.com/favicon.gif', 'refs': []}}, 'GIT_REF': '4.0.0', 'PKG': {u'license': u'GPLv3', u'description': u'Multiple file upload component with progress-bar, drag-and-drop, support for all modern browsers.', u'repository': {u'url': u'git://github.com/Widen/fine-uploader.git', u'type': u'git'}, u'title': u'Fine Uploader', u'directories': {u'test': u'test', u'doc': u'docs'}, u'author': u'Widen Enterprises, Inc.', u'bugs': {u'url': u'https://github.com/Widen/fine-uploader/issues'}, u'licenses': [{u'url': u'http://www.gnu.org/licenses/gpl-3.0.txt', u'type': u'GPL 3'}, {u'url': u'http://fineuploader.com/downloads.html', u'type': u'Widen Commerical License'}], u'maintainers': [u'Ray Nicholus <rnicholus@widen.com>', u'Mark Feltner <mfeltner@widen.com>'], u'version': u'4.0.0', u'dependencies': {u'uuid': u'~1.4.1', u'underscore': u'~1.5.2', u'optimist': u'~0.6.0'}, u'scripts': {u'test': u'grunt test', u'docs': u'make docs', u'build': u'make build'}, u'keywords': [u'upload', u'file', u'chunking', u'file-uploader'], u'devDependencies': {u'coffee-script': u'~1.6.3', u'semver': u'2.0.x', u'karma-sauce-launcher': u'~0.1.0', u'karma-slimerjs-launcher': u'~0.1.2', u'grunt-contrib-copy': u'~0.4.1', u'grunt-version': u'~0.2.2', u'grunt-karma': u'~0.6.2', u'grunt-contrib-concat': u'~0.3.0', u'grunt-saucelabs': u'git://github.com/feltnerm/grunt-saucelabs.git', u'grunt-open': u'~0.2.2', u'grunt-contrib-uglify': u'~0.2.2', u'grunt-contrib-watch': u'~0.4.4', u'grunt-bower-task': u'~0.3.1', u'grunt-contrib-compress': u'~0.5.2', u'wd': u'git://github.com/admc/wd.git', u'glob': u'~3.2.6', u'grunt-contrib-cssmin': u'~0.6.1', u'karma-mocha': u'~0.1.0', u'bower': u'~1.2.5', u'grunt-contrib-clean': u'~0.4.1', u'grunt-strip-code': u'~0.1.2', u'grunt-banner': u'~0.1.4', u'grunt': u'~0.4.1', u'grunt-concurrent': u'~0.3.1', u'grunt-shell': u'~0.3.1', u'grunt-contrib-connect': u'~0.3.0', u'request': u'~2.21.0', u'karma': u'~0.10.2', u'grunt-contrib-jshint': u'~0.6.0', u'async': u'~0.2.9', u'grunt-mocha-webdriver': u'~0.9.3'}, u'main': u'./fine-uploader/js/fineuploader.js', u'name': u'fineuploader'}}
+Walking: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/browser-support.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/contributing.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/faq.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/index.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/support.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/upgrading-to-4.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/events.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/methods-s3.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/methods.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/options-s3.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/options-ui.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/options.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/api/qq.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/endpoint_handlers/amazon-s3.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/endpoint_handlers/traditional.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/CORS.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/async-tasks-and-promises.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/cancellable-uploads.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/chunking.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/delete.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/drag-and-drop.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/extra-buttons.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/filename-edit.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/handling-errors.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/paste-to-upload.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/progress-bars.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/request-parameters.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/resume.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/retry.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/statistics-and-status-updates.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/styling.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/thumbnails.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/upload-files.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/upload-from-mobile-camera.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/features/validation.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/integrating/bootstrap.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/integrating/jquery.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/modes/core.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/modes/ui.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/01-getting-started.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/02-setting_options-s3.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/02-setting_options.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/03-setting_up_server-s3.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/03-setting_up_server.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/enabling_fineuploader.jmd
+Source file found: /home/fineuploaderdocs/tmp/docfu-kueYfO/docs/quickstart/html5_features.jmd
+Rendering documents @ /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0
+  > Rendering document: events.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/events.jmd
+  > Rendering document: methods-s3.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/methods-s3.jmd
+  > Rendering document: methods.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/methods.jmd
+  > Rendering document: options-s3.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/options-s3.jmd
+  > Rendering document: options-ui.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/options-ui.jmd
+  > Rendering document: options.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/options.jmd
+  > Rendering document: qq.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/api/qq.jmd
+  > Rendering document: browser-support.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/browser-support.jmd
+  > Rendering document: contributing.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/contributing.jmd
+  > Rendering document: amazon-s3.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/endpoint_handlers/amazon-s3.jmd
+  > Rendering document: traditional.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/endpoint_handlers/traditional.jmd
+  > Rendering document: faq.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/faq.jmd
+  > Rendering document: CORS.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/CORS.jmd
+  > Rendering document: async-tasks-and-promises.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/async-tasks-and-promises.jmd
+  > Rendering document: cancellable-uploads.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/cancellable-uploads.jmd
+  > Rendering document: chunking.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/chunking.jmd
+  > Rendering document: delete.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/delete.jmd
+  > Rendering document: drag-and-drop.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/drag-and-drop.jmd
+  > Rendering document: extra-buttons.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/extra-buttons.jmd
+  > Rendering document: filename-edit.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/filename-edit.jmd
+  > Rendering document: handling-errors.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/handling-errors.jmd
+  > Rendering document: paste-to-upload.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/paste-to-upload.jmd
+  > Rendering document: progress-bars.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/progress-bars.jmd
+  > Rendering document: request-parameters.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/request-parameters.jmd
+  > Rendering document: resume.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/resume.jmd
+  > Rendering document: retry.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/retry.jmd
+  > Rendering document: statistics-and-status-updates.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/statistics-and-status-updates.jmd
+  > Rendering document: styling.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/styling.jmd
+  > Rendering document: thumbnails.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/thumbnails.jmd
+  > Rendering document: upload-files.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/upload-files.jmd
+  > Rendering document: upload-from-mobile-camera.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/upload-from-mobile-camera.jmd
+  > Rendering document: validation.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/features/validation.jmd
+  > Rendering document: index.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/index.jmd
+  > Rendering document: bootstrap.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/integrating/bootstrap.jmd
+  > Rendering document: jquery.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/integrating/jquery.jmd
+  > Rendering document: core.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/modes/core.jmd
+  > Rendering document: ui.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/modes/ui.jmd
+  > Rendering document: 01-getting-started.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/01-getting-started.jmd
+  > Rendering document: 02-setting_options-s3.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/02-setting_options-s3.jmd
+  > Rendering document: 02-setting_options.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/02-setting_options.jmd
+  > Rendering document: 03-setting_up_server-s3.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/03-setting_up_server-s3.jmd
+  > Rendering document: 03-setting_up_server.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/03-setting_up_server.jmd
+  > Rendering document: enabling_fineuploader.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/enabling_fineuploader.jmd
+  > Rendering document: html5_features.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/quickstart/html5_features.jmd
+  > Rendering document: support.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/support.jmd
+  > Rendering document: upgrading-to-4.jmd --> /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0/upgrading-to-4.jmd
+Documents rendered @ /home/fineuploaderdocs/docs.fineuploader.com/tag/4.0.0
+Cleaning up ...
+Temporary path removed at: /home/fineuploaderdocs/tmp/docfu-kueYfO

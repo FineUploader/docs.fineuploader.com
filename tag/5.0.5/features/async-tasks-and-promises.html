@@ -1,0 +1,547 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Async Tasks and Promises | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.5/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.5/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.5">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.5/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.5/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.5/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.5/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.5/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.5/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.5/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.5/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.5/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.5/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.5/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.5/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.5/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.5/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.5/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.5/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.5/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.5/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.5/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.5/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.5/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.5/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.5/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.5/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.5/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.5/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.5/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.5/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.5/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.5/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.5/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.5/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.5/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.5/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.5/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.5/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.5/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.5/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.5/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.5/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.5/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.5/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.5">Current: 5.0.5</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.5"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.5</p></span>
+
+                
+
+                
+<h1 class="page-header" id="async-tasks-and-promises">Async Tasks and Promises</h1>
+<p>In some cases, Fine Uploader uses &#8220;promises&#8221;, both internally and via the API.
+Promises are a design pattern taken from the functional programming style and
+are extremely helpful when dealing with asynchronous operations.</p>
+<p>Fine Uploader&#8217;s support for promises is encapsulated in the <code>qq.Promise</code> module.  Starting with version 5.0, you
+can use any A+ certified promise implementation to communicate with Fine Uploader as well.  That is, you are
+no longer bound to <code>qq.Promise</code>.  Instead, you can use <a href="https://github.com/kriskowal/q">Q</a>, or <a href="https://github.com/tildeio/rsvp.js/">RSVP</a>, for example, to return promises from any
+promissory callback handlers.</p>
+<p>For more informaton on promises in JavaScript, have a look at
+<a href="http://12devs.co.uk/articles/promises-an-alternative-way-to-approach-asynchronous-javascript/">Promises &#8212; an alternative way to approach asynchronous JavaScript</a>.</p>
+<h2 id="promissory-callbacks">Promissory Callbacks</h2>
+<p>Promises are acceptable return values in the following <a href="../api/events.html">event handlers</a>.
+All of these callbacks can also prevent an associated action from being executed
+with a false return value (non-promise) or a call to <code>failure()</code> on a returned
+promise instance:</p>
+<ul>
+<li><code>onSubmit</code></li>
+<li><code>onCancel</code></li>
+<li><code>onCredentialsExpired</code></li>
+<li><code>onValidateBatch</code></li>
+<li><code>onValidate</code></li>
+<li><code>onSubmitDelete</code></li>
+<li><code>onPasteReceived</code></li>
+</ul>
+<p>You are not required to return a promise &#8212; you can simply return <code>false</code> (or nothing).
+However, there are some instances where you may want to perform
+some asynchronous work in your callback handler. A promise can be returned from
+any of the above callbacks if you need to execute  some non-blocking task,
+such as an AJAX request, or asking the user for input via a modal window that
+does not block the UI thread (such as a Bootstrap modal, or a Bootbox.js dialog box).</p>
+<h2 id="qqpromise-api">qq.Promise API</h2>
+
+    <span class="method row-fluid">
+    <h4 id="then"><a style="color: #f87436;" href="#then">then (successCallback, failureCallback)</a></h4>
+    <span class="method-description">
+        <p>Register callbacks from success <em>and</em> failure. The promise instance that <code>then</code> is called on will pass any values into the provided callbacks. If success or failure have already occurred before these callbacks have been registered, then they will be called immediately after this call has been executed. Each subsequent call to <code>then</code> registers an additional set of callbacks.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>successCallback</em></dt>
+    <dd class="method-param-description span8"><p>The function to call when the promise is successfully fulfilled.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>failureCallback</em></dt>
+    <dd class="method-param-description span8"><p>The function to call when the promise is unsuccessfully fulfilled.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-qq.promise">qq.Promise</span>
+
+</dd>
+    <dd class="method-return-description span8">An instance of a promise.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="done"><a style="color: #f87436;" href="#done">done (callback)</a></h4>
+    <span class="method-description">
+        <p>Register callbacks for success <em>or</em> failure. Invoked when the promise is fulfilled regardless of the result. The promise instance that <code>done</code> is called on will pass any values into the provided callback. Each call to <code>done</code> registers an additional set of callbacks</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>callback</em></dt>
+    <dd class="method-param-description span8"><p>The function to call when the promise is fulfilled, successful or not.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-qq.promise">qq.Promise</span>
+
+</dd>
+    <dd class="method-return-description span8">An instance of a promise.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+    <span class="method row-fluid">
+    <h4 id="success"><a style="color: #f87436;" href="#success">success (callback)</a></h4>
+    <span class="method-description">
+        <p>Call this on a promise to indicate success. The parameter values will depend on the situation.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>callback</em></dt>
+    <dd class="method-param-description span8"><p>The function to call when all promises have been fulfilled</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-qq.promise">qq.Promise</span>
+
+</dd>
+    <dd class="method-return-description span8">An instance of a promise.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+    <span class="method row-fluid">
+    <h4 id="failure"><a style="color: #f87436;" href="#failure">failure (callback)</a></h4>
+    <span class="method-description">
+        <p>Call this on a promise to indicate success. The parameter values will depend on the situation.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>callback</em></dt>
+    <dd class="method-param-description span8"><p>The function to call when all promises have been fulfilled.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-qq.promise">qq.Promise</span>
+
+</dd>
+    <dd class="method-return-description span8">An instance of a promise.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+<h2 id="promissory-options">Promissory Options</h2>
+<p>The <code>showPrompt</code> and <code>showConfirm</code> options in Fine Uploader accept promissory return values.
+This makes it trivial to do work (such as launching a confirmation window and waiting for user input)
+without blocking the rest of the UI thread (and thus stopping downloads).</p>
+<h3 id="example">Example</h3>
+<p>Suppose you are overriding a promissory function or callback.  For example,
+suppose you want to override the <code>showPrompt</code> option (function).  The default
+implementation of this function uses <code>window.prompt</code>, which isn&#8217;t very stylish.
+You may want to provide a more appropriate prompt dialog for your application.
+Your implementation, using <a href="http://bootboxjs.com/">bootbox</a>
+for your prompt dialog, might look something like this:</p>
+<div class="codehilite"><pre><span class="nx">showPrompt</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">Promise</span><span class="p">();</span>
+
+    <span class="nx">bootbox</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter a value&quot;</span><span class="p">,</span> <span class="s2">&quot;Cancel&quot;</span><span class="p">,</span> <span class="s2">&quot;Confirm&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">trimStr</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">promise</span><span class="p">.</span><span class="nx">failure</span><span class="p">(</span><span class="s2">&quot;User canceled prompt dialog or entered an empty string.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">promise</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="nx">defaultValue</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">promise</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The bootbox prompt dialog is not blocking, meaning the <code>showPrompt</code> call will
+return before the user has entered any information.  So, you must return a
+promise that will be updated with the user&#8217;s response after it is submitted.
+Fine Uploader will wait for a callback indicating either success or
+failure, and will then continue executing the original task
+based on this result.  One use of the <code>showPrompt</code> function is to grab a name,
+from the user, of a pasted image.  In this case
+once the result has been updated on the promise instance, Fine Uploader will
+proceed to upload the pasted image using the
+name supplied by the user.</p>
+<p><a href="http://blog.fineuploader.com/2013/05/07/callbacks-that-permit-asynchronous-returns/">For more information, see the associated blog post</a></p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.5/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

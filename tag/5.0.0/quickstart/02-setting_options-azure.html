@@ -196,7 +196,7 @@
                 
 
                 
-<h1 id="setting-fine-uploader-options-azure-blob-storage-page-header">Setting Fine Uploader Options <small>Azure Blob Storage</small>{: .page-header }</h1>
+<h1 class="page-header" id="setting-fine-uploader-options-wzxhzdk162azure-blob-storagewzxhzdk163">Setting Fine Uploader Options <small>Azure Blob Storage</small></h1>
 <p>At this point in the tutorial you should have an very simple HTML page with a
 Fine Uploader Azure instance. This section will get you started with setting some of
 the more common options of Fine Uploader.</p>
@@ -221,14 +221,14 @@ Fine Uploader Azure, the endpoint should point to your Azure Blob Storage contai
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure&#8217;s API does
 not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
 If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
 handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
 
 </div>
 
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">supportedFeatures</span><span class="p">.</span><span class="nx">ajaxUploading</span><span class="p">)</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">supportedFeatures</span><span class="p">.</span><span class="nx">ajaxUploading</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
         <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;https://{ YOUR_STORAGE_ACCOUNT_NAME }.blob.core.windows.net/{ YOUR_CONTAINER_NAME }&#39;</span>
@@ -247,7 +247,7 @@ handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code
 <h3 id="debug-mode">Debug mode</h3>
 <p>Debug mode is used to begin diagnosing any application errors. Debug mode can
 be enabled in the options of Fine Uploader:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
     <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="cm">/* ...other options... */</span>
 <span class="p">});</span>
@@ -261,7 +261,7 @@ have this mode on during development.</p>
 <h3 id="retrying-uploads_1">Retrying Uploads</h3>
 <p>Networks can be unreliable, and if your upload fails, Fine Uploader offers the
 ability to retry. The <code>retry</code> option can be set to enable this:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
     <span class="cm">/* ...other options... */</span>
     <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
        <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// defaults to false</span>
@@ -279,7 +279,7 @@ link will appear next to the file after it has successfully uploaded.  File dele
 options.  You can also send a delete request via the <code>deleteFile</code> <a href="../api/methods.html">API method</a>.</p>
 <p>Note that Fine Uploader Azure will send delete file requests directly to Azure via the REST API.  This means that the
 <code>endpoint</code> property of the <code>deleteFile</code> feature is irrelevant.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
     <span class="cm">/* ...other options... */</span>
     <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// default is false</span>
@@ -291,23 +291,23 @@ options.  You can also send a delete request via the <code>deleteFile</code> <a 
 <p>More information on <a href="../features/delete.html">deleting files here</a>.</p>
 <h2 id="putting-it-together">Putting it together</h2>
 <p>Now our Fine Uploader page should look something like this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;fineuploader-5.0.0.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;fineuploader-5.0.0.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
 
     <span class="c">&lt;!-- The element where Fine Uploader will exist. --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fine-uploader&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fine-uploader&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- jQuery version 1.10.x (if you are using the jQuery plugin --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
     <span class="c">&lt;!-- Fine Uploader-jQuery --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery.fineuploader-5.0.0.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.fineuploader-5.0.0.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
     <span class="c1">// Wait until the DOM is &#39;ready&#39;</span>
     <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span>
@@ -328,9 +328,9 @@ options.  You can also send a delete request via the <code>deleteFile</code> <a 
             <span class="p">}</span>
         <span class="p">});</span>
     <span class="p">});</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;qq-template&quot;</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Drop</span> <span class="nx">files</span> <span class="nx">here</span> <span class="nx">to</span> <span class="nx">upload</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
@@ -359,14 +359,14 @@ options.  You can also send a delete request via the <code>deleteFile</code> <a 
               <span class="o">&lt;</span><span class="err">/li&gt;</span>
             <span class="o">&lt;</span><span class="err">/ul&gt;</span>
         <span class="o">&lt;</span><span class="err">/div&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
 
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 
 
-<p><a href="03-setting_up_server-azure.html">Next</a>, you'll learn to use Fine Uploader Azure to handle uploads.</p>
+<p><a href="03-setting_up_server-azure.html">Next</a>, you&#8217;ll learn to use Fine Uploader Azure to handle uploads.</p>
 
 
                 

@@ -247,14 +247,14 @@
 
                 
 <h1 class="page-header" id="validation_1">Validation</h1>
-<p>Fine Uploader's validation abilities allow integrators to strictly define
+<p>Fine Uploader&#8217;s validation abilities allow integrators to strictly define
 what sorts of files can and can not be uploaded.</p>
 <p>Fine Uploader validators (defined in the options) execute.</p>
 <p>If the <code>validation.stopOnFirstInvalidFile</code> option is enabled, then neither of
 these events will be thrown preceding a file being invalid (i.e., one of these
 callbacks returned <code>false</code>).</p>
 <p>Also note that a <code>BlobData</code> object has two properties:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="cm">/* The name of the file or blob */</span>
     <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="cm">/* the size of the file or blob */</span>
 <span class="p">}</span>
@@ -276,7 +276,7 @@ via the <code>sizeLimit</code> or <code>minSizeLimit</code> options in the <code
 option for specifics.  Keep in mind that this feature was created with processed images in mind, and not images
 sent directly from a camera.  Some browsers may natively report width and height swapped for JPEGs (from cameras) based
 on the orientation of the camera.  Those uploading pictures directly from cameras have no control over the
-dimensions of the image, so it doesn't seem to make much sense to impose these restrictions if you expect your users
+dimensions of the image, so it doesn&#8217;t seem to make much sense to impose these restrictions if you expect your users
 to upload images directly via a camera.  In that case, it likely makes more sense to allow the user to scale the image
 first (before submitting the file) or simply impose a file size restriction.</p>
 <p>Also, this feature is dependant on the preview generation feature, and therefore is only supported in modern browsers.

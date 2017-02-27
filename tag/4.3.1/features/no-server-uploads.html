@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>No-Server Uploads | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/4.3.1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/4.3.1/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/4.3.1">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/4.3.1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/4.3.1/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/4.3.1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/4.3.1/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/4.3.1/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/4.3.1/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/4.3.1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/4.3.1/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/4.3.1/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/4.3.1/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/4.3.1/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/4.3.1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/4.3.1/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/4.3.1/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/4.3.1/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/4.3.1/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/4.3.1/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/4.3.1/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/4.3.1/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/4.3.1/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/4.3.1/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/4.3.1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/4.3.1/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/4.3.1/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/4.3.1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/4.3.1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/4.3.1/api/options.html">Core</a></li>
+                                <li><a href="/tag/4.3.1/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/4.3.1/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/4.3.1/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/4.3.1/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/4.3.1/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/4.3.1/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/4.3.1/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/4.3.1/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.3.1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/4.3.1/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/4.3.1/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/4.3.1/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/4.3.1/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class='active'><a href="/tag/4.3.1">Current: 4.3.1</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>4.3.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="upload-without-server-side-code">Upload Without Server-side Code</h1>
+<h3 id="summary_1">Summary</h3>
+<p>Enabling file uploads for your web application is easier than ever with Fine Uploader S3&#8217;s client-side
+request signing support.  With this feature, you don&#8217;t need to worry about server-side languages.  In fact,
+you only need a server to host your HTML and JavaScript files.  You can even delegate this task to an Amazon
+S3 bucket, such as in the <a href="https://fineuploader-s3-client-demo.s3.amazonaws.com/index.html">official Fine Uploader S3 no-server example</a>.</p>
+<h3 id="api">API</h3>
+<p>A <a href="../api/options-s3.html#credentials-option"><code>credentials</code> option</a> has been created for Fine Uploader S3 to support this workflow.  It allows you to
+pass temporary credentials (secret &amp; public AWS keys) to Fine Uploader S3 during initialization.  An <code>expiration</code> date
+for the credentials must also be provided.  Additionally, if you are using temporary credentials from the
+AWS Security Token Service, you will also need to provide a <code>sessionToken</code>.</p>
+<p>When your credentials expire, your <a href="../api/events-s3.html#credentialsexpired"><code>credentialsExpired</code> event handler</a> will be invoked.  You must then return a
+<a href="async-tasks-and-promises.html"><code>qq.Promise</code> object</a> and fulfill it by passing the new credentials via the <code>success</code> method on the promise.  The
+validity of credentials is checked internall by Fine Uploader S3 just before a request is sent to S3.  If the
+credentials have expired, the request will be held up until your event handler specifies a new set of credentials or
+fails its attempt to do so.</p>
+<p>An <a href="../api/methods-s3.html">API method, <code>setCredentials</code></a>, also exists if you would like to update initial credentials after
+Fine Uploader S3 has been initialized.  You can also utilize this method to tell Fine Uploader S3 about
+temporary credentials for the first time at some point after the uploader instance has been created.</p>
+<h3 id="best-practices">Best Practices</h3>
+<p>In light of the fact that this workflow requires you expose an AWS secret key client-side (making it easy for
+malicious users to gain access to your secret key), there are some precautionary measure you should take:</p>
+<ul>
+<li>Do not hard-code your credentials client-side.  Your credentials should be <strong>temporary</strong>, with a reasonable expiration date.</li>
+<li>Communication between your page and the entity that provides temporary credentials should be secured in some fashion (i.e. SSL).</li>
+<li>Communication between your Fine Uploader S3 instance and your S3 bucket should be secured via SSL.</li>
+<li>Consider use of an established identity provider along with AWS STS to obtain temporary credentials.  An example of this can be seen in the <a href="https://fineuploader-s3-client-demo.s3.amazonaws.com/index.html">official Fine Uploader S3 no-server upload example</a>.</li>
+</ul>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

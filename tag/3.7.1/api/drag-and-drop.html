@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="file-drag-and-drop-module">File Drag and Drop Module</h2>
+<h4 id="note-this-module-is-aimed-at-fineuploaderbasic-mode-integrators-only-if-you-are-running-the-library-in-fineuploader-mode-have-a-look-at-the-draganddrop-options-instead">Note: This module is aimed at FineUploaderBasic mode integrators only.  If you are running the library in FineUploader mode, have a look at the <a href="/tag/3.7.1/integrating/options/fineuploader.html#draganddrop-option-properties">dragAndDrop options</a> instead.</h4>
+<p>If you are integrating Fine Uploader and utilizing FineUploaderBasic mode, you are likely building you own UI entirely.<br>
+In case you want to support drag and drop of folders and files, you probably don&rsquo;t want to re-invent the wheel, since<br>
+Fine Uploader already has code to handle this in FineUploader mode.  Fine Uploader&rsquo;s drag &amp; drop code has been moved into<br>
+a standalone module, so it can be easily integrated into your FineUploaderBasic mode app (or even any non-Fine Uploader app).<br>
+This document will explain how to utilize this module.</p>
+<h3 id="non-jquery-example">Non-jQuery Example</h3>
+<p>If you are not utilizing jQuery, you can use the plain javascript DnD module.  Here is a simple example:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">dragAndDropModule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">DragAndDrop</span><span class="p">({</span>
+        <span class="nx">dropZoneElements</span><span class="o">:</span> <span class="p">[</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myDropZone'</span><span class="p">)],</span>
+        <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">dropActive</span><span class="o">:</span> <span class="s2">"cssClassToAddToDropZoneOnEnter"</span>
+        <span class="p">},</span>
+        <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">processingDroppedFiles</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//TODO: display some sort of a "processing" or spinner graphic</span>
+          <span class="p">},</span>
+          <span class="nx">processingDroppedFilesComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">files</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//TODO: hide spinner/processing graphic</span>
+
+            <span class="nx">fineUploaderBasicInstance</span><span class="p">.</span><span class="nx">addFiles</span><span class="p">(</span><span class="nx">files</span><span class="p">);</span> <span class="c1">//this submits the dropped files to Fine Uploader</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}),</span>
+
+  <span class="nx">fineUploaderBasicInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">"server/uploadHandler"</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</pre></div>
+
+
+<h2 id="jquery-plug-in-wrapper-notes-example">jQuery Plug-in Wrapper Notes &amp; Example</h2>
+<p>For jQuery users, a jQuery-wrapped DnD module is also available in the combined and minified Fine Uplpoader javascript file.<br>
+This jQuery wrapper follows the same conventions as the jQuery plug-in that wraps the uploader library.  To read more<br>
+about these conventions, please see the <a href="/tag/3.7.1/integrating/modes/using-jquery-plugin.html">Using jQuery plug-in</a> readme document.</p>
+<p>There are a couple things to be aware of when using the DnD standalone module via the jQuery plug-in wrapper:<br>
+<em> The only API method available is <code>dispose</code>.  This restriction is in place since the other API functions don&rsquo;t really make sense in the context of a jQuery plug-in.<br>
+</em> The target of your plug-in instance takes the place of the <code>dropZoneElements</code> option.  Do not pass a <code>dropZoneElements</code> option, it will be ignored.</p>
+<p>Here is the above example rewritten using the jQuery plug-in wrappers:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#myDropZone'</span><span class="p">).</span><span class="nx">fineUploaderDnd</span><span class="p">({</span>
+    <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">dropActive</span><span class="o">:</span> <span class="s2">"cssClassToAddToDropZoneOnEnter"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'processingDroppedFiles'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//TODO: display some sort of a "processing" or spinner graphic</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'processingDroppedFilesComplete'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">files</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//TODO: hide spinner/processing graphic</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#fineUploaderBasicContainer'</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">'addFiles'</span><span class="p">,</span> <span class="nx">files</span><span class="p">);</span> <span class="c1">//this submits the dropped files to Fine Uploader</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#fineUploaderBasicContainer'</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">"server/uploadHandler"</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="options">Options</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dropZoneElements</td>
+            <td>array of HTML elements</td>
+            <td>[]</td>
+            <td>Use this option to specify all container elements that should be treated as drop zones by the module.</td>
+        </tr>
+        <tr>
+            <td>hideDropZonesBeforeEnter</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Set this to true if you would like to ensure that the contents of all drop zones are only revealed when
+            a file has entered the drop zone.</td>
+        </tr>
+        <tr>
+            <td>allowMultipleItems</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Set this to false if you would like to prevent a user from dropping more than one item at once.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="classes-option"><code>classes</code> option</h4>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dropActive</td>
+            <td>string</td>
+            <td>null</td>
+            <td>Specify a CSS class you would like the module to assign to the drop zone when a file has entered the drop zone.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="callbacks-option"><code>callbacks</code> option</h4>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>arguments</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>processingDroppedFiles</td>
+            <td>none</td>
+            <td>Invoked when the module has started processing the set of dropped files.</td>
+        </tr>
+        <tr>
+            <td>processingDroppedFilesComplete</td>
+            <td>array of <code>File</code> objects</td>
+            <td>Invoked when the module has finished processing the set of dropped files.  The parameter passed to this
+            callback represents all files parsed by the module from the associated drop event.</td>
+        </tr>
+        <tr>
+            <td>dropError</td>
+            <td>errorCode, errorRelatedData</td>
+            <td>Invoked when processing the drop fails for some reason.</td>
+        </tr>
+        <tr>
+            <td>dropLog</td>
+            <td>message, logLevel</td>
+            <td>Invoked when a message is logged.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="api">API</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Function Name</th>
+            <th>arguments</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>setupExtraDropzone</td>
+            <td>element</td>
+            <td>Call this to add an additional drop zone to the DnD instance.  Not available if using the jQuery plug-in wrapper.</td>
+        </tr>
+        <tr>
+            <td>removeDropzone</td>
+            <td>element</td>
+            <td>Call this to remove a drop zone from the DnD instance.  Not available if using the jQuery plug-in wrapper.</td>
+        </tr>
+        <tr>
+            <td>dispose</td>
+            <td>none</td>
+            <td>Tears down all drop zones associated with the dnd instance.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

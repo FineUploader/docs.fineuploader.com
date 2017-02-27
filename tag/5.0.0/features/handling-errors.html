@@ -267,7 +267,7 @@ have a key of <code>success</code> set to <code>true</code>.</p>
 <h2 id="debugging-errors">Debugging Errors</h2>
 <p>Sometimes errors are not intended, or unexpected. Fine Uploader provides the
 <code>debug</code> option which will make the plugin spit out logging messages to the
-client's JavaScript log.</p>
+client&#8217;s JavaScript log.</p>
 <p>To enable debug mode, set the <code>debug</code> option of Fine Uploader to <code>true</code>
 and open the developer console in your browser. Interact with Fine Uploader
 and notice that it is logging specifically what is happening. These messages
@@ -279,7 +279,7 @@ The text to be displayed in the case of an error is passed in as the <code>error
 parameter.</p>
 <p>The following code snippet shows how one might display a custom alert on the
 event of an error.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
    <span class="c1">// ...</span>
 <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">,</span> <span class="nx">xhrOrXdr</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">&quot;Error on file number {} - {}.  Reason: {}&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">));</span>
@@ -302,7 +302,7 @@ that value to the <code>onError</code> callback.</p>
 <p>If the server indicates failure in the response, but does not include an
 <code>error</code> property and the response status code is <code>200</code>, then the
 <code>defaultResponseError</code> property will be used as the error message.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">text</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">defaultResponseError</span><span class="o">:</span> <span class="s1">&#39;An unknown upload error occurred.&#39;</span>
     <span class="p">}</span>
@@ -313,7 +313,7 @@ that value to the <code>onError</code> callback.</p>
 <h2 id="changing-error-messages">Changing Error Messages</h2>
 <p>The <code>messages</code> property in the main Fine Upload options object provides a
 handful of properties one can override to display custom error messages.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;{file} has an invalid extension. Valid extension(s): {extensions}.&#39;</span>
         <span class="c1">// other messages can go here as well ...</span>
@@ -326,7 +326,7 @@ handful of properties one can override to display custom error messages.</p>
 <p>Error messages include primitive <code>String</code> interpolation that allows integrators
 to inject variable data into error messages. For example, the <code>typeError</code>
 message could be modified:</p>
-<div class="codehilite"><pre><span></span><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;Invalid extension detected in file, {file}.&#39;</span>
 <span class="p">}</span>
 </pre></div>
@@ -337,7 +337,7 @@ instead of the <code>"{file}"</code> <code>String</code>.</p>
 <h2 id="modifying-the-text-for-failed-uploads">Modifying the Text for Failed Uploads</h2>
 <p>The <code>failedUploadTextDisplay</code> option defines properties used for displaying
 text when an upload fails.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="c1">// These are all the DEFAULT values...</span>
     <span class="nx">failedUploadTextDisplay</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>

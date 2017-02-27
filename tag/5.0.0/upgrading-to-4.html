@@ -220,18 +220,18 @@ CSS class was removed/renamed, you had to be sure to update the associated <code
 UI used the same CSS classes for selection and styling.</p>
 <p>In version 4.0, the <code>template</code> option expects either a string or an <code>Element</code> as a value (or a <code>jQuery</code> object if using
 the jQuery plug-in wrapper).  You may either specify the ID of the container element in your document that contains
-the template markup, or you may select the container element yourself.  The default value is a string: "qq-template".</p>
-<p>The default template HTML file that is bundled with Fine Uploader contains a <code>&lt;script&gt;</code> with an ID of "qq-template" along
+the template markup, or you may select the container element yourself.  The default value is a string: &#8220;qq-template&#8221;.</p>
+<p>The default template HTML file that is bundled with Fine Uploader contains a <code>&lt;script&gt;</code> with an ID of &#8220;qq-template&#8221; along
 with all supported template items.  You can drop this into your document without any changes, and Fine Uploader UI
 will work just as it did before.  If you want to further customize the template, you can make appropriate changes to
-the markup in the <code>&lt;script&gt;</code> template contents.  You can remove almost any item in the template if you don't want it
-to be rendered in the DOM.  Note that each template item has a CSS class that ends in "-selector" which is used internally
+the markup in the <code>&lt;script&gt;</code> template contents.  You can remove almost any item in the template if you don&#8217;t want it
+to be rendered in the DOM.  Note that each template item has a CSS class that ends in &#8220;-selector&#8221; which is used internally
 for selecting the item.  A second CSS class may be present on the item, used only for styling.  You can remove this second
-CSS class without fear of breaking the uploader.  If you remove the "-selector" CSS class, Fine Uploader will simply
+CSS class without fear of breaking the uploader.  If you remove the &#8220;-selector&#8221; CSS class, Fine Uploader will simply
 ignore the item, though it will still render in the DOM.</p>
 <h3 id="removed-the-filetemplate-option">Removed the <code>fileTemplate</code> option</h3>
 <p>The contents of the old <code>template</code> and <code>fileTemplate</code> options have been combined into one template, which must be
-included as a <code>&lt;script&gt;</code> tag with a type of "text/template" in your document (or any hidden container element).
+included as a <code>&lt;script&gt;</code> tag with a type of &#8220;text/template&#8221; in your document (or any hidden container element).
 You can use the template contained in the included <code>default.html</code> file in the <code>templates</code> directory as-is,
 or modify it to match your application.</p>
 <h3 id="template-must-be-included-in-document-script-tag-for-fine-uploader-ui">Template must be included in document script tag for Fine Uploader UI</h3>
@@ -252,13 +252,13 @@ simply omit the retry-related element from your template.</p>
 <h3 id="removed-editfilenameenabled">Removed <code>editFilename.enabled</code></h3>
 <p>If you do not want to utilize the edit filename feature, either ensure the <code>autoUpload</code> option is set to true
 (this is the default) or remove the edit-filename related elements from your template.  Currently, this involves removing
-the "qq-edit-filename-icon-selector" and "qq-edit-filename-selector" elements.</p>
+the &#8220;qq-edit-filename-icon-selector&#8221; and &#8220;qq-edit-filename-selector&#8221; elements.</p>
 <h3 id="removed-all-classes-option-properties-other-than-the-ones-listed-in-styling-doc">Removed all <code>classes</code> option properties, other than the ones listed in styling doc</h3>
 <p>In most cases, there is no longer any need to define options for each class associated with a UI-mode template item.
-Remember, Fine Uploader UI 4.0's default template includes a "-selector" class on each template item specifically for
+Remember, Fine Uploader UI 4.0&#8217;s default template includes a &#8220;-selector&#8221; class on each template item specifically for
 selecting the item, and another for styling.  You can remove or rename the styling class without fear of breaking the
 uploader.  In fact, omitting most template items is possible as well.  The only <code>classes</code> properties that remain are
-ones that are added by Fine Uploader dynamically/on-demand.  You can override any of these default values if you'd like
+ones that are added by Fine Uploader dynamically/on-demand.  You can override any of these default values if you&#8217;d like
 to use one of your own custom CSS classes instead.</p>
 <h3 id="added-classeshide">Added <code>classes.hide</code></h3>
 <p>Part of the 4.0 template rework included a push to stop assigning/changing style attributes on template items in the
@@ -270,7 +270,7 @@ be visible again, this class is removed.  You can override the default CSS class
 <code>classes.hide</code>.</p>
 <p>Note that the standalone drag &amp; drop module (which is also used internally by Fine Uploader UI) still sets a <code>display: none;</code>
 style directly on drop zones when they must be hidden, and changes this to <code>display: block;</code> to make them visible again.
-This was left alone, as we didn't want to break all Fine Uploader Core mode apps that do not include Fine Uploader UI's
+This was left alone, as we didn&#8217;t want to break all Fine Uploader Core mode apps that do not include Fine Uploader UI&#8217;s
 default CSS file (since there has never been a dependency on this file when using core mode).</p>
 <h3 id="removed-all-text-option-properties-except-for-failupload-formatprogress-and-waitingforresponse">Removed all <code>text</code> option properties, except for <code>failUpload</code>, <code>formatProgress</code> and <code>waitingForResponse</code></h3>
 <p>Similar to the changes to the <code>classes</code> option, there is no longer a need to have options dedicated to text that

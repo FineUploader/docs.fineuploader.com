@@ -1,0 +1,1150 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>S3 Options | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.3/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.3/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/tag/5.0.3/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.3">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.3/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.3/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.3/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.3/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.3/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.3/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.3/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.3/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.3/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.3/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.3/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.3/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.3/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.3/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.3/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.3/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.3/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.3/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.3/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.3/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.3/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.3/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.3/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.3/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.3/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.3/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.3/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.3/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.3/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.3/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.3/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.3/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.3/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.3/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.3/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.3/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.3/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.3/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.3/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.3/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.3/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.3/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.3">Current: 5.0.3</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.3"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.3</p></span>
+
+                
+
+                
+<div class="all-options">
+<div class="options-s3-core">
+<h1 class="page-header" id="options-wzxhzdk14s3wzxhzdk15">Options <small>S3</small></h1>
+<p>If you are using the S3 uploader, all of Fine Uploader&#8217;s options are still
+present, and most of them still function the same way. However, some of the
+options are slightly different. This page will list any new or different options
+for the S3 uploader. Any option not listed here can be assumed to have the same
+behavior for the Traditional or S3 uploader.</p>
+<h2 id="core_2">Core</h2>
+
+<div class="option-parent row-fluid">
+    <h3 id="credentials"><a style="color: #00ABC7;" href="#credentials">credentials</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="credentials.accessKey"><a style="color: #f87436" href="#credentials.accessKey">accessKey</a></h4>
+    <span class="option-description row-fluid">
+        <p>Temporary public AWS key</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="credentials.expiration"><a style="color: #f87436" href="#credentials.expiration">expiration</a></h4>
+    <span class="option-description row-fluid">
+        <p>Expiration date for temporary credentials.  May be an ISO 8601 String or a <code>Date</code> object.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-date">Date</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="credentials.secretKey"><a style="color: #f87436" href="#credentials.secretKey">secretKey</a></h4>
+    <span class="option-description row-fluid">
+        <p>Temporary secret AWS key</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="credentials.sessionToken"><a style="color: #f87436" href="#credentials.sessionToken">sessionToken</a></h4>
+    <span class="option-description row-fluid">
+        <p>Session token associated with the temporary credentials.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <code>chunking.paramNames</code> option does <strong>not</strong> apply to S3.</p>
+
+</div>
+<div class="option-parent row-fluid">
+    <h3 id="chunking"><a style="color: #00ABC7;" href="#chunking">chunking</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.partSize"><a style="color: #f87436" href="#chunking.partSize">partSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum size of each part, in bytes.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">5242880</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="cors"><a style="color: #00ABC7;" href="#cors">cors</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.allowXdr"><a style="color: #f87436" href="#cors.allowXdr">allowXdr</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enables or disables cross-domain ajax calls (if <code>expected</code> property is true) in IE9 and older.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="iframeSupport"><a style="color: #00ABC7;" href="#iframeSupport">iframeSupport</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="iframeSupport.localBlankPagePath"><a style="color: #f87436" href="#iframeSupport.localBlankPagePath">localBlankPagePath</a></h4>
+    <span class="option-description row-fluid">
+        <p>This is required if you plan on supporting browsers that do not implement the File API, such as IE9 and older.  This must point to a blank page on the same origin/domain as the page hosting Fine Uploader.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="objectProperties"><a style="color: #00ABC7;" href="#objectProperties">objectProperties</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="objectProperties.acl"><a style="color: #f87436" href="#objectProperties.acl">acl</a></h4>
+    <span class="option-description row-fluid">
+        <p>This value corresponds to a <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL">canned ACL</a></p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">private</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="objectProperties.key"><a style="color: #f87436" href="#objectProperties.key">key</a></h4>
+    <span class="option-description row-fluid">
+        <p>Describes the object key used to identify the file in your S3 bucket. Possible values are &#8216;uuid&#8217;, &#8216;filename&#8217; or a function.  If the value is a function, Fine Uploader S3 will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return one of a promise or a <code>String</code>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">uuid</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="objectProperties.reducedRedundancy"><a style="color: #f87436" href="#objectProperties.reducedRedundancy">reducedRedundancy</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to true if you would like to use the reduced redundancy storage class for all objects uploaded to S3.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="objectProperties.serverSideEncryption"><a style="color: #f87436" href="#objectProperties.serverSideEncryption">serverSideEncryption</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to true if you would like all uploaded files to be encrypted by AWS.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <code>resume.paramNames</code> option does <strong>not</strong> apply to S3.</p>
+
+</div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p><code>request.customHeaders</code> does <strong>not</strong> apply to S3.</p>
+
+</div>
+<div class="option-parent row-fluid">
+    <h3 id="request"><a style="color: #00ABC7;" href="#request">request</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="request.accessKey"><a style="color: #f87436" href="#request.accessKey">accessKey</a></h4>
+    <span class="option-description row-fluid">
+        <p>Your AWS public key. <strong>NOT YOUR SECRET KEY</strong>. Ignored if <code>credentials</code> have been set.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.endpoint"><a style="color: #f87436" href="#request.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>URL for your S3 bucket.  All valid bucket URLs documented by Amazon are supported, including custom domains.  SSL is also supported.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.params"><a style="color: #f87436" href="#request.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Parameters passed along with each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
+    <span class="option-description row-fluid">
+        <p>Part of the parameter name that contains the name of the associated file which may differ from the key name. Prefixed with &#8216;x-amz-meta-&#8216; by Fine Uploader.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfilename</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="signature"><a style="color: #00ABC7;" href="#signature">signature</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.customHeaders"><a style="color: #f87436" href="#signature.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.endpoint"><a style="color: #f87436" href="#signature.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>The endpoint that Fine Uploader can use to send policy documents (HTML form uploads) or other strings to sign (REST requests) before sending requests off to S3.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="uploadSuccess"><a style="color: #00ABC7;" href="#uploadSuccess">uploadSuccess</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.customHeaders"><a style="color: #f87436" href="#uploadSuccess.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.endpoint"><a style="color: #f87436" href="#uploadSuccess.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>An endpoint that Fine Uploader should POST to when a file has been successfully uploaded to S3.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.params"><a style="color: #f87436" href="#uploadSuccess.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional parameters to attach to upload success file requests. Note that Fine Uploader will still send the bucket, key, filename, UUID, and etag (if available) as well</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+</div>
+
+
+<div class="options-s3-ui">
+<h2 id="ui_2">UI</h2>
+
+<div class="option-parent row-fluid">
+    <h3 id="failedUploadTextDisplay"><a style="color: #00ABC7;" href="#failedUploadTextDisplay">failedUploadTextDisplay</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.mode"><a style="color: #f87436" href="#failedUploadTextDisplay.mode">mode</a></h4>
+    <span class="option-description row-fluid">
+        <p>You will most likely want to keep this at the default value of &#8216;custom&#8217;. See the UI options documentation for more info on this option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">custom</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+</div>
+</div>
+
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.3/_static/js/main.js"></script>
+
+        
+<script>
+$(document).ready(function() {
+    console.log('herro')
+    renderOptionsSidebarNav(['s3-core', 's3-ui']);
+});
+</script>
+
+
+
+    </body>
+</html>

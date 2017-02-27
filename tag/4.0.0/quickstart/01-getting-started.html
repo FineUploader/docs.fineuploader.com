@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -183,9 +242,9 @@ section. The download comes bundled with all required scripts and modules.</p>
 <p>Fine Uploader comes with two different modes pertaining to the user interface.</p>
 <h5 id="core-mode_3"><a href="../modes/core.html">Core Mode</a></h5>
 <p>The most basic Fine Uploader mode.  Core mode assumes that the developer will code their own UI
-but still make use of Fine Uploader's API. Core mode is suggested for advanced developers
-who wish for to heavily customize the uploader's user interface. To use Core Mode:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
+but still make use of Fine Uploader&#8217;s API. Core mode is suggested for advanced developers
+who wish for to heavily customize the uploader&#8217;s user interface. To use Core Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -196,7 +255,7 @@ progress bars, retry/cancel/delete buttons, proper display of error messages,
 and more. UI mode is recommended for beginning developers or for those who
 are pleased with the default Fine Uploader interface or can customize the default Fine Uploader
 UI via CSS. To use UI Mode:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -215,10 +274,10 @@ use the <code>default.html</code> file in the <code>templates</code> directory b
 <p>To use the traditional endpoint handler, simply declare Fine Uploader as you
 normally would.</p>
 <h5 id="amazon-s3"><a href="../endpoint_handlers/amazon-s3.html">Amazon S3</a></h5>
-<p>Amazon's S3 is currently the most popular cloud service.
+<p>Amazon&#8217;s S3 is currently the most popular cloud service.
 Fine Uploader comes with built in support that allows all files to be uploaded directly to S3 via the browser.
 To make use of Fine Uploader S3:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -226,18 +285,18 @@ To make use of Fine Uploader S3:</p>
 <p>Fine Uploader is also easily used as a jQuery plugin. This plugin gives you
 the ability to use either Core or UI mode.</p>
 <p>To use Core Mode with the jQuery plugin simply set the uploaderType to be
-'basic':</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span> <span class="cm">/* options go here... */</span><span class="p">});</span>
+&#8216;basic&#8217;:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span> <span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
 <p>To use UI Mode with the jQuery plugin:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
 <p>To use Fine Uploader S3 with the jQuery plugin:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -263,7 +322,7 @@ bit different:</p>
 property. The parameters for the callbacks are the same as listed in the
 <a href="../api/events.html">documentation</a>.</p>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="c1">// options</span>
     <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">onUpload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
@@ -282,7 +341,7 @@ be familiar to thsoe used to working with jQuery plugins. Note that an extra
 function as the first parameter, the consecutive parameters are the same as
 those listed in the <a href="../api/events.html">events documentation</a>.</p>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;upload&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// callback code here...</span>
@@ -307,7 +366,7 @@ function is non-null.</p>
 
 </div>
 
-<p>Next, let's check out some of Fine Uploader's options.</p>
+<p>Next, let&#8217;s check out some of Fine Uploader&#8217;s options.</p>
 <p>Proceed by selecting either:</p>
 <ul>
 <li><a href="02-setting_options.html">Traditional Mode</a></li>

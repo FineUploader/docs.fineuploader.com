@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h3 id="getting-started-with-fineuploader">Getting Started with FineUploader</h3>
+<p>This tutorial will serve as a walkthrough for getting starting with FineUploader. It is geared towards those who have minimal experience with Javascript, server-side concepts, or the web.</p>
+<h4 id="download">Download</h4>
+<p>You can get FineUploader in the <a href="http://fineuploader.com/downloads.html">downloads</a> section.</p>
+<h4 id="enabling-fineuploader-on-your-site">Enabling FineUploader on your site</h4>
+<p>Once you have the FineUploader source files, you can being to set up your website to use FineUploader. At its most basic, FineUploader requires one <code>div</code> tag with which to place its UI. In your main project root, create an index.html page with the following contents:</p>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="c">&lt;!-- FineUploader CSS --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"fineuploader-3.6.3.min.css"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"fine-uploader"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;noscript&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Please enable JavaScript to use Fine Uploader.<span class="nt">&lt;/p&gt;</span>
+            <span class="c">&lt;!-- or put a simple form for upload here --&gt;</span>
+        <span class="nt">&lt;/noscript&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>Fine Uploader does NOT depend on jQuery, and you don&rsquo;t have to use the jQuery plug-in if you don&rsquo;t want to. The same features are available without the jQuery plug-in.</p>
+<p>To proceed, choose whether you would like to use the <a href="#without-jquery">vanilla version</a> or the <a href="#with-jquery">jQuery version</a>.</p>
+<h5 id="without-jquery_1">without jQuery &hellip;</h5>
+<p>To use Fine Uploader with &ldquo;plain &lsquo;ole&rdquo; Javascript, include the uploader Javascript file and, optionally, the css file along with any images provided into your page. If you are only making use of FineUploaderBasic, you can omit the css and image(s) file(s).</p>
+<p>Initialize uploader when the DOM is ready. Change the endpoint option to the endpoint specified by your backend server. A walkthrough on setting up your first server is on the next part of this guide. For more detailed guidelines on how to set up your upload server, check the <a href="/tag/3.7.1/integrating/server">server-side docs</a>.</p>
+<div class="codehilite"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"fineuploader.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+
+            <span class="c1">// pass the DOM node (ex. $(selector)[0] for jQuery users)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'fine-uploader'</span><span class="p">),</span>
+
+            <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="c1">// path to server-side upload URI</span>
+                <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span>
+            <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+
+<h5 id="with-jquery_1">with jQuery &hellip;</h5>
+<p>A jQuery plug-in exists that wraps the native Fine Uploader code.  If you would like to reap all of the benefits that a jQuery plug-in offers, such as use of jQuery Events, specifying elements using the jQuery object/jQuery selectors, easy integration into your otherwise jQuery project: look no further!</p>
+<p>To use the jQuery plug-in, ensure you include the proper Fine Uploader source files on your page&hellip;</p>
+<div class="codehilite"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.fineuploader.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+
+<p>&hellip; and instantiate it like so:</p>
+<div class="codehilite"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#fineUploaderElementId'</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/uploads'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+
+<p><a href="setting_options.html">Next</a>, let&rsquo;s check out some of FineUploader&rsquo;s options.</p>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

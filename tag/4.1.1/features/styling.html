@@ -1,0 +1,593 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Styling | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/4.1.1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/4.1.1/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/4.1.1">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/4.1.1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/4.1.1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/4.1.1/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/4.1.1/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/4.1.1/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/4.1.1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/4.1.1/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/4.1.1/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/4.1.1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/4.1.1/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/4.1.1/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/4.1.1/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/4.1.1/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/4.1.1/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/4.1.1/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/4.1.1/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/4.1.1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/4.1.1/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/4.1.1/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/4.1.1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/4.1.1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/4.1.1/api/options.html">Core</a></li>
+                                <li><a href="/tag/4.1.1/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/4.1.1/api/options-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/4.1.1/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/4.1.1/api/methods-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.1/api/events.html">Events</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/4.1.1/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/4.1.1/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/4.1.1/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class='active'><a href="/tag/4.1.1">Current: 4.1.1</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/feature/initial-files">Feature_initial-Files</a></ul>
+                            
+                                <ul><a href="/branch/site/4.1.0">Site_4.1.0</a></ul>
+                            
+                                <ul><a href="/branch/feature/getuploads-doc-improvement">Feature_getuploads-Doc-Improvement</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/4.1.1">Hotfix_4.1.1</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/fix/s3-jquery-build">Fix_s3-Jquery-Build</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.0">4.0.0</a></ul>
+                            
+                                <ul><a href="/tag/4.0.1">4.0.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.2">4.0.2</a></ul>
+                            
+                                <ul><a href="/tag/4.0.3">4.0.3</a></ul>
+                            
+                                <ul><a href="/tag/4.1.0">4.1.0</a></ul>
+                            
+                                <ul><a href="/tag/4.1.1">4.1.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span10 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>4.1.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="styling">Styling</h1>
+<div class="alert alert-block alert-warn">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Templating changed drastically in version 4.0.  If you are upgrading from a 3.x version to a 4.x version
+you will want to read the <a href="../upgrading-to-4.html">upgrading to 4.x document</a> as well.</p>
+
+</div>
+
+<p>This document applies to Fine Uploader UI mode only, and aims to help you customize the default UI using
+the built-in templating feature.</p>
+<h3 id="template">Template</h3>
+<p>A default template, <code>default.html</code> in the <code>templates</code> directory, is bundled with each version.  In the future,
+alternate templates may be included as well.  Note that you must include a template in your markup/document
+when using Fine Uploader UI.  Everything should work just fine if you simply use the provided template as is,
+without changing anything.  However, you can certainly customize the default template to match your
+web application&#8217;s look and feel.  The rest of this section includes examples of some changes you may want to
+make to the template.</p>
+<p>The templates are, by default, included in a <code>&lt;script&gt;</code> tag with the <code>type</code> attribute set to &#8220;text/template&#8221;.
+The template does not have to be included in a <code>&lt;script&gt;</code> tag.  For example, you may instead include the template
+in a hidden <code>&lt;div&gt;</code>.  Fine Uploader simple needs to be able to locate the template element container in the document.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The CSS classes included in template elements that end with &#8216;-selector&#8217; are used internally by Fine Uploader UI
+for the purposes of element selection only.  No styles are attached to these classes.  Other CSS classes that DO NOT
+end with &#8216;-selector&#8217; are used to style these elements.  You can certainly remove the non-selector class if you
+want to contribute your own styles, but you should only remove the selector class if you no longer want Fine
+Uploader UI to track/address the associated template element.</p>
+
+</div>
+
+<h4 id="re-style-the-progress-bar">Re-style the progress bar</h4>
+<p>Don&#8217;t like the default progress bar included with Fine Uploader&#8217;s CSS file?  No problem!  You can easily use,
+for example, a Bootstrap-styled progress bar.  Just <a href="http://getbootstrap.com/">include Bootstrap</a>
+in your project and change this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-container-selector&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>To this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-container-selector progress&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-selector bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<h4 id="omit-a-portion-of-the-template-that-does-not-apply-to-your-app">Omit a portion of the template that does not apply to your app</h4>
+<p>You can omit any element of the template that does not apply to your uploader except for:</p>
+<ul>
+<li>The parent div that contains the contents of the template (qq-uploader-selector element)</li>
+<li>The file list container element (qq-upload-list-selector element)</li>
+<li>The immediate child container of the file list container element.  You can certainly change the type of tag here though.</li>
+</ul>
+<p>Otherwise, any portion of the template can simply be omitted.  For example, if you don&#8217;t want to utilize the edit
+filename feature, simply omit any elements with class names that start with qq-edit-filename.  If you don&#8217;t want
+to have the delete button appear after a successful upload, omit the qq-upload-delete-selector element.  If you don&#8217;t
+want the progress bar at all, omit the qq-progress-bar elements, etc, etc.</p>
+<h4 id="change-default-text">Change default text</h4>
+<p>Any of the text nodes in the template can be changed to match your language or preferences.  In some cases, Fine
+Uploader UI dynamically sets text, such as with the qq-upload-status-text-selector and qq-upload-size-selector
+elements.  See the <a href="../api/options-ui.html#text-option"><code>text</code> option</a> for adjusting these types of strings.</p>
+<h4 id="re-arrange-the-order-of-the-template-elements">Re-arrange the order of the template elements</h4>
+<p>You may also change the order of the elements in the template.  Note that you should not move file-related elements
+out of the qq-upload-list-selector container or it&#8217;s immediate child container though.</p>
+<h4 id="move-the-file-list-to-an-alternate-location-in-the-dom">Move the file list to an alternate location in the DOM</h4>
+<p>If you would like to locate the file list (contents of the qq-upload-list-selector element) elsewhere in your document,
+you may do so via the <a href="../api/options-ui.html"><code>listElement</code> option</a> which allows you to specify an existing
+container element where Fine Uploader UI will render the file list item elements.</p>
+<h4 id="move-the-default-drop-zone-into-the-file-list">Move the default drop zone into the file list</h4>
+<p>Suppose you want to combine the file list (qq-upload-list-selector element) and the drop zone (qq-upload-drop-area-selector element).
+You can accomplish this simply by following these steps:</p>
+<p>First, make the file list a child of the drop zone:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-upload-drop-area-selector&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;qq-upload-list-selector qq-upload-list&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            ....
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>Notice that the default styling class for the drop area has been removed, you may want to contribute your own CSS class
+to match your web application&#8217;s style.  Also notice that the <code>qq-hide-dropzone</code> attribute has been omitted from
+the drop area container.  By removing this (or setting its value to &#8220;false&#8221;, we are telling Fine Uploader UI
+to keep the contents of this drop zone visible at all times.  When this attribute is present, the contents are
+only visible when an item enters the drop zone.</p>
+<p>Then, you may want to specify some custom styles for the drop zone.  Perhaps a <code>min-height</code> is important to ensure
+that the drop zone is not 0-sized when the uploader first loads (before any files have been submitted).  You may also
+want to consider setting a <code>background</code> image, adjusting the <code>opacity</code> (so the default background color that Fine
+Uploader UI adds when you enter the drop zone is visible), or something else.  You can contribute these styles directly
+to the qq-drop-area-selector element in the template via a <code>style</code> attribute, or define a CSS class elsewhere in the
+document with these styles and simply append this custom class to the drop-area element signature.</p>
+<h4 id="customize-the-buttonslinks">Customize the buttons/links</h4>
+<p>It is trivial to re-style the delete, cancel, retry, and upload buttons.  For example, you can utilize Bootstrap&#8217;s
+button styling to re-skin the upload button by changing this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>Upload a file<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>to this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-upload-button-selector btn&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>Upload a file<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<h4 id="include-other-custom-elements-in-your-template">Include other custom elements in your template</h4>
+<p>Suppose you want to include a link to the uploaded file next to each file item element.  You can modify the template
+to include a styled anchor link, hidden initially, and then show the anchor and set its <code>href</code> attribute
+in your <code>complete</code> event handler, once you know the path of the file on your server.</p>
+<p>To do this, the file list portion of the template can be modified to include this link as the last child:</p>
+<div class="codehilite"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;qq-upload-list-selector qq-upload-list&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        ...
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;view-btn hide btn&quot;</span><span class="nt">&gt;</span>View<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+
+
+<p>Your <code>complete</code> event handler would look something like this:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myUploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">serverPathToFile</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">filePath</span><span class="p">,</span>
+        <span class="nx">$fileItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s2">&quot;getItemByFileId&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$fileItem</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.view-btn&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">,</span> <span class="nx">serverPathToFile</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>You cannot specify an <code>Element</code> as an option value if it only exists in a template.  This is due to the
+fact that the options are evaluated before the template is rendered.  For example, you cannot specify an
+<a href="extra-buttons.html">extra button</a> that is declared in a template.</p>
+
+</div>
+
+<h3 id="classes-option_1"><code>classes</code> option</h3>
+<p>A <code>classes</code> option allows you to change some default class names that Fine Uploader may add to template
+elements dynamically/on-demand.  The following <code>classes</code> option properties exist in Fine Uploader UI mode:</p>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Property Name</p></td>
+
+        <td><p>Default CSS</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>buttonFocus</p></td>
+
+        <td><p>qq-upload-button-focus</p></td>
+
+        <td><p>Added to any upload button tracked by Fine Uploader when the
+        button receives focus.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>buttonHover</p></td>
+
+        <td><p>qq-upload-button-hover</p></td>
+
+        <td><p>Added to any upload button tracked by Fine Uploader when a
+        mouse cursor hovers over the button.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>dropActive</p></td>
+
+        <td><p>qq-upload-drop-area-active</p></td>
+
+        <td><p>Added to the drop area container when an item
+        has entered the drop zone.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>editable</p></td>
+
+        <td><p>qq-editable</p></td>
+
+        <td><p>Added to the file name element when the file name may be edited.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>fail</p></td>
+
+        <td><p>qq-upload-fail</p></td>
+
+        <td><p>Added to the file item container after a completely failed upload.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>hide</p></td>
+
+        <td><p>qq-hide</p></td>
+
+        <td><p>Added whenever an item should no longer be visible.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>retryable</p></td>
+
+        <td><p>qq-upload-retryable</p></td>
+
+        <td><p>Added to the file item container after a failed upload attempt
+        if the item is eligible for a retry.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>retrying</p></td>
+
+        <td><p>qq-upload-retrying</p></td>
+
+        <td><p>Added to the file item container during a retry attempt.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>success</p></td>
+
+        <td><p>qq-upload-success</p></td>
+
+        <td><p>Added to the file item container after a successful upload.</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<h3 id="dialogs">Dialogs</h3>
+<p>Fine Uploader UI mode &#8212; by default &#8212; uses the native browser implementations
+of alerts, confirms, and messages to show user notifications when necessary.
+More than likely, you are going to want to override these. To provide your own
+dialogs just provide your own functions for the <code>showMessage</code>,  <code>showConfirm</code>,
+and/or <code>showPrompt</code> options.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>For a tutorial on integrating the third-party modal dialog library <a href="http://fabien-d.github.io/alertify.js/">alertify.js</a>
+with Fine Uploader&#8217;s dialogs check out: <a href="http://wp.me/p3FpYP-5I">Alertify your Notifications and Dialogs</a>.</p>
+
+</div>
+
+<ul>
+<li><code>showMessage: function(message) {...}</code> - You may want to change the default alert dialog implementation and messages
+as you see fit.  This is possible by overriding the <code>showMessage</code> function option.  The default <code>showMessage</code> function
+simply invokes <code>alert</code> with the message text.  One instance in which this is used is when the user attempts to select an
+invalid file for upload.  There are general message types with default text that can be overriden as well.</li>
+<li><code>showConfirm: function(message, okCallback, cancelCallback) {...}</code> - This function is used to display a confirm dialog.  One
+such feature that optionally uses this is the <code>deleteFile</code> feature. Note that <strong>this
+is a promissory callback</strong>, meaning it requires a <a href="api/promise.html"><code>qq.Promise</code></a> to
+be returned.The default implementation uses <code>window.confirm</code>, but you
+may override this with something a bit nicer, if you choose.  The okCallback will be executed if the user clicks &#8220;ok&#8221; and the
+<code>cancelCallback</code> if the user clicks &#8220;cancel&#8221;.  The <code>cancelCallback</code> is optional, but the <code>okCallback</code> is required.</li>
+<li><code>showPrompt: function(message, defaultValue) {...}</code> - This function is used to prompt the user for a value.  Note that <strong>this
+is a promissory callback</strong>, meaning it requires a <a href="api/promise.html"><code>qq.Promise</code></a> to be returned.  The <code>qq.Promise</code> documentation
+includes a simple example that overrides this default implementation using bootbox.  The default implementation here simply
+uses <code>window.prompt</code>.</li>
+</ul>
+
+
+                
+                </div>
+
+            
+            </div>
+            <hr>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

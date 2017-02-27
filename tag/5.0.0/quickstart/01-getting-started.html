@@ -211,9 +211,9 @@ section. The download comes bundled with all required scripts and modules.</p>
 <p>Fine Uploader comes with two different modes pertaining to the user interface.</p>
 <h5 id="core-mode_2"><a href="../modes/core.html">Core Mode</a></h5>
 <p>The most basic Fine Uploader mode.  Core mode assumes that the developer will code their own UI
-but still make use of Fine Uploader's API. Core mode is suggested for advanced developers
-who wish for to heavily customize the uploader's user interface. To use Core Mode:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
+but still make use of Fine Uploader&#8217;s API. Core mode is suggested for advanced developers
+who wish for to heavily customize the uploader&#8217;s user interface. To use Core Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -224,7 +224,7 @@ progress bars, retry/cancel/delete buttons, proper display of error messages,
 and more. UI mode is recommended for beginning developers or for those who
 are pleased with the default Fine Uploader interface or can customize the default Fine Uploader
 UI via CSS. To use UI Mode:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -243,17 +243,17 @@ use the <code>default.html</code> file in the <code>templates</code> directory b
 <p>To use the traditional endpoint handler, simply declare Fine Uploader as you
 normally would.</p>
 <h5 id="amazon-s3"><a href="../endpoint_handlers/amazon-s3.html">Amazon S3</a></h5>
-<p>Amazon's S3 is currently the most popular cloud service.
+<p>Amazon&#8217;s S3 is currently the most popular cloud service.
 Fine Uploader comes with built in support that allows all files to be uploaded directly to S3 via the browser.
 To make use of Fine Uploader S3:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
 </pre></div>
 
 
 <h5 id="azure-blob-storage"><a href="../endpoint_handlers/azure.html">Azure Blob Storage</a></h5>
 <p>Fine Uploader comes with built in support that allows all files to be uploaded directly to Azure via the browser.
 To make use of Fine Uploader Azure:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -261,7 +261,7 @@ To make use of Fine Uploader Azure:</p>
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure&#8217;s API does
 not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
 If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
 handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
@@ -272,23 +272,23 @@ handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code
 <p>Fine Uploader is also easily used as a jQuery plugin. This plugin gives you
 the ability to use either Core or UI mode.</p>
 <p>To use Core Mode with the jQuery plugin simply set the uploaderType to be
-'basic':</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span> <span class="cm">/* options go here... */</span><span class="p">});</span>
+&#8216;basic&#8217;:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span> <span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
 <p>To use UI Mode with the jQuery plugin:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
 <p>To use Fine Uploader S3 with the jQuery plugin:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
 <p>To use Fine Uploader Azure with the jQuery plugin:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">});</span>
 </pre></div>
 
 
@@ -314,7 +314,7 @@ bit different:</p>
 property. The parameters for the callbacks are the same as listed in the
 <a href="../api/events.html">documentation</a>.</p>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="c1">// options</span>
     <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">onUpload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
@@ -333,7 +333,7 @@ be familiar to thsoe used to working with jQuery plugins. Note that an extra
 function as the first parameter, the consecutive parameters are the same as
 those listed in the <a href="../api/events.html">events documentation</a>.</p>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">fineUploader</span><span class="p">({</span><span class="cm">/* options go here... */</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;upload&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// callback code here...</span>
@@ -358,7 +358,7 @@ function is non-null.</p>
 
 </div>
 
-<p>Next, let's check out some of Fine Uploader's options.</p>
+<p>Next, let&#8217;s check out some of Fine Uploader&#8217;s options.</p>
 <p>Proceed by selecting either:</p>
 <ul>
 <li><a href="02-setting_options.html">Traditional endpoint</a></li>

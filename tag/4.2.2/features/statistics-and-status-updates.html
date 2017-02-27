@@ -1,0 +1,525 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Statistics and Status Updates | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/4.2.2/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/4.2.2/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/4.2.2">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/4.2.2/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/4.2.2/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/4.2.2/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/4.2.2/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/4.2.2/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/4.2.2/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/4.2.2/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/4.2.2/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/4.2.2/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/4.2.2/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/4.2.2/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/4.2.2/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/4.2.2/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/4.2.2/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/4.2.2/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/4.2.2/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/4.2.2/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/4.2.2/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/4.2.2/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/4.2.2/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/4.2.2/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/4.2.2/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/4.2.2/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/4.2.2/api/options.html">Core</a></li>
+                                <li><a href="/tag/4.2.2/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/4.2.2/api/options-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/4.2.2/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/4.2.2/api/methods-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/4.2.2/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/4.2.2/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.2.2/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/4.2.2/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/4.2.2/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/4.2.2/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class='active'><a href="/tag/4.2.2">Current: 4.2.2</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/site/4.2.0">Site_4.2.0</a></ul>
+                            
+                                <ul><a href="/branch/feature/s3-sign-clientside">Feature_s3-Sign-Clientside</a></ul>
+                            
+                                <ul><a href="/branch/feature/karma-ievms">Feature_karma-Ievms</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/4.2.1">Hotfix_4.2.1</a></ul>
+                            
+                                <ul><a href="/branch/feature/dynamic-acl">Feature_dynamic-Acl</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/4.2.2">Hotfix_4.2.2</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/feature/azure">Feature_azure</a></ul>
+                            
+                                <ul><a href="/branch/site/4.1.0">Site_4.1.0</a></ul>
+                            
+                                <ul><a href="/branch/feature/getuploads-doc-improvement">Feature_getuploads-Doc-Improvement</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/4.1.1">Hotfix_4.1.1</a></ul>
+                            
+                                <ul><a href="/branch/feature/initial-files">Feature_initial-Files</a></ul>
+                            
+                                <ul><a href="/branch/mobile-bugs">Mobile-Bugs</a></ul>
+                            
+                                <ul><a href="/branch/feature/docs-ui">Feature_docs-Ui</a></ul>
+                            
+                                <ul><a href="/branch/feature/ditch-sauce">Feature_ditch-Sauce</a></ul>
+                            
+                                <ul><a href="/branch/feature/directory-paths">Feature_directory-Paths</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/fix/s3-jquery-build">Fix_s3-Jquery-Build</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.0">4.0.0</a></ul>
+                            
+                                <ul><a href="/tag/4.0.1">4.0.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.2">4.0.2</a></ul>
+                            
+                                <ul><a href="/tag/4.0.3">4.0.3</a></ul>
+                            
+                                <ul><a href="/tag/4.1.0">4.1.0</a></ul>
+                            
+                                <ul><a href="/tag/4.1.1">4.1.1</a></ul>
+                            
+                                <ul><a href="/tag/4.2.0">4.2.0</a></ul>
+                            
+                                <ul><a href="/tag/4.2.1">4.2.1</a></ul>
+                            
+                                <ul><a href="/tag/4.2.2">4.2.2</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#getUploads">getUploads</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#statusChange">statusChange</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>4.2.2</p></span>
+
+                
+
+                
+<h1 class="page-header" id="statistics-and-status-updates">Statistics and Status Updates</h1>
+<p>Fine Uploader provides API methods and other options to facilitate statistics
+and status updates on your uploads.</p>
+<p>With this, we can register a callback that allows us to be notified
+when any submitted item changes status.  The concept is simple: this will be
+invoked whenever any submitted file changes state. The ID, old status, and the
+new status will be included in the callback parameters.</p>
+<p>The status values correspond to those found in the <code>qq.status</code> object.
+For reference, here are valid status values:</p>
+<ul>
+<li><code>SUBMITTING</code> - Selected file is in the process of being submitted to the uploader.  Validation checks occur during this phase.</li>
+<li><code>SUBMITTED</code> - Selected file has been successfully submitted to the uploader.  In UI mode, it is also now represented in the DOM.</li>
+<li><code>QUEUED</code> - Uploads are in progress, but this one has not yet started due to lack of available connections.   It is waiting in line for an available connection before an attempt is made to upload it.</li>
+<li><code>UPLOADING</code> - File is currently uploading (in progress).</li>
+<li><code>UPLOAD_RETRYING</code> - The state when an upload retry is about to occur, just before the upload retry it attempted.  The file will likely only be in this state for a brief moment.</li>
+<li><code>UPLOAD_FAILED</code> - The upload has officially failed to upload, after all auto-retry attempts have been exhausted.</li>
+<li><code>UPLOAD_SUCCESSFUL</code> - The upload has officially succeeded.</li>
+<li><code>CANCELED</code> - The upload has been canceled.</li>
+<li><code>REJECTED</code> - The submitted file has failed validation, either via the internal validation checks, or via a <code>validate</code>, <code>validateBatch</code>, or <code>submit</code> event callback.</li>
+<li><code>DELETED</code> - The file has been successfully deleted from the server.</li>
+<li><code>DELETING</code> - A delete attempt is in progress.</li>
+<li><code>DELETE_FAILED</code> - The last delete attempt failed.</li>
+<li><code>PAUSED</code> - The file was in progress, but is now paused.</li>
+</ul>
+<hr>
+<h3 id="examples">Examples</h3>
+<h4 id="simple-status-query">Simple status query</h4>
+<p>The API method allows you the retrieve information about all items submitted to
+the uploader. If you invoke this method without any arguments, information on
+all items will be returned.  For example, suppose we have submitted only two
+files to the uploader, and both have uploaded successfully. If we wanted to retrieve
+information about these files, the following code should be executed.  Note that I
+have illustrated the expected return value as well:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p>Now, suppose we delete the second files via Fine Uploader. If we invoke a new-argument getUploads() again,
+we receive the following in return:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;upload successful&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<h4 id="filtering-results">Filtering results</h4>
+<p>Note that you can filter by ID(s) OR UUID(s) OR status.  You can include multiple
+ID, UUID, or status values as an array as well. All valid status values
+are defined in the <code>qq.status</code> object. Also, please note that the <code>size</code> property
+will only be included if the user agent supports the File API (that is, if
+qq.supportedFeatures.canDetermineSize evaluates to true).</p>
+<p>Suppose we only want to compile a list of all deleted files for this instance, we can do this:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span>
+<span class="p">});</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p>Now, suppose we have submitted another file, but we have canceled it.  Maybe we only want
+information about canceled OR deleted items:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="p">[</span><span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span><span class="p">,</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">CANCELED</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="c1">//the uploads return value will look like this:</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">67890</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+  <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;some_other_name_2&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="mi">11111</span><span class="p">,</span>
+    <span class="nx">uuid</span><span class="o">:</span> <span class="s2">&quot;some_other_uuid2&quot;</span><span class="p">,</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;canceled&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<h4 id="determine-if-all-submitted-files-are-done">Determine if all submitted files are &#8220;done&#8221;</h4>
+<p>How can I determine if all of my uploads are complete?  This is very much a frequently asked question.
+Luckily, is quite simple to make this determination with the <code>getUploads</code> API method.  The following
+code is all that is needed to make this determination:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">areAllUploadsDone</span> <span class="o">=</span> <span class="nx">uploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="p">[</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">UPLOADING</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">UPLOAD_RETRYING</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">QUEUED</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">SUBMITTED</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">SUBMITTING</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">SUBMITTED</span><span class="p">,</span>
+        <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">PAUSED</span>
+    <span class="p">]</span>
+<span class="p">}).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">areAllUploadsDone</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">//do something here</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The above code is most appropriate for a <code>statusChange</code> event/callback handler.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

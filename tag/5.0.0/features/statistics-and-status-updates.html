@@ -275,7 +275,7 @@ all items will be returned.  For example, suppose we have submitted only two
 files to the uploader, and both have uploaded successfully. If we wanted to retrieve
 information about these files, the following code should be executed.  Note that I
 have illustrated the expected return value as well:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
 
 <span class="c1">//the uploads return value will look like this:</span>
 <span class="p">[</span>
@@ -299,7 +299,7 @@ have illustrated the expected return value as well:</p>
 
 <p>Now, suppose we delete the second files via Fine Uploader. If we invoke a new-argument getUploads() again,
 we receive the following in return:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">();</span>
 
 <span class="c1">//the uploads return value will look like this:</span>
 <span class="p">[</span>
@@ -328,7 +328,7 @@ are defined in the <code>qq.status</code> object. Also, please note that the <co
 will only be included if the user agent supports the File API (that is, if
 qq.supportedFeatures.canDetermineSize evaluates to true).</p>
 <p>Suppose we only want to compile a list of all deleted files for this instance, we can do this:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
   <span class="nx">status</span><span class="o">:</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span>
 <span class="p">});</span>
 
@@ -347,7 +347,7 @@ qq.supportedFeatures.canDetermineSize evaluates to true).</p>
 
 <p>Now, suppose we have submitted another file, but we have canceled it.  Maybe we only want
 information about canceled OR deleted items:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploads</span> <span class="o">=</span> <span class="nx">myUploader</span><span class="p">.</span><span class="nx">getUploads</span><span class="p">({</span>
   <span class="nx">status</span><span class="o">:</span> <span class="p">[</span><span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">DELETED</span><span class="p">,</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">CANCELED</span><span class="p">]</span>
 <span class="p">});</span>
 
@@ -381,7 +381,7 @@ return an array.</p>
 
 </div>
 
-<h4 id="determine-if-all-submitted-files-are-done">Determine if all submitted files are "done"</h4>
+<h4 id="determine-if-all-submitted-files-are-done">Determine if all submitted files are &#8220;done&#8221;</h4>
 <p>How can I determine if all of my uploads are complete?  This is very much a frequently asked question.
 Luckily, is quite simple to make this determination by contributing <a href="../api/events.html#allComplete">an <code>onAllComplete</code> event handler</a>.</p>
 

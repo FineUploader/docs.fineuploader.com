@@ -1,0 +1,370 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Getting Started | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.11.4/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.11.4/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.11.4">Docs</a></li>
+                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.4/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.11.4/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.4">Current: 5.11.4</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.11.4"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.11.4</p></span>
+
+                
+
+                
+<h1 class="page-header" id="getting-started-with-fine-uploader">Getting Started with Fine Uploader</h1>
+<p>This tutorial will serve as a step-by-step walkthrough for getting starting with
+Fine Uploader. It is geared towards those who have minimal experience with
+Javascript, server-side concepts, or the web.</p>
+<p>The tutorial is not comprehensive or meant to cover all aspects of Fine Uploader.
+For more information, make sure to read through the list of features as well
+as the API documentation.</p>
+<h3 id="1-download">1. Download</h3>
+<p>You can get Fine Uploader in the <a href="http://fineuploader.com/downloads.html">downloads</a>
+section. The download comes bundled with all required scripts and modules.</p>
+<h3 id="2-decide-which-fine-uploader-to-use">2. Decide which Fine Uploader to use</h3>
+<h4 id="modes">Modes</h4>
+<p>Fine Uploader comes with two different modes pertaining to the user interface.</p>
+<h5 id="core-mode_2"><a href="../modes/core.html">Core Mode</a></h5>
+<p>The most basic Fine Uploader mode.  Core mode assumes that the developer will code their own UI
+but still make use of Fine Uploader's API. Core mode is suggested for advanced developers
+who wish to heavily customize the uploader's user interface. To use Core Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span><span class="cm">/* options go here .... */</span><span class="p">});</span>
+</pre></div>
+
+
+<p><strong>Each endpoint handler has a "core" build artifact associated with it. For example, if
+you only need core functionality for Fine Uploader S3, you should import "s3.fine-uploader.core.js".</strong></p>
+<h5 id="ui-mode_2"><a href="../modes/ui.html">UI Mode</a></h5>
+<p>Inherits everything from Core mode. UI mode also comes with a fully functional
+user interface which includes, but is not limited to: a default upload button,
+progress bars, retry/cancel/delete buttons, proper display of error messages,
+and more. UI mode is recommended for beginning developers or for those who
+are pleased with the default Fine Uploader interface or can customize the default Fine Uploader
+UI via CSS. To use UI Mode:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
+<p><strong>Each endpoint handler has a "ui" build artifact associated with it. For example, if
+you need core <em>and</em> UI functionality for Fine Uploader S3, you should import "s3.fine-uploader.js".</strong></p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If you are using Fine Uploader UI, you MUST include a template in your document/markup.  You can
+use the <code>default.html</code> file in the <code>templates</code> directory bundled with the library and customize it as desired.  See the
+<a href="../features/styling.html">styling documentation page</a> for more details.</p>
+
+</div>
+
+<h4 id="endpoint-handlers_1">Endpoint Handlers</h4>
+<h5 id="traditional"><a href="../endpoint_handlers/traditional.html">Traditional</a></h5>
+<p>To use the traditional endpoint handler, simply declare Fine Uploader as you
+normally would.</p>
+<h5 id="amazon-s3"><a href="../endpoint_handlers/amazon-s3.html">Amazon S3</a></h5>
+<p>Amazon's S3 is currently the most popular cloud service.
+Fine Uploader comes with built in support that allows all files to be uploaded directly to S3 via the browser.
+To make use of Fine Uploader S3:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
+<h5 id="azure-blob-storage"><a href="../endpoint_handlers/azure.html">Azure Blob Storage</a></h5>
+<p>Fine Uploader comes with built in support that allows all files to be uploaded directly to Azure via the browser.
+To make use of Fine Uploader Azure:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span><span class="cm">/* options go here ... */</span><span class="p">});</span>
+</pre></div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
+If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
+handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
+
+</div>
+
+<h4 id="callbacks_1">Callbacks</h4>
+<p>Like many other JavaScript libraries, Fine Uploader implements a event system
+that uses callbacks to execute user-provided functions at runtime, based on
+specific events. These <a href="../api/events.html">events are listed here</a>.</p>
+<p>Callbacks are defined in the <code>callbacks</code> option
+property. The parameters for the callbacks are the same as listed in the
+<a href="../api/events.html">documentation</a>.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="c1">// options</span>
+    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">onUpload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+        <span class="nx">onSubmitted</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="3-determine-how-you-would-like-to-import-fine-uploader">3. Determine how you would like to import Fine Uploader</h3>
+<p>You have the following options available to pull Fine Uploader into your project:</p>
+<ol>
+<li>CommonJS (<code>require</code>).</li>
+<li>ES6 Modules (<code>import</code>).</li>
+<li>Globally scoped (<code>&lt;script src="..."&gt;</code>)</li>
+</ol>
+<p>For more information on how you can load Fine Uploader into your project, please see the
+<a href="../features/modules.html">modules feature page</a>.</p>
+<p>Next, let's check out some of Fine Uploader's options.</p>
+<p>Proceed by selecting either:</p>
+<ul>
+<li><a href="02-setting_options.html">Traditional endpoint</a></li>
+<li><a href="02-setting_options-s3.html">Amazon S3 endpoint</a></li>
+<li><a href="02-setting_options-azure.html">Azure Blob Storage endpoint</a></li>
+</ul>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.11.4/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

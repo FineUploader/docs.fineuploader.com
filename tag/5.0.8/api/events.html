@@ -1,0 +1,1763 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Events | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.8/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.8/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/tag/5.0.8/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.8">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.8/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.8/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.8/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.8/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.8/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.8/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.8/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.8/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.8/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.8/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.8/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.8/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.8/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.8/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.8/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.8/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.8/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.8/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.8/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.8/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.8/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.8/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.8/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.8/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.8/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.8/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.8/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.8/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.8/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.8/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.8/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.8/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.8/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.8/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.8/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.8/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.8/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.8/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.8/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.8/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.8/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.8/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.8">Current: 5.0.8</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.8"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion"></div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.8</p></span>
+
+                
+
+                
+<h1 class="page-header" id="events">Events</h1>
+<p>Fine Uploader&#8217;s event system enables integrators to execute any operations at
+almost any point in the upload process. Knowing how these callbacks work, and
+when they are called, is crucial to unlocking the full potential of
+Fine Uploader.</p>
+<h3 id="syntax_1">Syntax</h3>
+<p>There is a significant difference in the way events are defined between the jQuery and non-jQuery uploaders.</p>
+<p>When using the non-jQuery version, events are defined as functions in the <code>callbacks</code> option object.</p>
+<p>There are two things to keep in mind when using the jQuery plugin version. First, event handlers are defined by calling the <a href="http://api.jquery.com/on/">jQuery <code>.on()</code></a> function which will bind a function to an event. Secondly, event handler parameters are passed an extra <a href="http://api.jquery.com/category/events/event-object/">jQuery <code>Event</code></a> object. If using the jQuery plugin, this Event object will precede all arguments listed.</p>
+<p>See the <a href="../integrating/jquery">Integrating jQuery</a> page for code examples and more details.</p>
+<h4 id="non-jquery_1">non-jQuery</h4>
+<p>When using the non-jQuery uploader, the following syntax is the correct way to define event handlers:</p>
+<div class="codehilite"><pre><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">onDelete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="nx">onDeleteComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="jquery_1">jQuery</h4>
+<p>The syntax below is only acceptable when using the jQuery plugin for the uploader:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#my_uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;deleteComplete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+<div class="events-all">
+
+
+    <span class="event row-fluid">
+    <h4 id="autoRetry"><a style="color: #f87436;" href="#autoRetry">autoRetry</a></h4>
+    <span class="event-description">
+        <p>Called before each automatic retry attempt for a failed item.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>attemptNumber</em></dt>
+    <dd class="method-param-description span8"><p>The number of retry attempts for the current file so far.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="cancel"><a style="color: #f87436;" href="#cancel">cancel</a></h4>
+    <span class="event-description">
+        <p>Called when the item has been canceled. Return <code>false</code> to prevent the
+upload from being canceled. Also can return a promise if non-blocking
+work is required here. Calling <code>failure()</code> on the promise is equivalent to
+returning <code>false</code>. If using a Promise, then processing of the cancel request
+will be deferred until the promise is fullfilled. Since there is no way to
+&#8216;pause&#8217; the upload in progress while waiting for the promise to be fullfilled
+the upload may actually complete until the promise has actually be fullfilled.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="complete"><a style="color: #f87436;" href="#complete">complete</a></h4>
+    <span class="event-description">
+        <p>Called when the item has finished uploading.</p>
+<p>The <code>responseJSON</code> will contain the raw response from the server including the
+&#8216;success&#8217; property which indicates whether the upload succeeded.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>responseJSON</em></dt>
+    <dd class="method-param-description span8"><p>The raw response from the server.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xmlhttprequest">XMLHttpRequest</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xdomainrequest">XDomainRequest</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>xhr</em></dt>
+    <dd class="method-param-description span8"><p>The object used to make the request.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="allComplete"><a style="color: #f87436;" href="#allComplete">allComplete</a></h4>
+    <span class="event-description">
+        <p>Called when all submitted items have reached a point of termination.  A file has reached a point of termination
+if it has been cancelled, rejected, or uploaded (failed or successful).  For example, if a file in the group is paused,
+and all other files in the group have uploaded successfully the allComplete event will not be invoked for the group
+until that paused file is either continued and completes the uploading process, or canceled.  This event will not be
+called if all files in the group have been cancelled or rejected (i.e. if none of the files have reached a
+<a href="../features/statistics-and-status-updates.html">status</a> of <code>qq.status.UPLOAD_SUCCESSFUL</code> or <code>qq.status.UPLOAD_FAILED</code>).</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>succeeded</em></dt>
+    <dd class="method-param-description span8"><p>IDs of all files in the group that have uploaded successfully (<a href="../features/statistics-and-status-updates.html">status</a> = <code>qq.status.UPLOAD_SUCCESSFUL</code>).</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>failed</em></dt>
+    <dd class="method-param-description span8"><p>IDs of all files in the group that have failed (<a href="../features/statistics-and-status-updates.html">status</a> = <code>qq.status.UPLOAD_FAILED</code>).</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="delete"><a style="color: #f87436;" href="#delete">delete</a></h4>
+    <span class="event-description">
+        <p>Called just before a delete request is sent for the associated item.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="deleteComplete"><a style="color: #f87436;" href="#deleteComplete">deleteComplete</a></h4>
+    <span class="event-description">
+        <p>Called just after receiving a response from the server for a delete file request.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xmlhttprequest">XMLHttpRequest</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xdomainrequest">XDomainRequest</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>xhr</em></dt>
+    <dd class="method-param-description span8"><p>The object used to make the request.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>isError</em></dt>
+    <dd class="method-param-description span8"><p><code>true</code> if there has been an error, <code>false</code> otherwise.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="error"><a style="color: #f87436;" href="#error">error</a></h4>
+    <span class="event-description">
+        <p>Called whenever an exceptional condition occurs (see <a href="../features/handling-errors.html">Handling Errors</a>)</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>errorReason</em></dt>
+    <dd class="method-param-description span8"><p>The reason for the current error.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xmlhttprequest">XMLHttpRequest</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xdomainrequest">XDomainRequest</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>xhr</em></dt>
+    <dd class="method-param-description span8"><p>The object used to make the request.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="manualRetry"><a style="color: #f87436;" href="#manualRetry">manualRetry</a></h4>
+    <span class="event-description">
+        <p>Called before each manual retry attempt.</p>
+<p>Return <code>false</code> to prevent this an all future retry attempts on the associated item.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="pasteReceived"><a style="color: #f87436;" href="#pasteReceived">pasteReceived</a></h4>
+    <span class="event-description">
+        <p>Called when a pasted image has been received (before upload).</p>
+<p>The pasted image is represented as a <code>Blob</code>. Also can return a promise if non-blocking work is required here. If using a Promise the value of the success parameter must be the name to associate with the pasted image. If the associated attempt is marked a failure then you should include a string explaining the reason in your failure callback for the Promise.</p>
+<p><strong>Note:</strong></p>
+<p>The <code>promptForName</code> option, if <code>true</code>, will effectively wipe away any custom implementation of this callback. The two are not meant to be used together. This callback is meant to provide an alternative means to provide a name for a pasted image. If you are using Fine Uploader Core mode then you can display your own prompt for the name by overriding the default implementation of this callback.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-blob">Blob</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>blob</em></dt>
+    <dd class="method-param-description span8"><p>An object encapsulating the image pasted from the clipboard.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="progress"><a style="color: #f87436;" href="#progress">progress</a></h4>
+    <span class="event-description">
+        <p>Called during the upload, as it progresses, but only for the AJAX uploader.</p>
+<p>For chunked uploads, this will be called for each chunk.</p>
+<p>Useful for implementing a progress bar.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>uploadedBytes</em></dt>
+    <dd class="method-param-description span8"><p>The number of bytes that have been uploaded so far.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>totalBytes</em></dt>
+    <dd class="method-param-description span8"><p>The total number of bytes that comprise this file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="resume"><a style="color: #f87436;" href="#resume">resume</a></h4>
+    <span class="event-description">
+        <p>Called just before an upload is resumed. See the <a href="#uploadChunk"><code>uploadChunk</code></a>
+ event for more info on the <code>chunkData</code> object.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>chunkData</em></dt>
+    <dd class="method-param-description span8"><p>The chunk that will be sent next when file upload resumes.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="sessionRequestComplete"><a style="color: #f87436;" href="#sessionRequestComplete">sessionRequestComplete</a></h4>
+    <span class="event-description">
+        <p>Invoked when a session request has completed.  The <code>response</code> will be either an <code>Array</code> containing the response data
+or <code>null</code> if the response did not contain valid JSON.  The <code>success</code> parameter will be <code>false</code> if ANY of the file items
+represented in the response could not be parsed (due to bad syntax, missing name/UUID property, etc).</p>
+<p>See the <a href="../features/session.html">Initial File List feature page</a> for more details.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>response</em></dt>
+    <dd class="method-param-description span8"><p>The raw response data.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>success</em></dt>
+    <dd class="method-param-description span8"><p>Indicates whether success has been achieved or not.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xmlhttprequest">XMLHttpRequest</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xdomainrequest">XDomainRequest</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>xhrOrXdr</em></dt>
+    <dd class="method-param-description span8"><p>The raw request.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="statusChange"><a style="color: #f87436;" href="#statusChange">statusChange</a></h4>
+    <span class="event-description">
+        <p>Invoked whenever the status changes for any item submitted by the uploader.</p>
+<p>The status values correspond to those found in the <code>qq.status</code> object. For reference:</p>
+<ul>
+<li><code>SUBMITTED</code></li>
+<li><code>QUEUED</code></li>
+<li><code>UPLOADING</code></li>
+<li><code>UPLOAD_RETRYING</code></li>
+<li><code>UPLOAD_FAILED</code></li>
+<li><code>UPLOAD_SUCCESSFUL</code></li>
+<li><code>CANCELED</code></li>
+<li><code>REJECTED</code></li>
+<li><code>DELETED</code></li>
+<li><code>DELETING</code></li>
+<li><code>DELETE_FAILED</code></li>
+<li><code>PAUSED</code></li>
+</ul>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>oldStatus</em></dt>
+    <dd class="method-param-description span8"><p>The previous item status.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newStatus</em></dt>
+    <dd class="method-param-description span8"><p>The new status of the item.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="submit"><a style="color: #f87436;" href="#submit">submit</a></h4>
+    <span class="event-description">
+        <p>Called when the item has been selected and is a candidate for uploading.</p>
+<p>This does not mean the item is going to be uploaded. Return <code>false</code> to prevent
+submission to the uploader. A promise can be used if non-blocking work is
+required. Processing of this item is deferred until the promise is fullfilled.
+If a promise is returned, a call to failure is the same as returning <code>false</code>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="submitDelete"><a style="color: #f87436;" href="#submitDelete">submitDelete</a></h4>
+    <span class="event-description">
+        <p>Called before an item has been marked for deletion has been submitted to
+the uploader.</p>
+<p>A promise can be used if non-blocking work is required. Processing of
+this item is deferred until the promise is fullfilled. If a promise is
+returned, a call to failure is the same as returning <code>false</code>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="submitted"><a style="color: #f87436;" href="#submitted">submitted</a></h4>
+    <span class="event-description">
+        <p>Called when the item has been successfully submitted to the uploader.</p>
+<p>The file will upload immediately if there is a) at least one free connection
+(see: <a href="options.html#maxconnections"><code>maxConnections</code> option</a>) and b) <code>autoUpload</code>
+is set to <code>true</code> (see <a href="options.html#autoupload"><code>autoUpload</code> option</a>).</p>
+<p>The callback is invoked after the &#8216;submit&#8217; event is handled without returning a
+<code>false</code> value. In Fine Uploader Core mode it is usually safe to assume that
+the associated elements in the UI representing the associated file have already
+been added to the DOM immediately before this callback is invoked.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>THe current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="totalProgress"><a style="color: #f87436;" href="#totalProgress">totalProgress</a></h4>
+    <span class="event-description">
+        <p>Called during a batch of uploads, as they progress, but only for the AJAX uploader.  This represents the total
+progress of all files in the batch.</p>
+<p>Useful for implementing an aggregate progress bar.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>totalUploadedBytes</em></dt>
+    <dd class="method-param-description span8"><p>The number of bytes that have been uploaded so far in this batch.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>totalBytes</em></dt>
+    <dd class="method-param-description span8"><p>The total number of bytes that comprise all files in the batch.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="upload"><a style="color: #f87436;" href="#upload">upload</a></h4>
+    <span class="event-description">
+        <p>Called just before an item begins uploading to the server.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="uploadChunk"><a style="color: #f87436;" href="#uploadChunk">uploadChunk</a></h4>
+    <span class="event-description">
+        <p>Called just before a chunk request is sent.</p>
+<p>The <code>chunkData</code> object, which is passed into the &#8216;uploadChunk&#8217; event handler, has 4 properties:</p>
+<ul>
+<li><code>partIndex</code> - the 0-based index of the associated partition.</li>
+<li><code>startByte</code> - the byte offset of the current chunk.</li>
+<li><code>endByte</code> - the last byte of the current chunk.</li>
+<li><code>totalParts</code> - the total number of partitions associated with the <code>File</code> or <code>Blob</code>.</li>
+</ul>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>chunkData</em></dt>
+    <dd class="method-param-description span8"><p>An object encapsulating the current chunk of data about to be uploaded.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="uploadChunkSuccess"><a style="color: #f87436;" href="#uploadChunkSuccess">uploadChunkSuccess</a></h4>
+    <span class="event-description">
+        <p>This is similar to the <a href="#complete"><code>complete</code> event</a>, except it is invoked after each chunk
+has been <strong>successfully</strong> uploaded.</p>
+<p>See the <a href="#uploadChunk"><code>uploadChunk</code> event</a> for more information on the <code>chunkData</code> object.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>chunkData</em></dt>
+    <dd class="method-param-description span8"><p>An object encapsulating the current chunk of data about to be uploaded.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>responseJSON</em></dt>
+    <dd class="method-param-description span8"><p>The raw response from the server.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xmlhttprequest">XMLHttpRequest</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-xdomainrequest">XDomainRequest</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>xhr</em></dt>
+    <dd class="method-param-description span8"><p>The object used to make the request.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="validate"><a style="color: #f87436;" href="#validate">validate</a></h4>
+    <span class="event-description">
+        <p>Called once for each selected, dropped, or <code>addFiles</code> submitted file and for
+each <code>addBlobs</code> submitted <code>Blob</code>.</p>
+<p>This callback is always invoked before the default Fine Uploader validators
+execute.</p>
+<p>This event will not be called if you return <code>false</code> in your <code>validateBatch</code> event
+handler, or if the <code>stopOnFirstInvalidFile</code> validation option is <code>true</code> and
+the <code>validate</code> event handler has returned <code>false</code> for an item.</p>
+<p>A promise can be used if non-blocking work is required.
+Processing of this item is deferred until the promise is fullfilled.
+If a promise is returned, a call to <code>failure</code> is the same as returning <code>false</code>.</p>
+<p>A buttonContainer element will be passed as the last argument, provided the file was
+submitted using a Fine Uploader tracked button.</p>
+<p>The <code>blobData</code> object has two properties: <code>name</code> and <code>size</code>. The <code>size</code> property will be undefined for browsers without File API support.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>data</em></dt>
+    <dd class="method-param-description span8"><p>An object with a <code>name</code> and <code>size</code> property.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>buttonContainer</em></dt>
+    <dd class="method-param-description span8"><p>The button corresponding to the respective file if the file was submitted to Fine Uploader using a tracked button.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="validateBatch"><a style="color: #f87436;" href="#validateBatch">validateBatch</a></h4>
+    <span class="event-description">
+        <p>This callback is always invoked before the default Fine Uploader validators
+execute.</p>
+<p>This event will not be called if you return <code>false</code> in your <code>validateBatch</code> event
+handler, or if the <code>stopOnFirstInvalidFile</code> validation option is <code>true</code> and
+the <code>validate</code> event handler has returned <code>false</code> for an item.</p>
+<p>A promise can be used if non-blocking work is required.
+Processing of this item is deferred until the promise is fullfilled.
+If a promise is returned, a call to <code>failure</code> is the same as returning <code>false</code>.</p>
+<p>A buttonContainer element will be passed as the last argument, provided the file was
+submitted using a Fine Uploader tracked button.</p>
+<p>The <code>fileOrBlobDataArray</code> object has two properties: <code>name</code> and <code>size</code>. The <code>size</code> property will be undefined for browsers without File API support.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>fileOrBlobDataArray</em></dt>
+    <dd class="method-param-description span8"><p>An array of <code>Objects</code> with <code>name</code> and <code>size</code> properties.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>buttonContainer</em></dt>
+    <dd class="method-param-description span8"><p>The button corresponding to the respective file if the file was submitted to Fine Uploader using a tracked button.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+</div>
+
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.8/_static/js/main.js"></script>
+
+        
+<script type="text/javascript">
+$(document).ready(function() {
+    renderEventsSidebarNav(['all']);
+});
+</script>
+
+
+
+    </body>
+</html>

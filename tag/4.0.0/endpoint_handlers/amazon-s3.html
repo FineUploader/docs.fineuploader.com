@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -183,12 +242,12 @@ handle S3 uploads can be found on the Fine Uploader blog</a></p>
 
 </div>
 
-<h4 id="creating-your-s3-buckets-cors-configuration">Creating your S3 bucket's CORS configuration</h4>
+<h4 id="creating-your-s3-buckets-cors-configuration">Creating your S3 bucket&#8217;s CORS configuration</h4>
 <p>In order to use the upload-to-S3 feature, you MUST properly set the CORS configuration in your S3 bucket(s).  Fine Uploader
 must make cross-origin requests to S3 whenever it communicates with AWS.  You can <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">read more about CORS configuration on
 the AWS developer site</a>.  A simple and typical CORS configuration
 would look like this:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="codehilite"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;CORSConfiguration</span> <span class="na">xmlns=</span><span class="s">&quot;http://s3.amazonaws.com/doc/2006-03-01/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;CORSRule&gt;</span>
         <span class="nt">&lt;AllowedOrigin&gt;</span>*<span class="nt">&lt;/AllowedOrigin&gt;</span>
@@ -209,18 +268,18 @@ would look like this:</p>
 will always need to include this.</li>
 <li>The PUT method is required only if you enable the chunking feature in Fine Uploader.</li>
 <li>The DELETE method is if you plan on deleting files from your bucket server-side.  This would be critical
-if you enable Fine Uploader's delete file feature.  It is also required if you enable the chunking feature, as Fine Uploader
+if you enable Fine Uploader&#8217;s delete file feature.  It is also required if you enable the chunking feature, as Fine Uploader
 sends a DELETE request to S3 when a user cancels an in-progress upload in order to ensure S3 removes all chunks associated
 with that upload present in your bucket.</li>
 <li>The ExposeHeader line is required only if you enable the chunking feature.</li>
 <li>You can (and probably should) make the AllowedOrigin condition(s) a bit more restrictive.  If you know specifically what
 domains will host your Fine Uploader instance, include these in the AllowedOrigin tag value.</li>
 <li>You can (and probably should) make the AllowedHeader condition(s) a bit more restrictive.  If you do, you will always
-need to allow the following headers: "origin" and "content-type".  If you have the chunking feature enabled, you will also
-need to include: "x-amz-acl", "x-amx-meta-qqfilename", "x-amz-date", and "authorization".  If you have chunking enabled,
+need to allow the following headers: &#8220;origin&#8221; and &#8220;content-type&#8221;.  If you have the chunking feature enabled, you will also
+need to include: &#8220;x-amz-acl&#8221;, &#8220;x-amx-meta-qqfilename&#8221;, &#8220;x-amz-date&#8221;, and &#8220;authorization&#8221;.  If you have chunking enabled,
 you will also need to authorize headers for any custom parameters (user metadata) you want to attach to the object in S3.
-All parameters are sent as headers in the "Initiate Multipart Upload" request sent by Fine Uploader with a prefix of
-"x-amz-meta-".</li>
+All parameters are sent as headers in the &#8220;Initiate Multipart Upload&#8221; request sent by Fine Uploader with a prefix of
+&#8220;x-amz-meta-&#8220;.</li>
 </ul>
 <h3 id="required-server-side-tasks-all-browsers">Required server-side tasks: all browsers</h3>
 <p>The only required server-side task for all browsers is an endpoint that signs the policy document.  This endpoint
@@ -228,12 +287,12 @@ corresponds to the <code>signature.endpoint</code> property.</p>
 <p>Fine Uploader will construct a policy document (required for securely uploading the file to your S3 bucket)
 which then must be signed using your AWS secret key.  When Fine Uploader requires this signature, it will send a
 POST request to the endpoint specified in your <code>signature.endpoint</code> option, passing the JSON policy document in the
-request payload with a Content-Type of "application/json".  You can read more about <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy">policy documents on Amazon's developer site</a>.</p>
+request payload with a Content-Type of &#8220;application/json&#8221;.  You can read more about <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy">policy documents on Amazon&#8217;s developer site</a>.</p>
 <h4 id="verifying-the-policy">Verifying the policy</h4>
 <p>When your server receives this policy document, it should first verify that the policy contains expected properties.
 If the policy document appears incorrect (due to client-side tampering), your server should immediately return a response
-with a status code of 500, a Content-Type of "application/json" and the following payload:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+with a status code of 500, a Content-Type of &#8220;application/json&#8221; and the following payload:</p>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="s2">&quot;invalid&quot;</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
@@ -245,18 +304,18 @@ will not send the file to S3 until the issue is addressed.</p>
 <p>If your server determines that the policy document is accurate, it should then base-64 encode the policy document,
 generate a base-64 encoded HMAC SHA1 of the policy document using your AWS secret key, and then return the base-64
 encoded policy document and the base-64 encoded signature in the response payload with a status of 200 and a Content-Type
-of "application/json".  Your response payload should follow this format:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+of &#8220;application/json&#8221;.  Your response payload should follow this format:</p>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="s2">&quot;policy&quot;</span><span class="o">:</span> <span class="s2">&quot;INSERT BASE-64 ENCODED POLICY HERE&quot;</span><span class="p">,</span>
     <span class="s2">&quot;signature&quot;</span><span class="o">:</span> <span class="s2">&quot;INSERT BASE-64 ENCODED SIGNED POLICY HERE&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>It's quite simple to sign the policy document server-side.  Amazon's developer site also provides some
+<p>It&#8217;s quite simple to sign the policy document server-side.  Amazon&#8217;s developer site also provides some
 <a href="http://aws.amazon.com/articles/1434/#signyours3postform">code in several languages illustrating how to do this</a>.</p>
 <h3 id="required-server-side-tasks-ie9-and-older-and-android-23x-and-older-only">Required server-side tasks: IE9 (and older) and Android 2.3.x (and older) ONLY</h3>
-<p>This isn't really a server-side task, but I'll mention it here anyway as it does minimally involve your server.</p>
+<p>This isn&#8217;t really a server-side task, but I&#8217;ll mention it here anyway as it does minimally involve your server.</p>
 <p>For browsers that do not support the File API, Fine Uploader must submit selected files inside of form, targeting a specific
 dynamically-generated iframe.  When the response comes in, Fine Uploader will not be able to determine if the upload was
 successful since the response originated from a domain other than the one hosting the uploader.  To get around this,
@@ -267,7 +326,7 @@ but it MUST reside on the same origin/domain as the one hosting your upload page
 <h3 id="optional-server-side-tasks-all-browsers">Optional server-side tasks: all browsers</h3>
 <p>If you would like Fine Uploader to notify your server when any file has been successfully uploaded to S3, you should
 set the <code>uploadSuccess.endpoint</code> property.  If this is set, Fine Uploader will send a POST request
-to your server with a Content-Type of "application/x-www-form-urlencoded".  The payload of this request, by default,
+to your server with a Content-Type of &#8220;application/x-www-form-urlencoded&#8221;.  The payload of this request, by default,
 will contain the following information:</p>
 <ul>
 <li>S3 bucket</li>
@@ -285,10 +344,10 @@ and passed to your <code>onError</code> callback handler via an <code>error</cod
 the response payload must be valid JSON.</p>
 <p>You can also pass any data to your Fine Uploader <a href="../api/events.html"><code>complete</code> event handler</a>, client-side,
 by including it in a valid JSON response to the <code>uploadSuccess.endpoint</code> POST request.  In fact, the S3 demo server-side
-code on FineUploader.com is passing a signed URL to the <code>complete</code> handler which allows you to view the file you've
+code on FineUploader.com is passing a signed URL to the <code>complete</code> handler which allows you to view the file you&#8217;ve
 uploaded.</p>
 <h2 id="chunked-uploads">Chunked Uploads</h2>
-<p>Fine Uploader S3 uses <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html">Amazon S3's REST API</a>
+<p>Fine Uploader S3 uses <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html">Amazon S3&#8217;s REST API</a>
 to initiate, upload, complete, and
 abort multipart uploads. The REST API handles authentication by signing
 canonically formatted headers. This signing is something you need to implement
@@ -296,7 +355,7 @@ server-side. All your server needs to do to authenticate and supported chunked
 uploads direct to Amazon S3 is sign a string representing the headers of the
 request that Fine Uploader sends to S3. This string is found in the payload of
 the signature request:</p>
-<div class="codehilite"><pre><span></span>{ &quot;headers&quot;: /* string to sign */ }
+<div class="codehilite"><pre><span class="p">{</span> <span class="s">&quot;headers&quot;</span><span class="o">:</span> <span class="cm">/* string to sign */</span> <span class="p">}</span>
 </pre></div>
 
 
@@ -306,16 +365,16 @@ a request to sign a REST/multipart request and not a policy document.</p>
 signature. You should <strong>NOT</strong> base64 encode the headers string before signing it.
 All you must do, server-side, is generate an HMAC SHA1 signature of the string
 using your AWS secret key and <em>then</em> base64 encode the result. Your server
-should respond with the following in the body of an 'application/json' response:</p>
-<div class="codehilite"><pre><span></span>{ &quot;signature&quot;: /* signed headers string */ }
+should respond with the following in the body of an &#8216;application/json&#8217; response:</p>
+<div class="codehilite"><pre><span class="p">{</span> <span class="s">&quot;signature&quot;</span><span class="o">:</span> <span class="cm">/* signed headers string */</span> <span class="p">}</span>
 </pre></div>
 
 
 <h2 id="delete-file-support">Delete File support</h2>
 <p>Support for the delete file feature when using the S3 uploader is mostly the same as when using the traditional upload
-mode.  The S3 uploader does add "key" and "bucket" parameters with the request.  Otherwise, the request and the server-side
+mode.  The S3 uploader does add &#8220;key&#8221; and &#8220;bucket&#8221; parameters with the request.  Otherwise, the request and the server-side
 code required to handle these requests in the same as when using the traditional uploader.  Fine Uploader expects your
-server-side code to delete the associated file in S3 via Amazon's S3 API, and then return a response to Fine Uploader's
+server-side code to delete the associated file in S3 via Amazon&#8217;s S3 API, and then return a response to Fine Uploader&#8217;s
 delete request when this has task has been handled.  See the <a href="../endpoint_handlers/traditional.html">server-side documentation for the traditional uploader</a>
 for additional information on handling delete file requests.</p>
 <h2 id="cors-support">CORS support</h2>
@@ -323,7 +382,7 @@ for additional information on handling delete file requests.</p>
 to set the <code>expected</code> property of the <code>cors</code> option when setting up your Fine Uploader instance.  You must also include
 appropriate headers in your server-response, and possibly handle OPTIONS (pre-flight) requests sent by the browser.  Please
 read the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/">blog post on CORS support</a> for details.  Note that
-you can ignore the "Handling iframe CORS upload requests server-side" section.</p>
+you can ignore the &#8220;Handling iframe CORS upload requests server-side&#8221; section.</p>
 <h2 id="thumbnails">Thumbnails</h2>
 <p>If you would like to override the client-side generated preview (where supported) or provide a thumbnail for a
 non-previewable file that you have generated server-side, you can do so by providing an absolute or relative path (URL)

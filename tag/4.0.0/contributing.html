@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -190,30 +249,30 @@
 </table>
 
 <h2 id="building">Building</h2>
-<p>Fine Uploader's build system depends on <a href="http://nodejs.org/">nodejs</a>.
+<p>Fine Uploader&#8217;s build system depends on <a href="http://nodejs.org/">nodejs</a>.
 If you are developing an open-source project and are comfortable with the GPL v3 license, you can build your own
-version-stamped copy of Fine Uploader's combined source code using the provided Gruntfile.</p>
+version-stamped copy of Fine Uploader&#8217;s combined source code using the provided Gruntfile.</p>
 <ol>
 <li>Install <a href="http://gruntjs.com/:">grunt</a> <code>npm install -g grunt</code></li>
 <li>Clone the repository: <code>git clone git://github.com/Widen/fine-uploader</code></li>
-<li><code>grunt package</code> will generate a .zip file of Fine Uploader's JavaScript, CSS, and images in the <code>./_dist/</code> directory.</li>
+<li><code>grunt package</code> will generate a .zip file of Fine Uploader&#8217;s JavaScript, CSS, and images in the <code>./_dist/</code> directory.</li>
 </ol>
 <h2 id="coding">Coding</h2>
 <p>Oh, you think you can code? Great!</p>
-<p>To contribute to development <a href="https://github.com/Widen/fine-uploader/fork">fork it</a>, and make sure to submit any pull requests against the "develop" branch.  See <a href="http://stackoverflow.com/questions/4384776/how-do-i-contribute-to-others-code-in-github">How do I contribute to other's code in GitHub?</a>.</p>
-<p>Pull requests <strong>MUST</strong> be against the "develop" branch!</p>
+<p>To contribute to development <a href="https://github.com/Widen/fine-uploader/fork">fork it</a>, and make sure to submit any pull requests against the &#8220;develop&#8221; branch.  See <a href="http://stackoverflow.com/questions/4384776/how-do-i-contribute-to-others-code-in-github">How do I contribute to other&#8217;s code in GitHub?</a>.</p>
+<p>Pull requests <strong>MUST</strong> be against the &#8220;develop&#8221; branch!</p>
 <ol>
 <li>Install <a href="http://gruntjs.com/:">grunt</a> <code>npm install -g grunt</code></li>
 <li>Clone the repository: <code>git clone git://github.com/Widen/fine-uploader</code></li>
-<li>Checkout the "develop" branch. It's where the most bleeding edge code exists: <code>git checkout develop</code></li>
+<li>Checkout the &#8220;develop&#8221; branch. It&#8217;s where the most bleeding edge code exists: <code>git checkout develop</code></li>
 <li>From the develop branch, make a new topic branch to work on the whichever
-new, hot feature you plan to add such as 'feature/add-ie6-support'.</li>
+new, hot feature you plan to add such as &#8216;feature/add-ie6-support&#8217;.</li>
 <li>Issue <code>grunt dev</code> this will prepare the development environment</li>
 <li><code>grunt build</code> will build the latest version from the source code into <code>./_build/</code>.</li>
-<li><code>grunt package</code> will generate a .zip file of Fine Uploader's JavaScript, CSS, and images in the <code>./_dist/</code> directory.</li>
+<li><code>grunt package</code> will generate a .zip file of Fine Uploader&#8217;s JavaScript, CSS, and images in the <code>./_dist/</code> directory.</li>
 </ol>
 <h2 id="testing">Testing</h2>
-<p>If you're reading this, then good for you!</p>
+<p>If you&#8217;re reading this, then good for you!</p>
 <p>You can run the test suite by forking or cloning the repo and running <code>grunt test:unit</code> on your development machine.</p>
 <h2 id="writing">Writing</h2>
 <p>Like to write for people rather than computers?</p>

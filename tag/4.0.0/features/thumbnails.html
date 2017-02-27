@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -190,8 +249,8 @@ in place of the <code>default.html</code> template is all that is required to tu
 file name.  You, of course, can customize the location, along with any other aspect of the template.  Notice
 that the thumbnail will always be house in an <code>&lt;img&gt;</code> element.  This <code>&lt;img&gt;</code> tag has a <code>qq-max-size</code> attribute
 which specifies a default maximum size to enforce for all thumbnails.  A <code>qq-server-scale</code> attribute is also
-present by default, with a value of "true".  This signals Fine Uploader UI to always ensure any thumbnails display
-from server responses are scaled as well.  You can remove this attribute or set the value to "false" if any thumbnails
+present by default, with a value of &#8220;true&#8221;.  This signals Fine Uploader UI to always ensure any thumbnails display
+from server responses are scaled as well.  You can remove this attribute or set the value to &#8220;false&#8221; if any thumbnails
 returned in your upload responses are already appropriately scaled.</p>
 <p>If you are not a Fine Uploader UI user, and instead are building your own highly-customized UI utilizing
 Fine Uploader Core, you can still easily display thumbnails/previews via the new <code>drawThumbnail</code> API method.
@@ -206,21 +265,21 @@ can also render TIFF previews.</p>
 <h4 id="previews">Previews</h4>
 <p>As mentioned previously Fine Uploader can generate previews for popular image file formats in modern browsers.
 In addition to this, JPEGs will be displayed with the correct orientation as Fine Uploader includes an file parser
-that will read the Orientation tag in the EXIF header and render the image appropriately based on this tag's value.
-Furthermore, the preview will be scaled according to the value (in the template) of the <code>&lt;img&gt;</code> tag's
+that will read the Orientation tag in the EXIF header and render the image appropriately based on this tag&#8217;s value.
+Furthermore, the preview will be scaled according to the value (in the template) of the <code>&lt;img&gt;</code> tag&#8217;s
 <code>qq-max-size</code> attribute.  When scaling previews, Fine Uploader will draw the preview onto a <code>&lt;canvas&gt;</code> internally
 in order to scale the preview without resorting to CSS or inline <code>style</code> attribute adjustments.  Once the preview
 is scaled on the <code>&lt;canvas&gt;</code>, it is then transferred to the <code>&lt;img&gt;</code> tag mentioned in the template.</p>
 <h4 id="thumbnails-from-server-response">Thumbnails from server response</h4>
-<p>If the server's response to Fine Uploader's upload request (or <code>uploadSuccess</code> for S3 endpoints) contains a
-<code>thumbnailUrl</code> property in the JSON response, Fine Uploader will attempt to render the path in the template's <code>&lt;img&gt;</code>
+<p>If the server&#8217;s response to Fine Uploader&#8217;s upload request (or <code>uploadSuccess</code> for S3 endpoints) contains a
+<code>thumbnailUrl</code> property in the JSON response, Fine Uploader will attempt to render the path in the template&#8217;s <code>&lt;img&gt;</code>
 element for the associated successfully uploaded file.  If a preview already exists for the file, it will be replaced
 with the server-returned thumbnail, but only if the thumbnail can be successfully displayed in the browser.  This
-thumbnail will be scaled according to the value of the <code>&lt;img&gt;</code> tag's <code>qq-max-size</code> attribute, but only if the <code>&lt;img&gt;</code>
-tag also contains a <code>qq-server-scale</code> attribute with a value of "true".  The provided simple thumbnails template
+thumbnail will be scaled according to the value of the <code>&lt;img&gt;</code> tag&#8217;s <code>qq-max-size</code> attribute, but only if the <code>&lt;img&gt;</code>
+tag also contains a <code>qq-server-scale</code> attribute with a value of &#8220;true&#8221;.  The provided simple thumbnails template
 includes both of these attributes, but you can remove the latter one if your server is going to generate an
 appropriately scaled thumbnail at the returned <code>thumbnailUrl</code>.</p>
-<p>Note that JPEGs grabbed from the URL returned in your server's upload response will not be re-oriented, so your server
+<p>Note that JPEGs grabbed from the URL returned in your server&#8217;s upload response will not be re-oriented, so your server
 must either be sure to create thumbnails that are oriented correctly.  Since modern browsers already generate correctly
 oriented JPEG previews client-side, there is generally no need to worry about this.  However, you should take care to
 not blindly return a <code>thumbnailUrl</code> for images that are already previewable in modern browsers unless your server
@@ -239,25 +298,25 @@ intends to orient them correctly first.</p>
 best-effort attempt to scale the thumbnail (if required) using a <code>&lt;canvas&gt;</code> internally.  In some browsers, this is
 not possible as support for image CORS is required in order to transfer the scaled cross-origin image from the <code>&lt;canvas&gt;</code>
 to the <code>&lt;img&gt;</code> tag.  In browsers where image CORS is not supported (such as IE10) the thumbnail URL will be placed
-directly on the template's <code>&lt;img&gt;</code> tag and scaled (if required) via inline <code>style</code> attribute properties (using
+directly on the template&#8217;s <code>&lt;img&gt;</code> tag and scaled (if required) via inline <code>style</code> attribute properties (using
 <code>max-width</code> and <code>max-height</code>).  If your server returns a cross-origin thumbnail URL, your server must also return
 the appropriate <code>Access-Control-Allow-Origin</code> header in the response, with a value equal to the domain hosting
 the uploader page.  You can determine the domain server-side by looking at the <code>Origin</code> header for the GET request
 that the browser will send when Fine Uploader attempts to render the thumbnail in the document.</p>
 <h4 id="placeholder-images">Placeholder images</h4>
 <p>If you specify URLs/paths for the <a href="../api/options-ui.html#thumbnailsplaceholders-option"><code>thumbnails.placeholders.notAvailablePath</code> and/or <code>thumbnails.placeholders.waitingPath</code></a>
-options, Fine Uploader will render a "waiting for thumbnail/preview" image until the preview generation attempt has
-completed, and a "image/preview not available" image if the preview generation attempt has failed.  Placeholders are
+options, Fine Uploader will render a &#8220;waiting for thumbnail/preview&#8221; image until the preview generation attempt has
+completed, and a &#8220;image/preview not available&#8221; image if the preview generation attempt has failed.  Placeholders are
 bundled with Fine Uploader.  You can use the bundled placeholders or use your own, but be sure to specify the correct
 path for these placeholders in the Fine Uploader UI options if you want them to be displayed.  It is valid to leave
-either of these options <code>null</code> if you don't want a placeholder image to be displayed.</p>
-<p>Placeholders will also be scaled, if the <code>qq-max-size</code> attribute on the template's <code>&lt;img&gt;</code> tag is specified.  Cross-origin
-placeholders will be treated the same way as cross-origin server-generated thumbnails.  See the "Cross-origin thumbnails"
+either of these options <code>null</code> if you don&#8217;t want a placeholder image to be displayed.</p>
+<p>Placeholders will also be scaled, if the <code>qq-max-size</code> attribute on the template&#8217;s <code>&lt;img&gt;</code> tag is specified.  Cross-origin
+placeholders will be treated the same way as cross-origin server-generated thumbnails.  See the &#8220;Cross-origin thumbnails&#8221;
 section above for details.  Re-orienting placeholder images is not supported, so, if you provide your own placeholder
 images, ensure they are already oriented correctly.</p>
 <h3 id="core-mode_1">Core mode</h3>
 <p>For Core mode users that need to create their own highly-customized UI, there is a <a href="../api/methods.html"><code>drawThumbnail</code> API method</a>
-that will allow you to effortlessly render either a submitted image file's preview or a server-returned thumbnail
+that will allow you to effortlessly render either a submitted image file&#8217;s preview or a server-returned thumbnail
 on either a <code>&lt;canvas&gt;</code> or and <code>&lt;img&gt;</code>.  See the <a href="../api/methods.html">method documentation section</a>
 for <code>drawThumbnail</code> for more details.</p>
 <div class="alert alert-block alert-info">
@@ -270,8 +329,8 @@ preview/thumbnail on a <code>&lt;canvas&gt;</code> instead of the <code>&lt;img&
 </div>
 
 <h2 id="supporting-older-browsers-ie9-and-older">Supporting Older Browsers (IE9 and older)</h2>
-<p>"Older" browsers include IE9 and older, Safari 5, and Android older than version 4.  In these browsers, client-side
-image previews are not possible.  However, Fine Uploader provides a way to display thumbnails returned in the server's
+<p>&#8220;Older&#8221; browsers include IE9 and older, Safari 5, and Android older than version 4.  In these browsers, client-side
+image previews are not possible.  However, Fine Uploader provides a way to display thumbnails returned in the server&#8217;s
 response to the upload request.  If you want thumbnails to be displayed in these browsers, your server will have to
 either generate the thumbnail or simply return a public URL for the uploaded image.  Fine Uploader will display
 the thumbnail if the URL can result in a natively rendered <code>&lt;img&gt;</code>.</p>
@@ -279,22 +338,22 @@ the thumbnail if the URL can result in a natively rendered <code>&lt;img&gt;</co
 <p>If you want to display thumbnails (after the upload has completed) next to the associated files, your server must
 return a <code>thumbnailUrl</code> property in its JSON response to the upload (or <code>uploadSuccess</code> request for S3 endpoints).
 Fine Uploader will scale the thumbnail using inline <code>style</code> attribute properties (via <code>max-width</code> and <code>max-height</code>) if
-the <code>qq-max-size</code> attribute is present on the template's <code>&lt;img&gt;</code> template tag.  Re-orientation is not possible
+the <code>qq-max-size</code> attribute is present on the template&#8217;s <code>&lt;img&gt;</code> template tag.  Re-orientation is not possible
 client-side.  If you do not want to display thumbnails for these browsers, you can contribute an alternate template
 for browsers that do not support client-side previews and set the <a href="../api/options-ui.html"><code>template</code> option</a>
 accordingly, based on the capabilities of the current browser.</p>
 <h4 id="placeholder-images_1">Placeholder images</h4>
 <p>Placeholder images are supported in older browsers as well.  As with thumbnails, placeholder images will be scaled,
-if required, via incline style attribute properties.  If specified, the "waiting for thumbnail" placeholder will be
+if required, via incline style attribute properties.  If specified, the &#8220;waiting for thumbnail&#8221; placeholder will be
 visible until the server response is parsed.  If the server response contains a <code>thumbnailUrl</code> property in its response,
 and the URL can be rendered in an <code>&lt;img&gt;</code> tag, this placeholder will be replaced with the thumbnail.  Otherwise, if
-specified, the "not available" placeholder will be displayed.  See the "Placeholder images" section above for more
+specified, the &#8220;not available&#8221; placeholder will be displayed.  See the &#8220;Placeholder images&#8221; section above for more
 details.</p>
 <h3 id="core-mode_2">Core mode</h3>
 <p>For Core mode users that need to create their own highly-customized UI, there is a <a href="../api/methods.html"><code>drawThumbnail</code> API method</a>
-that will allow you to effortlessly render either a submitted image file's server-returned thumbnail on an <code>&lt;img&gt;</code>.
+that will allow you to effortlessly render either a submitted image file&#8217;s server-returned thumbnail on an <code>&lt;img&gt;</code>.
 Note that you are limited to drawing the thumbnail on an <code>&lt;img&gt;</code> in these browsers.  Also, since client-side previews
-are not possible in these browsers, the thumbnail will need to be provided in your server's upload response.
+are not possible in these browsers, the thumbnail will need to be provided in your server&#8217;s upload response.
 Fine Uploader will scale the thumbnail using inline <code>style</code> attribute properties (via <code>max-width</code> and <code>max-height</code>) if
 you specify a <code>maxSize</code> parameter.  See the <a href="../api/methods.html">method documentation section</a> for <code>drawThumbnail</code>
 for more details.</p>

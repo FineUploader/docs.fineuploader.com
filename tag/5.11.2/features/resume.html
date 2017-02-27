@@ -1,0 +1,372 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Resume | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.11.2/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.11.2/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.11.2">Docs</a></li>
+                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.2/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.11.2/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.2">Current: 5.11.2</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.11.2"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#resume">resume</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#getResumableFilesData">getResumableFilesData</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#resume">resume</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.11.2</p></span>
+
+                
+
+                
+<h1 class="page-header" id="resuming-uploads">Resuming Uploads</h1>
+<p>Suppose you’re sitting in a coffee shop, slowly uploading a very large file. Your lunch break is over and you have to
+head back to the office, but your upload is no where near complete. If you're using Fine Uploader, you can simply close
+your browser, head back to the office, and re-select or drop the file back into the uploader. It will pick up where you left off.
+Perhaps you are uploading another large file, but your PC blue-screens in the middle of the upload. Once you get your
+browser back up and running again, simply drop or select the file again and Fine Uploader will resume your file upload.</p>
+<h2 id="high-level-summary">High-level summary</h2>
+<p>The ability to resume an upload is dependent <a href="chunking.html">the chunking feature</a>. Before each chunk is sent to the server,
+Fine Uploader creates a <code>localStorage</code> entry with all of the information required to resume the upload. This is done to
+cover termination of the browser session before the chunk has been successfully received by the server. After Fine Uploader
+has confirmed that the chunk has been successfully processed, the storage entry is either deleted (if there are no more
+chunks left for this file) or updated with the metadata for the next chunk.</p>
+<h2 id="configuring">Configuring</h2>
+<p>We have provided the ability to enable or disable the resume feature (it’s disabled by default). Also, the number of
+days a resume storage entry can live is configurable, but defaults to 7 days. Finally, you may specify an ID property
+that will be used to further distinguish resume cookies stored by the uploader. You may find this useful, if, for instance,
+you would like to tie resumable files to a specific user.</p>
+<p>Note that you <em>must</em> also enable the chunking feature if you want to use resume.</p>
+<h2 id="callbacks">Callbacks</h2>
+<p>We've also provided a callback, <code>onResume</code>, with some useful parameters. The callback is invoked <em>before</em> a resume begins.
+The file ID, along with the name of the file and some data specific to the chunk to be sent are passed to the callback.
+If you want to abort the resume attempt browser-side and simply start uploading from the first chunk, you can return <code>false</code>
+in your callback handler.</p>
+<h2 id="api_1">API</h2>
+<p>We have also added a new method to the API: <code>getResumableFilesData</code>. This allows you to obtain a list of files that are
+resumable in the current session. You may find this useful if you want to display a message to the user after the uploader
+is initialized.</p>
+<h2 id="server-side-support">Server-side support</h2>
+<p>On the server side, there is very little you have to do if you are already accounting for chunked uploads. You can
+determine when a resume has been ordered by looking for a “qqresume” parameter in the request with a value of <code>true</code>.
+This parameter will be sent with the first request of the resume attempt.</p>
+<p>It is important that you keep chunks around on the server until either the entire file has been uploaded and all chunks
+have been merged, or until the number of days specified in the <code>resume.recordsExpireIn</code> option have passed.
+If, for some reason, you receive a request that indicates a resume has been ordered, and one or more of the previously
+uploaded chunks is missing or invalid, you can return a valid JSON response containing a “reset” property with a value of “true”.
+This will let Fine Uploader know that it should start the file upload from the first chunk instead of the last failed chunk.</p>
+<h2 id="example_1">Example</h2>
+<p>It’s really quite simple to start using the resume feature:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myUploader&#39;</span><span class="p">),</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/my/endpoint&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">chunking</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">resume</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.11.2/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

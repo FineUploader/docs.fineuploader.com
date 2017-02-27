@@ -297,7 +297,7 @@
                 
 <h1 class="page-header" id="uploading-files">Uploading Files</h1>
 <p>Assuming you already have a copy of Fine Uploader, first and foremost, you are
-going to want to make sure you've read the <a href="../quickstart/01-getting-started.html">Getting Started guide</a>.</p>
+going to want to make sure you&#8217;ve read the <a href="../quickstart/01-getting-started.html">Getting Started guide</a>.</p>
 <p>If you feel comfortable from there, we can begin explaining how Fine Uploader
 uploads files, as well as some of the basic options one can set to customize
 their uploads.</p>
@@ -323,7 +323,7 @@ endpoints.</p>
 
 <h3 id="blobdata-objects"><code>BlobData</code> objects</h3>
 <p><code>BlobData</code> objects are just <code>Blobs</code> with names. Their properties:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">blobData</span> <span class="o">=</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">blobData</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="cm">/* Blob name goes here */</span>
     <span class="nx">blob</span><span class="o">:</span> <span class="cm">/* Blob goes here */</span>
 <span class="p">}</span>
@@ -331,14 +331,14 @@ endpoints.</p>
 
 
 <h3 id="successfully-uploading">Successfully Uploading</h3>
-<p>Upload success will occur when the server's response status is 200 and the
+<p>Upload success will occur when the server&#8217;s response status is 200 and the
 request body is a JSON string <code>{ "success": "true" }</code></p>
 <h3 id="automanual-uploading">Auto/Manual Uploading</h3>
 <p>Fine Uploader can automatically upload files that are added to it, or wait until
 the user triggers an action to upload. Automatic uploads are turned on or off
 via the <code>autoUpload</code> property of the main options object.</p>
 <p>By default <code>autoUpload</code> is enabled.</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Upload automatically</span>
+<div class="codehilite"><pre><span class="c1">// Upload automatically</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/server/upload&#39;</span>
@@ -351,7 +351,7 @@ via the <code>autoUpload</code> property of the main options object.</p>
 the uploads via the API time. Uploads can be triggered by calling the <code>uploadStoredFiles</code> method on an instance of Fine Uploader.</p>
 <!-- http://stackoverflow.com/questions/16471503/fineuploader-uploads-the-same-file-multiple-times-at-the-same-time -->
 
-<div class="codehilite"><pre><span></span><span class="c1">// Manually upload</span>
+<div class="codehilite"><pre><span class="c1">// Manually upload</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">autoUpload</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>

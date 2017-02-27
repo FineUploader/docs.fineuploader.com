@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -187,7 +246,7 @@
                 
 
                 
-<h1 class="page-header" id="options-core">Options <small>Core</small></h1>
+<h1 class="page-header" id="options-wzxhzdk62corewzxhzdk63">Options <small>Core</small></h1>
 <p>Fine Uploader has a <strong>plethora</strong> of options. Many of these options change meaning
 depending on what sort of uploader you are using. Pay close attention to the
 mode you are in and keep that in mind when determining which options do what.</p>
@@ -229,7 +288,7 @@ mode you are in and keep that in mind when determining which options do what.</p
 
         <td><p><code>null</code></p></td>
 
-        <td><p>Specify an element to use as the 'select files' button. Cannot be a <code>&lt;button&gt;</code> (<a href="https://github.com/Widen/fine-uploader/issues/33">#33</a>)</p></td>
+        <td><p>Specify an element to use as the &#8216;select files&#8217; button. Cannot be a <code>&lt;button&gt;</code> (<a href="https://github.com/Widen/fine-uploader/issues/33">#33</a>)</p></td>
 
     </tr>
 
@@ -627,7 +686,7 @@ mode you are in and keep that in mind when determining which options do what.</p
 
         <td><p><code>'DELETE'</code></p></td>
 
-        <td><p>Set the method to use for delete requests. Accepts 'POST' or 'DELETE'</p></td>
+        <td><p>Set the method to use for delete requests. Accepts &#8216;POST&#8217; or &#8216;DELETE&#8217;</p></td>
 
     </tr>
 
@@ -672,7 +731,7 @@ mode you are in and keep that in mind when determining which options do what.</p
 
 <hr>
 <h3 id="extrabuttons-option"><code>extraButtons</code> option</h3>
-<p>This must contain an array of objects.  Each object will describe an "extra" button that Fine Uploader will track
+<p>This must contain an array of objects.  Each object will describe an &#8220;extra&#8221; button that Fine Uploader will track
 along with the default upload button.  Each button object can contain the following properties:</p>
 <table class="table table-striped table-bordered reference-table">
     <thead>
@@ -779,7 +838,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is empty, please select files again without it.'</p></td>
+        <td><p>&#8216;{file} is empty, please select files again without it.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submitted item is zero bits.</p></td>
 
@@ -791,7 +850,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is too large, maximum file size is {sizeLimit}.'</p></td>
+        <td><p>&#8216;{file} is too large, maximum file size is {sizeLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submitted item is too large.</p></td>
 
@@ -803,7 +862,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} has an invalid extension. Valid extension(s): {extensions}.'</p></td>
+        <td><p>&#8216;{file} has an invalid extension. Valid extension(s): {extensions}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if an invalid file type is detected.</p></td>
 
@@ -815,7 +874,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is too small, minimum file size is {minSizeLimit}.'</p></td>
+        <td><p>&#8216;{file} is too small, minimum file size is {minSizeLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if the item is too small.</p></td>
 
@@ -827,7 +886,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'No files to upload.'</p></td>
+        <td><p>&#8216;No files to upload.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if any empty array of items is submitted.</p></td>
 
@@ -839,7 +898,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'The files are being uploaded, if you leave now the upload will be cancelled.'</p></td>
+        <td><p>&#8216;The files are being uploaded, if you leave now the upload will be cancelled.&#8217;</p></td>
 
         <td><p>Text displayed to the user when they attempt to leave the page while uploads are still in progress.</p></td>
 
@@ -851,7 +910,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'Retry failed - you have reached your file limit.'</p></td>
+        <td><p>&#8216;Retry failed - you have reached your file limit.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a retry attempt is declared a failed due to a violation of the <code>validation.itemLimit</code> rule.</p></td>
 
@@ -863,7 +922,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.'</p></td>
+        <td><p>&#8216;Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submit is ignored due to a violation of the <code>validation.itemLimit</code> rules.</p></td>
 
@@ -1237,7 +1296,7 @@ always used and shared among all buttons for a particular instance.</p>
 
         <td><p><code>'Upload failure reason unknown'</code></p></td>
 
-        <td><p>In the event of non-200 response from the server sans the 'error' property, this message will be passed to the 'error' event handler.</p></td>
+        <td><p>In the event of non-200 response from the server sans the &#8216;error&#8217; property, this message will be passed to the &#8216;error&#8217; event handler.</p></td>
 
     </tr>
 

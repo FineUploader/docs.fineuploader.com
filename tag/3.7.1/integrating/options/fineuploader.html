@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="fineuploader-mode-options">FineUploader mode options</h2>
+<p>Note that all <a href="fineuploaderbasic.html">FineUploaderBasic mode options</a> are also available in FineUploader mode.</p>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>element</td>
+            <td>element</td>
+            <td>null</td>
+            <td>Container for the default drop zone (if supported by browser) and files/`Blob` objects list.  <b>Required</b></td>
+        </tr>
+        <tr>
+            <td>listElement</td>
+            <td>element</td>
+            <td>null</td>
+            <td>Container for the file or `Blob` list.  If null, the list defined in the template will be used.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="draganddrop-option-properties"><code>dragAndDrop</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>extraDropzones</td>
+            <td>array of elements</td>
+            <td>[]</td>
+            <td>Useful if you&rsquo;d like to to designate additional dropozones for file input.  Of course, this is not relevant if the
+            form uploader is used.</td>
+        </tr>
+        <tr>
+            <td>hideDropzones</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Useful if you do not want all dropzone elements to be hidden.  It is expected that some CSS would accompany setting
+            this option to false.  You may set this to false if you want to wrap some visible elements, such as the listElement,
+            in a drop zone.</td>
+        </tr>
+        <tr>
+            <td>disableDefaultDropzone</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Set this to true if you are contributing your own drop zone(s) and do not want to use the default one.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="text-option-properties_1"><code>text</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>uploadButton</td>
+            <td>string</td>
+            <td>Upload a file</td>
+            <td>Label for the file selector button</td>
+        </tr>
+        <tr>
+            <td>cancelButton</td>
+            <td>string</td>
+            <td>cancel</td>
+            <td>The cancel button text (which is more of a link than a button).</td>
+        </tr>
+        <tr>
+            <td>retryButton</td>
+            <td>string</td>
+            <td>Retry</td>
+            <td>The retry (a failed upload) link text.</td>
+        </tr>
+        <tr>
+            <td>deleteButton</td>
+            <td>string</td>
+            <td>Delete</td>
+            <td>The delete file link text.</td>
+        </tr>
+        <tr>
+            <td>failUpload</td>
+            <td>string</td>
+            <td>Upload failed</td>
+            <td>Text that appears next to a failed file or `Blob` item</td>
+        </tr>
+        <tr>
+            <td>deleteButton</td>
+             <td>string</td>
+             <td>Delete</td>
+             <td>The delete file link text.</td>
+         </tr>
+         <tr>
+            <td>dragZone</td>
+            <td>string</td>
+            <td>Drop files here to upload</td>
+            <td>Text that appears in the drop zone when it is visible</td>
+        </tr>
+        <tr>
+            <td>dropProcessing</td>
+            <td>string</td>
+            <td>Processing dropped files&hellip;</td>
+            <td>Text that appears next to the drop processing spinner while we are waiting for the upload to finish processing dropped files or directories.</td>
+        </tr>
+        <tr>
+            <td>formatProgress</td>
+            <td>string</td>
+            <td>{percent}% of {total_size}</td>
+            <td>Text that appears next to a file or `Blob` as it is uploading (if the browser supports the file API)</td>
+        </tr>
+        <tr>
+            <td>waitingForResponse</td>
+            <td>string</td>
+            <td>Processing&hellip;</td>
+            <td>Text that appears next to a file or `Blob` after last byte has been sent (according to the UA) while we are wating for a response from the server.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="faileduploadtextdisplay-option-properties"><code>failedUploadTextDisplay</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>mode</td>
+            <td>string</td>
+            <td>default</td>
+            <td>Valid values are &ldquo;default&rdquo; (display the text defined in <code>failUploadText</code> next to each
+            failed file), &ldquo;none&rdquo; (don&rsquo;t display any text next to a failed file), and &ldquo;custom&rdquo; (display error response text from the
+            server next to the failed file or `Blob`).</td>
+        </tr>
+        <tr>
+            <td>maxChars</td>
+            <td>integer</td>
+            <td>50</td>
+            <td>The maximum amount of character of text to display next to the file or `Blob`.  After the limit has been reached,
+            &ldquo;&hellip;&rdquo; will terminate the string.  This is ignored unless <code>mode</code> is &ldquo;custom&rdquo;.</td>
+        </tr>
+        <tr>
+            <td>responseProperty</td>
+            <td>string</td>
+            <td>error</td>
+            <td>The property from the server response containing the error text to display next to the
+            failed file or `Blob`.  This is ignored unless <code>mode</code> is &ldquo;custom&rdquo;.</td>
+        </tr>
+        <tr>
+            <td>enableTooltip</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>If set to true, a tooltip will display the full contents of the error message when the mouse pointer
+            hovers over the failed file or `Blob`.  Note that this currently uses the title attribute of the failed item element.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="messages-option-properties_1"><code>messages</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tooManyFilesError</td>
+            <td>string</td>
+            <td>You may only drop one file</td>
+            <td>Text sent to `showMessage` and the `onError` callback when `multiple` is `false` and more the one file is dropped at once.</td>
+        </tr>
+        <tr>
+            <td>unsupportedBrowser</td>
+            <td>string</td>
+            <td>Unrecoverable error - this browser does not permit file uploading of any kind.</td>
+            <td>Text displayed in place of the normal uploader contents when the current browser does not support browser-based uploading of any kind.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="retry-option-properties_1"><code>retry</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>showAutoRetryNote</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>If set to <code>true</code>, a status message will appear next to the file or `Blob` during automatic retry attempts.</td>
+        </tr>
+        <tr>
+            <td>autoRetryNote</td>
+            <td>string</td>
+            <td>Retrying {retryNum}/{maxAuto}&hellip;</td>
+            <td>The text of the note that will optionally appear next to the file or `Blob` during automatic retry attempts.  Ignored
+            if <code>showAutoRetryNote</code> is <code>false</code>.</td>
+        </tr>
+        <tr>
+            <td>showButton</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If <code>true</code>, a button/link will appear next to a failed file or `Blob` after all retry attempts have been
+            exhausted, assuming the server has not prohibited further retry attempts via the <code>preventRetryResponseProperty</code>.
+            This button/link will allow the user to manually order the uploader to make another attempt at uploading the
+            failed file or `Blob`.  Note that this operation does respect the <code>maxConnections</code> value, so if all connections
+            are accounted for, the retry attempt will be queued until a connection opens up.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="deletefile-option-properties_1"><code>deleteFile</code> option properties:</h3>
+<p>For more information on the Delete File feature, please read the <a href="http://blog.fineuploader.com/2013/01/25/delete-an-uploaded-file-in-3-3/">associated blog post</a> and<br>
+check out the server-side readme.</p>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>forceConfirm</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Set this to true if you want to force users to confirm their choice to delete a file.
+            This uses the <code>showConfirm</code> function, which is overridable.</td>
+        </tr>
+        <tr>
+            <td>confirmMessage</td>
+            <td>string</td>
+            <td>Are you sure you want to delete {filename}?</td>
+            <td>The message displayed in the confirm delete dialog (if enabled).  Note that the {filename} string is important,
+            as Fine Uploader replaces this with the associated file name in the confirm dialog.</td>
+        </tr>
+        <tr>
+            <td>deletingStatusText</td>
+            <td>string</td>
+            <td>Deleting&hellip;</td>
+            <td>Status message to appear next to a file that is pending deletion.  Note that a spinner, by default, will also appear.</td>
+        </tr>
+        <tr>
+            <td>deletingFailedText</td>
+            <td>string</td>
+            <td>Delete failed</td>
+            <td>Status message to appear next to a file that has failed to delete.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="display-option-properties"><code>display</code> option properties:</h3>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>fileSizeOnSubmit</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to true, the file or `Blob` size (if available) will be displayed next to the file immediately after the file has been submitted/selected.
+            Otherwise, it will only appear once the actual upload starts.</td>
+        </tr>
+        <tr>
+            <td>prependFiles</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to true, each batch of files submitted will be added to the top of the UI&rsquo;s file list.  If batch
+            selection or drag and drop is not supported, each individual file submitted will be added to the top of the
+            UI&rsquo;s file list.  Note that this will not affect the order in which files are actually uploaded.  Files will
+            still be uploaded in the order they are actually submitted.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="paste-option-properties_1"><code>paste</code> option properties:</h3>
+<p>Currently, only pasting images (from the web) is supported, and only in Chrome.  See the <a href="fineuploaderbasic.html">FineUploaderBasic mode options</a><br>
+for additional <code>paste</code> options.</p>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>promptForName</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to true, the <code>showPrompt</code> function will be called in an attempt to ask the user to provide a name
+            for the associated pasted image.  See the styling documentation for more details on overriding <code>showPrompt</code>.</td>
+        </tr>
+        <tr>
+            <td>namePromptMessage</td>
+            <td>string</td>
+            <td>Please name this image</td>
+            <td>Text that will appear in the <code>showPrompt</code> dialog, asking the user to name the pasted image.
+            Note that an appropriate extension will always been appended to the name supplied by the user automatically.
+            If you override the <code>onPasteReceived</code> callback AND set this option to true, your <code>onPasteReceived</code>
+            callback will be ignored.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="editfilename-option-properties"><code>editFilename</code> option properties:</h3>
+<p>If enabled, this will allow users to edit the filename via the UI.  See the <a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/">blog post</a> for more details.</p>
+<table class='table table-bordered table-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>enabled</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>If set to true, users will be allowed to edit the name of all submitted files via the UI.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

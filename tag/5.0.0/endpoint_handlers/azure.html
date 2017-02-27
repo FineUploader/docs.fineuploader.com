@@ -204,14 +204,14 @@ server.  This document will outline both required and optional server-side tasks
 
 <h4 class="alert-heading">Note</h4>
 
-<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure&#8217;s API does
 not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
 If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
 handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
 
 </div>
 
-<h4 id="creating-your-azure-blob-storage-containers-cors-configuration">Creating your Azure Blob Storage container's CORS configuration</h4>
+<h4 id="creating-your-azure-blob-storage-containers-cors-configuration">Creating your Azure Blob Storage container&#8217;s CORS configuration</h4>
 <p>You MUST properly set the CORS configuration in your container(s).  Fine Uploader
 must make cross-origin requests to Azure.  You can <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn535601.aspx">read more about CORS configuration on
 the Azure developer site</a>.</p>
@@ -219,7 +219,7 @@ the Azure developer site</a>.</p>
 to configure your container in this regard at this point.  The <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">Fine Uploader Azure C# example</a> covers CORS
 configuration.</p>
 <p>A simple and typical CORS configuration would look like this:</p>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;Cors&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;Cors&gt;</span>
     <span class="nt">&lt;CorsRule&gt;</span>
         <span class="nt">&lt;AllowedOrigins&gt;</span>http://yourdomain.com<span class="nt">&lt;/AllowedOrigins&gt;</span>
         <span class="nt">&lt;AllowedMethods&gt;</span>PUT,DELETE<span class="nt">&lt;/AllowedMethods&gt;</span>
@@ -236,10 +236,10 @@ configuration.</p>
 <li>The DELETE method is required.  It is used by the delete file feature (optional) but is also used by Fine Uploader Azure
 to clean up uncommitted blocks if an in-progress chunked upload is cancelled.</li>
 <li>You will also need to include entries in the AllowedHeaders tag for any custom parameters (user metadata) you want
-to attach to the blob.  All parameters are sent as headers with a prefix of "x-ms-meta-".</li>
+to attach to the blob.  All parameters are sent as headers with a prefix of &#8220;x-ms-meta-&#8220;.</li>
 <li>If you are using the <a href="../features/scaling.html">scaling feature</a>, and you are have electing to have the original/parent image
-uploaded, you will need to account for these headers in your CORS configuration as well: "x-ms-meta-qquuid",
-"x-ms-meta-qqparentuuid", and "x-ms-meta-qqparentsize".</li>
+uploaded, you will need to account for these headers in your CORS configuration as well: &#8220;x-ms-meta-qquuid&#8221;,
+&#8220;x-ms-meta-qqparentuuid&#8221;, and &#8220;x-ms-meta-qqparentsize&#8221;.</li>
 </ul>
 <h3 id="required-server-side-tasks">Required server-side tasks</h3>
 <p>The only required server-side task for all browsers is an endpoint the returns a Shared Access Signature URI
@@ -249,7 +249,7 @@ corresponds to the <code>signature.endpoint</code> property.</p>
 query string of this request URI:</p>
 <ul>
 <li><code>_method</code>: The verb that will be used by Fine Uploader when it sends the associated request to Azure.
-Possible values are "DELETE" and "PUT" at this time.</li>
+Possible values are &#8220;DELETE&#8221; and &#8220;PUT&#8221; at this time.</li>
 <li><code>_bloburi</code>: The fully-qualified URI for the blob associated with the request that Fine Uploader will send to Azure.</li>
 <li><code>qqtimestamp</code>: You can ignore this parameter.  It is simply used to ensure that the browser requests a fresh
 SAS URI from your server every time.</li>
@@ -263,11 +263,11 @@ either.</p>
 <h4 id="returning-a-sas-uri">Returning a SAS URI</h4>
 <p>At this point, the simplest way to generate a SAS URI is to use the Microsoft Windows Azure Storage SDK server-side.
 See <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">our C# server-side example</a> for details.</p>
-<p>Once the SAS URI has been generated, simply return it in your response to Fine Uploader's signature request.</p>
+<p>Once the SAS URI has been generated, simply return it in your response to Fine Uploader&#8217;s signature request.</p>
 <h3 id="optional-server-side-tasks">Optional server-side tasks</h3>
 <p>If you would like Fine Uploader to notify your server when any file has been successfully uploaded to Azure, you should
 set the <code>uploadSuccess.endpoint</code> property.  If this is set, Fine Uploader will send a POST request
-to your server with a Content-Type of "application/x-www-form-urlencoded".  The payload of this request, by default,
+to your server with a Content-Type of &#8220;application/x-www-form-urlencoded&#8221;.  The payload of this request, by default,
 will contain the following information:</p>
 <ul>
 <li>Blob name</li>
@@ -282,7 +282,7 @@ handling this request and let Fine Uploader know if there is a problem with this
 appropriate (non-200) status code.  Furthermore, you can include a message to be displayed (FineUploader/default-UI mode)
 and passed to your <code>onError</code> callback handler via an <code>error</code> property in the payload of your response.  In this case,
 the response payload must be valid JSON.  Furthermore, you can tell Fine Uploader to prevent any retries by including
-a <code>preventRetry</code> property in the payload of your JSON response with a value of "true".</p>
+a <code>preventRetry</code> property in the payload of your JSON response with a value of &#8220;true&#8221;.</p>
 <p>You can also pass any data to your Fine Uploader <a href="../api/events.html#complete"><code>complete</code> event handler</a>, client-side,
 by including it in a valid JSON response to the <code>uploadSuccess.endpoint</code> POST request.</p>
 <h2 id="delete-file-support_1">Delete File support</h2>
@@ -294,7 +294,7 @@ to Azure.  As usual, Fine Uploader will ask your server for a SAS URI before sen
 to set the <code>expected</code> property of the <code>cors</code> option when setting up your Fine Uploader instance.  You must also include
 appropriate headers in your server-response, and possibly handle OPTIONS (pre-flight) requests sent by the browser.  Please
 read the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/">blog post on CORS support</a> for details.  Note that
-you can ignore the "Handling iframe CORS upload requests server-side" section.</p>
+you can ignore the &#8220;Handling iframe CORS upload requests server-side&#8221; section.</p>
 <h2 id="thumbnails_1">Thumbnails</h2>
 <p>If you would like to override the client-side generated preview (where supported) or provide a thumbnail for a
 non-previewable file that you have generated server-side, you can do so by providing an absolute or relative path (URL)

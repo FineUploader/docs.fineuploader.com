@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="documentation">Documentation</h2>
+<p>Welcome to FineUploader&rsquo;s documentation. This documentation is divided into different parts. It&rsquo;s recommended that you start at the <a href="#users-guide">Users&rsquo; guide</a> and afterwards head over to <a href="#quickstart">Quickstart</a>. If you&rsquo;d rather dive into the internals of FineUploader, check out the <a href="#api-reference">API documentation</a>. Common server-side examples are found in the <a href="#server-side">server examples repository</a>.</p>
+<h3 id="users-guide">User&rsquo;s Guide</h3>
+<p>This area of the documentation is mostly prose and examples. It is meant to be human-readable and accessible to those looking to get started with FineUploader. For experts, or developers looking to view more technical documentation, refer to the <a href="#api-reference">API docs</a>.</p>
+<h4 id="quickstart">Quickstart</h4>
+<ol>
+<li><a href="integrating/quickstart/index.html">Getting Stared with FineUploader</a></li>
+<li><a href="integrating/quickstart/setting_options.html">Setting FineUploader options</a></li>
+<li><a href="integrating/quickstart/setting_up_server.html">Setting up a simple server to handle uploads</a></li>
+</ol>
+<h4 id="modes">Modes</h4>
+<ul>
+<li><a href="integrating/modes/fineuploaderbasic.html">FineUploaderBasic</a></li>
+<li><a href="integrating/modes/fineuploader.html">FineUploader</a></li>
+<li><a href="integrating/modes/jquery-fineuploaderbasic.html">jQuery &amp; FineUploaderBasic</a></li>
+<li><a href="integrating/modes/jquery-fineuploader.html">jQuery &amp; FineUploader</a></li>
+</ul>
+<h4 id="options_1">Options</h4>
+<ul>
+<li><a href="integrating/options/fineuploaderbasic.html">FineUploaderBasic</a></li>
+<li><a href="integrating/options/fineuploader.html">FineUploader</a></li>
+<li><a href="integrating/styling.html">Styling Fine Uploader</a><ul>
+<li><a href="integrating/styling.html#templates">Templates</a></li>
+<li><a href="integrating/styling.html#classes">Classes</a></li>
+<li><a href="integrating/styling.html#dialogs">Dialogs</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="server-side">Server-side</h4>
+<ul>
+<li><a href="integrating/server/index.html">Server-side guidelines</a></li>
+<li><a href="https://github.com/Widen/fine-uploader-server">Server-side examples</a></li>
+</ul>
+<h4 id="browser-support">Browser Support</h4>
+<ul>
+<li><a href="integrating/limitations-ie.html">IE Limitations</a></li>
+</ul>
+<h3 id="api-reference">API Reference</h3>
+<p>The API reference is primarily for experienced integrators who are looking for more advanced features and details about FineUploader. That being said, these docs should be viewed by all who are looking to use FineUploader as some of the information is integral.</p>
+<ul>
+<li><a href="api/fineuploaderbasic.html">FineUploaderBasic mode</a></li>
+<li><a href="api/fineuploader.html">FineUploader mode</a></li>
+<li><a href="api/drag-and-drop.html">Drag and Drop standalone module</a></li>
+<li><a href="api/callbacks.html">Callbacks</a></li>
+<li><a href="api/promise.html">Promises</a></li>
+<li><a href="api/qquery.html">Utility functions</a></li>
+<li><a href="api/feature-detection.html">Feature Detection module</a></li>
+</ul>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="fineuploaderbasic-mode-api-functions">FineUploaderBasic mode API functions</h2>
+<ul>
+<li>
+<p><code>log(String message)</code> - Outputs a message to the javascript console, if possible.</p>
+</li>
+<li>
+<p><code>setParams(Object newParams, [optional] Number id)</code> - Set the parameters sent along with the request after initializing the uploader.<br>
+You can either change the parameters for a specific file or <code>Blob</code>, or for all files and <code>Blob</code>s.  To do the latter, simply omit the <code>id</code> parameter.<br>
+See this <a href="http://blog.fineuploader.com/2012/12/05/include-params-in-the-request-body-or-the-query-string/">blog post explaining parameters</a><br>
+as well as <a href="http://blog.fineuploader.com/2012/12/09/setparams-is-now-much-more-useful-in-3-1/">this one explaining how this function works in 3.1 and later versions</a>.</p>
+</li>
+<li>
+<p><code>setEndpoint(String endpointPath, [optional] Number id)</code> - Modify the location,  after initializing the uploader, where upload requests should be directed.<br>
+You can either change the endpoint for a specific file or <code>Blob</code>, or for all files and <code>Blob</code>s.  To do the latter, simply omit the <code>id</code> parameter.</p>
+</li>
+<li>
+<p><code>uploadStoredFiles()</code> - If <code>!autoUpload</code>, this will begin uploading all queued files and <code>Blob</code>s.<br>
+If there are no items to upload, this will result in &ldquo;no files&rdquo; error.</p>
+</li>
+<li>
+<p><code>clearStoredFiles()</code> - Clears the internal list of stored files and <code>Blob</code>s.  Only applicable when <code>autoUpload</code> is set to false.</p>
+</li>
+<li>
+<p><code>getInProgress()</code> - Returns the number of files or <code>Blob</code>s that are either currently uploading or waiting in line to be uploaded. Note that calling this method inside of an onCancel callback will return a value that includes the upload associated with the onCancel callback. This is due to the fact that the upload will not be cancelled until the onCancel callback returns, since this callback provides the opportunity to prevent the upload from being cancelled by returning false inline or via a promise.</p>
+</li>
+<li>
+<p><code>getNetUploads()</code> - Returns the number of files or <code>Blob</code>s that have both been successfully uploaded and have NOT been deleted.</p>
+</li>
+<li>
+<p><code>retry(String id)</code> - Orders the uploader to make another attempt at uploading a specific file or <code>Blob</code>.  A NO-OP if the server<br>
+prohibits retries on a failed file via the <code>preventRetryResponseProperty</code>.  Note that this operation does<br>
+respect the <code>maxConnections</code> value, so if all connections are accounted for, the retry attempt will be queued<br>
+until a connection opens up.</p>
+</li>
+<li>
+<p><code>cancel(String id)</code> - Cancels a queued or currently uploading file or <code>Blob</code>.</p>
+</li>
+<li>
+<p><code>cancelAll()</code> - Cancels all queued or currently uploading files or <code>Blob</code>s.</p>
+</li>
+<li>
+<p><code>reset()</code> - While this function is most useful for FineUploader, it is also available in FineUploaderBasic.  In FineUploader,<br>
+calling this function will reset all UI elements to the state they exsited in immediately after initialization.  In FineUploaderBasic,<br>
+this resets all internal variables to the state they existed in immediately after initialization.  If you are using FineUploaderBasic,<br>
+it is up to you to &ldquo;reset&rdquo; any of your UI elements.</p>
+</li>
+<li>
+<p><code>addFiles(filesOrInputs, (optional) params, (optional) endpoint)</code> - Use this if you would like to submit files to the uploader.<br>
+This may be useful if you have a method of gathering files that does not include Fine Uploader&rsquo;s input button or the drag &amp; drop<br>
+support built into FineUploader.  This function accepts the following types: <code>File</code>, <code>input</code> element, or a collection of<br>
+any of these types, provided the collection object contains an (integer) index property for each contained item.  Note<br>
+that you can also pass parameters and/or an endpoint to associate with the passed file(s) or input(s).</p>
+</li>
+<li>
+<p><code>addBlobs(blobDataArray, (optional) params, (optional) endpoint)</code> - Allows you to submit one or more <code>Blob</code> objects to<br>
+be uploaded.  This is expected to be an array of <code>BlobData</code> objects.  A <code>BlobData</code> object is simply defined by the<br>
+following convention: an object with a <code>name</code> property (used to assoicate a name with the <code>Blob</code>) and a <code>blob</code> property<br>
+(with a value equal to the <code>Blob</code> you would like to upload).  Note that you may also simply pass one <code>Blob</code> or an array<br>
+of <code>Blob</code> objects.  In each of these last two cases, a default name, defined in the <code>blobs</code> option, will be used.  Also<br>
+note that your <code>Blob</code> objects must be <code>Blob</code> objects, but not <code>File</code> objects.  In other words, <code>Blob</code> subtypes are not<br>
+acceptable.  If you would like to upload <code>File</code> objects via the API, do so via the <code>addFiles</code> function.  Note that you<br>
+can also pass parameters and/or an endpoint to associate with the passed <code>Blob</code> object(s).</p>
+</li>
+<li>
+<p><code>getResumableFilesData()</code> - Returns an array of objects, each describing a file that is potentially resumable by this uploader instance.<br>
+If a <code>resume.id</code> property has been set, this is taken into consideration.  Each resumable file is represented by an object with the<br>
+following properties: <code>name</code> - filename, <code>size</code> - file size, <code>uuid</code> - unique ID associated w/ the file, <code>partIdx</code> - index of the part where<br>
+the resume will start.</p>
+</li>
+<li>
+<p><code>getSize(id)</code> - Returns the size of the <code>File</code> or <code>Blob</code> represented by the passed ID.  Undefined if the file size cannot be determined, such as<br>
+if the user agent does not support the File API.</p>
+</li>
+<li>
+<p><code>getName(id)</code> - Returns the name of the file or <code>Blob</code> represented by the passed ID.</p>
+</li>
+<li>
+<p><code>setName(id, newName)</code> - Provide an alternate/new name for the associated file or blob.<br>
+This will be sent along with the upload request, by default, as the value of a &ldquo;qqfilename&rdquo; parameter.<br>
+You should only call this method before the upload request has been sent.  Read<br>
+<a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/">the blog post about the edit filename feature</a><br>
+in both FineUploader and FineUploaderBasic for more details.</p>
+</li>
+<li>
+<p><code>getFile(id)</code> - Returns the <code>File</code> or <code>Blob</code> object associated with the passed ID.  Undefined if the underlying <code>File</code> or <code>Blob</code> cannot be found,<br>
+or if the user agent does not support the File API.  For more info on the <code>File</code> and <code>Blob</code> objects, please see<br>
+<a href="http://www.w3.org/TR/FileAPI/#dfn-file">the File entry in the W3C spec</a> and <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">the Blob entry in the W3C spec</a>, respectively.</p>
+</li>
+<li>
+<p><code>deleteFile(id)</code> - This allows you to programmatically order Fine Uploader to send a DELETE request for a specific file or <code>Blob</code>.<br>
+Fine Uploader actually uses the API call internally when a user clicks the delete link in FineUploader mode.</p>
+</li>
+<li>
+<p><code>setDeleteFileEndpoint(String endpointPath, [optional] Number id)</code> - Same as the <code>setEndpoint</code> function except this applies only to the <code>deleteFile</code> option endpoint(s).</p>
+</li>
+<li>
+<p><code>setDeleteFileParams(Object newParams, [optional] Number id)</code> - Same as the <code>setParams</code> function except this applies only to the <code>deleteFile</code> option parameters.</p>
+</li>
+<li>
+<p><code>getUuid(id)</code> - Retrieves the UUID associated with a file or <code>Blob</code>, given a current session file or <code>Blob</code> ID.</p>
+</li>
+<li>
+<p><code>doesExist(id)</code> - Returns true if the associated file or <code>Blob</code> is a currently registered with Fine Uploader.</p>
+</li>
+<li>
+<p><code>getUploads(optionalFilter)</code> - Get information about all files or <code>Blob</code>s that have been submitted to the uploader during<br>
+this session.  The return type is either a single object (filter by single ID, filter by single UUID), or an array of<br>
+objects (filter by array of IDs or UUIDs, filter by status, no filter).  The object referred to here has the following<br>
+properties: <code>id</code>, <code>uuid</code>, <code>originalName</code>, <code>name</code>, <code>size</code> (if available), and <code>status</code>.  The status values correspond to &ldquo;constants&rdquo;<br>
+defined in the <code>qq.status</code> object.  You may filter the results by one of the following filters: <code>id</code>, <code>uuid</code>, or<br>
+<code>status</code>.  The filter may be a single value or an array of values.  For example, if you would like to retrieve information<br>
+about the first 3 items submitted to the uploader, you would call <code>uploaderInstance.getUploads({id: [0, 1, 2]});</code>.  Please<br>
+see <a href="http://blog.fineuploader.com/2013/05/24/query-fine-uploader-for-upload-stats/">the blog post on upload stats retrieval</a><br>
+for more details and examples.</p>
+</li>
+</ul>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

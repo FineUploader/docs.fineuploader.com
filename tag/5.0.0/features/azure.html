@@ -207,7 +207,7 @@ more efficient and scalable.</p>
 <ol>
 <li>Fine Uploader constructs a URL that will represent the file as a blob once it is in the blob storage container.</li>
 <li>Fine Uploader sends a GET request to your <a href="../endpoint_handlers/azure.html">signature server</a>.  Your server must then create a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">Shared Access Signature</a>
-URI for that specific operation and blob.  This URI must be returned in your server's response.</li>
+URI for that specific operation and blob.  This URI must be returned in your server&#8217;s response.</li>
 <li>Fine Uploader sends a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179451.aspx">Put Blob</a> request to Azure and includes the file bytes in the request payload.  The URL for this
 request is the SAS URI returned by your server in step 2.</li>
 <li>If the file uploaded successfully, Fine Uploader will send a POST request to your server with the blob details if
@@ -227,7 +227,7 @@ request to Azure if a user cancels an in-progress <a href="../features/chunking.
 uncommitted blocks are cleaned up by Azure.</p>
 <h3 id="what-features-are-available">What features are available?</h3>
 <p>All features present in the traditional endpoint uploader are also available in Fine Uploader Azure, with one notable
-omission.  Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does
+omission.  Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure&#8217;s API does
 not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
 If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
 handler if the value of <a href="../browser-support.html#feature-detection"><code>qq.supportedFeatures.ajaxUploading</code></a> is <code>false</code>.</p>

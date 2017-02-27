@@ -236,21 +236,21 @@
 
 <p>This feature is available in Chrome (except in iOS), Firefox, Safari, IE10+, &amp; Opera 15+ due to their support for the
 <a href="https://dvcs.w3.org/hg/progress/raw-file/tip/Overview.html#interface-progressevent"><code>ProgressEvent</code> interface</a>.  Note that
-progress reporting is not supported in Android's stock browser, or Chrome in iOS.</p>
+progress reporting is not supported in Android&#8217;s stock browser, or Chrome in iOS.</p>
 
 </div>
 
 <p>Seeing your uploads progress can be a satisfying feeling, especially when they
 finish. With Fine Uploader UI mode, a progress bar is included in the UI, and
--- just like any other Fine Uploader UI feature -- it can be completely
+&#8212; just like any other Fine Uploader UI feature &#8212; it can be completely
 rebuilt and rebranded in Core mode.</p>
 <p>Fine Uploader provides two concepts of progress: per-file progress, and total progress.</p>
 <h3 id="per-file-progress">Per-File Progress</h3>
 <p>If using Fine Uploader UI, a progress bar will be drawn and updated for each file as the upload progresses.  Note that
-you must have the progress element in your template.  Here's what the progress element may look like in your template:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-progress-bar-container-selector&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+you must have the progress element in your template.  Here&#8217;s what the progress element may look like in your template:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-container-selector&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
@@ -260,11 +260,11 @@ Fine Uploader Core.</p>
 <h3 id="total-progress">Total Progress</h3>
 <p>Version 4.4 brings built-in total progress tracking.  If using Fine Uploader UI, a total progress bar will be rendered
 and updated automatically for you, provided you have the total progress module included in the source and the total
-progress element is present in your template.  Here's what the total progress element may look like in your
+progress element is present in your template.  Here&#8217;s what the total progress element may look like in your
 template:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
@@ -276,7 +276,7 @@ events that Fine Uploader will trigger.</p>
 finished uploading (failed or successful), total progress calculations are complete and will restart once
 new files are submitted.</p>
 <p>Total progress will be updated, and the <code>totalProgress</code> event will be triggered whenever:
-<em> An individual file's progress changes.
+<em> An individual file&#8217;s progress changes.
 </em> The total size of an individual file changes (such as for scaled images, as the sizes of these are not known
 until they are generated just before the upload begins).
 <em> Whenever a file is added.

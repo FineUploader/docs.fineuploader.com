@@ -1,0 +1,412 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Multiple Upload Buttons | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/4.1.0/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/4.1.0/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/4.1.0">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/4.1.0/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/4.1.0/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/4.1.0/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/4.1.0/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/4.1.0/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/4.1.0/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/4.1.0/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/4.1.0/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/4.1.0/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/4.1.0/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/4.1.0/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/4.1.0/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/4.1.0/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/4.1.0/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/4.1.0/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/4.1.0/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/4.1.0/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/4.1.0/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/4.1.0/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/4.1.0/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/4.1.0/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/4.1.0/api/options.html">Core</a></li>
+                                <li><a href="/tag/4.1.0/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/4.1.0/api/options-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/4.1.0/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/4.1.0/api/methods-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.0/api/events.html">Events</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.0/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/4.1.0/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/4.1.0/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/4.1.0/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class='active'><a href="/tag/4.1.0">Current: 4.1.0</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/site/4.1.0">Site_4.1.0</a></ul>
+                            
+                                <ul><a href="/branch/feature/getuploads-doc-improvement">Feature_getuploads-Doc-Improvement</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/fix/s3-jquery-build">Fix_s3-Jquery-Build</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.0">4.0.0</a></ul>
+                            
+                                <ul><a href="/tag/4.0.1">4.0.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.2">4.0.2</a></ul>
+                            
+                                <ul><a href="/tag/4.0.3">4.0.3</a></ul>
+                            
+                                <ul><a href="/tag/4.1.0">4.1.0</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span10 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>4.1.0</p></span>
+
+                
+
+                
+<h1 class="page-header" id="multiple-upload-buttons">Multiple Upload Buttons</h1>
+<p>You have always been able to customize the default upload button.  As of Fine Uploader 3.9,
+you can easily create multiple upload buttons with varying validation rules, styles, and behaviors.</p>
+<h2 id="adding-additional-upload-buttons">Adding additional upload buttons</h2>
+<p>The new <a href="../api/options.html#extrabuttons-option"><code>extraButtons</code> option</a> allows you to point Fine Uploader
+at styled containers that you would like to use as upload buttons.  This option takes an array of objects, and
+each object must, at least, define an <code>element</code> property with a value of your styled upload button container.
+Fine Uploader will then attach a file input element to this container and track it just as it tracks the default
+upload button it creates.  You can specify an <code>HTMLElement</code>, or even a <code>jQuery</code> object (if you are using the
+Fine Uploader jQuery plugin) as the value for the <code>element</code> property.</p>
+<p>By default, each extra button will inherit the root <code>multiple</code> and <code>validation</code> option values from the root option
+set.  You can override these values for each button by simply contributing alternate <code>multiple</code> and <code>validation</code>
+properties for a specific extra button object.  For example, say your default upload button allows jpegs,
+to be selected, but you have an extra button elsewhere on your page that deals specifically with PDFs.  You
+also want to enforce a 5 MiB limit (where supported) for all types of accepted files
+selected by both buttons. Your HTML and javascript might look something like this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;pdfButton&quot;</span> <span class="na">class=</span><span class="s">&quot;myCustomCssClassForStyling&quot;</span><span class="nt">&gt;</span>Select a PDF<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">validation</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">allowedExtensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;jpg&quot;</span><span class="p">],</span>
+        <span class="nx">sizeLimit</span><span class="o">:</span> <span class="mi">5000000</span> <span class="c1">// 5 MiB</span>
+    <span class="p">}</span>
+    <span class="nx">extraButtons</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pdfButton&quot;</span><span class="p">),</span>
+            <span class="nx">validation</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">allowedExtensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;pdf&quot;</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>As always, Fine Uploader creates a default upload button (in Fine Uploader UI) for you,
+and attaches the limitations specified via the <code>validation</code> option to that button and any drop zones.
+Fine Uploader will also attach an invisible file input element to the <code>#pdfButton</code> element and track it.
+Note that, in the above code, the extra button inherits the <code>sizeLimit</code> from the base <code>validation</code> option,
+but overrides the <code>allowedExtensions</code> property.</p>
+<h2 id="custom-per-button-validation-rules">Custom per-button validation rules</h2>
+<p>Suppose you want to apply custom validation rules to a specific button.  No problem!  The <code>validate</code> and
+<code>validateBatch</code> events contain a <code>button</code> as the last parameter passed to your handler.  This <code>button</code> parameter
+will be the container element for the button that was used to select/submit the associated file to the uploader.
+If a drop zone was used to submit the file, or if an input element or source outside of Fine Uploader was used
+to submit the file (such as via the <code>addFiles</code> method), the <code>button</code> parameter will be undefined.  Note that, if
+you are using the jQuery plug-in, the <code>button</code> parameter will be a jQuery object.</p>
+<h2 id="associate-file-id-to-a-button-per-button-endpoints-params-etc">Associate file ID to a button (per-button endpoints, params, etc)</h2>
+<p>You can also, at any time, associate any file with the button that was used to select/submit the file.
+For example, if you want to attach specific parameters to a file, or send it to a different endpoint based
+on the button that selected it, you can do so in an appropriate event handler, such as <code>upload</code>.  For example:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;upload&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$button</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s2">&quot;getButton&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pdfButton&quot;</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="nx">$button</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s2">&quot;setParams&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;pdf&quot;</span><span class="p">},</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s2">&quot;setParams&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;jpeg&quot;</span><span class="p">},</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="allow-an-extra-upload-button-to-be-used-to-select-folders">Allow an extra upload button to be used to select folders</h2>
+<p>Fine Uploader already allows you to drop folders that you would like to upload (Chrome &amp; Opera 15+ only).
+What if you want to allow users to select folders via the file chooser dialog?  Unfortunately, due
+to the restrictions imposed by this browser feature, you can either select files OR folders, not both.
+If you&#8217;d like to allow users to select files and folders, you can use the default upload button for file
+selection, and contribute an extra button marked as &#8220;folder selection&#8221; (Chrome &amp; Opera 15+).  Here&#8217;s an example,
+also assuming you only want this button to appear if folder selection is possible in the current browser:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;foldersButton&quot;</span><span class="nt">&gt;</span>Select Folders<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c1">// only show the folders button if folder selection is possible in the current browser</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">qq</span><span class="p">.</span><span class="nx">supportedFeatures</span><span class="p">.</span><span class="nx">folderSelection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#foldersButton&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">extraButtons</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#foldersButton&quot;</span><span class="p">),</span>
+            <span class="nx">folders</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="allow-an-extra-upload-button-to-target-the-camera-in-ios">Allow an extra upload button to target the camera in iOS</h2>
+<p>As pointed out in <a href="http://blog.fineuploader.com/2013/05/09/upload-directly-via-a-camera-on-mobile-devices/">the blog</a>,
+iOS has an odd restriction that prohibits you from accessing the camera and the photo/video gallery simultaneously
+with a file input element.  The blog details a way to get around this, but it involves a bit of complexity.  Now,
+with the addition of the extra buttons feature, it&#8217;s very easy!  Here is a simplified version of the code listed in the
+blog, now using the extra buttons feature:</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;cameraButtonContainer&quot;</span><span class="nt">&gt;</span>Upload from the camera<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;myFineUploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c1">// only show this button in iOS</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">qq</span><span class="p">.</span><span class="nx">ios</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cameraButtonContainer&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;myFineUploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">camera</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">ios</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">button</span><span class="o">:</span> <span class="nx">$</span><span class="p">{</span><span class="s2">&quot;#cameraButtonContainer&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">extraButtons</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cameraButtonContainer&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            <hr>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

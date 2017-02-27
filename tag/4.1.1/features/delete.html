@@ -1,0 +1,499 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Deleting Files | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/4.1.1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/4.1.1/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/4.1.1">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/4.1.1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/4.1.1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/4.1.1/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/4.1.1/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/4.1.1/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/4.1.1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/4.1.1/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/4.1.1/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/4.1.1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/4.1.1/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/4.1.1/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/4.1.1/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/4.1.1/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/4.1.1/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/4.1.1/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/4.1.1/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/4.1.1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/4.1.1/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/4.1.1/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/4.1.1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/4.1.1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/4.1.1/api/options.html">Core</a></li>
+                                <li><a href="/tag/4.1.1/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/4.1.1/api/options-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/4.1.1/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/4.1.1/api/methods-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.1/api/events.html">Events</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/4.1.1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/4.1.1/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/4.1.1/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/4.1.1/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class='active'><a href="/tag/4.1.1">Current: 4.1.1</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/feature/initial-files">Feature_initial-Files</a></ul>
+                            
+                                <ul><a href="/branch/site/4.1.0">Site_4.1.0</a></ul>
+                            
+                                <ul><a href="/branch/feature/getuploads-doc-improvement">Feature_getuploads-Doc-Improvement</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/4.1.1">Hotfix_4.1.1</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/fix/s3-jquery-build">Fix_s3-Jquery-Build</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.0">4.0.0</a></ul>
+                            
+                                <ul><a href="/tag/4.0.1">4.0.1</a></ul>
+                            
+                                <ul><a href="/tag/4.0.2">4.0.2</a></ul>
+                            
+                                <ul><a href="/tag/4.0.3">4.0.3</a></ul>
+                            
+                                <ul><a href="/tag/4.1.0">4.1.0</a></ul>
+                            
+                                <ul><a href="/tag/4.1.1">4.1.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span10 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>4.1.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="deleting-files_1">Deleting Files</h1>
+<p>Enabling the deletion of files means your users can delete files after they have been uploaded.
+You can only delete files that have been uploaded during the current session.
+If you upload a file, leave the page, and come back then you cannot delete that file though Fine Uploader.</p>
+<p>A file is eligible for deletion only after it has been successfully uploaded.</p>
+<h2 id="options_3">Options</h2>
+<h4 id="deletefile-option_2"><code>deleteFile</code> option</h4>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Option Name</p></td>
+
+        <td><p>Type</p></td>
+
+        <td><p>Default</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>enabled</p></td>
+
+        <td><p><code>Boolean</code></p></td>
+
+        <td><p><code>false</code></p></td>
+
+        <td><p>Set to <code>true</code> if users should be able to delete files.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>method</p></td>
+
+        <td><p><code>String</code></p></td>
+
+        <td><p><code>'DELETE'</code></p></td>
+
+        <td><p>Set the HTTP method to use for delete. You may also set this to POST</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>endpoint</p></td>
+
+        <td><p><code>String</code></p></td>
+
+        <td><p><code>'/server/upload'</code></p></td>
+
+        <td><p>The endpoint where the delete request is sent.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>customHeaders</p></td>
+
+        <td><p><code>Object</code></p></td>
+
+        <td><p><code>{}</code></p></td>
+
+        <td><p>Specify any additional headers to attach to all delete requests.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>params</p></td>
+
+        <td><p><code>Object</code></p></td>
+
+        <td><p><code>{}</code></p></td>
+
+        <td><p>Specify any additonal parameters to attach to all delete requests.</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Fine Uploader appends a <code>_method</code> parameter to the request object with a value of DELETE when the HTTP method is 
+POST instead of DELETE.  This makes it easier to determine the intended semantics of the request server-side.</p>
+
+</div>
+
+<h2 id="events_2">Events</h2>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Event</p></td>
+
+        <td><p>Parameters</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>delete</p></td>
+
+        <td><p><code>Integer</code> id</p></td>
+
+        <td><p>Called just before a delete request is sent for the associated item.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>deleteComplete</p></td>
+
+        <td><p><code>Integer</code> id, <code>XMLHttpRequest</code> or <code>XDomainRequest</code> xhrOrXdr, <code>Boolean</code> isError</p></td>
+
+        <td><p>Called just after receiving a request from the server for a delete file request.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>submitDelete</p></td>
+
+        <td><p><code>Integer</code> id</p></td>
+
+        <td><p>Called just before an item that has been marked for deletion has been submitted to the uploader. You may return false to prevent the delete.
+        You may also return a <a href="async-tasks-and-promises.html"><code>qq.Promise</code></a>.</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<h2 id="methods_1">Methods</h2>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Name</p></td>
+
+        <td><p>Parameters</p></td>
+
+        <td><p>Return</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>deleteFile</p></td>
+
+        <td><p><code>Integer</code> id</p></td>
+
+        <td></td>
+
+        <td><p>Delete the file with the corresponding ID off the server.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>setDeleteFileEndpoint</p></td>
+
+        <td><p><code>String</code> endpointPath[, <code>Integer</code> id]</p></td>
+
+        <td></td>
+
+        <td><p>Modify the location where the upload request should be directed. Pass in a value for the <code>id</code> parameter to change for a specific item.</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>setDeleteFileParams</p></td>
+
+        <td><p><code>String</code> newParams[, <code>Integer</code> id]</p></td>
+
+        <td></td>
+
+        <td><p>Set the parameters for the delete file request.</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<p><a href="http://blog.fineuploader.com/2013/01/25/delete-an-uploaded-file-in-3-3/">For more information, see the associated blog post</a></p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <hr>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

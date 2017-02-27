@@ -231,7 +231,7 @@
 Fine Uploader form support will allow you to do this quite easily.  A number of conventions are in place to allow
 incredibly easy integration of Fine Uploader into your existing form.  If you follow all of these conventions, and only
 require the most basic features, you can initialize and attach Fine Uploader to your form with only one simple line of
-JavaScript!    But don't worry, any of these conventions can be overridden via the <a href="../api/options.html#form">form option</a>.  Fine Uploader
+JavaScript!    But don&#8217;t worry, any of these conventions can be overridden via the <a href="../api/options.html#form">form option</a>.  Fine Uploader
 will even respect any HTML5 validation attributes set on your form elements.  Furthermore, you can include a traditional
 submit button in your form, and Fine Uploader will intercept this and upload all submitted files with the associated
 form data for you.</p>
@@ -242,18 +242,18 @@ to discover it and send all form data along with each upload request without exp
 configuration options.  This can allow you to focus more on your form, and less on JavaScript.  By default, Fine Uploader
 will:</p>
 <ul>
-<li>Find your form automatically if it has an <code>id</code> attribute with a value of "qq-form".  Once it finds your form, all
+<li>Find your form automatically if it has an <code>id</code> attribute with a value of &#8220;qq-form&#8221;.  Once it finds your form, all
 file upload requests will include any data associated with that form, automatically!</li>
 <li>Ensure any HTML5 validation attributes on your form elements are respected.  If any form values are invalid, the user
 will be notified and the uploads will not occur.</li>
-<li>Set the <code>request.endpoint</code> option to the value of your form's <code>action</code> attribute.  This means that you don't even
+<li>Set the <code>request.endpoint</code> option to the value of your form&#8217;s <code>action</code> attribute.  This means that you don&#8217;t even
 need to provide a <code>request.endpoint</code> configuration value when creating your Fine Uploader instance.</li>
 <li>Intercept any attempt to submit your form and instead upload all user-selected files (along with associated form data).</li>
-<li>Set Fine Uploader to "manual" upload mode.  This means that uploads will not occur until you (or your user) indicate
-that they are done filling out the form and choosing files.  You can allow your user to "submit" the form and trigger
+<li>Set Fine Uploader to &#8220;manual&#8221; upload mode.  This means that uploads will not occur until you (or your user) indicate
+that they are done filling out the form and choosing files.  You can allow your user to &#8220;submit&#8221; the form and trigger
 all files to be uploaded by simply providing a submit button in your form.</li>
 </ul>
-<p>If you don't want to rely on some of these default behaviors, you can override them.  See the <a href="../api/options.html#form">form option</a>
+<p>If you don&#8217;t want to rely on some of these default behaviors, you can override them.  See the <a href="../api/options.html#form">form option</a>
 for details.</p>
 <h4 id="validation">Validation</h4>
 <p>Fine Uploader will respect any <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation">validation attributes on your form elements</a>, provided the current browser
@@ -264,7 +264,7 @@ by the user.  Furthermore, the specific issues will be highlighted in the UI.</p
 
 <h4 class="alert-heading">Note:</h4>
 
-<p>Validation will only occur if you attempt to submit your form via a submit button, or by triggering the  form's submit
+<p>Validation will only occur if you attempt to submit your form via a submit button, or by triggering the  form&#8217;s submit
 function, or by triggering a submit event on the form.  If you trigger an upload via the <a href="../api/methods.html#uploadStoredFiles">uploadStoredFiles API method</a>,
 the form will not be validated.</p>
 
@@ -274,7 +274,7 @@ the form will not be validated.</p>
 <p>Submit attempts that target your attached form will be intercepted by default.  When Fine Uploader intercepts a submit
 attempt, it will first attempt to validate the form.  If the form is valid, or if the current browser does not have
 native support for form validation, the user-selected files will be uploaded along with the form data.  Fine Uploader
-will intercept submit attempts triggered by a form submit button, invocation of the form element's <code>submit</code> function,
+will intercept submit attempts triggered by a form submit button, invocation of the form element&#8217;s <code>submit</code> function,
 or via a submit event.</p>
 <p>You can prevent Fine Uploader from intercepting submit events by adjusting the <a href="../api/options.html#form">form.interceptSubmit option</a>.</p>
 <h4 id="when-are-all-uploads-done">When are all uploads done?</h4>
@@ -287,10 +287,10 @@ you can safely implement this logic in a contributed <code>onAllComplete</code> 
 <h3 id="simple-example">Simple example</h3>
 <p>The simplest use-case results in a very simple example, with only one line of JavaScript!  Here is a complete HTML
 file that integrates Fine Uploader into an existing form:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://code.jquery.com/jquery-latest.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;fineuploader.js&quot;</span><span class="err">&lt;/</span><span class="na">script</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-latest.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;fineuploader.js&quot;</span><span class="err">&lt;/</span><span class="na">script</span><span class="nt">&gt;</span>
         <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;fineuploader.css&quot;</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/template&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;qq-template&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader&quot;</span><span class="o">&gt;</span>
@@ -317,25 +317,25 @@ file that integrates Fine Uploader into an existing form:</p>
                     <span class="o">&lt;</span><span class="err">/li&gt;</span>
                 <span class="o">&lt;</span><span class="err">/ul&gt;</span>
             <span class="o">&lt;</span><span class="err">/div&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;server/uploads.php&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;qq-form&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Enter your name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;user_name&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Enter your email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;user_email&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Done&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;server/uploads.php&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-form&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>Enter your name<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;user_name&quot;</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>Enter your email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">name=</span><span class="s">&quot;user_email&quot;</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Done&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-uploader&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;my-uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
             <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#my-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">();</span>
-        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
 </pre></div>
 
 
@@ -343,7 +343,7 @@ file that integrates Fine Uploader into an existing form:</p>
 
 <h4 class="alert-heading">Note:</h4>
 
-<p>Note that you do not need to use jQuery.  Fine Uploader works just fine without it (it doesn't depend on jQuery
+<p>Note that you do not need to use jQuery.  Fine Uploader works just fine without it (it doesn&#8217;t depend on jQuery
 internally at all).  However, most web applications are likely already using jQuery, so our example reflects this
 common situation.</p>
 

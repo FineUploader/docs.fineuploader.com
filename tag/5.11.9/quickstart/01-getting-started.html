@@ -1,0 +1,1010 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Getting Started | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.11.9/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.11.9/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.11.9">Docs</a></li>
+                    <li><a href="http://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.11.9/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.11.9/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="http://fineuploader.com/support.html" target="_blank">Community Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.11.9">Current: 5.11.9</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.11.9"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.11.9</p></span>
+
+                
+
+                
+<h1 class="page-header" id="getting-started-with-fine-uploader">Getting Started with Fine Uploader</h1>
+<p>Fine Uploader is a pure-JavaScript browser-based file upload library with a long list of features that is unmatched by any other library. The power of Fine Uploader comes from its comprehensive set of options, API methods, and callbacks/events. The menu at the top of this page will give you access to more details regarding these three critical pieces of Fine Uploader. You can also read more about many of the features in the top navigation menu as well.</p>
+<p>This tutorial will serve as a step-by-step guide that you can follow to get Fine Uploader up and running in your project. The tutorial is not comprehensive or meant to cover all aspects of Fine Uploader. For more information, make sure to read through the list of features as well
+as the API documentation. Both of these items (and more) are available in the top nav menu anywhere on this site. Please also see the live demos at <a href="http://fineuploader.com/demos">http://fineuploader.com/demos</a> and detailed write-ups and integration ideas at <a href="https://blog.fineuploader.com/">https://blog.fineuploader.com</a>.</p>
+<h3 id="1-download-or-build">1. Download (or build)</h3>
+<p>First, you will need to download or build Fine Uploader's JS, CSS, image, and template files. You have exactly three different supported options to achieve this. <strong>Choose <em>one</em> of the following options:</strong></p>
+<h4 id="download-fine-uploader-from-npm">Download <a href="https://www.npmjs.com/package/fine-uploader">Fine Uploader from npm</a></h4>
+<p>The simplest option is to run <code>npm install fine-uploader</code> in your project directory. But this may not be appropriate for all situations.</p>
+<p>If your project has a package.json file, you should do this instead:</p>
+<ol>
+<li>Add a "fine-uploader" entry to the "dependencies" section of your project's package.json file. The safest option is to explicitly specify the version number you need. For example, as of 16 August 2016, your entry would be <code>"fine-uploader": "5.11.5"</code>. For more information about package.json files, read <a href="https://docs.npmjs.com/files/package.json">the official npm documentation on the subject</a>.</li>
+<li>Run <code>npm install</code> in the same directory as your project's package.json file.</li>
+</ol>
+<p>In either case, fine-uploader will be installed in a directory of the same name under the node_modules directory.</p>
+<h4 id="download-fine-uploader-from-fineuploadercom">Download Fine Uploader from FineUploader.com</h4>
+<p>Navigate to <a href="http://fineuploader.com/customize">http://fineuploader.com/customize</a> and select the desired build type. See "step 2" below for a detailed explanation of the different Fine Uploader build types. For any version since (and including) 5.11.0, you can download the individual builds at <a href="https://github.com/FineUploader/fine-uploader/releases">https://github.com/FineUploader/fine-uploader/releases</a>.</p>
+<h4 id="build-fine-uploader-yourself-from-the-github-repo">Build Fine Uploader yourself from the GitHub repo</h4>
+<ol>
+<li><code>git clone https://github.com/FineUploader/fine-uploader.git</code></li>
+<li><code>cd fine-uploader</code></li>
+<li><code>npm install</code></li>
+<li><code>make build</code></li>
+</ol>
+<p>This will result in a "_build" directory with CSS, JS, image, and template files for all possible builds of Fine Uploader. For information on how to further process these build files, if needed, read the <a href="https://github.com/FineUploader/fine-uploader#generating-build-artifacts">"Generating build artifacts" section the project's README.md file</a>.</p>
+<h3 id="2-decide-which-build-of-fine-uploader-to-use">2. Decide which build of Fine Uploader to use</h3>
+<p>Fine Uploader builds are categorized by "endpoint type" <em>and</em> by feature set. Each of the four endpoint type builds are available with each of the two supported feature sets. <strong>Choose one of the following endpoint types <em>and</em> one of the "feature sets" before moving on to step 3</strong>.</p>
+<h4 id="endpoint-types">Endpoint types</h4>
+<p>A Fine Uploader build that is tied to a specific "endpoint type" is designed to send requests to match a specific type of server. There are three endpoint types supported:</p>
+<h5 id="traditional-endpoints">Traditional endpoints</h5>
+<p>Traditional endpoints reside on a server or servers that you control. Fine Uploader "Traditional" will send all HTTP requests (such as "upload" and "delete file", to name a couple) to <em>your</em> server. It is expected that you maintain and control the server that handles these requests. The <a href="../endpoint_handlers/traditional.html">traditional server endpoints documentation page</a> describes how Fine Uploader "Traditional" will send requests to your server, and how your server must respond to these requests.</p>
+<h5 id="s3-endpoints">S3 endpoints</h5>
+<p>Fine Uploader S3 sends all requests (with the exception of the delete file request) directly to one or more S3 buckets. You may <a href="../endpoint_handlers/amazon-s3.html">utilize a server you control to sign these requests</a> (the safest option), or you may elect to <a href="../features/no-server-uploads.html">omit a server entirely and sign the requests client side</a> using Amazon's Web Identity Federation.</p>
+<h5 id="microsoft-azure-endpoints">Microsoft Azure endpoints</h5>
+<p>Fine Uploader Azure sends <em>all</em> requests directly to one or more Azure Blob Storage containers. You must utilize <a href="../endpoint_handlers/azure.html">a server you control to sign each request</a>.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure's API does not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support. If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
+
+</div>
+
+<h5 id="all-endpoints">"All" endpoints</h5>
+<p>If you would like to be able to send files to various endpoint types from a single running instance of Fine Uploader, a build of the library exists that includes support for traditional endpoint, S3 endpoints, <em>and</em> Azure endpoints.</p>
+<h4 id="feature-sets">Feature sets</h4>
+<p>In addition to endpoint types Fine Uploader builds are classified according to what we call "feature sets". The two feature sets with associated builds are "UI" and "core".</p>
+<h5 id="core-feature-set">Core feature set</h5>
+<p>The most basic Fine Uploader mode.  <a href="../modes/core.html">The core feature set</a> assumes that you will design and code your own UI but still make use of Fine Uploader's API. This feature set is suggested for advanced developers who wish to heavily customize the uploader's user interface.</p>
+<h5 id="ui-feature-set">UI feature set</h5>
+<p>Inherits everything from the core feature set. <a href="../modes/ui.html">The UI feature set</a> also comes with a fully functional user interface which includes, but is not limited to: a default upload button, progress bars, retry/cancel/delete buttons, proper display of error messages, and more. This feature set is recommended for those who are pleased with the default Fine Uploader interface or can sufficiently customize the default Fine Uploader UI using CSS overrides. <strong>In most cases, the UI feature set will be the most appropriate choice.</strong></p>
+<h3 id="3-gather-the-appropriate-fine-uploader-files">3. Gather the appropriate Fine Uploader files</h3>
+<p>After picking and endpoint type and a set of features from step 2, you can now gather the Fine Uploader files you will need to bring advanced file uploading capabilities to your project.</p>
+<h4 id="traditional-endpoint-core-feature-set">Traditional endpoint, core feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>fine-uploader/fine-uploader.core.js</li>
+<li>fine-uploader/fine-uploader.core.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<h4 id="traditional-endpoint-ui-feature-set">Traditional endpoint, UI feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>fine-uploader/fine-uploader.js</li>
+<li>fine-uploader/fine-uploader.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<p>Next, decide if you'd like to adopt the "gallery layout" or the "row-based layout" for submitted files. See the <a href="http://fineuploader.com/demos.html">demos page</a> for examples of both. The "Gallery View for Images" demo shows the gallery layout, and the "Manually Trigger Uploads &amp; Edit File Names" demo illustrates a row-based layout.</p>
+<p>If you choose the gallery layout, you'll need this css file:</p>
+<ul>
+<li>fine-uploader/fine-uploader-gallery.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>fine-uploader/templates/gallery.html</li>
+</ul>
+<p>If you've elected for a row-based UI layout, you'll need <em>these</em> CSS files instead of the gallery files listed previously:</p>
+<ul>
+<li>fine-uploader/fine-uploader-new.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>fine-uploader/templates/simple-thumbnails.html</li>
+</ul>
+<p>You'll also need these image files, which should be located in the same directory as the Fine Uploader CSS file:</p>
+<ul>
+<li>fine-uploader/loading.gif</li>
+<li>fine-uploader/processing.gif</li>
+<li>fine-uploader/continue.gif (optional - only if using the pause upload feature)</li>
+<li>fine-uploader/edit.gif (optional - only if using the edit filename feature)</li>
+<li>fine-uploader/retry.gif (optional - only if using the retry failed upload feature)</li>
+<li>fine-uploader/trash.gif (optional - only if using the delete file feature)</li>
+</ul>
+<p>The path to these placeholder images must be specified in the set of options you pass Fine Uploader. These are only needed if you make use of the <a href="../features/thumbnails.html">thumbnail preview feature</a>:</p>
+<ul>
+<li>fine-uploader/placeholders/not_available-generic.png</li>
+<li>fine-uploader/placeholders/waiting-generic.png</li>
+</ul>
+<h4 id="s3-endpoint-core-feature-set">S3 endpoint, core feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>s3.fine-uploader/s3.fine-uploader.core.js</li>
+<li>s3.fine-uploader/s3.fine-uploader.core.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<h4 id="s3-endpoint-ui-feature-set">S3 endpoint, UI feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>s3.fine-uploader/s3.fine-uploader.js</li>
+<li>s3.fine-uploader/s3.fine-uploader.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<p>Next, decide if you'd like to adopt the "gallery layout" or the "row-based layout" for submitted files. See the <a href="http://fineuploader.com/demos.html">demos page</a> for examples of both. The "Gallery View for Images" demo shows the gallery layout, and the "Manually Trigger Uploads &amp; Edit File Names" demo illustrates a row-based layout.</p>
+<p>If you choose the gallery layout, you'll need this css file:</p>
+<ul>
+<li>s3.fine-uploader/fine-uploader-gallery.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>s3.fine-uploader/templates/gallery.html</li>
+</ul>
+<p>If you've elected for a row-based UI layout, you'll need <em>these</em> CSS files instead of the gallery files listed previously:</p>
+<ul>
+<li>s3.fine-uploader/fine-uploader-new.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>s3.fine-uploader/templates/simple-thumbnails.html</li>
+</ul>
+<p>You'll also need these image files, which should be located in the same directory as the Fine Uploader CSS file:</p>
+<ul>
+<li>s3.fine-uploader/loading.gif</li>
+<li>s3.fine-uploader/processing.gif</li>
+<li>s3.fine-uploader/continue.gif (optional - only if using the pause upload feature)</li>
+<li>s3.fine-uploader/edit.gif (optional - only if using the edit filename feature)</li>
+<li>s3.fine-uploader/retry.gif (optional - only if using the retry failed upload feature)</li>
+<li>s3.fine-uploader/trash.gif (optional - only if using the delete file feature)</li>
+</ul>
+<p>The path to these placeholder images must be specified in the set of options you pass Fine Uploader. These are only needed if you make use of the <a href="../features/thumbnails.html">thumbnail preview feature</a>:</p>
+<ul>
+<li>s3.fine-uploader/placeholders/not_available-generic.png</li>
+<li>s3.fine-uploader/placeholders/waiting-generic.png</li>
+</ul>
+<h4 id="azure-endpoint-core-feature-set">Azure endpoint, core feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>azure.fine-uploader/azure.fine-uploader.core.js</li>
+<li>azure.fine-uploader/azure.fine-uploader.core.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<h4 id="azure-endpoint-ui-feature-set">Azure endpoint, UI feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>azure.fine-uploader/azure.fine-uploader.js</li>
+<li>azure.fine-uploader/azure.fine-uploader.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<p>Next, decide if you'd like to adopt the "gallery layout" or the "row-based layout" for submitted files. See the <a href="http://fineuploader.com/demos.html">demos page</a> for examples of both. The "Gallery View for Images" demo shows the gallery layout, and the "Manually Trigger Uploads &amp; Edit File Names" demo illustrates a row-based layout.</p>
+<p>If you choose the gallery layout, you'll need this css file:</p>
+<ul>
+<li>azure.fine-uploader/fine-uploader-gallery.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>azure.fine-uploader/templates/gallery.html</li>
+</ul>
+<p>If you've elected for a row-based UI layout, you'll need <em>these</em> CSS files instead of the gallery files listed previously:</p>
+<ul>
+<li>azure.fine-uploader/fine-uploader-new.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>azure.fine-uploader/templates/simple-thumbnails.html</li>
+</ul>
+<p>You'll also need these image files, which should be located in the same directory as the Fine Uploader CSS file:</p>
+<ul>
+<li>azure.fine-uploader/loading.gif</li>
+<li>azure.fine-uploader/processing.gif</li>
+<li>azure.fine-uploader/continue.gif (optional - only if using the pause upload feature)</li>
+<li>azure.fine-uploader/edit.gif (optional - only if using the edit filename feature)</li>
+<li>azure.fine-uploader/retry.gif (optional - only if using the retry failed upload feature)</li>
+<li>azure.fine-uploader/trash.gif (optional - only if using the delete file feature)</li>
+</ul>
+<p>The path to these placeholder images must be specified in the set of options you pass Fine Uploader. These are only needed if you make use of the <a href="../features/thumbnails.html">thumbnail preview feature</a>:</p>
+<ul>
+<li>azure.fine-uploader/placeholders/not_available-generic.png</li>
+<li>azure.fine-uploader/placeholders/waiting-generic.png</li>
+</ul>
+<h4 id="all-endpoint-types-core-feature-set">All endpoint types, core feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>all.fine-uploader/all.fine-uploader.core.js</li>
+<li>all.fine-uploader/all.fine-uploader.core.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<h4 id="all-endpoint-types-ui-feature-set">All endpoint types, UI feature set</h4>
+<p>You will need the following JavaScript files:</p>
+<ul>
+<li>all.fine-uploader/all.fine-uploader.js</li>
+<li>all.fine-uploader/all.fine-uploader.map.js (optional, but useful for live-debugging)</li>
+</ul>
+<p>Next, decide if you'd like to adopt the "gallery layout" or the "row-based layout" for submitted files. See the <a href="http://fineuploader.com/demos.html">demos page</a> for examples of both. The "Gallery View for Images" demo shows the gallery layout, and the "Manually Trigger Uploads &amp; Edit File Names" demo illustrates a row-based layout.</p>
+<p>If you choose the gallery layout, you'll need this css file:</p>
+<ul>
+<li>all.fine-uploader/fine-uploader-gallery.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>all.fine-uploader/templates/gallery.html</li>
+</ul>
+<p>If you've elected for a row-based UI layout, you'll need <em>these</em> CSS files instead of the gallery files listed previously:</p>
+<ul>
+<li>all.fine-uploader/fine-uploader-new.css</li>
+</ul>
+<p>...and this template file:</p>
+<ul>
+<li>all.fine-uploader/templates/simple-thumbnails.html</li>
+</ul>
+<p>You'll also need these image files, which should be located in the same directory as the Fine Uploader CSS file:</p>
+<ul>
+<li>all.fine-uploader/loading.gif</li>
+<li>all.fine-uploader/processing.gif</li>
+<li>all.fine-uploader/continue.gif (optional - only if using the pause upload feature)</li>
+<li>all.fine-uploader/edit.gif (optional - only if using the edit filename feature)</li>
+<li>all.fine-uploader/retry.gif (optional - only if using the retry failed upload feature)</li>
+<li>all.fine-uploader/trash.gif (optional - only if using the delete file feature)</li>
+</ul>
+<p>The path to these placeholder images must be specified in the set of options you pass Fine Uploader. These are only needed if you make use of the <a href="../features/thumbnails.html">thumbnail preview feature</a>:</p>
+<ul>
+<li>all.fine-uploader/placeholders/not_available-generic.png</li>
+<li>all.fine-uploader/placeholders/waiting-generic.png</li>
+</ul>
+<h3 id="4-integrating-fine-uploader-into-your-project">4. Integrating Fine Uploader into your project</h3>
+<p>The three most common environments for web projects are:</p>
+<ol>
+<li>Globally scoped (<code>&lt;script src="..."&gt;</code> for JS files and <code>&lt;link href="..."&gt; for CSS files</code>).</li>
+<li>ES6 Modules (using <code>import</code> for JS/CSS files).</li>
+<li>CommonJS (using <code>require()</code> for JS/CSS files).</li>
+</ol>
+<p>Continue reading the section for the steps needed to integrate Fine Uploader into your project for each of the three environments listed above.</p>
+<h4 id="globally-scoped-environments">Globally scoped environments</h4>
+<p>In a "globally scoped" environment, you simply reference the required Fine Uploader JavaScript and CSS files (along with other JS and CSS files specific to your prohect) directly via appropriate HTML tags. The sections below will show you how to use Fine Uploader in a globally scoped environment, depending on the endpoint type and feature set you chose in step 2, using the files you gathered in step 3.</p>
+<h5 id="traditional-endpoint-core-feature-set_1">Traditional endpoint, core feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;fine-uploader/fine-uploader.core.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Upload your files<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>Remember, when using the "core" build, you will need to build your own UI and update it as needed by observing Fine Uploader callbacks/events. See the API menu at the top of this page for more information on events.</p>
+<h5 id="traditional-endpoint-ui-feature-set_1">Traditional endpoint, UI feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;fine-uploader/fine-uploader-gallery.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;fine-uploader/fine-uploader.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader qq-gallery&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-text-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Upload</span> <span class="nx">a</span> <span class="nx">file</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-selector qq-drop-processing&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Processing</span> <span class="nx">dropped</span> <span class="nx">files</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-spinner-selector qq-drop-processing-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-list-selector qq-upload-list&quot;</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;region&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">live</span><span class="o">=</span><span class="s2">&quot;polite&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">relevant</span><span class="o">=</span><span class="s2">&quot;additions removals&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-status-text-selector qq-upload-status-text&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-container-selector qq-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-spinner-selector qq-upload-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-wrapper&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">img</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-selector&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">max</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="s2">&quot;120&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">server</span><span class="o">-</span><span class="nx">scale</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-cancel-selector qq-upload-cancel&quot;</span><span class="o">&gt;</span><span class="nx">X</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-retry-selector qq-upload-retry&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-retry-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Retry&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="nx">Retry</span>
+                    <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-info&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-name&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-file-selector qq-upload-file&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Edit filename&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="nx">tabindex</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-size-selector qq-upload-size&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-delete-selector qq-upload-delete&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-delete-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Delete&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-pause-selector qq-upload-pause&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-pause-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Pause&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-continue-selector qq-upload-continue&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-continue-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Continue&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="err">/li&gt;</span>
+            <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-alert-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Close</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-confirm-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">No</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Yes</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-prompt-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Ok</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>Fine Uploader Gallery UI<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>The above examples assumes you are using the gallery layout. Simply replace the above <code>&lt;script&gt;</code> tag containing the template with the row layout template if you prefer that look instead. For information on customizing template, see the <a href="../features/styling.html">styling feature page</a>.</p>
+<h5 id="s3-endpoint-core-feature-set_1">S3 endpoint, core feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;s3.fine-uploader/s3.fine-uploader.core.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Upload your files<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>Remember, when using the "core" build, you will need to build your own UI and update it as needed by observing Fine Uploader callbacks/events. See the API menu at the top of this page for more information on events.</p>
+<h5 id="s3-endpoint-ui-feature-set_1">S3 endpoint, UI feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;s3.fine-uploader/fine-uploader-gallery.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;s3.fine-uploader/s3.fine-uploader.min.js&quot;</span><span class="err">&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader qq-gallery&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-text-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Upload</span> <span class="nx">a</span> <span class="nx">file</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-selector qq-drop-processing&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Processing</span> <span class="nx">dropped</span> <span class="nx">files</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-spinner-selector qq-drop-processing-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-list-selector qq-upload-list&quot;</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;region&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">live</span><span class="o">=</span><span class="s2">&quot;polite&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">relevant</span><span class="o">=</span><span class="s2">&quot;additions removals&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-status-text-selector qq-upload-status-text&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-container-selector qq-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-spinner-selector qq-upload-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-wrapper&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">img</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-selector&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">max</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="s2">&quot;120&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">server</span><span class="o">-</span><span class="nx">scale</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-cancel-selector qq-upload-cancel&quot;</span><span class="o">&gt;</span><span class="nx">X</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-retry-selector qq-upload-retry&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-retry-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Retry&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="nx">Retry</span>
+                    <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-info&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-name&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-file-selector qq-upload-file&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Edit filename&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="nx">tabindex</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-size-selector qq-upload-size&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-delete-selector qq-upload-delete&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-delete-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Delete&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-pause-selector qq-upload-pause&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-pause-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Pause&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-continue-selector qq-upload-continue&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-continue-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Continue&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="err">/li&gt;</span>
+            <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-alert-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Close</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-confirm-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">No</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Yes</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-prompt-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Ok</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>Fine Uploader Gallery UI<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>The above examples assumes you are using the gallery layout. Simply replace the above <code>&lt;script&gt;</code> tag containing the template with the row layout template if you prefer that look instead. For information on customizing template, see the <a href="../features/styling.html">styling feature page</a>.</p>
+<h5 id="azure-endpoint-core-feature-set_1">Azure endpoint, core feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;azure.fine-uploader/s3.fine-uploader.core.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Upload your files<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>Remember, when using the "core" build, you will need to build your own UI and update it as needed by observing Fine Uploader callbacks/events. See the API menu at the top of this page for more information on events.</p>
+<h5 id="azure-endpoint-ui-feature-set_1">Azure endpoint, UI feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;azure.fine-uploader/fine-uploader-gallery.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;azure.fine-uploader/azure.fine-uploader.min.js&quot;</span><span class="err">&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader qq-gallery&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-text-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Upload</span> <span class="nx">a</span> <span class="nx">file</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-selector qq-drop-processing&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Processing</span> <span class="nx">dropped</span> <span class="nx">files</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-spinner-selector qq-drop-processing-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-list-selector qq-upload-list&quot;</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;region&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">live</span><span class="o">=</span><span class="s2">&quot;polite&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">relevant</span><span class="o">=</span><span class="s2">&quot;additions removals&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-status-text-selector qq-upload-status-text&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-container-selector qq-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-spinner-selector qq-upload-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-wrapper&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">img</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-selector&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">max</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="s2">&quot;120&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">server</span><span class="o">-</span><span class="nx">scale</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-cancel-selector qq-upload-cancel&quot;</span><span class="o">&gt;</span><span class="nx">X</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-retry-selector qq-upload-retry&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-retry-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Retry&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="nx">Retry</span>
+                    <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-info&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-name&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-file-selector qq-upload-file&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Edit filename&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="nx">tabindex</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-size-selector qq-upload-size&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-delete-selector qq-upload-delete&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-delete-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Delete&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-pause-selector qq-upload-pause&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-pause-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Pause&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-continue-selector qq-upload-continue&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-continue-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Continue&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="err">/li&gt;</span>
+            <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-alert-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Close</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-confirm-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">No</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Yes</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-prompt-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Ok</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>Fine Uploader Gallery UI<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>The above examples assumes you are using the gallery layout. Simply replace the above <code>&lt;script&gt;</code> tag containing the template with the row layout template if you prefer that look instead. For information on customizing template, see the <a href="../features/styling.html">styling feature page</a>.</p>
+<h5 id="all-endpoint-types-core-feature-set_1">All endpoint types, core feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;all.fine-uploader/all.fine-uploader.core.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Upload your files<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// For a traditional endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+
+        <span class="c1">// For an S3 endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+
+        <span class="c1">// For an Azure endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>Remember, when using the "core" build, you will need to build your own UI and update it as needed by observing Fine Uploader callbacks/events. See the API menu at the top of this page for more information on events.</p>
+<h5 id="all-endpoint-types-ui-feature-set_1">All endpoint types, UI feature set</h5>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;all.fine-uploader/fine-uploader-gallery.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;all.fine-uploader/all.fine-uploader.min.js&quot;</span><span class="err">&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;qq-template&quot;</span><span class="nt">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-uploader-selector qq-uploader qq-gallery&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">drop</span><span class="o">-</span><span class="nx">area</span><span class="o">-</span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Drop files here&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-container-selector qq-total-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-selector qq-upload-drop-area&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">dropzone</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-drop-area-text-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-button-selector qq-upload-button&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Upload</span> <span class="nx">a</span> <span class="nx">file</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-selector qq-drop-processing&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Processing</span> <span class="nx">dropped</span> <span class="nx">files</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-drop-processing-spinner-selector qq-drop-processing-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-list-selector qq-upload-list&quot;</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;region&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">live</span><span class="o">=</span><span class="s2">&quot;polite&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">relevant</span><span class="o">=</span><span class="s2">&quot;additions removals&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-status-text-selector qq-upload-status-text&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-container-selector qq-progress-bar-container&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">role</span><span class="o">=</span><span class="s2">&quot;progressbar&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuenow</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemin</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">valuemax</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-progress-bar-selector qq-progress-bar&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-spinner-selector qq-upload-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-wrapper&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">img</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-thumbnail-selector&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">max</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="s2">&quot;120&quot;</span> <span class="nx">qq</span><span class="o">-</span><span class="nx">server</span><span class="o">-</span><span class="nx">scale</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-cancel-selector qq-upload-cancel&quot;</span><span class="o">&gt;</span><span class="nx">X</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-retry-selector qq-upload-retry&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-retry-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Retry&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="nx">Retry</span>
+                    <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-info&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-file-name&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-file-selector qq-upload-file&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Edit filename&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-edit-filename-selector qq-edit-filename&quot;</span> <span class="nx">tabindex</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-upload-size-selector qq-upload-size&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-delete-selector qq-upload-delete&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-delete-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Delete&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-pause-selector qq-upload-pause&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-pause-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Pause&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-upload-continue-selector qq-upload-continue&quot;</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-btn qq-continue-icon&quot;</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Continue&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="err">/li&gt;</span>
+            <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-alert-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Close</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-confirm-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">No</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Yes</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">dialog</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-prompt-dialog-selector&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-message-selector&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-dialog-buttons&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-cancel-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;qq-ok-button-selector&quot;</span><span class="o">&gt;</span><span class="nx">Ok</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/dialog&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>Fine Uploader Gallery UI<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;traditional-uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;s3-uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;azure-uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// For a traditional endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;traditional-uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="c1">// For an S3 endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;s3-uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="c1">// For an Azure endpoint instance:</span>
+        <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
+        <span class="kd">var</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;azure-uploader&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>The above examples assumes you are using the gallery layout. Simply replace the above <code>&lt;script&gt;</code> tag containing the template with the row layout template if you prefer that look instead. For information on customizing template, see the <a href="../features/styling.html">styling feature page</a>.</p>
+<h4 id="es6-module-commonjs-environments">ES6 module &amp; CommonJS environments</h4>
+<p>The JavaScript and CSS files mentioned in the "globally scoped environments" examples are also needed if you are working in an ES6 or CommonJS environment. If you are working in either of these two environments, you may be using tools like Webpack, Rollup, Babel, and Bublé to compile and combine JavaScript and CSS files into bundles for production use in a wide array of browsers. For more information on how you can load Fine Uploader into your project using ES6 or CommonJS, please see the <a href="../features/modules.html">modules feature page</a>.</p>
+<h3 id="5-next-lets-check-out-some-of-fine-uploaders-options">5. Next, let's check out some of Fine Uploader's options.</h3>
+<p>Proceed by selecting either:</p>
+<ul>
+<li><a href="02-setting_options.html">Traditional endpoint</a></li>
+<li><a href="02-setting_options-s3.html">Amazon S3 endpoint</a></li>
+<li><a href="02-setting_options-azure.html">Azure Blob Storage endpoint</a></li>
+</ul>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.11.9/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -170,7 +229,7 @@
                 
 <h1 class="page-header" id="chunking-partitioning">Chunking &amp; Partitioning</h1>
 <p>With the advent of the File API, modern browsers now are capable of dividing
-files into "chunks" (also referred to as partitions). This feature is a crucial
+files into &#8220;chunks&#8221; (also referred to as partitions). This feature is a crucial
 component to the <a href="resume.html">resume</a> feature, and makes the <a href="retry.html">retry</a> feature
 more useful.  File chunking also provides a workaround for request size limits
 put in place by browsers (e.g., Firefox and Chrome limit upload request
@@ -185,7 +244,7 @@ server responds with a failure message, the uploader will attempt to retry
 sending the file starting with the last failed chunk if the <code>autoRetry</code> option
 is enabled.</p>
 <p>The parameters on a chunked request will contain the following information:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="nt">&quot;qquuid&quot;</span><span class="p">:</span> <span class="s2">&quot;380d6893-b98b-4189-9938-93d265dfab5d&quot;</span><span class="p">,</span>
     <span class="nt">&quot;qqpartindex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nt">&quot;qqpartbyteoffset&quot;</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span>
@@ -207,7 +266,7 @@ is enabled.</p>
 
 <p>The <code>qqfilename</code> parameter is only sent along with chunked requests that are
 multipart encoded. This is because multipart encoded uploads report the filename
-in the Content-Disposition header as "blob" or the empty string when a <code>Blob</code>
+in the Content-Disposition header as &#8220;blob&#8221; or the empty string when a <code>Blob</code>
 is included in the request. So, to determine the original filename when dealing
 with a multipart encoded request, you must read the <code>qqfilename</code> property.</p>
 <p>Custom parameters can be sent with each chunk. Those parameters can be set and
@@ -221,7 +280,7 @@ to guarantee there are no collisions with other chunks. After all chunks have
 been received for a file (i.e., <code>qqpartindex == qqtotalparts</code>) then you should
 combine all the chunks (in order) to recreate the original file.</p>
 <p>Fine Uploader will also keep an eye out for a <code>reset</code> JSON property in the
-server's response. When this property is present Fine Uploader will
+server&#8217;s response. When this property is present Fine Uploader will
 fail the upload and then restart the upload with the first chunk again on the
 next attempt (assuming auto or manual retry has been enabled).</p>
 <h2 id="options_2">Options</h2>
@@ -385,7 +444,7 @@ next attempt (assuming auto or manual retry has been enabled).</p>
 </table>
 
 <h3 id="the-chunkdata-object">The chunkData Object</h3>
-<p>The <code>chunkData</code> object, which is passed into the 'uploadChunk' event handler, has 4 properties:</p>
+<p>The <code>chunkData</code> object, which is passed into the &#8216;uploadChunk&#8217; event handler, has 4 properties:</p>
 <ul>
 <li><code>partIndex</code> - the 0-based index of the associated partition.</li>
 <li><code>startByte</code> - the byte offset of the current chunk.</li>

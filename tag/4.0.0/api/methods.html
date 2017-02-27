@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -173,7 +232,7 @@
                 
 
                 
-<h1 class="page-header" id="methods-traditional">Methods <small>Traditional</small></h1>
+<h1 class="page-header" id="methods-wzxhzdk15traditionalwzxhzdk16">Methods <small>Traditional</small></h1>
 <h2 id="core">Core</h2>
 <table class="table table-striped table-bordered reference-table">
     <thead>
@@ -287,7 +346,7 @@
         <td><p>Draws a thumbnail.  If you set the <code>fromServer</code> parameter to false, or leave it <code>undefined</code>,
         a preview will be generated from the <code>Blob</code>/<code>File</code> provided by the browser.  If client-side preview generation is
         not supported by the browser, or if you specify <code>true</code> for the <code>fromServer</code> option, a thumbnail based on the
-        server <code>thumbnailUrl</code> from your server's upload response will be displayed on the <code>targetContainer</code>.  You can
+        server <code>thumbnailUrl</code> from your server&#8217;s upload response will be displayed on the <code>targetContainer</code>.  You can
         also optionally specify a maximum height/width for the thumbnail.  The returned promise will be fulfilled by
         passing the container back into the success callback after the thumbnail has rendered.  If the thumbnail
         cannot be generated, failure callbacks will be invoked instead, passing the container and an error message.</p></td>
@@ -327,7 +386,7 @@
 
         <td></td>
 
-        <td><p>Returns the number of items that are either currently uploading or queued. If called inside of the 'cancel' event handler this method will return a value that includes the upload associated with the 'cancel' event handler. This is because the upload will not be cancelled until the event handler returns.</p></td>
+        <td><p>Returns the number of items that are either currently uploading or queued. If called inside of the &#8216;cancel&#8217; event handler this method will return a value that includes the upload associated with the &#8216;cancel&#8217; event handler. This is because the upload will not be cancelled until the event handler returns.</p></td>
 
     </tr>
 
@@ -450,7 +509,7 @@
         <td><p>Modify the location where
         upload requests should be directed. he endpoint for a specific file or blob can be changed by passing in an
         optional <code>id</code> or <code>button</code> parameter.  An id will always be a number and refers to a specific file.  A button will
-        always be an <code>HTMLElement</code> and refers to a specific 'extra' button element contributed via the options.</p></td>
+        always be an <code>HTMLElement</code> and refers to a specific &#8216;extra&#8217; button element contributed via the options.</p></td>
 
     </tr>
 
@@ -531,7 +590,7 @@
 
 <h3 id="blobdata-objects"><code>blobData</code> objects</h3>
 <p>These are simple JS objects that have the following properties:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="cm">/* The name of the blob */</span>
     <span class="s2">&quot;blob&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="cm">/* The value of the bytes of the Blob object being uploaded */</span>
 <span class="p">}</span>
@@ -542,7 +601,7 @@
 
 <h4 class="alert-heading">Info:</h4>
 
-<p>For more information on <code>File</code> and <code>Blob</code> objects, see the W3C's
+<p>For more information on <code>File</code> and <code>Blob</code> objects, see the W3C&#8217;s
 <a href="http://www.w3.org/TR/FileAPI/#dfn-file">File Specification</a> and
 <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">Blob Specification</a>.</p>
 

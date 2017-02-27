@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="qquery">qQuery</h2>
+<p>Fine Uploader, which lives in the <code>qq</code> namespace, also contains a number of utility functions in the same namespace.<br>
+While these functions were developed to be used by the internal Fine Uploader code, they are all public functions and many<br>
+of them may be useful to others.  If, for example, you cannot or do not want to import a 3rd-party library such as jQuery,<br>
+Fine Uploader&rsquo;s qQuery contains a number of useful utility functions.  I will document the ones that are most likely to be<br>
+useful outside of Fine Uploader below:</p>
+<h3 id="qqhtmlelement"><code>qq(HTMLElement)</code></h3>
+<p>The functions below are part of the <code>qq(HTMLElement)</code> function.  This is similar to the <code>jQuery</code> function that takes,<br>
+for one, a selector string.  <code>qq(...)</code> is a bit simpler and less advanced, though.  It only accepts one HTMLElement (for now).<br>
+For example, if you want to hide an element with an ID of &ldquo;myDiv&rdquo;:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">myDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myDiv'</span><span class="p">);</span>
+<span class="nx">qq</span><span class="p">(</span><span class="nx">myDiv</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</pre></div>
+
+
+<p><br/><br>
+The following element-related functions are available on the <code>qq(...)</code> function.  Unless otherwise specified, the function returns the qq instance to allow chaining:<br>
+* <code>hide()</code> - Hides this element.</p>
+<ul>
+<li>
+<p><code>attach(String type, Function callback)</code> - attach an event handler to this element for a specific type of native DOM event.  Returns a <code>detach</code> function.</p>
+</li>
+<li>
+<p><code>detach(String type, Function originalCallback)</code> - detach an already attached event handler given a specific event type and callback function.</p>
+</li>
+<li>
+<p><code>contains(HTMLElement descendant)</code> - Returns true if this element contains the passed element.</p>
+</li>
+<li>
+<p><code>insertBefore(HTMLElement elementB)</code> - Inserts this element directly before the passed element in the DOM.</p>
+</li>
+<li>
+<p><code>remove()</code> - Removes this element from the DOM.</p>
+</li>
+<li>
+<p><code>css(Object styles)</code> - Specify css styles for this element, such as <code>{top: 0, right: 0</code>}.</p>
+</li>
+<li>
+<p><code>hasClass(String className)</code> - Returns true if this element has the passed class name.</p>
+</li>
+<li>
+<p><code>addClass(String className)</code> - Adds the passed class to this element.</p>
+</li>
+<li>
+<p><code>removeClass(String className)</code> - Removes the passed class from this element.</p>
+</li>
+<li>
+<p><code>getByClass(String className)</code> -  Returns an array of all descendants of this element that contain the passed class name.</p>
+</li>
+<li>
+<p><code>setText(String text)</code> - Sets the text for this element.</p>
+</li>
+<li>
+<p><code>clearText(String text)</code> - Clears all text for this element.</p>
+</li>
+<li>
+<p><code>children()</code> - Returns an array of all immediate children elements of this element.</p>
+</li>
+</ul>
+<p><br/></p>
+<h3 id="the-following-utility-functions-are-also-available-in-the-qq-namespace-as">The following utility functions are also available in the <code>qq</code> namespace as:</h3>
+<ul>
+<li>
+<p><code>qq.isObject(somevar)</code> - Returns true if the parameter is a &ldquo;simple&rdquo; object, such as <code>{foo: "bar"}</code> or <code>new Object()</code>.</p>
+</li>
+<li>
+<p><code>qq.isFunction(maybeFunc)</code> - Returns true if the parameter is a function.</p>
+</li>
+<li>
+<p><code>qq.isString(maybeString)</code> - Returns true if the parameter is a String literal OR a String created using the <code>String</code> constructor (<code>new String('somestring')</code>).</p>
+</li>
+<li>
+<p><code>qq.trimStr(string)</code> - Polyfill for <code>String.prototype.trim()</code>, since some browsers, such as IE8 and earlier, do not support this function.</p>
+</li>
+<li>
+<p><code>qq.extend(Object firstObj, Object secondObj, Boolean extendNested)</code> - Copies the properties of secondObj to firstObj.  If extendNested is true, sub-properties of secondObj are copied over as well.</p>
+</li>
+<li>
+<p><code>qq.indexOf(Array array, String item, Number startingIndex)</code> - Same as <a href="https://developer.mozilla.org/en-USJavaScript/Reference/Global_Objects/Array/indexOf">indexOf from Javascript 1.6</a>, but implemented for browsers that don&rsquo;t support this native function, such as IE8 and earlier.</p>
+</li>
+<li>
+<p><code>qq.preventDefault(Event)</code> - A function used to prevent the user agent&rsquo;s default action.  To be used inside an event handler.</p>
+</li>
+<li>
+<p><code>qq.toElement()</code> - Creates and returns a new DIV element.</p>
+</li>
+<li>
+<p><code>qq.each(objectOrArray, callback)</code> - Iterates through an object or array, passing your callback the key and value for each element in the object.  <code>return false;</code> to stop iteration.</p>
+</li>
+<li>
+<p><code>qq.bind(oldFunc, context)</code> - Same concept as <code>Function.prototype.bind</code>, but this will function in all browsers.  Pass comma-separated<br>
+values after the <code>context</code> parameter for all arguments to be passed to the new function (when invoked).  This is an alterative to<br>
+modifying <code>Function.prototype</code>.  Note that you can also pass additional arguments to the returned/new function during invocation.</p>
+</li>
+<li>
+<p><code>qq.log(String logMessage, (optional) String logLevel)</code> - Log a message to the console.  No-op if console logging is not supported<br>
+by the user agent.  Will delegate to the user agent&rsquo;s logging function that corresponds to the passed logging level, if<br>
+it exists.  If a comparable function does not exist, but console logging is supported, the log event will be delegated<br>
+to <code>console.log</code> and the log level will be included in the message.</p>
+</li>
+<li>
+<p><code>qq.ie10()</code> - Returns true if the current user agent is Internet Explorer 10.</p>
+</li>
+<li>
+<p><code>qq.ie()</code> - Returns true if the current user agent is Internet Explorer.</p>
+</li>
+<li>
+<p><code>qq.safari()</code> - Returns true if the current user agent is Safari.</p>
+</li>
+<li>
+<p><code>qq.chrome()</code> - Returns true if the current user agent is Chrome.</p>
+</li>
+<li>
+<p><code>qq.firefox()</code> - Returns true if the current user agent is Firefox.</p>
+</li>
+<li>
+<p><code>qq.windows()</code> - Returns true if the current user agent is running on the Microsoft Windows platform.</p>
+</li>
+<li>
+<p><code>qq.android()</code> - Returns true of the current user agent is running on an Android device.</p>
+</li>
+<li>
+<p><code>qq.ios()</code> - Returns true if the current device is an iPad, iPhone, or iPod.</p>
+</li>
+<li>
+<p><code>qq.isXhrUploadSupported()</code> - Returns true if the current user agent is capable of sending files using an ajax request.</p>
+</li>
+<li>
+<p><code>qq.isFolderDropSupported()</code> - Returns true if the current user agent is capable of handling dropped folders.</p>
+</li>
+<li>
+<p><code>qq.isFileChunkingSupported()</code> - Returns true if the current user agent is capable of sending chunked file requests.</p>
+</li>
+<li>
+<p><code>qq.areCookiesEnabled()</code> - Returns true if persistent cookies are permitted by the user agent.</p>
+</li>
+<li>
+<p><code>qq.getUniqueId()</code> - Returns a version 4 UUID.</p>
+</li>
+<li>
+<p><code>qq.getCookie(String name)</code> - Returns the value of the cookie associated with the passed name.</p>
+</li>
+<li>
+<p><code>qq.setCookie(String name, String value, number daysTillExpiration)</code> - Sets or updates a cookie.</p>
+</li>
+<li>
+<p><code>qq.deleteCookie(String name)</code> - Deletes a cookie with the passed name.</p>
+</li>
+</ul>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

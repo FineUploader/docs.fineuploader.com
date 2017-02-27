@@ -198,7 +198,7 @@
                 
 <h1 class="page-header" id="traditional-uploader-server-side-notes-requirements">Traditional Uploader Server-Side Notes &amp; Requirements</h1>
 <p>In the server folder you will find some examples for different platforms. If
-you can't find the one you need, please read up on the server-side guidelines
+you can&#8217;t find the one you need, please read up on the server-side guidelines
 handling multipart form requests and XHR upload requests in your server-side
 language of choice.</p>
 <p>Note that you can fine server-side examples in the <a href="https://github.com/Widen/fine-uploader-server">Fine Uploader Server repository</a>.</p>
@@ -207,7 +207,7 @@ language of choice.</p>
 POST request.  The filename will be encoded in the request, but the parameters
 will be available in the query string only.  Note that, if chunking is enabled,
 the filename in the content-disposition header of the file boundary will have a
-value of "blob" so you will need to parse the value of the "qqfilename"
+value of &#8220;blob&#8221; so you will need to parse the value of the &#8220;qqfilename&#8221;
 parameter in this case to determine the name of the associated file.</p>
 <p>Note that each request contains a UUID parameter.  By default, the name of this
 parameter is <code>qquuid</code>, but this is configurable in the <a href="../api/options.html"><code>request</code> option section</a>.
@@ -218,9 +218,9 @@ sever-side if you want to handle DELETE requests, the resume feature, or chunkin
 
 <h4 class="alert-heading">Note:</h4>
 
-<p>iOS devices use 'image.jpg' for <strong>all</strong> image file names. Ensure to save your
-files with the UUID somewhere in that file's path to ensure users are not
-overwriting each others' files.</p>
+<p>iOS devices use &#8216;image.jpg&#8217; for <strong>all</strong> image file names. Ensure to save your
+files with the UUID somewhere in that file&#8217;s path to ensure users are not
+overwriting each others&#8217; files.</p>
 
 </div>
 
@@ -239,7 +239,7 @@ along with <a href="http://blog.fineuploader.com/2012/12/05/include-params-in-th
 </div>
 
 <h2 id="response">Response</h2>
-<p>Your server should return a <a href="http://jsonlint.com/">valid JSON</a> response.  The content-type must be "text/plain".</p>
+<p>Your server should return a <a href="http://jsonlint.com/">valid JSON</a> response.  The content-type must be &#8220;text/plain&#8221;.</p>
 <h4 id="values">Values</h4>
 <ul>
 <li><code>{"success":true}</code> when upload was successful.</li>
@@ -251,7 +251,7 @@ any further attempts to retry uploading the file</li>
 Note that, if resume is also enabled, and this is the first chunk of a resume attempt, this will result in the upload starting with the first chunk immediately.</li>
 <li><code>{"success":true, "newUuid": "abc-def-ghi"}</code> When you would like to override the UUID for this file provided by Fine Uploader.</li>
 </ul>
-<p>Note: You can have additional custom properties in the response, but ensure that you include the "success": true property for a successful response, or it will trigger the onError callback.</p>
+<p>Note: You can have additional custom properties in the response, but ensure that you include the &#8220;success&#8221;: true property for a successful response, or it will trigger the onError callback.</p>
 <h2 id="file-chunkingpartitioning">File Chunking/Partitioning</h2>
 <p>If you have file chunking turned on, each file will be split up into chunks that are sent, in order, in separate requests.</p>
 <p>On the server-side, you must acknowledge each chunked request just as you would a non-chunked request.  If your response does
@@ -268,21 +268,21 @@ to avoid collisions during accumulation of chunks between files with the same na
 <p>For more complete details regarding the file chunking feature, along with code examples, please see <a href="http://blog.fineuploader.com/2012/12/28/file-chunkingpartitioning-is-now-available-in-3-2/">this blog post</a>.
 on the topic.</p>
 <h2 id="file-resume">File Resume</h2>
-<p>There isn't much you need to do, server-side, to support file resume, other than what has been discussed in the file chunking
-section above.  You can determine if a resume has been ordered by looking for a "qqresume" param with a value of true.  This
+<p>There isn&#8217;t much you need to do, server-side, to support file resume, other than what has been discussed in the file chunking
+section above.  You can determine if a resume has been ordered by looking for a &#8220;qqresume&#8221; param with a value of true.  This
 parameter will be sent with the first request of the resume.</p>
 <p>It is important that you keep chunks around on the server until either the entire file has been uploaded
 and all chunks have been merged, or until the number of days specified in the <code>recordsExpireIn</code> property of the resume option have
 passed.  If, for some reason, you receive a request that indicates a resume has been ordered, and one or more of the previously uploaded
-chunks is missing or invalid, you can return a valid JSON response containing a "reset" property with a value of "true".  This will
+chunks is missing or invalid, you can return a valid JSON response containing a &#8220;reset&#8221; property with a value of &#8220;true&#8221;.  This will
 let Fine Uploader know that it should start the file upload from the first chunk instead of the last failed chunk.</p>
 <p>For more details, please read the <a href="http://blog.fineuploader.com/2013/01/01/resume-uploads-from-previous-sessions-in-3-2/">blog post on the file resume feature</a>.</p>
 <h2 id="deleting-files">Deleting Files</h2>
 <p>If you have enabled the <code>deleteFile</code> feature, you will need to handle <code>DELETE</code> or <code>POST</code> requests server-side.  The method
 is configurable via the <code>method</code> property of the <a href="../api/options.html"><code>deleteFile</code> option</a>.</p>
 <p>For DELETE  requests, the UUID of the file to delete will be specified as the last element of the URI path.  Any custom parameters
-specified will be added to the query string.  For POST requests, the UUID is sent as a "qquuid" parameter, and a "_method"
-parameter is sent with a value of "DELETE".  All POST request parameters are sent in the request payload.</p>
+specified will be added to the query string.  For POST requests, the UUID is sent as a &#8220;qquuid&#8221; parameter, and a &#8220;_method&#8221;
+parameter is sent with a value of &#8220;DELETE&#8221;.  All POST request parameters are sent in the request payload.</p>
 <p>Success of the request will depend solely on the response code.  Acceptable response codes that indicate success are 200,
 202, and 204 for DELETE requests and 200 or 204 for POST requests.</p>
 <p>If you would like to enable the delete file feature for cross-origin environments in IE9 or older, you will need to set
@@ -298,12 +298,12 @@ please see the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-
 cors option documentation in the main readme.</p>
 <h2 id="providing-your-own-uuid-for-files">Providing your own UUID for files</h2>
 <p>If you would like to track files with your own generated UUID, you can return the new UUID for the file at any time in
-your server's response.  If chunking is enabled, it generally would be most prudent to return this new UUID in the response
+your server&#8217;s response.  If chunking is enabled, it generally would be most prudent to return this new UUID in the response
 to the first or last chunk.  Once you return the new UUID in your response, Fine Uploader will update its client-side
 records and begin to use that UUID from that point forward.  New UUIDs must be returned as the value of a <code>newUuid</code> property.
 See the <a href="#values">values</a> section above for an example.</p>
 <h2 id="handling-an-overridden-filename">Handling an Overridden Filename</h2>
-<p>Simple look for a "qqfilename" parameter.  If this exists in the request, be sure to use this when naming your file server-side.
+<p>Simple look for a &#8220;qqfilename&#8221; parameter.  If this exists in the request, be sure to use this when naming your file server-side.
 See the <a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/">blog post</a> for more details.</p>
 <h2 id="thumbnails_2">Thumbnails</h2>
 <p>If you would like to override the client-side generated preview (where supported) or provide a thumbnail for a

@@ -201,7 +201,7 @@
 
                 
 <h1 class="page-header" id="events">Events</h1>
-<p>Fine Uploader's event system enables integrators to execute any operations at
+<p>Fine Uploader&#8217;s event system enables integrators to execute any operations at
 almost any point in the upload process. Knowing how these callbacks work, and
 when they are called, is crucial to unlocking the full potential of
 Fine Uploader.</p>
@@ -212,24 +212,24 @@ Fine Uploader.</p>
 <p>See the <a href="../integrating/jquery">Integrating jQuery</a> page for code examples and more details.</p>
 <h4 id="non-jquery_1">non-jQuery</h4>
 <p>When using the non-jQuery uploader, the following syntax is the correct way to define event handlers:</p>
-<div class="codehilite"><pre><span></span>callbacks: {
-    onDelete: function(id) {
-    // ...
-    },
-    onDeleteComplete: function(id, xhr, isError) {
-    //...
-    }
-}
+<div class="codehilite"><pre><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">onDelete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="nx">onDeleteComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h4 id="jquery_1">jQuery</h4>
 <p>The syntax below is only acceptable when using the jQuery plugin for the uploader:</p>
-<div class="codehilite"><pre><span></span>$(&quot;#my_uploader&quot;).on(&quot;deleteComplete&quot;, function(event, id, xhr, isError) {
-    //...
-}).on(&quot;delete&quot;, function(event, id) {
-    // ...
-});
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#my_uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;deleteComplete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
 </pre></div>
 <div class="events-all">
 
@@ -254,7 +254,7 @@ Fine Uploader.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -270,7 +270,7 @@ Fine Uploader.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -307,7 +307,7 @@ upload from being canceled. Also can return a promise if non-blocking
 work is required here. Calling <code>failure()</code> on the promise is equivalent to
 returning <code>false</code>. If using a Promise, then processing of the cancel request
 will be deferred until the promise is fullfilled. Since there is no way to
-'pause' the upload in progress while waiting for the promise to be fullfilled
+&#8216;pause&#8217; the upload in progress while waiting for the promise to be fullfilled
 the upload may actually complete until the promise has actually be fullfilled.</p>
     </span>
     
@@ -325,7 +325,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -341,7 +341,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -359,7 +359,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
     <span class="event-description">
         <p>Called when the item has finished uploading.</p>
 <p>The <code>responseJSON</code> will contain the raw response from the server including the
-'success' property which indicates whether the upload succeeded.</p>
+&#8216;success&#8217; property which indicates whether the upload succeeded.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -376,7 +376,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -392,7 +392,7 @@ the upload may actually complete until the promise has actually be fullfilled.</
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -535,7 +535,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -568,7 +568,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -657,7 +657,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -673,7 +673,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -763,7 +763,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -779,7 +779,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -850,7 +850,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -866,7 +866,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name</p></dd>
 </span>
 <hr/>
             
@@ -932,7 +932,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -948,7 +948,7 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name</p></dd>
 </span>
 <hr/>
             
@@ -1104,7 +1104,7 @@ represented in the response could not be parsed (due to bad syntax, missing name
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1173,7 +1173,7 @@ If a promise is returned, a call to failure is the same as returning <code>false
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1189,7 +1189,7 @@ If a promise is returned, a call to failure is the same as returning <code>false
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -1226,7 +1226,7 @@ returned, a call to failure is the same as returning <code>false</code>.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1246,7 +1246,7 @@ returned, a call to failure is the same as returning <code>false</code>.</p>
 <p>The file will upload immediately if there is a) at least one free connection
 (see: <a href="options.html#maxconnections"><code>maxConnections</code> option</a>) and b) <code>autoUpload</code>
 is set to <code>true</code> (see <a href="options.html#autoupload"><code>autoUpload</code> option</a>).</p>
-<p>The callback is invoked after the 'submit' event is handled without returning a
+<p>The callback is invoked after the &#8216;submit&#8217; event is handled without returning a
 <code>false</code> value. In Fine Uploader Core mode it is usually safe to assume that
 the associated elements in the UI representing the associated file have already
 been added to the DOM immediately before this callback is invoked.</p>
@@ -1266,7 +1266,7 @@ been added to the DOM immediately before this callback is invoked.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1282,7 +1282,7 @@ been added to the DOM immediately before this callback is invoked.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>THe current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>THe current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -1366,7 +1366,7 @@ progress of all files in the batch.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1382,7 +1382,7 @@ progress of all files in the batch.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -1399,7 +1399,7 @@ progress of all files in the batch.</p>
     <h4 id="uploadChunk"><a style="color: #f87436;" href="#uploadChunk">uploadChunk</a></h4>
     <span class="event-description">
         <p>Called just before a chunk request is sent.</p>
-<p>The <code>chunkData</code> object, which is passed into the 'uploadChunk' event handler, has 4 properties:</p>
+<p>The <code>chunkData</code> object, which is passed into the &#8216;uploadChunk&#8217; event handler, has 4 properties:</p>
 <ul>
 <li><code>partIndex</code> - the 0-based index of the associated partition.</li>
 <li><code>startByte</code> - the byte offset of the current chunk.</li>
@@ -1422,7 +1422,7 @@ progress of all files in the batch.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1438,7 +1438,7 @@ progress of all files in the batch.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>name</em></dt>
-    <dd class="method-param-description span8"><p>The current file's name.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s name.</p></dd>
 </span>
 <hr/>
             
@@ -1489,7 +1489,7 @@ has been <strong>successfully</strong> uploaded.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>id</em></dt>
-    <dd class="method-param-description span8"><p>The current file's id.</p></dd>
+    <dd class="method-param-description span8"><p>The current file&#8217;s id.</p></dd>
 </span>
 <hr/>
             
@@ -1689,7 +1689,7 @@ submitted using a Fine Uploader tracked button.</p>
 
 </dd>
     <dt class="method-param-name span2"><em>fileOrBlobDataArray</em></dt>
-    <dd class="method-param-description span8"><p>An array of <code>File</code>'s or <code>Blob</code>'s.</p></dd>
+    <dd class="method-param-description span8"><p>An array of <code>File</code>&#8216;s or <code>Blob</code>&#8216;s.</p></dd>
 </span>
 <hr/>
             

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="using-the-optional-jquery-plug-in">Using the optional jQuery plug-in</h2>
+<p>Fine Uploader also provides an optional jQuery plug-in.  This simply wraps the native uploader code.  You can use either of<br>
+the modes described above when using the jQuery plug-in via the <code>uploaderType</code> option.</p>
+<p><strong>It is important to understand that the target of your plug-in should be an existing container element for your upload<br>
+component, <em>NOT</em> the button element.  Your button element must be specified separately via the <code>button</code> option.</strong></p>
+<p>The above example is the simplest possible use-case.  Note that you can use any of the options available for the native<br>
+Fine Uploader and Fine Uploader Basic, with the following exceptions &amp; additions:<br>
+<em> There is no need to specify the <code>element</code> option.  It will be ignored if you pass it in.  The plug-in will pass the<br>
+<code>element</code> option for you, using the element you associated with the plug-in (the element with an id of fineUploaderElementId<br>
+ in the above example).</em> If you plan on using FineUploaderBasic, include the <code>uploaderType</code> option with a value of &lsquo;basic&rsquo;.  If not specified, it<br>
+is assumed that you intend to use FineUploader.</p>
+<h3 id="options-that-require-an-htmlelement">Options that require an HTMLElement</h3>
+<p>For any option with an <code>HTMLElement</code> value, you can, instead, pass a jQuery object.  For example, if you specify the<br>
+<code>button</code> option, the value can be <code>$('#myButton')</code>.</p>
+<p>If the option takes an array of <code>HTMLElements</code>, any item in the array that is a jQuery object will be evaluated and all<br>
+<code>HTMLElement</code>s associated with that jQuery object will be added to the array when it is passed to the native Fine<br>
+Uploader.  For example, if specify a value for the <code>extraDropzones</code> option, and, say, your value is<br>
+<code>[$('.myExtraDropzone')]</code>, and there are 3 elements in the DOM with this class, the plug-in will pass all 3 elements<br>
+to native Fine Uploader.</p>
+<h3 id="callbacks_2">Callbacks</h3>
+<p>All <a href="/tag/3.7.1/api/callbacks.html">callbacks defined in the native uploader</a> are also available when using<br>
+the jQuery plug-in.  However, as is common with jQuery plug-ins, these callbacks are actually custom events.  For example,<br>
+if you want to be notified whenever an error occurs and whenever an upload has completed, your client-side code may look<br>
+something like this:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fineUploaderElementId'</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/upload/endpoint'</span>
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">//do something</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">responseJSON</span><span class="p">){</span>
+    <span class="c1">//do something</span>
+  <span class="p">});</span>
+</pre></div>
+
+
+<p>It may be important to note that the value returned from your event/callback handler may be examined by the uploader.<br>
+As the documentation states, uploads can be prevented by returning &lsquo;false&rsquo; in some of your callback handlers.  This is also true<br>
+when using the jQuery plug-in.</p>
+<p>Also, please note that the context of your event handler, by default, is the event target.  This is, in fact, true, by<br>
+default, for <em>all</em> jQuery event handlers, not just event handlers associated with Fine Uploader.  Say you want to change<br>
+the parameters sent along with a file when handling a <code>submit</code> event.  Your code can be as simple as this:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fineUploaderElementId'</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">'/upload/endpoint'</span>
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">'setParams'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'param1'</span><span class="o">:</span> <span class="s1">'val1'</span><span class="p">});</span>
+  <span class="p">});</span>
+</pre></div>
+
+
+<h3 id="public-api-instance-functions">Public API / Instance Functions</h3>
+<p>All public API (instance) functions defined in the native javascript uploader are accessible when<br>
+using the jQuery plug-in.  See the <a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploaderBasic mode API functions section</a> and the<br>
+<a href="/tag/3.7.1/api/fineuploader.html">FineUploader mode API functions section</a> for more details.  Public/instance functions on a jQuery plug-in are made accessible as recommended in the<br>
+<a href="http://docs.jquery.com/Plugins/Authoring#Plugin_Methods">jQuery plug-in documentation</a>.  Looking for an example?<br>
+Please see the above code fragment, where we call the <code>setParams</code> instance function and pass it an object.</p>
+<p>For more examples using the jQuery plug-in, please have a look at <a href="http://fineuploader.com">fineuploader.com</a>.</p>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

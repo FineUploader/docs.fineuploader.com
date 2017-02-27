@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -168,7 +227,7 @@
                 
 
                 
-<h1 id="setting-fine-uploader-options-amazon-s3-page-header">Setting Fine Uploader Options <small>Amazon S3</small>{: .page-header }</h1>
+<h1 class="page-header" id="setting-fine-uploader-options-wzxhzdk216amazon-s3wzxhzdk217">Setting Fine Uploader Options <small>Amazon S3</small></h1>
 <p>At this point in the tutorial you should have an very simple HTML page with a
 Fine Uploader instance. This section will get you started with setting some of
 the more common options of Fine Uploader.</p>
@@ -189,7 +248,7 @@ requests to. This endpoint can be an absolute path or a relative path.  The mean
 endpoint varies depending on the endpoint handler. If you are using
 Fine Uploader S3, the endpoint should point to your S3 bucket.</p>
 <p>More information on the <a href="../api/options-s3.html#request-option"><code>request</code> option here</a>.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_BUCKET_NAME }.s3.amazonaws.com&#39;</span>
         <span class="nx">accessKey</span><span class="o">:</span> <span class="s1">&#39;{ YOUR_ACCESS_KEY }&#39;</span>
@@ -210,7 +269,7 @@ Fine Uploader S3, the endpoint should point to your S3 bucket.</p>
 <h3 id="debug-mode">Debug mode</h3>
 <p>Debug mode is used to begin diagnosing any application errors. Debug mode can
 be enabled in the options of Fine Uploader:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
     <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="cm">/* ...other options... */</span>
 <span class="p">});</span>
@@ -224,7 +283,7 @@ have this mode on during development.</p>
 <h3 id="retrying-uploads_1">Retrying Uploads</h3>
 <p>Networks can be unreliable, and if your upload fails, Fine Uploader offers the
 ability to retry. The <code>retry</code> option can be set to enable this:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
     <span class="cm">/* ...other options... */</span>
     <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
        <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// defaults to false</span>
@@ -241,7 +300,7 @@ In Fine Uploader UI mode, if this feature is enabled, a customizable delete
 link will appear next to the file after it has successfully uploaded.  File deletion can be enabled in the Fine Uploader
 options.</p>
 <p>You can also send a delete request via the <code>deleteFile</code> <a href="../api/methods.html">API method</a>.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
     <span class="cm">/* ...other options... */</span>
     <span class="nx">deleteFile</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// defaults to false</span>
@@ -254,23 +313,23 @@ options.</p>
 <p>More information on <a href="../features/delete.html">deleting files here</a>.</p>
 <h2 id="putting-it-together">Putting it together</h2>
 <p>Now our Fine Uploader page should look something like this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;fineuploader-4.0.0.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;fineuploader-4.0.0.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
 
     <span class="c">&lt;!-- The element where Fine Uploader will exist. --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fine-uploader&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fine-uploader&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- jQuery version 1.10.x (if you are using the jQuery plugin --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
     <span class="c">&lt;!-- Fine Uploader-jQuery --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery.fineuploader-4.0.0.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.fineuploader-4.0.0.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
     <span class="c1">// Wait until the DOM is &#39;ready&#39;</span>
     <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span>
@@ -297,14 +356,14 @@ options.</p>
             <span class="p">}</span>
         <span class="p">});</span>
     <span class="p">});</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
 
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 
 
-<p><a href="03-setting_up_server-s3.html">Next</a>, you'll learn to use Amazon S3 to handle uploads.</p>
+<p><a href="03-setting_up_server-s3.html">Next</a>, you&#8217;ll learn to use Amazon S3 to handle uploads.</p>
 
 
                 

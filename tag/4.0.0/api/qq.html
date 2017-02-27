@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -173,7 +232,7 @@
 it dependency free and lightweight. These functions are found in the same
 namespace as Fine Uploader, <code>qq</code>.</p>
 <h2 id="qquery">qQuery</h2>
-<p>The qQuery object is much like a poor man's jQuery. If you cannot or do not
+<p>The qQuery object is much like a poor man&#8217;s jQuery. If you cannot or do not
 want to import a 3rd-party library such as jQuery or Zepto to do cross-browser
 DOM manipulation, then qQuery will be your friend.</p>
 <table class="table table-striped table-bordered reference-table">
@@ -201,7 +260,7 @@ DOM manipulation, then qQuery will be your friend.</p>
 
         <td><p><code>qq HTMLElement</code></p></td>
 
-        <td><p>Selects an <code>HTMLElement</code> and returns a <code>qq</code> 'wrapped' object.</p></td>
+        <td><p>Selects an <code>HTMLElement</code> and returns a <code>qq</code> &#8216;wrapped&#8217; object.</p></td>
 
     </tr>
 
@@ -212,8 +271,8 @@ DOM manipulation, then qQuery will be your friend.</p>
 it can perform. For now, though, <code>qq</code> only accepts <code>HTMLElements</code> as input.
 To be able to use the <code>qq</code> methods, first one must wrap some <code>HTMLElement</code>
 in the <code>qq</code> function as such:</p>
-<p>For example, if you wanted to hide an element with the id of "myDiv":</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">myDiv</span><span class="p">,</span> <span class="nx">qqMyDiv</span><span class="p">;</span>
+<p>For example, if you wanted to hide an element with the id of &#8220;myDiv&#8221;:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">myDiv</span><span class="p">,</span> <span class="nx">qqMyDiv</span><span class="p">;</span>
 <span class="nx">myDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myDiv&quot;</span><span class="p">);</span>
 <span class="nx">qqMyDiv</span> <span class="o">=</span> <span class="nx">qq</span><span class="p">(</span><span class="nx">myDiv</span><span class="p">);</span>
 
@@ -225,7 +284,7 @@ in the <code>qq</code> function as such:</p>
 </pre></div>
 
 
-<p>Once you've wrapped an element, you have access to a wealth of cross-browser
+<p>Once you&#8217;ve wrapped an element, you have access to a wealth of cross-browser
 polyfills that will let you manipulate the DOM and CSS as you please. Just make
 sure to wrap any elements before calling these methods on them.</p>
 <h3 id="dom-selection-and-traversal">DOM Selection and Traversal</h3>
@@ -554,7 +613,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
         <td><p><code>boolean</code></p></td>
 
-        <td><p><code>True</code> if the parameter is a 'simple' object.</p></td>
+        <td><p><code>True</code> if the parameter is a &#8216;simple&#8217; object.</p></td>
 
     </tr>
 
@@ -590,7 +649,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
         <td></td>
 
-        <td><p>Prevent the user agent's default action on an event. Useful inside of event handlers.</p></td>
+        <td><p>Prevent the user agent&#8217;s default action on an event. Useful inside of event handlers.</p></td>
 
     </tr>
 
@@ -626,7 +685,7 @@ sure to wrap any elements before calling these methods on them.</p>
 
         <td></td>
 
-        <td><p>Log a message to the console. No-op if console logging is not supported. Polyfill for th user-agent's logging function corresponding to that passed logging level. Generally delegates to <code>console.log</code></p></td>
+        <td><p>Log a message to the console. No-op if console logging is not supported. Polyfill for th user-agent&#8217;s logging function corresponding to that passed logging level. Generally delegates to <code>console.log</code></p></td>
 
     </tr>
 

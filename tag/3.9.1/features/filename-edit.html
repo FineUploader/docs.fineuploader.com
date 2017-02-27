@@ -1,0 +1,373 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Editing Filenames | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/3.9.1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/3.9.1/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.9.1">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/3.9.1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/3.9.1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/3.9.1/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/3.9.1/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/3.9.1/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/3.9.1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/3.9.1/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/3.9.1/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/3.9.1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/3.9.1/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/3.9.1/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/3.9.1/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/3.9.1/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/3.9.1/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/3.9.1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/3.9.1/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/3.9.1/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/3.9.1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/3.9.1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/3.9.1/api/options.html">Core</a></li>
+                                <li><a href="/tag/3.9.1/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/3.9.1/api/options-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/3.9.1/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/3.9.1/api/methods-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/3.9.1/api/events.html">Events</a></li>
+                                <li><a style="margin-left: -20px;"href="/tag/3.9.1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.9.1/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/3.9.1/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.9.1/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <ul><a href="/branch/master">Stable</a></ul>
+                            
+                                <ul><a href="/branch/develop">In Progress</a></ul>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span10 content">
+                
+
+                
+<h1 class="page-header" id="filename-editing">Filename Editing</h1>
+<p>Fine Uploader provides methods and options to enable client-side editing
+of filenames before upload.</p>
+<p>In Core mode, integrators can use the API methods <code>getName</code> and <code>setName</code> for
+this. In UI mode, if the <code>editFilename</code> option is enabled, then when a user
+clicks a file that they have submitted to the uploader the text will become
+an input element that they can use to change the name.</p>
+<p>The filename will then be sent with the request as the <code>qqfilename</code> parameter.
+Be sure to read this parameter when naming your file server-side.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>You will want to have <code>autoUpload</code> disabled when using the edit filename feature.</p>
+
+</div>
+
+<h2 id="editfilename-option_1"><code>editFilename</code> option</h2>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Option Name</p></td>
+
+        <td><p>Type</p></td>
+
+        <td><p>Default</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>enabled</p></td>
+
+        <td><p>boolean</p></td>
+
+        <td><p><code>false</code></p></td>
+
+        <td><p>If set to <code>true</code>, users are allowed to edit the name of a submitted files before upload.</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<h2 id="methods_4">Methods</h2>
+<table class="table table-striped table-bordered reference-table">
+    <thead>
+    <tr>
+
+        <td><p>Name</p></td>
+
+        <td><p>Parameters</p></td>
+
+        <td><p>Return</p></td>
+
+        <td><p>Description</p></td>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+
+        <td><p>getName</p></td>
+
+        <td><p><code>Integer</code> id</p></td>
+
+        <td><p><code>String</code></p></td>
+
+        <td><p>Returns the name of the item with the associated id</p></td>
+
+    </tr>
+
+    <tr>
+
+        <td><p>setName</p></td>
+
+        <td><p><code>Integer</code> id, <code>String</code> newName</p></td>
+
+        <td></td>
+
+        <td><p>Provide an alternative name for the associated item</p></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<p><a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/">For more information, see the associated blog post</a></p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <hr>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        
+        
+        
+
+
+    </body>
+</html>

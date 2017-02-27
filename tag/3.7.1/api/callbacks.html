@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FineUploader - Documentation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" rel="stylesheet">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/pygments.css" />
+
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<link rel="stylesheet" href="/tag/3.7.1/_static/css/main.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -13px; height: 24px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/3.7.1">Home</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+                    <li><a href="/tag/3.7.1/overview">Overview</li></a>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrating <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/integrating/quickstart/">Quickstart</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Modes</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploader.html">jQuery FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/modes/jquery-fineuploaderbasic.html">jQuery FineUploader Basic</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Options</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/options/overriding.html">Overriding</a></ul>
+                            <li class="divider"></li>
+                            <ul><b>Extras</b></ul>
+                            <ul><a href="/tag/3.7.1/integrating/styling.html">Styling</a></ul>
+                            <ul><a href="/tag/3.7.1/integrating/server">Server</a></ul>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/3.7.1/api/callbacks.html">Callbacks</a></ul>
+                            <ul><a href="/tag/3.7.1/api/drag-and-drop.html">Drag 'n' Drop</a></ul>
+                            <ul><a href="/tag/3.7.1/api/feature-detection.html">Feature Detection</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploader.html">FineUploader</a></ul>
+                            <ul><a href="/tag/3.7.1/api/fineuploaderbasic.html">FineUploader Basic</a></ul>
+                            <ul><a href="/tag/3.7.1/api/promise.html">Promises</a></ul>
+                            <ul><a href="/tag/3.7.1/api/qquery.html">QQuery</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/3.7.1/overview/support.html">Support</li></a>
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            
+                                <li class="active"><a href="/branch/master">Newest</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                        
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/feature/s3-fileapi-simple">Feature_s3-Fileapi-Simple</a></ul>
+                            
+                                <ul><a href="/branch/feature/documentation-styling">Feature_documentation-Styling</a></ul>
+                            
+                                <ul><a href="/branch/hotfix/overbearing-editFilename">Hotfix_overbearing-EditFilename</a></ul>
+                            
+                                <ul><a href="/branch/chore/fineuploader-3.7.1">Chore_fineuploader-3.7.1</a></ul>
+                            
+                                <ul><a href="/branch/downloads">Downloads</a></ul>
+                            
+                                <ul><a href="/branch/feature/old-browser-s3">Feature_old-Browser-S3</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                        
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container">
+
+            
+<h2 id="callbacks_1">Callbacks</h2>
+<p>For jQuery plug-in users, adhere to the following syntax:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#myUploader'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'cancel'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+</pre></div>
+
+
+<p>Note that, if using the jQuery plug-in, you can also bind your callback/event handlers as part of your initialization code, since<br>
+the <code>fineUploader</code> plug-in returns your target element (<code>$('#myUploader')</code>, in this example).</p>
+<p>Callbacks must be declared inside of a <code>callbacks</code> object for non-jQuery users, like this:</p>
+<div class="codehilite"><pre><span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">onComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">},</span>
+        <span class="nx">onCancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="list-of-callbacks">List of callbacks</h3>
+<ul>
+<li>
+<p><code>onSubmit(String id, String name)</code> - called when the file or <code>Blob</code> is a candidate for uploading.<br>
+Note that this does not mean the file upload will begin at this point.  Return <code>false</code> to prevent submission to the uploader.<br>
+You may also return a <a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required here.  Processing of this item will be deferred<br>
+until the promise is fulfilled.  If a promise is returned, a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onSubmitted(String id, String name)</code> - called when the file or <code>Blob</code> has been successfully submitted to the uploader.  The<br>
+file will be uploaded immediately if there is at least one free connection available (see <code>maxConnections</code> option) and the <code>autoUpload</code><br>
+option is set to true (the default).  This callback is invoked after the <code>onSubmit</code> callback has returned without a &ldquo;false&rdquo; return value.<br>
+In FineUploader mode, it is safe to assume that the associated element(s) in the UI representing the associated file have already been added<br>
+to the DOM immediately before this callback is invoked.</p>
+</li>
+<li>
+<p><code>onComplete(String id, String name, Object responseJSON, XMLHttpRequest xhr)</code> - called when the file or <code>Blob</code> upload has finished.<br>
+A successful upload will always have a <code>success</code> property in the <code>responseJSON</code> object with a value of <code>true</code>.  The<br>
+<code>responseJSON</code> parameter will also contain any other elements of the JSON response returned by the server.  Note that<br>
+the last parameter, xhr, will only be included if the upload is related to a request initiated by XMLHttpRequest.</p>
+</li>
+<li>
+<p><code>onCancel(String id, String name)</code> - called when the file or <code>Blob</code> upload has been cancelled.  You may return &ldquo;false&rdquo; to<br>
+prevent the upload from being cancelled.  You may also return a <a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required<br>
+here.  Processing of this cancel request will be deferred until the promise is fulfilled.  Note that there is no way to &ldquo;pause&rdquo;<br>
+the upload in progress while waiting for the promise to be fulfilled, so the upload may complete while waiting for the promise<br>
+to be fulfilled.  If a promise is returned, a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onUpload(String id, String name)</code> - called just before a file or <code>Blob</code> upload begins.</p>
+</li>
+<li>
+<p><code>onUploadChunk(String id, String name, Object chunkData)</code> - called just before a <code>File</code>/<code>Blob</code> chunk/partition request is sent.  The chunkData object has<br>
+4 properties: <code>partIndex</code> (the 0-based index of the associated partition), <code>startByte</code> (the byte offset of the current chunk in terms<br>
+of the underlying <code>File</code>/<code>Blob</code>), <code>endByte</code> (the last byte of the current chunk in terms of the underlying <code>File</code>/<code>Blob</code>), and <code>totalParts</code> (the<br>
+total number of partitions associated with the underlying <code>File</code>/<code>Blob</code>).</p>
+</li>
+<li>
+<p><code>onProgress(String id, String name, int uploadedBytes, int totalBytes)</code> - called during the upload, as it progresses.  Only used by the XHR/ajax uploader.</p>
+</li>
+<li>
+<p><code>onError(String id, String name, String errorReason, XMLHttpRequest xhr)</code> - called whenever an exceptional condition occurs (during an upload, file selection, etc).<br>
+Note that the last parameter, xhr, will only be included if the error is related to a request initiated by XMLHttpRequest.</p>
+</li>
+<li>
+<p><code>onAutoRetry(String id, String name, String attemptNumber)</code> - called before each automatic retry attempt for a failed file or <code>Blob</code>.</p>
+</li>
+<li>
+<p><code>onManualRetry(String id, String name)</code> - called before each manual retry attempt.  Return false to prevent this and all future retry attempts on this file or <code>Blob</code>.</p>
+</li>
+<li>
+<p><code>onResume(String id, String fileName, Object chunkData)</code> - Called before an attempt is made to resume a failed/stopped upload from a previous session.<br>
+If you return false, the resume will be cancelled and the uploader will start uploading the item from the first chunk.<br>
+The <code>chunkData</code> object contains the properties as the <code>chunkData</code> parameter passed into the <code>onUploadChunk</code> callback.<br>
+You may also return a <a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required here.  Processing of this resume request<br>
+will be deferred until the promise is fulfilled.  If a promise is returned, a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onValidate(FileOrBlobData fileOrBlobData)</code> - This callback represents one of the files or <code>Blob</code>s selected for upload.  It is called once<br>
+for each selected, dropped, or <code>addFiles</code> submitted file and for each <code>addBlobs</code> submitted <code>Blob</code>, provided you do not return false in your <code>onValidateBatch</code> handler, and also provided<br>
+the <code>stopOnFirstInvalidFile</code> validation option is not set and a previous invocation of your <code>onValidate</code> callback in this batch has not returned false.<br>
+This callback is always invoked before the default Fine Uploader validators execute.  Note that a <code>FileOrBlobData</code> object has two properties: <code>name</code><br>
+and <code>size</code>.  The <code>size</code> property will be undefined if the user agent does not support the File API.  You may also return<br>
+a <a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required here.  Processing of this item, along with any additional<br>
+items in the associated batch, will be deferred until the promise is fulfilled.  Deferral of all other items in the batch<br>
+is done to ensure the <code>stopOnFirstInvalidFile</code> property of the <code>validation</code> option is respected.  If a promise is returned,<br>
+a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onValidateBatch(Array fileOrBlobDataArray)</code> - This callback is invoked once for each batch of files or <code>Blob</code>s selected, dropped, or submitted<br>
+via the <code>addFiles</code> or <code>addBlobs</code>  API functions.  A FileOrBlobData array is passed in representing all files or <code>Blob</code>s selected or dropped at once.  This allows<br>
+you to prevent the entire batch from being uploaded, if desired, by returning false.  If your handler does not return false,<br>
+the <code>onValidate</code> callback will be invoked once for each individual file or <code>Blob</code> submitted.  This callback is always invoked before<br>
+the default Fine Uploader validators execute.  Note that a <code>FileOrBlobData</code> object has two properties: <code>name</code> and <code>size</code>.<br>
+The <code>size</code> property will be undefined if the user agent does not support the File API.  You may also return a<br>
+<a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required here.  Processing of this batch will be deferred until the<br>
+promise is fulfilled.  If a promise is returned, a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onSubmitDelete(id)</code> - Called before a file or <code>Blob</code> that has been marked for deletion has been submitted to the uploader.<br>
+You may return false from your handler if you want to ignore/stop the delete request.  You may also return a<br>
+<a href="promise.html"><code>qq.Promise</code></a> if non-blocking work is required here.  Processing of this delete request will be deferred until the<br>
+promise is fulfilled.  If a promise is returned, a call to <code>failure</code> is the same as returning &ldquo;false&rdquo;.</p>
+</li>
+<li>
+<p><code>onDelete(id)</code> - Called just before a delete request is sent for the associated file or <code>Blob</code>.  The parameter is the ID.</p>
+</li>
+<li>
+<p><code>onDeleteComplete(id, xhr, isError)</code> - Called after receiving a response from the server for a DELETE request.  The associated<br>
+ID, along with the request&rsquo;s XMLHttpRequest object and a boolean indicating whether the response succeeded or not (based on the response code)<br>
+are sent along as parameters.</p>
+</li>
+<li>
+<p><code>onPasteReceived(blob)</code> - Called when a pasted image has been received (before uploading the image).  The pasted image is<br>
+represented as a <code>Blob</code>.  You <em>may</em> return a <a href="promise.html"><code>qq.Promise</code></a> in your callback handler.  If you do return a <code>qq.Promise</code>,<br>
+the value of the success parameter must be the name to associate with the pasted image.  If the associated attempt is marked<br>
+a <code>failure</code> it is wise to include a string explaining the failure in your <code>failure</code> callback.<br>
+Note that the <code>promptForName</code> in FineUploader mode, if set to true, will effectively wipe out any custom implementation of this<br>
+callback.  The two are not meant to be used together.  This callback is meant to provide an alternative means to provide a name<br>
+for a pasted image (such as via an ajax call).  If FineUploaderBasic mode is in use and you want to display your own user prompt<br>
+for the name, you may do so by overriding the default implementation of this callback.</p>
+</li>
+<li>
+<p><code>onStatusChange(id, oldStatus, newStatus)</code> - This will be invoked whenever the status changes for any item submitted to<br>
+the uploader.  The status values correspond to a &ldquo;constant&rdquo; defined in the <code>qq.status</code> object.  Please<br>
+see <a href="http://blog.fineuploader.com/2013/05/24/query-fine-uploader-for-upload-stats/">the blog post on upload stats retrieval</a><br>
+for more details and examples.</p>
+</li>
+</ul>
+
+
+            <hr>
+
+            <footer>
+    <p>&copy; <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>, 2013</p>
+</footer>
+
+        </div> <!-- /container -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    </body>
+</html>

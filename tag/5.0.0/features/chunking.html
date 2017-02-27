@@ -256,7 +256,7 @@
 </div>
 
 <p>With the advent of the File API, modern browsers now are capable of dividing
-files into "chunks" (also referred to as partitions). This feature is a crucial
+files into &#8220;chunks&#8221; (also referred to as partitions). This feature is a crucial
 component to the <a href="resume.html">resume</a> feature, and makes the <a href="retry.html">retry</a> feature
 more useful.  File chunking also provides a workaround for request size limits
 put in place by browsers (e.g., Firefox and Chrome limit upload request
@@ -271,7 +271,7 @@ sizes to about 4GB).</p>
 
 <p>Chunking is made possible by the File API, and is supported in Chrome, Firefox,
 Safari (iOS 6+ and OS X), Internet Explorer 10+, and Opera 15+. Chunking is disabled in
-Android's stock browser due to a bug in the browser's ability to upload Blobs.</p>
+Android&#8217;s stock browser due to a bug in the browser&#8217;s ability to upload Blobs.</p>
 <p>Each chunk is sent in order and as a separate request, and each chunked request
 should be acknowledged much as you would for a non-chunked request because
 the response to each chunk-request is checked to determine success. If the
@@ -279,7 +279,7 @@ server responds with a failure message, the uploader will attempt to retry
 sending the file starting with the last failed chunk if the <code>autoRetry</code> option
 is enabled.</p>
 <p>The parameters on a chunked request will contain the following information:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<div class="codehilite"><pre><span class="p">{</span>
     <span class="nt">&quot;qquuid&quot;</span><span class="p">:</span> <span class="s2">&quot;380d6893-b98b-4189-9938-93d265dfab5d&quot;</span><span class="p">,</span>
     <span class="nt">&quot;qqpartindex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nt">&quot;qqpartbyteoffset&quot;</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span>
@@ -301,7 +301,7 @@ is enabled.</p>
 
 <p>The <code>qqfilename</code> parameter is only sent along with chunked requests that are
 multipart encoded. This is because multipart encoded uploads report the filename
-in the Content-Disposition header as "blob" or the empty string when a <code>Blob</code>
+in the Content-Disposition header as &#8220;blob&#8221; or the empty string when a <code>Blob</code>
 is included in the request. So, to determine the original filename when dealing
 with a multipart encoded request, you must read the <code>qqfilename</code> property.</p>
 <p>Custom parameters can be sent with each chunk. Those parameters can be set and
@@ -312,7 +312,7 @@ to guarantee there are no collisions with other chunks. After all chunks have
 been received for a file (i.e., <code>qqpartindex == qqtotalparts - 1</code>) then you should
 combine all the chunks (in order) to recreate the original file.</p>
 <p>Fine Uploader will also keep an eye out for a <code>reset</code> JSON property in the
-server's response. When this property is present Fine Uploader will
+server&#8217;s response. When this property is present Fine Uploader will
 fail the upload and then restart the upload with the first chunk again on the
 next attempt (assuming auto or manual retry has been enabled).</p>
 <div class="alert alert-block alert-default">

@@ -265,13 +265,13 @@ images, and not the original image, are uploaded.  Finally, you can ask Fine Upl
 EXIF data from the original image into each scaled image.</p>
 <p>Generating and uploading scaled versions of each submitted
 image can be as simple as specifying an array of objects with <code>name</code> and <code>maxSize</code> properties to indicate the scaled image
-file's name and maximum size, respectively.</p>
+file&#8217;s name and maximum size, respectively.</p>
 <h3 id="basic-operation">Basic Operation</h3>
 <p>By default, Fine Uploader will send the original image file, along with any scaled versions you have requested via
 the <a href="../api/options.html#scaling.sizes"><code>scaling.sizes</code> option</a>.  Also, by default, all scaled versions will be correctly oriented before they
 are uploaded.</p>
 <p>You must provide a <code>sizes</code> array though.  For example:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="p">...</span>
     <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">sizes</span><span class="o">:</span> <span class="p">[</span>
@@ -284,11 +284,11 @@ are uploaded.</p>
 
 
 <p>The code above will result in Fine Uploader generating and uploading 2 scaled versions of each user-submitted
-image file.  The original, along with the 2 scaled versions, will appear in the UI's file list as well.  If the
-user submits a PNG named "image.png", that will be submitted, along with another file named "image (small).png",
-and "image (medium).png".</p>
-<p>The scaled versions will be scaled proportional to the original image.  In this case, the "small" version will
-be no more than 100px high or wide, and the "medium" version will be no more than 300px wide or high.</p>
+image file.  The original, along with the 2 scaled versions, will appear in the UI&#8217;s file list as well.  If the
+user submits a PNG named &#8220;image.png&#8221;, that will be submitted, along with another file named &#8220;image (small).png&#8221;,
+and &#8220;image (medium).png&#8221;.</p>
+<p>The scaled versions will be scaled proportional to the original image.  In this case, the &#8220;small&#8221; version will
+be no more than 100px high or wide, and the &#8220;medium&#8221; version will be no more than 300px wide or high.</p>
 <p>Notice that the two scaled images do not initially have file sizes displayed in the UI.  This is due to the
 fact that Fine Uploader defers generation of these scaled versions until just before the images are going to be
 actually uploaded.  After a scaled image has been uploaded, the client-side generated version of this image is
@@ -303,7 +303,7 @@ The original file is always sent last.</p>
 <h3 id="only-upload-scaled-files">Only Upload Scaled Files</h3>
 <p>To conserve bandwidth, you may only want to upload smaller, scaled versions of an original image.  Simply set the
 <a href="../api/options.html#scaling.sendOriginal"><code>scaling.sendOriginal</code> option</a> to <code>false</code>.  The above example would be changed to:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="p">...</span>
     <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">sendOriginal</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -323,17 +323,17 @@ the specified number of scaled versions.  However, it will still be accessible v
 that require access to the original file for your convenience.  For example, calling <a href="../api/methods.html#getFile"><code>getFile</code></a>
 on a scaled image will still return the original file.</p>
 <h3 id="hide-scaled-files-in-ui-mode">Hide Scaled Files in UI Mode</h3>
-<p>If you do not want scaled versions to be represented in Fine Uploader UI's file list, simply set the Fine Uploader
+<p>If you do not want scaled versions to be represented in Fine Uploader UI&#8217;s file list, simply set the Fine Uploader
 UI <a href="../api/options-ui.html#scaling.hideScaled"><code>scaling.hideScaled</code> option</a> to <code>true</code>.  Note that this will <em>only</em> ensure the scaled versions
 are not displayed in the UI.  They will still be uploaded and represented in the <a href="statistics-and-status-updates.html">upload data store</a>.
 Since they will not be represented in the UI, this means that they cannot be deleted, canceled, or manually retried
-via Fine Uploader's default UI.  Failures of these scaled versions will obviously not be apparent to users by
+via Fine Uploader&#8217;s default UI.  Failures of these scaled versions will obviously not be apparent to users by
 default if you elect to hide them from the UI.</p>
 <h3 id="include-exif-headers-in-scaled-images">Include EXIF Headers in Scaled Images</h3>
 <p>If you set the <a href="../api/options.html#scaling.includeExif"><code>scaling.includeExif</code> option</a> to <code>true</code>, Fine Uploader will insert the EXIF header from the
 original image into each scaled image.  This option is ignored unless the original image AND the target (scaled)
-image are both of type "image/jpeg".</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+image are both of type &#8220;image/jpeg&#8221;.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
     <span class="p">...</span>
     <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">includeExif</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -349,7 +349,7 @@ image are both of type "image/jpeg".</p>
 
 <p>In the above example, EXIF data from the original image will be inserted into both of the scaled images.
 Note that, by default, the scaled images will also be re-oriented according to the parsed Orientation tag in the
-original image.  If you don't want Fine Uploader to do this, you must set the <a href="../api/options.html#scaling.orient"><code>scaling.orient</code> option</a>
+original image.  If you don&#8217;t want Fine Uploader to do this, you must set the <a href="../api/options.html#scaling.orient"><code>scaling.orient</code> option</a>
 to <code>false</code>.</p>
 <h3 id="supported-file-types">Supported File Types</h3>
 <p>Scaling can occur on JPEGs, BMPs, GIFs, and PNGs.  TIFFs are also supported, but only in Safari.  The output
@@ -360,9 +360,9 @@ what you are doing.</p>
 <h3 id="tracking-scaled-files-server-side">Tracking Scaled Files Server-Side</h3>
 <p>Fine Uploader will send request parameters along with some scaled files to make it easy for you to connect them to
 the original/parent file server-side.  If you have not set the <a href="../api/options.html#scaling.sendOriginal">scaling.sendOriginal option</a>
-to <code>false</code>, "qqparentuuid" and "qqparentsize" parameters will be sent with each scaled image upload request.  These
+to <code>false</code>, &#8220;qqparentuuid&#8221; and &#8220;qqparentsize&#8221; parameters will be sent with each scaled image upload request.  These
 parameters link the scaled image to the parent/original image.  Note that the parent images will also include
-a "qquuid" request parameter as well.  If you are using <a href="s3.html">Fine Uploader S3</a> or <a href="azure.html">Azure</a>, these parameters
+a &#8220;qquuid&#8221; request parameter as well.  If you are using <a href="s3.html">Fine Uploader S3</a> or <a href="azure.html">Azure</a>, these parameters
 will be associated with the file in your bucket or blob container.</p>
 <h3 id="notices">Notices</h3>
 <ul>
@@ -376,7 +376,7 @@ canceled, manually retried, or deleted via the UI, since they are not represente
 </li>
 <li>
 <p>Be very careful when specifying a value for <a href="../api/options.html#scaling.defaultType"><code>scaling.defaultType</code></a>, or a <code>type</code> property for one of your
-<a href="../api/options.html#scaling.sizes"><code>scaling.sizes</code> objects</a>.  The only safe values are <code>null</code> (the default), "image/jpeg", and "image/png".  Other
+<a href="../api/options.html#scaling.sizes"><code>scaling.sizes</code> objects</a>.  The only safe values are <code>null</code> (the default), &#8220;image/jpeg&#8221;, and &#8220;image/png&#8221;.  Other
 target types may not be supported by all browsers.</p>
 </li>
 <li>
@@ -390,7 +390,7 @@ Please keep this in mind before you enable this feature, taking into account you
 </ul>
 <h3 id="supported-browsers">Supported Browsers</h3>
 <p>This feature is supported on all browsers other than IE9 and older, Android 2.4 or older, and Safari 5.1 or older.
-Note that Android's stock browser is also not supported, due to multiple long-standing bugs in that browser with
+Note that Android&#8217;s stock browser is also not supported, due to multiple long-standing bugs in that browser with
 Blobs and data URIs.  Chrome on Android is supported, though.</p>
 
 

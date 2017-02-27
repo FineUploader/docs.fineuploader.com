@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -184,12 +243,12 @@ properties for a specific extra button object.  For example, say your default up
 to be selected, but you have an extra button elsewhere on your page that deals specifically with PDFs.  You
 also want to enforce a 5 MiB limit (where supported) for all types of accepted files
 selected by both buttons. Your HTML and javascript might look something like this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pdfButton&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;myCustomCssClassForStyling&quot;</span><span class="p">&gt;</span>Select a PDF<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;uploader&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;pdfButton&quot;</span> <span class="na">class=</span><span class="s">&quot;myCustomCssClassForStyling&quot;</span><span class="nt">&gt;</span>Select a PDF<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">validation</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">allowedExtensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;jpg&quot;</span><span class="p">],</span>
         <span class="nx">sizeLimit</span><span class="o">:</span> <span class="mi">5000000</span> <span class="c1">// 5 MiB</span>
@@ -222,7 +281,7 @@ you are using the jQuery plug-in, the <code>button</code> parameter will be a jQ
 <p>You can also, at any time, associate any file with the button that was used to select/submit the file.
 For example, if you want to attach specific parameters to a file, or send it to a different endpoint based
 on the button that selected it, you can do so in an appropriate event handler, such as <code>upload</code>.  For example:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;upload&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;upload&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">$button</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s2">&quot;getButton&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pdfButton&quot;</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="nx">$button</span><span class="p">))</span> <span class="p">{</span>
@@ -239,15 +298,15 @@ on the button that selected it, you can do so in an appropriate event handler, s
 <p>Fine Uploader already allows you to drop folders that you would like to upload (currently Chrome-only).
 What if you want to allow users to select folders via the file chooser dialog?  Unfortunately, due
 to the restrictions imposed by this browser feature, you can either select files OR folders, not both.
-If you'd like to allow users to select files and folders, you can use the default upload button for file
-selection, and contribute an extra button marked as "folder selection" (currently Chrome-only).  Here's an example,
+If you&#8217;d like to allow users to select files and folders, you can use the default upload button for file
+selection, and contribute an extra button marked as &#8220;folder selection&#8221; (currently Chrome-only).  Here&#8217;s an example,
 also assuming you only want this button to appear if folder selection is possible in the current browser:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;foldersButton&quot;</span><span class="p">&gt;</span>Select Folders<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;uploader&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;foldersButton&quot;</span><span class="nt">&gt;</span>Select Folders<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;uploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="c1">// only show the folders button if folder selection is possible in the current browser</span>
+<div class="codehilite"><pre><span class="c1">// only show the folders button if folder selection is possible in the current browser</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">qq</span><span class="p">.</span><span class="nx">supportedFeatures</span><span class="p">.</span><span class="nx">folderSelection</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#foldersButton&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 <span class="p">}</span>
@@ -267,14 +326,14 @@ also assuming you only want this button to appear if folder selection is possibl
 <p>As pointed out in <a href="http://blog.fineuploader.com/2013/05/09/upload-directly-via-a-camera-on-mobile-devices/">the blog</a>,
 iOS has an odd restriction that prohibits you from accessing the camera and the photo/video gallery simultaneously
 with a file input element.  The blog details a way to get around this, but it involves a bit of complexity.  Now,
-with the addition of the extra buttons feature, it's very easy!  Here is a simplified version of the code listed in the
+with the addition of the extra buttons feature, it&#8217;s very easy!  Here is a simplified version of the code listed in the
 blog, now using the extra buttons feature:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cameraButtonContainer&quot;</span><span class="p">&gt;</span>Upload from the camera<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myFineUploader&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;cameraButtonContainer&quot;</span><span class="nt">&gt;</span>Upload from the camera<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;myFineUploader&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="c1">// only show this button in iOS</span>
+<div class="codehilite"><pre><span class="c1">// only show this button in iOS</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">qq</span><span class="p">.</span><span class="nx">ios</span><span class="p">())</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cameraButtonContainer&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 <span class="p">}</span>

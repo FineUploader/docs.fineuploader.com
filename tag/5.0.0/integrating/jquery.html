@@ -212,7 +212,7 @@ if you have worked with jQuery plug-ins before, this should all be quite intuiti
 <p>With the Fine Uploader jQuery plugin there is no need to specify the <code>element</code> option. Instead,
 using the jQuery plugin syntax, you provide the element or elements you would like to associate with your
 Fine Uploader instance like so:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// This will instantiate an instance of Fine Uploader on the element</span>
+<div class="codehilite"><pre><span class="c1">// This will instantiate an instance of Fine Uploader on the element</span>
 <span class="c1">// with an id of &quot;fine-uploader&quot;</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="cm">/* options go here */</span>
@@ -230,7 +230,7 @@ jQuery object will be added to the array when it is passed to the native Fine Up
 For instance, if you specify a value for <code>extraDropzones</code> which is
 <code>[$(".myExtraDropzone")]</code>, and the element contains three child elements, then
 the plugin will pass all three elements to the native Fine Uploader.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="cm">/* ... */</span>
     <span class="nx">button</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#button&quot;</span><span class="p">),</span>
     <span class="nx">dragAndDrop</span><span class="o">:</span> <span class="p">{</span>
@@ -245,7 +245,7 @@ the plugin will pass all three elements to the native Fine Uploader.</p>
 whether they are using basic or ui mode by specifying the <code>uploaderType</code> option
 on instantiation.</p>
 <p>When the type is <code>'basic'</code> then basic mode is used, otherwise UI mode is assumed.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span>
 <span class="p">});</span>
 </pre></div>
@@ -271,7 +271,7 @@ All callbacks defined in Fine Uploader are still avaiable to jQuery plugin users
 
 </div>
 
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/upload/endpoint&#39;</span>
     <span class="p">}</span>
@@ -298,9 +298,9 @@ value of the <code>callbacks</code> function is non-null.</p>
 </div>
 
 <h2 id="api-methods">API Methods</h2>
-<p>All public API methods are also accessible when using the jQuery plugin, but -- as with callbacks --
+<p>All public API methods are also accessible when using the jQuery plugin, but &#8212; as with callbacks &#8212;
 there are just a few syntactical differences.</p>
-<div class="codehilite"><pre><span></span><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
+<div class="codehilite"><pre><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
 <span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;getStoredFiles&#39;</span><span class="p">)</span><span class="o">:</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cancel-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
@@ -314,7 +314,7 @@ there are just a few syntactical differences.</p>
 <p>The jQuery plugin cares not about what your endpoint is, but if you plan to use
 the S3 uploader rather than the traditional uploader, ensure that you are using
 the right plugin name:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#s3-fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#s3-fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
 </pre></div>
 
 

@@ -1,0 +1,571 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>S3 Methods | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.9/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.9/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/tag/5.0.9/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.9">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.9/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.9/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.9/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.9/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.9/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.9/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.9/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.9/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.9/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.9/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.9/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.9/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.9/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.9/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.9/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.9/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.9/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.9/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.9/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.9/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.9/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.9/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.9/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.9/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.9/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.9/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.9/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.9/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.9/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.9/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.9/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.9/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.9/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.9/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.9/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.9/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.9/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.9/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.9/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.9/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.9/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.9/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.9">Current: 5.0.9</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.9"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.9</p></span>
+
+                
+
+                
+<h1 class="page-header" id="methods-wzxhzdk8s3wzxhzdk9">Methods <small>S3</small></h1>
+
+<div class="all-methods" data-spy="" data-target="">
+<div class="methods-s3">
+
+<h2 id="s3">S3</h2>
+<p>The S3 uploader provides many of the same API methods as the traditional
+uploader, but there are a few crucial differences to take into account.
+If you plan to use the S3 uploader, then use the following table as your API
+reference.  All methods outlined in the core or UI documentation are also available
+in Fine Uploader S3, unless otherwise noted here.</p>
+
+
+    <span class="method row-fluid">
+    <h4 id="getKey"><a style="color: #f87436;" href="#getKey">getKey (fileId)</a></h4>
+    <span class="method-description">
+        <p>Retreive the S3 object key with the associated ID</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>fileId</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">The S3 object key associated with the fileID.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getResumableFilesData"><a style="color: #f87436;" href="#getResumableFilesData">getResumableFilesData ()</a></h4>
+    <span class="method-description">
+        <p>Returns an array of potentially resumable items. Each resumable is represented by an object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>filename</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td>the unique id</td>
+</tr>
+<tr>
+<td><code>partIdx</code></td>
+<td>the index of the part where the resume will start from</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>The associated object&#8217;s S3 key</td>
+</tr>
+</tbody>
+</table>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dd class="method-return-description span8">An array of resumable items. </dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setAcl"><a style="color: #f87436;" href="#setAcl">setAcl (newAcl[, id])</a></h4>
+    <span class="method-description">
+        <p>Set/update the ACL to be used for one or all file uploads.  If the ID is omitted, the new ACL targets all future files that have not yet been uploaded.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newAcl</em></dt>
+    <dd class="method-param-description span8"><p>Canned ACL value to be sent with the upload request.  Used by S3.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>File ID to target the ACL.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setCredentials"><a style="color: #f87436;" href="#setCredentials">setCredentials (newCredentials)</a></h4>
+    <span class="method-description">
+        <p>Pass new or initial credentials.  This is used to support the no-server workflow.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newCredentials</em></dt>
+    <dd class="method-param-description span8"><p>The new or initial credentials to set for server-less uploads</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setEndpoint"><a style="color: #f87436;" href="#setEndpoint">setEndpoint (bucketPath[, id])</a></h4>
+    <span class="method-description">
+        <p>Modify the bucket where upload requests should be directed. The endpoint for a specific file or blob can be changed by passing in an optional <code>id</code> parameter. An <code>id</code> will always be a number and refers to a single file. All valid bucket URLs documented by Amazon are supported, including custom domains. SSL is also supported.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>bucketPath</em></dt>
+    <dd class="method-param-description span8"><p>The new S3 bucket path</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>An ID corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setUploadSuccessParams"><a style="color: #f87436;" href="#setUploadSuccessParams">setUploadSuccessParams (newParams[, id])</a></h4>
+    <span class="method-description">
+        <p>Set additional parameters for the upload success request. Note that Fine Uploader will still send the bucket name, key, filename, UUID, and etag (if available) as well.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newParams</em></dt>
+    <dd class="method-param-description span8"><p>The additional parameters set for the upload request.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>A file id to apply these upload success parameters to.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+</div>
+</div>
+
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.9/_static/js/main.js"></script>
+
+        
+<script type="text/javascript">
+$(document).ready(function() {
+    renderMethodsSidebarNav(['s3']);
+});
+</script>
+
+
+
+    </body>
+</html>

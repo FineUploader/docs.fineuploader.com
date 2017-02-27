@@ -268,9 +268,9 @@ simply ensure a <code>qq-hide-dropzone</code> attribute is present on the drop z
 
 </div>
 
-<p>Fine Uploader's UI mode has drag &amp; drop support built in.  The following contains information about that built-in
-support.  Near the middle of this page, you can find instructions that will allow you to easily integrate Fine Uploader's
-standalone drag &amp; drop module into your project if you are using Fine Uploader's core mode only.</p>
+<p>Fine Uploader&#8217;s UI mode has drag &amp; drop support built in.  The following contains information about that built-in
+support.  Near the middle of this page, you can find instructions that will allow you to easily integrate Fine Uploader&#8217;s
+standalone drag &amp; drop module into your project if you are using Fine Uploader&#8217;s core mode only.</p>
 <div class="alert alert-block alert-default">
 
 <h4 class="alert-heading">Note</h4>
@@ -283,9 +283,9 @@ Dragging and dropping of <em>folders</em> is currently only supported in Chrome 
 <h1 id="drag-and-drop-standalone-module">Drag and Drop Standalone Module</h1>
 <p>If you are integrating Fine Uploader and utilizing FineUploaderBasic mode,
 you are likely building you own UI entirely. In case you want to support drag
-and drop of folders and files, you probably don't want to re-invent the wheel, since
+and drop of folders and files, you probably don&#8217;t want to re-invent the wheel, since
 Fine Uploader already has code to handle this in Fine Uploader mode.
-Fine Uploader's drag &amp; drop code has been moved into a standalone module, so
+Fine Uploader&#8217;s drag &amp; drop code has been moved into a standalone module, so
 it can be easily integrated into your Fine Uploader Core mode app
 (or even any non-Fine Uploader app). This following will explain how to utilize
 this module.</p>
@@ -641,10 +641,10 @@ you are running this in UI mode, then take a look at the <code>dragAndDrop</code
 This jQuery wrapper follows the same conventions as the jQuery plug-in that wraps the uploader library.  To read more
 about these conventions, please see the <a href="/tag/5.0.0/integrating/modes/using-jquery-plugin.html">Using jQuery plug-in</a> readme document.</p>
 <p>There are a couple things to be aware of when using the DnD standalone module via the jQuery plug-in wrapper:
-<em> The only API method available is <code>dispose</code>.  This restriction is in place since the other API functions don't really make sense in the context of a jQuery plug-in.
+<em> The only API method available is <code>dispose</code>.  This restriction is in place since the other API functions don&#8217;t really make sense in the context of a jQuery plug-in.
 </em> The target of your plug-in instance takes the place of the <code>dropZoneElements</code> option.  Do not pass a <code>dropZoneElements</code> option, it will be ignored.</p>
 <p>Here is the above example rewritten using the jQuery plug-in wrappers:</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDropZone&#39;</span><span class="p">).</span><span class="nx">fineUploaderDnd</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDropZone&#39;</span><span class="p">).</span><span class="nx">fineUploaderDnd</span><span class="p">({</span>
     <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">dropActive</span><span class="o">:</span> <span class="s2">&quot;cssClassToAddToDropZoneOnEnter&quot;</span>
     <span class="p">}</span>
@@ -676,7 +676,7 @@ about these conventions, please see the <a href="/tag/5.0.0/integrating/modes/us
 
 <h2 id="non-jquery-example">Non-jQuery Example</h2>
 <p>If you are not utilizing jQuery, you can use the plain javascript DnD module.  Here is a simple example:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">dragAndDropModule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">DragAndDrop</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">dragAndDropModule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">DragAndDrop</span><span class="p">({</span>
         <span class="nx">dropZoneElements</span><span class="o">:</span> <span class="p">[</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myDropZone&#39;</span><span class="p">)],</span>
         <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
           <span class="nx">dropActive</span><span class="o">:</span> <span class="s2">&quot;cssClassToAddToDropZoneOnEnter&quot;</span>

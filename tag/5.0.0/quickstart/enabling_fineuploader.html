@@ -197,32 +197,32 @@
 
                 
 <h3 id="enabling-fine-uploader">Enabling Fine Uploader</h3>
-<p>Fine Uploader does NOT depend on jQuery, and you don't have to use the jQuery plug-in if you don't want to.The same features are available without the jQuery plug-in.  To use Fine Uploader with "plain 'ole" Javascript, include the uploader Javascript file and, optionally, the css file along with any images provided into your page. If you are only making use of FineUploaderBasic, you can omit the css and image(s) file(s).</p>
-<div class="codehilite"><pre><span></span>html
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fine-uploader&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;noscript&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Please enable JavaScript to use Fine Uploader.<span class="nt">&lt;/p&gt;</span>
-        <span class="c">&lt;!-- or put a simple form for upload here --&gt;</span>
-    <span class="nt">&lt;/noscript&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<p>Fine Uploader does NOT depend on jQuery, and you don&#8217;t have to use the jQuery plug-in if you don&#8217;t want to.The same features are available without the jQuery plug-in.  To use Fine Uploader with &#8220;plain &#8216;ole&#8221; Javascript, include the uploader Javascript file and, optionally, the css file along with any images provided into your page. If you are only making use of FineUploaderBasic, you can omit the css and image(s) file(s).</p>
+<div class="codehilite"><pre><span class="nx">html</span>
+<span class="o">&lt;</span><span class="nb">div</span> <span class="n">id</span><span class="o">=</span><span class="s2">&quot;fine-uploader&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">noscript</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Please</span> <span class="nx">enable</span> <span class="nb">JavaScript</span> <span class="k">to</span> <span class="nx">use</span> <span class="nx">Fine</span> <span class="nx">Uploader.</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;!--</span> <span class="ow">or</span> <span class="nx">put</span> <span class="nx">a</span> <span class="nx">simple</span> <span class="nb">form</span> <span class="nb">for</span> <span class="nx">upload</span> <span class="nx">here</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">noscript</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nb">div</span><span class="o">&gt;</span>
 </pre></div>
 
 
-<h4 id="without-jquery">without jQuery ...</h4>
+<h4 id="without-jquery">without jQuery &#8230;</h4>
 <p>Initialize uploader when the DOM is ready. Change the endpoint option.
 In the server folder you will find some examples for different platforms.
-If you can't find the one you need, please read up on handling multipart form
+If you can&#8217;t find the one you need, please read up on handling multipart form
 requests and XHR upload requests in your server-side language of choice.</p>
-<div class="codehilite"><pre><span></span>javascript
-var uploader = new qq.FineUploader({
-        // pass the dom node (ex. $(selector)[0] for jQuery users)
-    element: document.getElementById(&#39;fine-uploader&#39;),
+<div class="codehilite"><pre><span class="n">javascript</span>
+<span class="n">var</span> <span class="n">uploader</span> <span class="o">=</span> <span class="n">new</span> <span class="n">qq</span><span class="p">.</span><span class="n">FineUploader</span><span class="p">({</span>
+        <span class="c1">// pass the dom node (ex. $(selector)[0] for jQuery users)</span>
+    <span class="nl">element:</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="err">&#39;</span><span class="n">fine</span><span class="o">-</span><span class="n">uploader</span><span class="err">&#39;</span><span class="p">),</span>
 
-    request: {
-            // path to server-side upload script
-        endpoint: &#39;/server/upload&#39;
-    }
-});
+    <span class="nl">request:</span> <span class="p">{</span>
+            <span class="c1">// path to server-side upload script</span>
+        <span class="nl">endpoint:</span> <span class="err">&#39;</span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">upload</span><span class="err">&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
 </pre></div>
 
 
@@ -231,16 +231,16 @@ var uploader = new qq.FineUploader({
 a jQuery plug-in offers, such as use of jQuery Events, specifying elements using the jQuery object/jQuery selectors,
 easy integration into your otherwise jQuery project: look no further!</p>
 <p>To use the jQuery plug-in, ensure you include the proper Fine Uploader js file on your page, and instantiate it like so:</p>
-<div class="codehilite"><pre><span></span>javascript
-$(&#39;#fineUploaderElementId&#39;).fineUploader({
-    request: {
-        endpoint: &#39;/upload/endpoint&#39;
-    }
-});
+<div class="codehilite"><pre><span class="n">javascript</span>
+<span class="err">$</span><span class="p">(</span><span class="err">&#39;#</span><span class="n">fineUploaderElementId</span><span class="err">&#39;</span><span class="p">).</span><span class="n">fineUploader</span><span class="p">({</span>
+    <span class="nl">request:</span> <span class="p">{</span>
+        <span class="nl">endpoint:</span> <span class="err">&#39;</span><span class="o">/</span><span class="n">upload</span><span class="o">/</span><span class="n">endpoint</span><span class="err">&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
 </pre></div>
 
 
-<p><a href="setting_up_server.html">Next</a>, you'll learn to set up a simple server to handle uploads.</p>
+<p><a href="setting_up_server.html">Next</a>, you&#8217;ll learn to set up a simple server to handle uploads.</p>
 
 
                 

@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -169,12 +228,12 @@
 
                 
 <h1 class="page-header" id="async-tasks-and-promises">Async Tasks and Promises</h1>
-<p>In some cases, Fine Uploader uses "promises", both internally and via the API.
+<p>In some cases, Fine Uploader uses &#8220;promises&#8221;, both internally and via the API.
 Promises are a design pattern taken from the functional programming style and
 are extremely helpful when dealing with asynchronous operations.</p>
-<p>Fine Uploader's support for promises is encapsulated in the <code>qq.Promise</code> module.</p>
+<p>Fine Uploader&#8217;s support for promises is encapsulated in the <code>qq.Promise</code> module.</p>
 <p>For more informaton on promises in JavaScript, have a look at
-<a href="http://12devs.co.uk/articles/promises-an-alternative-way-to-approach-asynchronous-javascript/">Promises -- an alternative way to approach asynchronous JavaScript</a>.</p>
+<a href="http://12devs.co.uk/articles/promises-an-alternative-way-to-approach-asynchronous-javascript/">Promises &#8212; an alternative way to approach asynchronous JavaScript</a>.</p>
 <h2 id="promissory-callbacks">Promissory Callbacks</h2>
 <p>Promises are acceptable return values in the following <a href="../api/events.html">event handlers</a>.
 All of these callbacks can also prevent an associated action from being executed
@@ -189,7 +248,7 @@ promise instance:</p>
 <li><code>onSubmitDelete</code></li>
 <li><code>onPasteReceived</code></li>
 </ul>
-<p>You are not required to return a promise -- you can simply return <code>false</code> (or nothing).
+<p>You are not required to return a promise &#8212; you can simply return <code>false</code> (or nothing).
 However, there are some instances where you may want to perform
 some asynchronous work in your callback handler. A promise can be returned from
 any of the above callbacks if you need to execute  some non-blocking task,
@@ -271,12 +330,12 @@ without blocking the rest of the UI thread (and thus stopping downloads).</p>
 <h3 id="example">Example</h3>
 <p>Suppose you are overriding a promissory function or callback.  For example,
 suppose you want to override the <code>showPrompt</code> option (function).  The default
-implementation of this function uses <code>window.prompt</code>, which isn't very stylish.
+implementation of this function uses <code>window.prompt</code>, which isn&#8217;t very stylish.
 You may want to provide a more appropriate prompt dialog for your application.
 Your implementation, using <a href="http://bootboxjs.com/">bootbox</a>
 for your prompt dialog, might look something like this:</p>
-<div class="codehilite"><pre><span></span><span class="nx">showPrompt</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nb">Promise</span><span class="p">();</span>
+<div class="codehilite"><pre><span class="nx">showPrompt</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">Promise</span><span class="p">();</span>
 
     <span class="nx">bootbox</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter a value&quot;</span><span class="p">,</span> <span class="s2">&quot;Cancel&quot;</span><span class="p">,</span> <span class="s2">&quot;Confirm&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">trimStr</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -294,7 +353,7 @@ for your prompt dialog, might look something like this:</p>
 
 <p>The bootbox prompt dialog is not blocking, meaning the <code>showPrompt</code> call will
 return before the user has entered any information.  So, you must return a
-promise that will be updated with the user's response after it is submitted.
+promise that will be updated with the user&#8217;s response after it is submitted.
 Fine Uploader will wait for a callback indicating either success or
 failure, and will then continue executing the original task
 based on this result.  One use of the <code>showPrompt</code> function is to grab a name,

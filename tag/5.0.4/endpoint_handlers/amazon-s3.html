@@ -1,0 +1,425 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>S3 Endpoint | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.4/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.4/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.4">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.4/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.4/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.4/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.4/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.4/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.4/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.4/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.4/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.4/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.4/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.4/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.4/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.4/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.4/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.4/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.4/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.4/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.4/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.4/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.4/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.4/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.4/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.4/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.4/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.4/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.4/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.4/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.4/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.4/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.4/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.4/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.4/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.4/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.4/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.4/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.4">Current: 5.0.4</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.4"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.4</p></span>
+
+                
+
+                
+<h1 class="page-header" id="s3-server-side-notes-requirements">S3 Server-Side Notes &amp; Requirements</h1>
+<p>Using the direct-to-S3 uploader module means that most of the server-side work required to parse upload requests is
+handled by Amazon for you.  However, there is some minimal communication required between Fine Uploader and your local
+server.  This document will outline both required and optional server-side tasks.  Note that, at the writing of this
+document, Fine Uploader developers have provided fully functional <a href="https://github.com/Widen/fine-uploader-server">server-side examples</a>
+in PHP, node.js, Python, and Java.  Other examples will be created in the future.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p><a href="http://blog.fineuploader.com/2013/08/16/fine-uploader-s3-upload-directly-to-amazon-s3-from-your-browser">A comprehensive, step-by-step guide on implementing your origin server to
+handle S3 uploads can be found on the Fine Uploader blog</a></p>
+
+</div>
+
+<h4 id="creating-your-s3-buckets-cors-configuration">Creating your S3 bucket&#8217;s CORS configuration</h4>
+<p>In order to use the upload-to-S3 feature, you MUST properly set the CORS configuration in your S3 bucket(s).  Fine Uploader
+must make cross-origin requests to S3 whenever it communicates with AWS.  You can <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">read more about CORS configuration on
+the AWS developer site</a>.  A simple and typical CORS configuration
+would look like this:</p>
+<div class="codehilite"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;CORSConfiguration</span> <span class="na">xmlns=</span><span class="s">&quot;http://s3.amazonaws.com/doc/2006-03-01/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;CORSRule&gt;</span>
+        <span class="nt">&lt;AllowedOrigin&gt;</span>*<span class="nt">&lt;/AllowedOrigin&gt;</span>
+        <span class="nt">&lt;AllowedMethod&gt;</span>POST<span class="nt">&lt;/AllowedMethod&gt;</span>
+        <span class="nt">&lt;AllowedMethod&gt;</span>PUT<span class="nt">&lt;/AllowedMethod&gt;</span>
+        <span class="nt">&lt;AllowedMethod&gt;</span>DELETE<span class="nt">&lt;/AllowedMethod&gt;</span>
+        <span class="nt">&lt;MaxAgeSeconds&gt;</span>3000<span class="nt">&lt;/MaxAgeSeconds&gt;</span>
+        <span class="nt">&lt;ExposeHeader&gt;</span>ETag<span class="nt">&lt;/ExposeHeader&gt;</span>
+        <span class="nt">&lt;AllowedHeader&gt;</span>*<span class="nt">&lt;/AllowedHeader&gt;</span>
+    <span class="nt">&lt;/CORSRule&gt;</span>
+<span class="nt">&lt;/CORSConfiguration&gt;</span>
+</pre></div>
+
+
+<p>Some notes on the above configuration:</p>
+<ul>
+<li>The POST method is required to allow HTML Form uploads by Fine Uploader, as well as other various REST API calls.  You
+will always need to include this.</li>
+<li>The PUT method is required only if you enable the chunking feature in Fine Uploader.</li>
+<li>The DELETE method is if you plan on deleting files from your bucket server-side.  This would be critical
+if you enable Fine Uploader&#8217;s delete file feature.  It is also required if you enable the chunking feature, as Fine Uploader
+sends a DELETE request to S3 when a user cancels an in-progress upload in order to ensure S3 removes all chunks associated
+with that upload present in your bucket.</li>
+<li>You can (and probably should) make the AllowedOrigin condition(s) a bit more restrictive.  If you know specifically what
+domains will host your Fine Uploader instance, include these in the AllowedOrigin tag value.</li>
+<li>You can (and probably should) make the AllowedHeader condition(s) a bit more restrictive.  If you do, you will always
+need to allow the following headers: &#8220;origin&#8221; and &#8220;content-type&#8221;.  If you have the chunking feature enabled, you will also
+need to include: &#8220;x-amz-acl&#8221;, &#8220;x-amz-meta-qqfilename&#8221;, &#8220;x-amz-date&#8221;, and &#8220;authorization&#8221;.  If you have chunking enabled,
+you will also need to authorize headers for any custom parameters (user metadata) you want to attach to the object in S3.
+All parameters are sent as headers in the &#8220;Initiate Multipart Upload&#8221; request sent by Fine Uploader with a prefix of
+&#8220;x-amz-meta-&#8220;.</li>
+<li>If you are using the <a href="../features/scaling.html">scaling feature</a>, and you have elected to have the original/parent image uploaded,
+you will need to account for these headers in your CORS configuration as well: &#8220;x-amz-meta-qquuid&#8221;,
+&#8220;x-amz-meta-qqparentuuid&#8221;, and &#8220;x-amz-meta-qqparentsize&#8221;.</li>
+</ul>
+<h3 id="required-server-side-tasks-all-browsers">Required server-side tasks: all browsers</h3>
+<p>The only required server-side task for all browsers is an endpoint that signs the policy document.  This endpoint
+corresponds to the <code>signature.endpoint</code> property.</p>
+<p>Fine Uploader will construct a policy document (required for securely uploading the file to your S3 bucket)
+which then must be signed using your AWS secret key.  When Fine Uploader requires this signature, it will send a
+POST request to the endpoint specified in your <code>signature.endpoint</code> option, passing the JSON policy document in the
+request payload with a Content-Type of &#8220;application/json&#8221;.  You can read more about <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy">policy documents on Amazon&#8217;s developer site</a>.</p>
+<h4 id="verifying-the-policy">Verifying the policy</h4>
+<p>When your server receives this policy document, it should first verify that the policy contains expected properties.
+If the policy document appears incorrect (due to client-side tampering), your server should immediately return a response
+with a status code of 500, a Content-Type of &#8220;application/json&#8221; and the following payload:</p>
+<div class="codehilite"><pre><span class="p">{</span>
+    <span class="s2">&quot;invalid&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The above response will let Fine Uploader know that the policy document may have been tampered with client-side, and it
+will not send the file to S3 until the issue is addressed.</p>
+<h4 id="signing-the-policy">Signing the policy</h4>
+<p>If your server determines that the policy document is accurate, it should then base-64 encode the policy document,
+generate a base-64 encoded HMAC SHA1 of the policy document using your AWS secret key, and then return the base-64
+encoded policy document and the base-64 encoded signature in the response payload with a status of 200 and a Content-Type
+of &#8220;application/json&#8221;.  Your response payload should follow this format:</p>
+<div class="codehilite"><pre><span class="p">{</span>
+    <span class="s2">&quot;policy&quot;</span><span class="o">:</span> <span class="s2">&quot;INSERT BASE-64 ENCODED POLICY HERE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;signature&quot;</span><span class="o">:</span> <span class="s2">&quot;INSERT BASE-64 ENCODED SIGNED POLICY HERE&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>It&#8217;s quite simple to sign the policy document server-side.  Amazon&#8217;s developer site also provides some
+<a href="http://aws.amazon.com/articles/1434/#signyours3postform">code in several languages illustrating how to do this</a>.</p>
+<h3 id="required-server-side-tasks-ie9-and-older-and-android-23x-and-older-only">Required server-side tasks: IE9 (and older) and Android 2.3.x (and older) ONLY</h3>
+<p>This isn&#8217;t really a server-side task, but I&#8217;ll mention it here anyway as it does minimally involve your server.</p>
+<p>For browsers that do not support the File API, Fine Uploader must submit selected files inside of form, targeting a specific
+dynamically-generated iframe.  When the response comes in, Fine Uploader will not be able to determine if the upload was
+successful since the response originated from a domain other than the one hosting the uploader.  To get around this,
+we can ask Amazon to redirect the response, on success, to an endpoint of our choice.  This is where the <code>iframeSupport</code>
+option comes into play.</p>
+<p>Your <code>iframeSupport.localBlankPagePath</code> value must point to a page on your server.  It can (and probably should) be an empty HTML page,
+but it MUST reside on the same origin/domain as the one hosting your upload page.</p>
+<h3 id="optional-server-side-tasks-all-browsers">Optional server-side tasks: all browsers</h3>
+<p>If you would like Fine Uploader to notify your server when any file has been successfully uploaded to S3, you should
+set the <code>uploadSuccess.endpoint</code> property.  If this is set, Fine Uploader will send a POST request
+to your server with a Content-Type of &#8220;application/x-www-form-urlencoded&#8221;.  The payload of this request, by default,
+will contain the following information:</p>
+<ul>
+<li>S3 bucket</li>
+<li>Key name of the associated file in S3</li>
+<li>UUID of the file</li>
+<li>Name of the file</li>
+<li>The ETag of the object in S3 (for non-chunked uploads only)</li>
+</ul>
+<p>An example of the payload for this request sent by Fine Uploader would look like this:</p>
+<p><code>key=f9a922bd-3007-4393-a76e-925fc009639c.txt&amp;uuid=f9a922bd-3007-4393-a76e-925fc009639c&amp;name=rubycsv.txt&amp;bucket=fineuploadertest&amp;etag=123</code></p>
+<p>Parsing url-encoded payloads should be trivial and handled by most web application frameworks.</p>
+<p>If you need to perform some specific task to verify the file server-side at this point, you can do so when
+handling this request and let Fine Uploader know if there is a problem with this file by returning a response with an
+appropriate (non-200) status code.  Furthermore, you can include a message to be displayed (FineUploader/default-UI mode)
+and passed to your <code>onError</code> callback handler via an <code>error</code> property in the payload of your response.  In this case,
+the response payload must be valid JSON.</p>
+<p>You can also pass any data to your Fine Uploader <a href="../api/events#complete.html"><code>complete</code> event handler</a>, client-side,
+by including it in a valid JSON response to the <code>uploadSuccess.endpoint</code> POST request.  In fact, the S3 demo server-side
+code on FineUploader.com is passing a signed URL to the <code>complete</code> handler which allows you to view the file you&#8217;ve
+uploaded.</p>
+<h2 id="chunked-uploads">Chunked Uploads</h2>
+<p>Fine Uploader S3 uses <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html">Amazon S3&#8217;s REST API</a>
+to initiate, upload, complete, and
+abort multipart uploads. The REST API handles authentication by signing
+canonically formatted headers. This signing is something you need to implement
+server-side. All your server needs to do to authenticate and supported chunked
+uploads direct to Amazon S3 is sign a string representing the headers of the
+request that Fine Uploader sends to S3. This string is found in the payload of
+the signature request:</p>
+<div class="codehilite"><pre><span class="p">{</span> <span class="s">&quot;headers&quot;</span><span class="o">:</span> <span class="cm">/* string to sign */</span> <span class="p">}</span>
+</pre></div>
+
+
+<p>The precense of this property indicates to your sever that this is, in fact,
+a request to sign a REST/multipart request and not a policy document.</p>
+<p>This signature for the headers string differs slightly from the policy document
+signature. You should <strong>NOT</strong> base64 encode the headers string before signing it.
+All you must do, server-side, is generate an HMAC SHA1 signature of the string
+using your AWS secret key and <em>then</em> base64 encode the result. Your server
+should respond with the following in the body of an &#8216;application/json&#8217; response:</p>
+<div class="codehilite"><pre><span class="p">{</span> <span class="s">&quot;signature&quot;</span><span class="o">:</span> <span class="cm">/* signed headers string */</span> <span class="p">}</span>
+</pre></div>
+
+
+<h2 id="delete-file-support">Delete File support</h2>
+<p>Support for the delete file feature when using the S3 uploader is mostly the same as when using the traditional upload
+mode.  The S3 uploader does add &#8220;key&#8221; and &#8220;bucket&#8221; parameters with the request.  Otherwise, the request and the server-side
+code required to handle these requests in the same as when using the traditional uploader.  Fine Uploader expects your
+server-side code to delete the associated file in S3 via Amazon&#8217;s S3 API, and then return a response to Fine Uploader&#8217;s
+delete request when this has task has been handled.  See the <a href="../endpoint_handlers/traditional.html">server-side documentation for the traditional uploader</a>
+for additional information on handling delete file requests.</p>
+<h2 id="cors-support">CORS support</h2>
+<p>Support for CORS exists for the requests sent to the <code>signature.endpoint</code> <code>uploadSuccess.endpoint</code> paths.  You will need
+to set the <code>expected</code> property of the <code>cors</code> option when setting up your Fine Uploader instance.  You must also include
+appropriate headers in your server-response, and possibly handle OPTIONS (pre-flight) requests sent by the browser.  Please
+read the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/">blog post on CORS support</a> for details.  Note that
+you can ignore the &#8220;Handling iframe CORS upload requests server-side&#8221; section.</p>
+<h2 id="thumbnails">Thumbnails</h2>
+<p>If you would like to override the client-side generated preview (where supported) or provide a thumbnail for a
+non-previewable file that you have generated server-side, you can do so by providing an absolute or relative path (URL)
+to this thumbnail in your response to the <code>uploadSuccess</code> request via a <code>thumbnailUrl</code> property in your JSON response.
+The URL may be cross-origin as well.  See the <a href="../features/thumbnails.html">previews/thumbnails feature page</a>
+for more information on this feature.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.4/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

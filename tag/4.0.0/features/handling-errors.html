@@ -136,7 +136,66 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Tag:  <b class="caret"></b>
                         <ul class="dropdown-menu">
                         
+                            <li><a href="/branch">Branch</a></li>
+                            
+                                <ul><a href="/branch/hotfix/bucket-underscores">Hotfix_bucket-Underscores</a></ul>
+                            
+                                <ul><a href="/branch/feature/boilerplate">Feature_boilerplate</a></ul>
+                            
+                                <ul><a href="/branch/feature/private-function-testing">Feature_private-Function-Testing</a></ul>
+                            
+                                <ul><a href="/branch/site/customize">Site_customize</a></ul>
+                            
+                                <ul><a href="/branch/develop">Develop</a></ul>
+                            
+                                <ul><a href="/branch/feature/4.0-site-update">Feature_4.0-Site-Update</a></ul>
+                            
+                                <ul><a href="/branch/feature/templating-redesign">Feature_templating-Redesign</a></ul>
+                            
+                                <ul><a href="/branch/feature/thumbnails">Feature_thumbnails</a></ul>
+                            
+                                <ul><a href="/branch/gh-pages">Gh-Pages</a></ul>
+                            
+                                <ul><a href="/branch/feat/modularize-the-builds">Feat_modularize-The-Builds</a></ul>
+                            
+                                <ul><a href="/branch/master">Master</a></ul>
+                            
+                        
+                            <li><a href="/favicon.gif">Favicon.gif</a></li>
+                            
+                        
+                            <li><a href="/favicon.ico">Favicon.ico</a></li>
+                            
+                        
+                            <li><a href="/file">File</a></li>
+                            
+                                <ul><a href="/file/fine-uploader">Fine-Uploader</a></ul>
+                            
+                        
+                            <li><a href="/hook.php">Hook.php</a></li>
+                            
+                        
+                            <li><a href="/htaccess-Fri Aug 16 08:08:46 PDT 2013">Htaccess-Fri Aug 16 08:08:46 Pdt 2013</a></li>
+                            
+                        
+                            <li><a href="/robots.txt">Robots.txt</a></li>
+                            
+                        
                             <li><a href="/tag">Tag</a></li>
+                            
+                                <ul><a href="/tag/3.7.1">3.7.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.0">3.8.0</a></ul>
+                            
+                                <ul><a href="/tag/3.8.1">3.8.1</a></ul>
+                            
+                                <ul><a href="/tag/3.8.2">3.8.2</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0">3.9.0</a></ul>
+                            
+                                <ul><a href="/tag/3.9.0-3">3.9.0-3</a></ul>
+                            
+                                <ul><a href="/tag/3.9.1">3.9.1</a></ul>
                             
                                 <ul><a href="/tag/4.0.0">4.0.0</a></ul>
                             
@@ -176,7 +235,7 @@ have a key of <code>success</code> set to <code>true</code>.</p>
 <h2 id="debugging-errors">Debugging Errors</h2>
 <p>Sometimes errors are not intended, or unexpected. Fine Uploader provides the
 <code>debug</code> option which will make the plugin spit out logging messages to the
-client's JavaScript log.</p>
+client&#8217;s JavaScript log.</p>
 <p>To enable debug mode, set the <code>debug</code> option of Fine Uploader to <code>true</code>
 and open the developer console in your browser. Interact with Fine Uploader
 and notice that it is logging specifically what is happening. These messages
@@ -188,7 +247,7 @@ The text to be displayed in the case of an error is passed in as the <code>error
 parameter.</p>
 <p>The following code snippet shows how one might display a custom alert on the
 event of an error.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
    <span class="c1">// ...</span>
 <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">,</span> <span class="nx">xhrOrXdr</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">&quot;Error on file number {} - {}.  Reason: {}&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">errorReason</span><span class="p">));</span>
@@ -211,7 +270,7 @@ that value to the <code>onError</code> callback.</p>
 <p>If the server indicates failure in the response, but does not include an
 <code>error</code> property and the response status code is <code>200</code>, then the
 <code>defaultResponseError</code> property will be used as the error message.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">text</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">defaultResponseError</span><span class="o">:</span> <span class="s1">&#39;An unknown upload error occurred.&#39;</span>
     <span class="p">}</span>
@@ -222,7 +281,7 @@ that value to the <code>onError</code> callback.</p>
 <h2 id="changing-error-messages">Changing Error Messages</h2>
 <p>The <code>messages</code> property in the main Fine Upload options object provides a
 handful of properties one can override to display custom error messages.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;{file} has an invalid extension. Valid extension(s): {extensions}.&#39;</span>
         <span class="c1">// other messages can go here as well ...</span>
@@ -256,7 +315,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is empty, please select files again without it.'</p></td>
+        <td><p>&#8216;{file} is empty, please select files again without it.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submitted item is zero bits.</p></td>
 
@@ -268,7 +327,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is too large, maximum file size is {sizeLimit}.'</p></td>
+        <td><p>&#8216;{file} is too large, maximum file size is {sizeLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submitted item is too large.</p></td>
 
@@ -280,7 +339,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} has an invalid extension. Valid extension(s): {extensions}.'</p></td>
+        <td><p>&#8216;{file} has an invalid extension. Valid extension(s): {extensions}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if an invalid file type is detected.</p></td>
 
@@ -292,7 +351,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'{file} is too small, minimum file size is {minSizeLimit}.'</p></td>
+        <td><p>&#8216;{file} is too small, minimum file size is {minSizeLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if the item is too small.</p></td>
 
@@ -304,7 +363,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'No files to upload.'</p></td>
+        <td><p>&#8216;No files to upload.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if any empty array of items is submitted.</p></td>
 
@@ -316,7 +375,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'The files are being uploaded, if you leave now the upload will be cancelled.'</p></td>
+        <td><p>&#8216;The files are being uploaded, if you leave now the upload will be cancelled.&#8217;</p></td>
 
         <td><p>Text displayed to the user when they attempt to leave the page while uploads are still in progress.</p></td>
 
@@ -328,7 +387,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'Retry failed - you have reached your file limit.'</p></td>
+        <td><p>&#8216;Retry failed - you have reached your file limit.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a retry attempt is declared a failed due to a violation of the <code>validation.itemLimit</code> rule.</p></td>
 
@@ -340,7 +399,7 @@ handful of properties one can override to display custom error messages.</p>
 
         <td><p><code>String</code></p></td>
 
-        <td><p>'Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.'</p></td>
+        <td><p>&#8216;Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.&#8217;</p></td>
 
         <td><p>Text passed to the error event handler if a submit is ignored due to a violation of the <code>validation.itemLimit</code> rules.</p></td>
 
@@ -352,7 +411,7 @@ handful of properties one can override to display custom error messages.</p>
 <p>Error messages include primitive <code>String</code> interpolation that allows integrators
 to inject variable data into error messages. For example, the <code>typeError</code>
 message could be modified:</p>
-<div class="codehilite"><pre><span></span><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span class="nx">messages</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">typeError</span><span class="o">:</span> <span class="s1">&#39;Invalid extension detected in file, {file}.&#39;</span>
 <span class="p">}</span>
 </pre></div>
@@ -363,7 +422,7 @@ instead of the <code>"{file}"</code> <code>String</code>.</p>
 <h2 id="modifying-the-text-for-failed-uploads">Modifying the Text for Failed Uploads</h2>
 <p>The <code>failedUploadTextDisplay</code> option defines properties used for displaying
 text when an upload fails.</p>
-<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
     <span class="c1">// These are all the DEFAULT values...</span>
     <span class="nx">failedUploadTextDisplay</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>

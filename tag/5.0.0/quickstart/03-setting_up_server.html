@@ -203,25 +203,25 @@
 
 <p>This section of the tutorial is aimed at beginners looking to create their
 own upload server. Note that this example does not apply to S3 uploads. For
-more information on uploading to Amazon's Simple Storage Service,
+more information on uploading to Amazon&#8217;s Simple Storage Service,
 read the <a href="../endpoint_handlers/amazon-s3.html">Fine Uploader S3 server documentation</a>.</p>
 
 </div>
 
 <p>For this tutorial we are going to use <a href="http://nodejs.org/">Node.js</a> to develop
 a simple server which will accept uploads from our Fine Uploader instance. If
-you don't have Node.js, now's the time to <a href="http://nodejs.org/download/">get it</a>.</p>
+you don&#8217;t have Node.js, now&#8217;s the time to <a href="http://nodejs.org/download/">get it</a>.</p>
 <p>If Node.js is not your style, then feel free to browse the other
-<a href="http://github.com/Widen/fine-uploader-server">server-side demos repository</a>.  <strong>It's quite important for you to read
+<a href="http://github.com/Widen/fine-uploader-server">server-side demos repository</a>.  <strong>It&#8217;s quite important for you to read
 the <a href="../endpoint_handlers/traditional.html">traditional server-side integration instructions</a> before you do any of this,
 though</strong>.</p>
 <h4 id="getting-started_3">Getting Started</h4>
-<p>Let's rock! First, download express:</p>
+<p>Let&#8217;s rock! First, download express:</p>
 <p><code>npm install express rimraf mkdirp</code></p>
-<p>Now let's download our server:</p>
+<p>Now let&#8217;s download our server:</p>
 <p><code>wget -O server.js https://raw.github.com/Widen/fine-uploader-server/master/nodejs/nodejs.js</code></p>
 <p>Coooool. Create a new file in your text editor called <code>server.js</code>. Time to code the first part of the server:</p>
-<p>And let's have node run it!</p>
+<p>And let&#8217;s have node run it!</p>
 <p><code>node server.js</code></p>
 <p>Make sure to set the request endpoint on your Fine Uploader instance to point to the corresponding URL on the express server. In this case, the endpoint is <code>/uploads</code>.</p>
 <p>Booyakosha! You are on the fast-track to upload nirvana. Continue forth in your quest to learn to integrate Fine Uploader with your application by reviewing the rest of the <a href="../">documentation</a></p>

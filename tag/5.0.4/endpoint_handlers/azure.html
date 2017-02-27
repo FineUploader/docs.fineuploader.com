@@ -1,0 +1,365 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <title>Azure Endpoint | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <!--
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.0.4/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.0.4/_static/css/pygments.css" />
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="http://fineuploader.com/img/FineUploader_logo.png"></img></a></li>
+                    <li><a href="/tag/5.0.4">Docs</li></a>
+                    <li><a href="http://blog.fineuploader.com/">Blog</li></a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/tag/5.0.4/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li><a href="/tag/5.0.4/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li><a href="/tag/5.0.4/features/chunking.html">Chunking</a></li>
+                            <li><a href="/tag/5.0.4/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li><a href="/tag/5.0.4/features/CORS.html">CORS</a></li>
+                            <li><a href="/tag/5.0.4/features/delete.html">Delete</a></li>
+                            <li><a href="/tag/5.0.4/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li><a href="/tag/5.0.4/features/handling-errors.html">Error Handling</a></li>
+                            <li><a href="/tag/5.0.4/features/filename-edit.html">Filename Editing</a></li>
+                            <li><a href="/tag/5.0.4/features/forms.html">Form Support</a></li>
+                            <li><a href="/tag/5.0.4/features/session.html">Initial File Lists</a></li>
+                            <li><a href="/tag/5.0.4/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li><a href="/tag/5.0.4/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/paste-to-upload.html">Paste</a></li>
+                            <li><a href="/tag/5.0.4/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/progress-bars.html">Progress Bars</a></li>
+                            <li><a href="/tag/5.0.4/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li><a href="/tag/5.0.4/features/request-parameters.html">Request</a></li>
+                            <li><a href="/tag/5.0.4/features/resume.html">Resuming</a></li>
+                            <li><a href="/tag/5.0.4/features/retry.html">Retrying</a></li>
+                            <li><a href="/tag/5.0.4/features/s3.html">S3 Uploads</a></li>
+                            <li><a href="/tag/5.0.4/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li><a href="/tag/5.0.4/features/styling.html">Styling</a></li>
+                            <li><a href="/tag/5.0.4/features/upload-files.html">Uploading</a></li>
+                            <li><a href="/tag/5.0.4/features/scaling.html">Upload Scaled Images</a></li>
+                            <li><a href="/tag/5.0.4/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li><a href="/tag/5.0.4/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu api">
+                                <li><b>Options</b></li>
+                                <li><a href="/tag/5.0.4/api/options.html">Core</a></li>
+                                <li><a href="/tag/5.0.4/api/options-ui.html">UI</a></li>
+                                <li><a href="/tag/5.0.4/api/options-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.4/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li><a href="/tag/5.0.4/api/methods.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.4/api/methods-s3.html">S3</a></li>
+                                <li><a href="/tag/5.0.4/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li><a href="/tag/5.0.4/api/events.html">Core & UI</a></li>
+                                <li><a href="/tag/5.0.4/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li><a style="margin-left: -20px;"href="/tag/5.0.4/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/traditional.html">Traditional</a></ul>
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/amazon-s3.html">Amazon S3</a></ul>
+                            <ul><a href="/tag/5.0.4/endpoint_handlers/azure.html">Azure Blob Storage</a></ul>
+                        </ul>
+                    </li>
+
+                    <li><a href="/tag/5.0.4/support.html">Support</li></a>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version <b class="caret"></b>
+                        <ul class="dropdown-menu">
+                            <li class><a href="/tag/5.0.4">Current: 5.0.4</a></li>
+                            
+                                <li><a href="/branch/master">Stable</a></li>
+                            
+                                <li><a href="/branch/develop">In Progress</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.0.4"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+                </form>
+
+
+                    <!--
+                    <div class="pull-right">
+                        <iframe src="http://duckduckgo.com/search.html?site=docs.fineuploader.com&prefill=Search documentation&focus=yes" style="overflow:hidden;margin:0;padding:0;width:208px;height:10px;" frameborder="0"></iframe>
+                    </div>
+                    -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right" style="opacity: .7; padding: 1px; margin-right: 5px;"><p>5.0.4</p></span>
+
+                
+
+                
+<h1 class="page-header" id="azure-server-side-notes-requirements">Azure Server-Side Notes &amp; Requirements</h1>
+<p>Using the direct-to-Azure uploader module means that most of the server-side work required to parse upload requests is
+handled by Microsoft for you.  However, there is some minimal communication required between Fine Uploader and your local
+server.  This document will outline both required and optional server-side tasks.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>Fine Uploader Azure does not support IE9 and older.  This is due to the fact that Azure&#8217;s API does
+not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
+If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
+handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code>false</code>.</p>
+
+</div>
+
+<h4 id="creating-your-azure-blob-storage-containers-cors-configuration">Creating your Azure Blob Storage container&#8217;s CORS configuration</h4>
+<p>You MUST properly set the CORS configuration in your container(s).  Fine Uploader
+must make cross-origin requests to Azure.  You can <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn535601.aspx">read more about CORS configuration on
+the Azure developer site</a>.</p>
+<p>Unfortunately, CORS can only be configured via the Azure SDK/API.  The management console does not allow you
+to configure your container in this regard at this point.  The <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">Fine Uploader Azure C# example</a> covers CORS
+configuration.</p>
+<p>A simple and typical CORS configuration would look like this:</p>
+<div class="codehilite"><pre><span class="nt">&lt;Cors&gt;</span>
+    <span class="nt">&lt;CorsRule&gt;</span>
+        <span class="nt">&lt;AllowedOrigins&gt;</span>http://yourdomain.com<span class="nt">&lt;/AllowedOrigins&gt;</span>
+        <span class="nt">&lt;AllowedMethods&gt;</span>PUT,DELETE<span class="nt">&lt;/AllowedMethods&gt;</span>
+        <span class="nt">&lt;AllowedHeaders&gt;</span>x-ms-meta-qqfilename,x-ms-blob-type,x-ms-blob-content-type,Content-Type<span class="nt">&lt;/AllowedHeaders&gt;</span>
+        <span class="nt">&lt;MaxAgeInSeconds&gt;</span>200<span class="nt">&lt;/MaxAgeInSeconds&gt;</span>
+    <span class="nt">&lt;/CorsRule&gt;</span>
+<span class="nt">&lt;Cors&gt;</span>
+</pre></div>
+
+
+<p>Some notes on the above configuration:</p>
+<ul>
+<li>The PUT method is required to upload blobs, blocks, and combine blocks into a blob.  The latter two apply if chunking is enabled/used.</li>
+<li>The DELETE method is required.  It is used by the delete file feature (optional) but is also used by Fine Uploader Azure
+to clean up uncommitted blocks if an in-progress chunked upload is cancelled.</li>
+<li>You will also need to include entries in the AllowedHeaders tag for any custom parameters (user metadata) you want
+to attach to the blob.  All parameters are sent as headers with a prefix of &#8220;x-ms-meta-&#8220;.</li>
+<li>If you are using the <a href="../features/scaling.html">scaling feature</a>, and you are have electing to have the original/parent image
+uploaded, you will need to account for these headers in your CORS configuration as well: &#8220;x-ms-meta-qquuid&#8221;,
+&#8220;x-ms-meta-qqparentuuid&#8221;, and &#8220;x-ms-meta-qqparentsize&#8221;.</li>
+</ul>
+<h3 id="required-server-side-tasks">Required server-side tasks</h3>
+<p>The only required server-side task for all browsers is an endpoint the returns a Shared Access Signature URI
+for each request Fine Uploader Azure makes against the Azure REST API.  This endpoint
+corresponds to the <code>signature.endpoint</code> property.</p>
+<p>Fine Uploader will send a GET request to your signature endpoint.  The following parameters will be included in the
+query string of this request URI:</p>
+<ul>
+<li><code>_method</code>: The verb that will be used by Fine Uploader when it sends the associated request to Azure.
+Possible values are &#8220;DELETE&#8221; and &#8220;PUT&#8221; at this time.</li>
+<li><code>_bloburi</code>: The fully-qualified URI for the blob associated with the request that Fine Uploader will send to Azure.</li>
+<li><code>qqtimestamp</code>: You can ignore this parameter.  It is simply used to ensure that the browser requests a fresh
+SAS URI from your server every time.</li>
+</ul>
+<h4 id="verification-before-returning-a-sas-uri">Verification before returning a SAS URI</h4>
+<p>Before you return a SAS URI, you might want to verify the <code>_bloburi</code> and <code>_method</code> to ensure that the associated
+user is allowed to perform the requested action on the associated blob.  If there is an issue, and your server
+does not want the requested operation to occur, your server should respond with a <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 status code</a>.  If your
+server returns a 403, Fine Uploader Azure will not send the underlying request, and will not attempt an auto-retry
+either.</p>
+<h4 id="returning-a-sas-uri">Returning a SAS URI</h4>
+<p>At this point, the simplest way to generate a SAS URI is to use the Microsoft Windows Azure Storage SDK server-side.
+See <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">our C# server-side example</a> for details.</p>
+<p>Once the SAS URI has been generated, simply return it in your response to Fine Uploader&#8217;s signature request.</p>
+<h3 id="optional-server-side-tasks">Optional server-side tasks</h3>
+<p>If you would like Fine Uploader to notify your server when any file has been successfully uploaded to Azure, you should
+set the <code>uploadSuccess.endpoint</code> property.  If this is set, Fine Uploader will send a POST request
+to your server with a Content-Type of &#8220;application/x-www-form-urlencoded&#8221;.  The payload of this request, by default,
+will contain the following information:</p>
+<ul>
+<li>Blob name</li>
+<li>Container URL</li>
+<li>UUID of the file</li>
+<li>Name of the file</li>
+</ul>
+<p>An example of the payload for this request sent by Fine Uploader would look like this:</p>
+<p><code>blob=f9a922bd-3007-4393-a76e-925fc009639c.txt&amp;uuid=f9a922bd-3007-4393-a76e-925fc009639c&amp;name=rubycsv.txt&amp;container=http%3A%2F%2Ffineuploaderdev.blob.core.windows.net%2Fdev</code></p>
+<p>If you need to perform some specific task to verify the file server-side at this point, you can do so when
+handling this request and let Fine Uploader know if there is a problem with this file by returning a response with an
+appropriate (non-200) status code.  Furthermore, you can include a message to be displayed (FineUploader/default-UI mode)
+and passed to your <code>onError</code> callback handler via an <code>error</code> property in the payload of your response.  In this case,
+the response payload must be valid JSON.  Furthermore, you can tell Fine Uploader to prevent any retries by including
+a <code>preventRetry</code> property in the payload of your JSON response with a value of &#8220;true&#8221;.</p>
+<p>You can also pass any data to your Fine Uploader <a href="../api/events.html#complete"><code>complete</code> event handler</a>, client-side,
+by including it in a valid JSON response to the <code>uploadSuccess.endpoint</code> POST request.</p>
+<h2 id="delete-file-support_1">Delete File support</h2>
+<p>Support for the delete file feature when using the Azure uploader is a bit different than the traditional endpoint uploader.
+Instead of proxying the delete request through your local server, Fine Uploader Azure will send delete requests directly
+to Azure.  As usual, Fine Uploader will ask your server for a SAS URI before sending the request.</p>
+<h2 id="cors-support_1">CORS support</h2>
+<p>Support for CORS exists for the requests sent to the <code>signature.endpoint</code> <code>uploadSuccess.endpoint</code> paths.  You will need
+to set the <code>expected</code> property of the <code>cors</code> option when setting up your Fine Uploader instance.  You must also include
+appropriate headers in your server-response, and possibly handle OPTIONS (pre-flight) requests sent by the browser.  Please
+read the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/">blog post on CORS support</a> for details.  Note that
+you can ignore the &#8220;Handling iframe CORS upload requests server-side&#8221; section.</p>
+<h2 id="thumbnails_1">Thumbnails</h2>
+<p>If you would like to override the client-side generated preview (where supported) or provide a thumbnail for a
+non-previewable file that you have generated server-side, you can do so by providing an absolute or relative path (URL)
+to this thumbnail in your response to the <code>uploadSuccess</code> request via a <code>thumbnailUrl</code> property in your JSON response.
+The URL may be cross-origin as well.  See the <a href="../features/thumbnails.html">previews/thumbnails feature page</a>
+for more information on this feature.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Powered by <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>. &copy; 2014</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.0.4/_static/js/main.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>

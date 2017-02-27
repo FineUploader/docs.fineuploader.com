@@ -200,7 +200,7 @@
                 
 
                 
-<h1 id="events-s3-page-header">Events <small>S3</small>{: .page-header }</h1>
+<h1 class="page-header" id="events-wzxhzdk2s3wzxhzdk3">Events <small>S3</small></h1>
 <p>The S3 uploader provides many of the same events as the traditional
 uploader, but there are some additional events exclusive to S3 endpoints.
 If you plan to use the S3 uploader, then use the following table as your event
@@ -213,24 +213,24 @@ in Fine Uploader S3, unless otherwise noted here.</p>
 <p>See the <a href="../integrating/jquery">Integrating jQuery</a> page for code examples and more details.</p>
 <h4 id="non-jquery">non-jQuery</h4>
 <p>When using the non-jQuery uploader, the following syntax is the correct way to define event handlers;</p>
-<div class="codehilite"><pre><span></span>callbacks: {
-    onDelete: function(id) {
+<div class="codehilite"><pre><span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">onDelete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
 
-    },
-    onDeleteComplete: function(id, xhr, isError) {
-    //...
-    }
-}
+    <span class="p">},</span>
+    <span class="nx">onDeleteComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h4 id="jquery">jQuery</h4>
 <p>The syntax below is only acceptable when using the jQuery plugin for the uploader:</p>
-<div class="codehilite"><pre><span></span>$(&quot;#my_uploader&quot;).on(&quot;deleteComplete&quot;, function(event, id, xhr, isError) {
-    //...
-}).on(&quot;delete&quot;, function(event, id) {
-    // ...
-});
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#my_uploader&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;deleteComplete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">isError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
 </pre></div>
 
 
