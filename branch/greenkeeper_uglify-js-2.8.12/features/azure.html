@@ -1,0 +1,313 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Uploading Directly to Azure Blob Storage | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.12/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.12/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/greenkeeper_uglify-js-2.8.12">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/greenkeeper_uglify-js-2.8.12/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.12">Current: 5.14.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/greenkeeper_uglify-js-2.8.12"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="uploading-directly-to-azure-blob-storage">Uploading Directly to Azure Blob Storage</h1>
+<h3 id="summary">Summary</h3>
+<p>Fine Uploader Azure allows your users to upload files directly to your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs-20/">Azure Blob Storage</a> container without the need
+to send the file through one of your servers first.  This will, among other things, allow your application to be a bit
+more efficient and scalable.</p>
+<h3 id="how-do-uploads-work">How do uploads work?</h3>
+<p>When a user submits a file to Fine Uploader Azure, the following occurs:</p>
+<ol>
+<li>Fine Uploader constructs a URL that will represent the file as a blob once it is in the blob storage container.</li>
+<li>Fine Uploader sends a GET request to your <a href="../endpoint_handlers/azure.html">signature server</a>.  Your server must then create a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">Shared Access Signature</a>
+URI for that specific operation and blob.  This URI must be returned in your server's response.</li>
+<li>Fine Uploader sends a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179451.aspx">Put Blob</a> request to Azure and includes the file bytes in the request payload.  The URL for this
+request is the SAS URI returned by your server in step 2.</li>
+<li>If the file uploaded successfully, Fine Uploader will send a POST request to your server with the blob details if
+you have specified an <a href="../api/options-azure.html#uploadSuccess"><code>uploadSuccess.endpoint</code></a> in your <a href="../api/options-azure.html">Fine Uploader Azure options configuration</a>.
+If the upload failed, start over at step 2 automatically if the <a href="../api/options.html#retry"><code>retry.enableAuto</code> option</a> is set to <code>true</code>.</li>
+</ol>
+<p><strong>The above steps are slightly different if Fine Uploader is <a href="../features/chunking.html">chunking</a> the file.</strong>  Instead of a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179451.aspx">Put Blob</a>
+request, Fine Uploader will send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd135726.aspx">Put Block</a> request to Azure for each piece of the file.
+Once all pieces have been successfully uploaded, Fine Uploader will then send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179467.aspx">Put Block List</a> request,
+which asks Azure to combine all the blocks into a blob. Fine Uploader will call your <a href="../endpoint_handlers/azure.html">signature server</a>
+before each and every request, asking for a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI.</p>
+<h3 id="how-do-delete-file-requests-work">How do delete file requests work?</h3>
+<p>If this feature is enabled, Fine Uploader will send a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179413.aspx">Delete Blob</a> request directly to Azure when
+asked to delete a file.  As usual, your <a href="../endpoint_handlers/azure.html">signature server</a> will be called on to provide a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI
+before this request is sent to Azure.  Note that even if this feature is disabled, Fine Uploader will issue a <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179413.aspx">Delete Blob</a>
+request to Azure if a user cancels an in-progress <a href="../features/chunking.html">chunked</a> upload.  This is necessary to ensure that the
+uncommitted blocks are cleaned up by Azure.</p>
+<h3 id="which-features-are-available">Which features are available?</h3>
+<p><strong>All features present in the traditional endpoint uploader are also available in Fine Uploader Azure</strong>, with one notable
+omission.  <strong>Fine Uploader Azure does not support IE9 and older</strong>.  This is due to the fact that Azure's API does
+not allow files to be uploaded via multipart encoded POST requests, which is critical for IE9 and older support.
+If you need to support IE9 and older, you will need to load/use Fine Uploader with its traditional endpoint
+handler if the value of <a href="../browser-support.html#feature-detection"><code>qq.supportedFeatures.ajaxUploading</code></a> is <code>false</code>.</p>
+<h3 id="is-this-secure">Is this secure?</h3>
+<p>There is nothing inherently insecure about this workflow, provided you take appropriate precautions. For example:</p>
+<ul>
+<li>Ensure your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URIs are short-lived.  An expiration date of a few minutes or seconds is appropriate.</li>
+<li>When constructing your <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a> URI, only attach the required permission(s) to the URI.</li>
+<li>Examine the blob URI before generating a <a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/">SAS</a>.  It is potentially unwise to blindly generate signatures.</li>
+<li>Keep your Azure storage account key a secret.  Do not commit it to any public repository.
+Ensure it is never sent to the client in a response or cookie.</li>
+<li>When creating CORS rules for your container, only authorize your domain(s), the expected request headers, and
+the expected request methods.  Avoid using wildcards as values whenever possible.  Also, keep in mind that CORS
+is NOT a security mechanism.</li>
+</ul>
+<h3 id="how-do-i-use-this">How do I use this?</h3>
+<p>Please see the getting started guides on <a href="../quickstart/01-getting-started.html">the home page of this documentation site</a>.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/greenkeeper_uglify-js-2.8.12/_static/js/main.js"></script>
+        <script src="/branch/greenkeeper_uglify-js-2.8.12/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
