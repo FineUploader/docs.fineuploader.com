@@ -1,0 +1,1654 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>UI Options | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.11/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.11/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/branch/greenkeeper_uglify-js-2.8.11/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/greenkeeper_uglify-js-2.8.11">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/greenkeeper_uglify-js-2.8.11/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.11">Current: 5.14.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/greenkeeper_uglify-js-2.8.11"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.1</p></span>
+
+                
+
+                
+<div class="all-options">
+<div class="options-ui">
+<h1 class="page-header" id="options-ui">Options <small>UI</small></h1>
+<h2 id="ui_3">UI</h2>
+<p>Fine Uploader <a href="../modes/ui.html">UI mode</a> has a few different options as well as some options
+pertaining specifically to the UI which <a href="../modes/core.html">core mode</a> does not have.</p>
+<p>Any options that exist in Core mode also exist in UI mode, and, in most cases,
+can be overridden.</p>
+
+<div class="option row-fluid">
+    <h4 id="element"><a style="color: #f87436" href="#element">element</a></h4>
+    <span class="option-description row-fluid">
+        <p>Container element for the default drop zone</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="listElement"><a style="color: #f87436" href="#listElement">listElement</a></h4>
+    <span class="option-description row-fluid">
+        <p>Container element for the item list.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="multiple"><a style="color: #f87436" href="#multiple">multiple</a></h4>
+    <span class="option-description row-fluid">
+        <p>When <code>false</code> this will prevent the user from simultaneously selecting or dropping more than one item. Dropping or selecting another item will clear the upload list. If another is already uploading, it will be canceled. To ignore rather than cancel, simply return <code>false</code> in the 'validate' or 'submit' event handlers.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="showMessage"><a style="color: #f87436" href="#showMessage">showMessage</a></h4>
+    <span class="option-description row-fluid">
+        <p>Provide a function here to display a message to the user when the uploader receives an error or the user attempts to leave the page. The provided function may return a promise if one wishes to do asynchronous work whilst waiting for user input.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">function(message) { window.alert(message); }</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="showConfirm"><a style="color: #f87436" href="#showConfirm">showConfirm</a></h4>
+    <span class="option-description row-fluid">
+        <p>Provide a function here to prompt the user to confirm deletion of a file. The provided function may return a promise if one wishes to do asynchronous work whilst waiting for user input.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">function(message) { window.confirm(message); }</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="showPrompt"><a style="color: #f87436" href="#showPrompt">showPrompt</a></h4>
+    <span class="option-description row-fluid">
+        <p>Provide a function here to prompt the user for a filename when pasting file(s). The provided function may return a promise if one wishes to do asynchronous work whilst waiting for user input.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">function(message, defaultValue) { window.prompt(message, defaultValue); }</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+
+<div class="option row-fluid">
+    <h4 id="template"><a style="color: #f87436" href="#template">template</a></h4>
+    <span class="option-description row-fluid">
+        <p>This points to the container element that contains the template to use for one or more Fine Uploader UI instances.  You can either specify a string, which is the element ID (the ID of the container element on the page) or an <code>Element</code> that points to the container element.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-element">Element</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">qq-template</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="deleteFile"><a style="color: #00ABC7;" href="#deleteFile">deleteFile</a></h3>
+    <span class="option-description row-fluid">
+        <p>This section defines UI specific options for <a href="options.html#deleteFile">the core <code>deleteFile</code> option</a>.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.confirmMessage"><a style="color: #f87436" href="#deleteFile.confirmMessage">confirmMessage</a></h4>
+    <span class="option-description row-fluid">
+        <p>The message displayed in the confirm delete dialog.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Are you sure you want to delete {filename}?</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.deletingFailedText"><a style="color: #f87436" href="#deleteFile.deletingFailedText">deletingFailedText</a></h4>
+    <span class="option-description row-fluid">
+        <p>The status message to appear next to a file that has failed to delete.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Delete failed</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.deletingStatusText"><a style="color: #f87436" href="#deleteFile.deletingStatusText">deletingStatusText</a></h4>
+    <span class="option-description row-fluid">
+        <p>The status message to appear next to a file that is pending deletion.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Deleting...</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.forceConfirm"><a style="color: #f87436" href="#deleteFile.forceConfirm">forceConfirm</a></h4>
+    <span class="option-description row-fluid">
+        <p>If this value is set to <code>true</code>, the user will be required to confirm the file delete request via a confirmation dialog.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="display"><a style="color: #00ABC7;" href="#display">display</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="display.fileSizeOnSubmit"><a style="color: #f87436" href="#display.fileSizeOnSubmit">fileSizeOnSubmit</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable the display of the file size next to the file after it has been submitted.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="display.prependFiles"><a style="color: #f87436" href="#display.prependFiles">prependFiles</a></h4>
+    <span class="option-description row-fluid">
+        <p>When <code>true</code> batches of files are added to the top of the UI's file list. The default is to append file(s) to the bottom of the list.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="dragAndDrop"><a style="color: #00ABC7;" href="#dragAndDrop">dragAndDrop</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="dragAndDrop.extraDropzones"><a style="color: #f87436" href="#dragAndDrop.extraDropzones">extraDropzones</a></h4>
+    <span class="option-description row-fluid">
+        <p>Designate additional drop zones for file input.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">[]</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="dragAndDrop.reportDirectoryPaths"><a style="color: #f87436" href="#dragAndDrop.reportDirectoryPaths">reportDirectoryPaths</a></h4>
+    <span class="option-description row-fluid">
+        <p>Include the path of dropped files (starting with the top-level dropped directory).  This value will be sent along with the request as a qqpath parameter.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="failedUploadTextDisplay"><a style="color: #00ABC7;" href="#failedUploadTextDisplay">failedUploadTextDisplay</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.enableTooltip"><a style="color: #f87436" href="#failedUploadTextDisplay.enableTooltip">enableTooltip</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable a tooltip that will display the full contents of the error message when the mouse pointer hovers over the failed item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.mode"><a style="color: #f87436" href="#failedUploadTextDisplay.mode">mode</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set the message to display next to each failed file. One of: <code>'default'</code> which displays the <code>failedUploadText</code>, <code>'custom'</code> which displays the error response from the server, or <code>'none'</code> which displays no text.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">default</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.responseProperty"><a style="color: #f87436" href="#failedUploadTextDisplay.responseProperty">responseProperty</a></h4>
+    <span class="option-description row-fluid">
+        <p>The property from the server response that contains the error text to display next to a failed item. Ignored unless <code>mode</code> is <code>'custom'</code></p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">error</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="messages"><a style="color: #00ABC7;" href="#messages">messages</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.tooManyFilesError"><a style="color: #f87436" href="#messages.tooManyFilesError">tooManyFilesError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text sent to <a href="#showMessage"><code>showMessage</code></a> when <code>multiple</code> is <code>false</code> and more than one file is dropped at once.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">You may only drop one file.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.unsupportedBrowser"><a style="color: #f87436" href="#messages.unsupportedBrowser">unsupportedBrowser</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text displayed to users who have ancient browsers.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Unrecoverable error - the browser does not permit uploading of any kind.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p><code>messages</code> is also in the Core mode options. This section defines UI specific
+options for <code>messages</code></p>
+
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="retry"><a style="color: #00ABC7;" href="#retry">retry</a></h3>
+    <span class="option-description row-fluid">
+        <p>This section defines UI specific options for <a href="options.html#retry">the core <code>retry</code> option</a></p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.autoRetryNote"><a style="color: #f87436" href="#retry.autoRetryNote">autoRetryNote</a></h4>
+    <span class="option-description row-fluid">
+        <p>The text of the note that will optionally appear next to the item during automatic retry attempts. Ignored if <code>showAutoRetryNote</code> is false.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Retrying {retryNum}/{maxAuto} ...</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.showButton"><a style="color: #f87436" href="#retry.showButton">showButton</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable the showing of a button/link next to the failed item after all retry attempts have been exhausted. Clicking the button/link will force the uploader to make another attempt.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.showAutoRetryNote"><a style="color: #f87436" href="#retry.showAutoRetryNote">showAutoRetryNote</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable a status message appearing next to the item during auto retry attempts.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="thumbnails"><a style="color: #00ABC7;" href="#thumbnails">thumbnails</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.customResizer"><a style="color: #f87436" href="#thumbnails.customResizer">customResizer</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</p>
+<p>A <code>resizeInfo</code> object, which will be passed to the supplied function, contains the following properties:</p>
+<ul>
+<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
+<li><code>height</code> - Desired height of the image after the resize operation.</li>
+<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
+<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
+<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
+<li><code>width</code> - Desired width of the image after the resize operation.</li>
+</ul>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">undefined</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.maxCount"><a style="color: #f87436" href="#thumbnails.maxCount">maxCount</a></h4>
+    <span class="option-description row-fluid">
+        <p>Maximum number of previews to render per Fine Uploader instance.  A call to the reset method resets this value as well.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.timeBetweenThumbs"><a style="color: #f87436" href="#thumbnails.timeBetweenThumbs">timeBetweenThumbs</a></h4>
+    <span class="option-description row-fluid">
+        <p>The amount of time, in milliseconds, to pause between each preview generation process.  This is in place to prevent the UI thread from locking up for a continuously long period of time, as preview generation can be a resource-intensive process.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">750</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="thumbnails.placeholders"><a style="color: #00ABC7;" href="#thumbnails.placeholders">thumbnails.placeholders</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.placeholders.notAvailablePath"><a style="color: #f87436" href="#thumbnails.placeholders.notAvailablePath">notAvailablePath</a></h4>
+    <span class="option-description row-fluid">
+        <p>Absolute URL or relative path to the image to display if the preview/thumbnail could not be generated/displayed.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.placeholders.waitingPath"><a style="color: #f87436" href="#thumbnails.placeholders.waitingPath">waitingPath</a></h4>
+    <span class="option-description row-fluid">
+        <p>Absolute URL or relative path to the image to display during preview generation (modern browsers) or until the server response has been parsed (older browsers).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="thumbnails.placeholders.waitUntilResponse"><a style="color: #f87436" href="#thumbnails.placeholders.waitUntilResponse">waitUntilResponse</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to <code>true</code> if you want the 'waiting' placeholder image to remain in place until the server response has been parsed.  This is useful if you expect to return thumbnail URLs in your upload responses for files types that cannot be previewed.  This option is ignored in older browsers where client-side previews cannot be generated.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="paste"><a style="color: #00ABC7;" href="#paste">paste</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="paste.namePromptMessage"><a style="color: #f87436" href="#paste.namePromptMessage">namePromptMessage</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text that will appear in <a href="#showPrompt">the <code>showPrompt</code> dialog</a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Please name this image</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="paste.promptForName"><a style="color: #f87436" href="#paste.promptForName">promptForName</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable the usage of <a href="#showPrompt"><code>showPrompt</code></a> by Fine Uploader to prompt the user for a filename for a pasted file.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="scaling"><a style="color: #00ABC7;" href="#scaling">scaling</a></h3>
+    <span class="option-description row-fluid">
+        <p>See the <a href="../features/scaling.html">Upload Scaled Images feature page</a> for more details.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.failureText"><a style="color: #f87436" href="#scaling.failureText">failureText</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text that will appear next to a scaled image that could not be generated.  This is in addition to the behavior associated with this property provided by Fine Uploader Core.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Failed to scale</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.hideScaled"><a style="color: #f87436" href="#scaling.hideScaled">hideScaled</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to true if you do not want any scaled images to be displayed in the file list.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="text"><a style="color: #00ABC7;" href="#text">text</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="text.failUpload"><a style="color: #f87436" href="#text.failUpload">failUpload</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text that appears next to a failed item</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Upload failed</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="text.formatProgress"><a style="color: #f87436" href="#text.formatProgress">formatProgress</a></h4>
+    <span class="option-description row-fluid">
+        <p>Appears next to a currently uploading item</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">{percent}% of {total_size}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="text.paused"><a style="color: #f87436" href="#text.paused">paused</a></h4>
+    <span class="option-description row-fluid">
+        <p>Appears next to a paused item</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Paused</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="text.waitingForResponse"><a style="color: #f87436" href="#text.waitingForResponse">waitingForResponse</a></h4>
+    <span class="option-description row-fluid">
+        <p>Appears next to item once the last bytes have been sent (differs on the user-agent)</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Processing...</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/greenkeeper_uglify-js-2.8.11/_static/js/main.js"></script>
+        <script src="/branch/greenkeeper_uglify-js-2.8.11/_static/js/navbar.js"></script>
+
+        
+<script type="text/javascript">
+$(document).ready(function() {
+    renderOptionsSidebarNav(['ui']);
+});
+</script>
+
+
+
+    </body>
+</html>
