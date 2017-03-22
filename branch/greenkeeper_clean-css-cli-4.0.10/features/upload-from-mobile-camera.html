@@ -1,0 +1,368 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Upload From Mobile Camera | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/greenkeeper_clean-css-cli-4.0.10/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/greenkeeper_clean-css-cli-4.0.10/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/greenkeeper_clean-css-cli-4.0.10">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/greenkeeper_clean-css-cli-4.0.10/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_clean-css-cli-4.0.10">Current: 5.14.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/greenkeeper_clean-css-cli-4.0.10"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#camera">camera</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="upload-from-mobile-device-cameras">Upload from Mobile Device Cameras</h1>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>While uploads are possible from all mobile cameras, this option is relevant for iOS devices only!
+Note that due to limitations related to camera access in iOS, setting this to true will prevent you from selecting
+multiple files at once.</p>
+
+</div>
+
+<p>If you’d like to easily ensure camera access is available in iOS, your Fine Uploader instance would look something like this:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+  <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myFineUploader&quot;</span><span class="p">),</span>
+  <span class="nx">camera</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ios</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>The downside to setting the <code>camera.ios</code> property to <code>true</code> is that you will not be able to select multiple files at once.
+This is a limitation of iOS. If you really want to allow users to select multiple files and have camera access,
+you can create your own <code>&lt;input type="file" accept="image/*;capture=camera"&gt;</code> element, register an <code>onchange</code> handler,
+and pass the input element to Fine Uploader’s <a href="../api/methods.html#addFiles">addFiles API method</a> (in your onchange handler).
+This button will be used exclusively for camera access and the button provided by Fine Uploader will be used for multiple file selection.
+You would, of course, not set the <code>camera.ios</code> to <code>true</code> in this case. Here’s an example:</p>
+<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">cameraButtonContainer</span>
+<span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+    <span class="k">direction</span><span class="p">:</span> <span class="kc">ltr</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">cameraButtonContainer</span> <span class="p">.</span><span class="nc">ios</span>
+<span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">cameraButton</span>
+<span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">118</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+    <span class="k">opacity</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cameraButtonContainer&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;qq-upload-button&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Camera<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cameraButton&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;camera&quot;</span> <span class="na">accept</span><span class="o">=</span><span class="s">&quot;image/*;capture=camera&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myFineUploader&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+  <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myFineUploader&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">qq</span><span class="p">.</span><span class="nx">ios</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">qq</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;cameraButtonContainer&quot;</span><span class="p">)).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;ios&#39;</span><span class="p">);</span>
+
+  <span class="nx">qq</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;cameraButton&quot;</span><span class="p">)).</span><span class="nx">attach</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">uploader</span><span class="p">.</span><span class="nx">addFiles</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/greenkeeper_clean-css-cli-4.0.10/_static/js/main.js"></script>
+        <script src="/branch/greenkeeper_clean-css-cli-4.0.10/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
