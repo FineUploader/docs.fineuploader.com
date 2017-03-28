@@ -1,0 +1,354 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Retrying Uploads | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.18/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/greenkeeper_uglify-js-2.8.18/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/greenkeeper_uglify-js-2.8.18">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/greenkeeper_uglify-js-2.8.18/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/greenkeeper_uglify-js-2.8.18">Current: 5.14.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/greenkeeper_uglify-js-2.8.18"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#retry">retry</a></li>
+            
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-ui.html#retry">retry (UI)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#retry">retry</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/events.html"><b>Events</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/events.html#autoRetry">autoRetry</a></li>
+            
+        
+            
+                <li><a href="../api/events.html#manualRetry">manualRetry</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="retrying-uploads">Retrying Uploads</h1>
+<p>Fine Uploader will automatically attempt to retry an upload if the <code>enableAuto</code> option is set to <code>true</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="cm">/* other required config options left out for brevity */</span>
+
+    <span class="nx">retry</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">enableAuto</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">onAutoRetry</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">attemptNumber</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/greenkeeper_uglify-js-2.8.18/_static/js/main.js"></script>
+        <script src="/branch/greenkeeper_uglify-js-2.8.18/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
