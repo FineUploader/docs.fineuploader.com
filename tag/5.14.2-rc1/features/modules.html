@@ -1,0 +1,485 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Importing Fine Uploader | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.14.2-rc1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.14.2-rc1/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.14.2-rc1">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.14.2-rc1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.14.2-rc1">Current: 5.14.2-rc1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.14.2-rc1"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.2-rc1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="importing-fine-uploader">Importing Fine Uploader</h1>
+<p>You have the following options when pulling Fine Uploader into your project:</p>
+<ol>
+<li>CommonJS (<code>require</code>).</li>
+<li>ES6 Modules (<code>import</code>).</li>
+<li>Globally scoped (<code>&lt;script src="..."&gt;</code>)</li>
+</ol>
+<p>The first two options assume you are downloading <a href="https://www.npmjs.com/package/fine-uploader">Fine Uploader via npm</a>. However, all three options are available
+should you choose the download the library with npm. The <em>preferred</em> way to download Fine Uploader is in fact through npm.</p>
+<p>A new "lib" directory is available in the npm package. Among the JavaScript and placeholder image files, the three CSS files
+are available as well, but with different names. The legacy css file is named "legacy.css". Generally speaking, you should
+avoid using this stylesheet unless you have old code that depends on these styles. The "fine-uploader-new.css" stylsheet that contains
+a more modern set of styles for a row-based uploader has been appropriately named "rows.css". Finally, the "fine-uploader-gallery.css"
+stylesheet which supports a gallery view of submitted files is named "gallery.css". For more information about styling
+your uploader, please see <a href="styling.html">the styling feature page</a>.</p>
+<p>The following sections cover, in detail, the three options you have for importing Fine Uploader, once you have downloaded
+the library. They are ordered by preference.</p>
+<h2 id="es6-modules">ES6 Modules</h2>
+<p>At the writing of this feature page, the JavaScript modules specification is completed and part of the ECMAScript-262
+6th edition standard. However, at this time, no browser implements this specification. But there are still many options
+available to you should you choose to make use of ES6 modules when loading Fine Uploader into your project.
+Without native browser support, you must make use of a tool that compiles ES6 module syntax into a format that is
+parsable by all browsers. There are many such tools, but the more popular options are:</p>
+<ul>
+<li><a href="https://babeljs.io/">Babel</a> + <a href="http://webpack.github.io/">Webpack</a> v1</li>
+<li><a href="http://webpack.github.io/">Webpack</a> v2+</li>
+<li><a href="http://rollupjs.org/">Rollup</a></li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+</ul>
+<p>Importing your desired Fine Uploader resources is as simple as using <code>import</code> statements. For example:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader core (non-ui) for traditional endpoints</span>
+<span class="kr">import</span> <span class="nx">qq</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/core&#39;</span>
+
+<span class="kr">const</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+</pre></div>
+
+
+<p>You will find core builds for S3, Azure, and "all" in <code>lib/core/s3.js</code>, <code>lib/core/azure.js</code>,
+and <code>lib/core/all.js</code> (respectively)</p>
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader UI for traditional endpoints</span>
+<span class="kr">import</span> <span class="nx">qq</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader&#39;</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="kr">import</span> <span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span>
+
+<span class="kr">const</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader S3</span>
+<span class="kr">import</span> <span class="nx">qq</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/s3&#39;</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="kr">import</span> <span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span>
+
+<span class="kr">const</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader Azure</span>
+<span class="kr">import</span> <span class="nx">qq</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/azure&#39;</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="kr">import</span> <span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span>
+
+<span class="kr">const</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// allow use of Fine Uploader S3, Azure, and/or traditional endpoint code</span>
+<span class="kr">import</span> <span class="nx">qq</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/all&#39;</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="kr">import</span> <span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span>
+
+<span class="kr">const</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+<span class="kr">const</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+<span class="kr">const</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<h2 id="commonjs">CommonJS</h2>
+<p>If you would like to use <a href="http://requirejs.org/">RequireJS</a> or <a href="https://babeljs.io/">Babel</a> + <a href="http://webpack.github.io/">Webpack</a> v1, or even <a href="https://gitlab.com/Rich-Harris/buble">Bublé</a>, you will want
+to import Fine Uploader using the <code>require</code> function. Importing your desired Fine Uploader resources is as simple
+as using <code>require</code> statements. For example:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader core (non-ui) for traditional endpoints</span>
+<span class="kd">var</span> <span class="nx">qq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/core&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+</pre></div>
+
+
+<p>You will find core builds for S3, Azure, and "all" in <code>lib/core/s3.js</code>, <code>lib/core/azure.js</code>,
+and <code>lib/core/all.js</code> (respectively)</p>
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader UI for traditional endpoints</span>
+<span class="kd">var</span> <span class="nx">qq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader&#39;</span><span class="nx">_</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader S3</span>
+<span class="kd">var</span> <span class="nx">qq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/s3&#39;</span><span class="p">)</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader Azure</span>
+<span class="kd">var</span> <span class="nx">qq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/azure&#39;</span><span class="p">)</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// allow use of Fine Uploader S3, Azure, and/or traditional endpoint code</span>
+<span class="kd">var</span> <span class="nx">qq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/all&#39;</span><span class="p">)</span>
+
+<span class="c1">// You may replace &quot;rows&quot; w/ &quot;legacy&quot; or &quot;gallery&quot; depending on your needs</span>
+<span class="c1">// This assumes you have a loader to handle importing css files, such as Webpack css-loader</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fine-uploader/lib/rows.css&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+<span class="kd">var</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+<span class="kd">var</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+</pre></div>
+
+
+<h2 id="globally-scoped">Globally Scoped</h2>
+<p>The traditional way to pull Fine Uploader onto a page is to do so using <code>&lt;script&gt;</code> and <code>&lt;link&gt;</code> tags. Before version
+5.8.0, this was the <em>only</em> way to properly import Fine Uploader. The downside of this approach is that you are left with
+a global variable attached to <code>window</code> - <code>qq</code>. Importing Fine Uploader as a globally scoped object can be accomplished
+as follows:</p>
+<div class="codehilite"><pre><span></span><span class="c">&lt;!-- use Fine Uploader core (non-ui) for traditional endpoints --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;node_modules/fine-uploader/fine-uploader/fine-uploader.core.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+    <span class="p">}())</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>You will find similarly named core builds for S3, Azure, and "all" inside of each respective
+endpoint folder as well.</p>
+<div class="codehilite"><pre><span></span><span class="c">&lt;!-- use Fine Uploader UI for traditional endpoints --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;node_modules/fine-uploader/fine-uploader/fine-uploader.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;node_modules/fine-uploader/fine-uploader/fine-uploader-new.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+    <span class="p">}())</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c">&lt;!--</span> <span class="nx">use</span> <span class="nx">Fine</span> <span class="nx">Uploader</span> <span class="nx">S3</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.js&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/s3.fine-uploader/fine-uploader-new.css&quot;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">/&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+    <span class="p">}())</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c">&lt;!--</span> <span class="nx">use</span> <span class="nx">Fine</span> <span class="nx">Uploader</span> <span class="nx">Azure</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.js&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/azure.fine-uploader/fine-uploader-new.css&quot;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">/&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+    <span class="p">}())</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c">&lt;!--</span> <span class="nx">use</span> <span class="nx">Fine</span> <span class="nx">Uploader</span> <span class="nx">S3</span><span class="p">,</span> <span class="nx">Azure</span><span class="p">,</span> <span class="nx">or</span> <span class="nx">traditional</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.js&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;node_modules/fine-uploader/all.fine-uploader/fine-uploader-new.css&quot;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">/&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+        <span class="kd">var</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+        <span class="kd">var</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...})</span>
+    <span class="p">}())</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+
+<h2 id="amd">AMD</h2>
+<p>Support for loading Fine Uploader via the Asynchronous Module Definition API is technically possible, and the code
+<em>should</em> be in place to support this, but it is not <em>officially</em> supported at this time. Demand for this type of loading
+is small, and we don't have a use for this in any of our projects. If you do find any issues with AMD support, please
+file an issue. We would also love to have this section of the documentation expanded to cover AMD support.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.14.2-rc1/_static/js/main.js"></script>
+        <script src="/tag/5.14.2-rc1/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
