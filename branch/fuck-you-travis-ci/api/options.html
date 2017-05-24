@@ -1,0 +1,3656 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Core Options | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/fuck-you-travis-ci/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/fuck-you-travis-ci/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/branch/fuck-you-travis-ci/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/fuck-you-travis-ci">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/fuck-you-travis-ci/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/fuck-you-travis-ci">Current: 5.14.2</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/fuck-you-travis-ci"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.14.2</p></span>
+
+                
+
+                
+<div class="all-options">
+<div class="options-core">
+<h1 class="page-header" id="options-core">Options <small>Core</small></h1>
+<p>Fine Uploader has a <strong>plethora</strong> of options. Many of these options change meaning
+depending on what sort of uploader you are using. Pay close attention to the
+mode you are in and keep that in mind when determining the meaning of a particular option.</p>
+<h2 id="core_3">Core</h2>
+
+<div class="option row-fluid">
+    <h4 id="autoUpload"><a style="color: #f87436" href="#autoUpload">autoUpload</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set to <code>false</code> if you want to be able to upload queued items later by calling the <a href="methods.html#uploadStoredFiles"><code>uploadStoredFiles()</code> method</a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="button"><a style="color: #f87436" href="#button">button</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify an element to use as the 'select files' button. <a href="https://github.com/Widen/fine-uploader/issues/33">Cannot be a <code>&lt;button&gt;</code></a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="debug"><a style="color: #f87436" href="#debug">debug</a></h4>
+    <span class="option-description row-fluid">
+        <p>This will result in log messages being written to the <a href="https://developer.mozilla.org/en-USDOM/console.log"><code>window.console</code></a> object</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="disableCancelForFormUploads"><a style="color: #f87436" href="#disableCancelForFormUploads">disableCancelForFormUploads</a></h4>
+    <span class="option-description row-fluid">
+        <p>When true the cancel link does not appear next to files when the form uploader is used.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="formatFileName"><a style="color: #f87436" href="#formatFileName">formatFileName</a></h4>
+    <span class="option-description row-fluid">
+        <p>Provide a function to control the display of file names. The raw file name is passed into the function when it is invoked. Your function may return a modified file name. Note that this does not affect the <em>actual</em> file name, only the <em>displayed</em> file name.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function"></span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="maxConnections"><a style="color: #f87436" href="#maxConnections">maxConnections</a></h4>
+    <span class="option-description row-fluid">
+        <p>Maximum allowable concurrent requests</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">3</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="multiple"><a style="color: #f87436" href="#multiple">multiple</a></h4>
+    <span class="option-description row-fluid">
+        <p>When false this will prevent the user from simultaneously selecting or dropping more than one item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="blobs"><a style="color: #00ABC7;" href="#blobs">blobs</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="blobs.defaultName"><a style="color: #f87436" href="#blobs.defaultName">defaultName</a></h4>
+    <span class="option-description row-fluid">
+        <p>The default name to be used for nameless <code>Blob</code>s.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Misc data</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="camera"><a style="color: #00ABC7;" href="#camera">camera</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="camera.button"><a style="color: #f87436" href="#camera.button">button</a></h4>
+    <span class="option-description row-fluid">
+        <p><code>null</code> allows camera access on the default button in iOS. Otherwise provide an extra button container element to target.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="camera.ios"><a style="color: #f87436" href="#camera.ios">ios</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable camera access on iOS (iPod, iPhone, and iPad) devices. Note: Enabling this will disable multiple file selection.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <code>chunking.success.endpoint</code> option <strong>only</strong> applies to traditional upload endpoints (not S3, Azure, etc).</p>
+
+</div>
+<div class="option-parent row-fluid">
+    <h3 id="chunking"><a style="color: #00ABC7;" href="#chunking">chunking</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.concurrent.enabled"><a style="color: #f87436" href="#chunking.concurrent.enabled">concurrent.enabled</a></h4>
+    <span class="option-description row-fluid">
+        <p>Allow multiple chunks to be uploaded simultaneously per file</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.enabled"><a style="color: #f87436" href="#chunking.enabled">enabled</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable splitting the file separate chunks. Each chunks is sent in a separate request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.mandatory"><a style="color: #f87436" href="#chunking.mandatory">mandatory</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ensure <em>every</em> file is uploaded in chunks, even if the file can only be split up into 1 chunk.  Does not apply if chunking is not possible in the current browser.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.partSize"><a style="color: #f87436" href="#chunking.partSize">partSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum size of each chunk, in bytes.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">2000000</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.paramNames.chunkSize"><a style="color: #f87436" href="#chunking.paramNames.chunkSize">paramNames.chunkSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>Name of the parameter passed with a chunked request that specifies the size in bytes of the associated chunk.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqchunksize</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.paramNames.partByteOffset"><a style="color: #f87436" href="#chunking.paramNames.partByteOffset">paramNames.partByteOffset</a></h4>
+    <span class="option-description row-fluid">
+        <p>Name of the parameter passed with a chunked request that specifies the starting byte of the associated chunk.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqpartbyteoffset</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.paramNames.partIndex"><a style="color: #f87436" href="#chunking.paramNames.partIndex">paramNames.partIndex</a></h4>
+    <span class="option-description row-fluid">
+        <p>Name of the parameter passed with a chunked request that specifies the index of the associated partition.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqpartindex</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.paramNames.totalParts"><a style="color: #f87436" href="#chunking.paramNames.totalParts">paramNames.totalParts</a></h4>
+    <span class="option-description row-fluid">
+        <p>Name of the parameter passed with a chunked request that specifies the total number of chunks associated with the <code>File</code> or <code>Blob</code>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqtotalparts</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.endpoint"><a style="color: #f87436" href="#chunking.success.endpoint">success.endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>Endpoint to send a POST after all chunks have been successfully uploaded for each file.  Required if the <a href="#chunking.concurrent.enabled"><code>concurrent.enabled</code> option</a> is set.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="cors"><a style="color: #00ABC7;" href="#cors">cors</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.allowXdr"><a style="color: #f87436" href="#cors.allowXdr">allowXdr</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable cross-origin requests from IE9 and older where <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Note">XDomainRequest</a> must be used.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.expected"><a style="color: #f87436" href="#cors.expected">expected</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable cross-domain requests.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.sendCredentials"><a style="color: #f87436" href="#cors.sendCredentials">sendCredentials</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable sending credentials along with each cross-domain request. Ignored if <code>allowXdr</code> is <code>true</code> and IE9 is being used.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="deleteFile"><a style="color: #00ABC7;" href="#deleteFile">deleteFile</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.customHeaders"><a style="color: #f87436" href="#deleteFile.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional headers to attach to all delete file requests.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.enabled"><a style="color: #f87436" href="#deleteFile.enabled">enabled</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable deletion of uploaded files.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.endpoint"><a style="color: #f87436" href="#deleteFile.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>The endpoint to which delete file requests are sent.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">/server/upload</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.method"><a style="color: #f87436" href="#deleteFile.method">method</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set the method to use for delete requests. Accepts 'POST' or 'DELETE'</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">DELETE</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="deleteFile.params"><a style="color: #f87436" href="#deleteFile.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional parameters to attach to delete file requests.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="extraButtons"><a style="color: #00ABC7;" href="#extraButtons">extraButtons</a></h3>
+    <span class="option-description row-fluid">
+        <p>This must contain an array of objects. Each object will describe an “extra” button that Fine Uploader will track along with the default upload button. Each button object can contain the following properties:</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="extraButtons.element"><a style="color: #f87436" href="#extraButtons.element">element</a></h4>
+    <span class="option-description row-fluid">
+        <p>REQUIRED: The container element for the upload button.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">undefined</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="extraButtons.fileInputTitle"><a style="color: #f87436" href="#extraButtons.fileInputTitle">fileInputTitle</a></h4>
+    <span class="option-description row-fluid">
+        <p>This value will be used when creating the <code>title</code> attribute for the underlying <code>&lt;input type="file"&gt;</code>. If not provided, the <a href="#text.fileInputTitle"><code>text.fileInputTitle</code> option</a> will be used instead.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">file input</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="extraButtons.folders"><a style="color: #f87436" href="#extraButtons.folders">folders</a></h4>
+    <span class="option-description row-fluid">
+        <p><code>true</code> to allow folders to be selected, <code>false</code> to allow files to be selected. See the browser support page for details regarding the limited user agent support for this feature.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="extraButtons.multiple"><a style="color: #f87436" href="#extraButtons.multiple">multiple</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify to override the default <code>multiple</code> value.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="extraButtons.validation"><a style="color: #f87436" href="#extraButtons.validation">validation</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify to override the default <code>validation</code> option specified. Any <code>validation</code> properties not specified will be inherited from the default <code>validation</code> option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">`validation`</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="form"><a style="color: #00ABC7;" href="#form">form</a></h3>
+    <span class="option-description row-fluid">
+        <p>Override default values for form support.  See the <a href="../features/forms.html">form support</a> feature page for more details.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="form.element"><a style="color: #f87436" href="#form.element">element</a></h4>
+    <span class="option-description row-fluid">
+        <p>This can be the ID of the <code>&lt;form&gt;</code> or a reference to the <code>&lt;form&gt;</code> element.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label- htmlelement"> HTMLElement</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">qq-form</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="form.autoUpload"><a style="color: #f87436" href="#form.autoUpload">autoUpload</a></h4>
+    <span class="option-description row-fluid">
+        <p>If Fine Uploader is able to attach to a form, this value takes the place of the base <code>autoUpload</code> option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="form.interceptSubmit"><a style="color: #f87436" href="#form.interceptSubmit">interceptSubmit</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to <code>false</code> if you do not want Fine Uploader to intercept attempts to submit your form.  By default, Fine Uploader will intercept submit attempts and instead upload all submitted files, including data from your form in each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="messages"><a style="color: #00ABC7;" href="#messages">messages</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.emptyError"><a style="color: #f87436" href="#messages.emptyError">emptyError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if a submitted item is zero bits.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">{file} is empty, please select files again without it.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.maxHeightImageError"><a style="color: #f87436" href="#messages.maxHeightImageError">maxHeightImageError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if an image is too tall.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Image is too tall.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.maxWidthImageError"><a style="color: #f87436" href="#messages.maxWidthImageError">maxWidthImageError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if an image is too wide.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Image is too wide.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.minHeightImageError"><a style="color: #f87436" href="#messages.minHeightImageError">minHeightImageError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if an image is not tall enough.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Image is not tall enough.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.minWidthImageError"><a style="color: #f87436" href="#messages.minWidthImageError">minWidthImageError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if an image is not wide enough.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Image is not wide enough.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.minSizeError"><a style="color: #f87436" href="#messages.minSizeError">minSizeError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if the item is too small.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">{file} is too small, minimum file size is {minSizeLimit}.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.noFilesError"><a style="color: #f87436" href="#messages.noFilesError">noFilesError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if any empty array of items is submitted.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">No files to upload.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.onLeave"><a style="color: #f87436" href="#messages.onLeave">onLeave</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text displayed to the user when they attempt to leave the page while uploads are still in progress.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">The files are being uploaded, if you leave now the upload will be canceled.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.retryFailTooManyItemsError"><a style="color: #f87436" href="#messages.retryFailTooManyItemsError">retryFailTooManyItemsError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if a retry attempt is declared a failed due to a violation of <a href="#validation.itemLimit">the <code>validation.itemLimit</code> rule</a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Retry failed - you have reached your file limit.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.sizeError"><a style="color: #f87436" href="#messages.sizeError">sizeError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if a submitted item is too large.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">{file} is too large, maximum file size is {sizeLimit}.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.tooManyItemsError"><a style="color: #f87436" href="#messages.tooManyItemsError">tooManyItemsError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if a submit is ignored due to a violation of <a href="#validation.itemLimit">the <code>validation.itemLimit</code> rules</a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.typeError"><a style="color: #f87436" href="#messages.typeError">typeError</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text passed to the error event handler if an invalid file type is detected.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">{file} has an invalid extension. Valid extension(s): {extensions}.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="messages.unsupportedBrowserIos8Safari"><a style="color: #f87436" href="#messages.unsupportedBrowserIos8Safari">unsupportedBrowserIos8Safari</a></h4>
+    <span class="option-description row-fluid">
+        <p>Message displayed if the browser is iOS8 Safari and the corresponding workarounds option is not disabled.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Unrecoverable error - this browser does not permit file uploading of any kind due to serious bugs in iOS8 Safari.  Please use iOS8 Chrome until Apple fixes these issues.</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="paste"><a style="color: #00ABC7;" href="#paste">paste</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="paste.defaultName"><a style="color: #f87436" href="#paste.defaultName">defaultName</a></h4>
+    <span class="option-description row-fluid">
+        <p>The default name given to pasted images.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">pasted_image</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="paste.targetElement"><a style="color: #f87436" href="#paste.targetElement">targetElement</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable this feature by providing any <code>HTMLElement</code> here.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-htmlelement">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="resume"><a style="color: #00ABC7;" href="#resume">resume</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="resume.recordsExpireIn"><a style="color: #f87436" href="#resume.recordsExpireIn">recordsExpireIn</a></h4>
+    <span class="option-description row-fluid">
+        <p>The number of days before a persistent resume record will expire.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">7</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="resume.enabled"><a style="color: #f87436" href="#resume.enabled">enabled</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable the ability to resume failed or stopped chunked uploads.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="resume.paramNames.resuming"><a style="color: #f87436" href="#resume.paramNames.resuming">paramNames.resuming</a></h4>
+    <span class="option-description row-fluid">
+        <p>Sent with the first request of the resume with a value of <code>true</code>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqresume</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="retry"><a style="color: #00ABC7;" href="#retry">retry</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.autoAttemptDelay"><a style="color: #f87436" href="#retry.autoAttemptDelay">autoAttemptDelay</a></h4>
+    <span class="option-description row-fluid">
+        <p>The number of seconds to wait between auto retry attempts.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">5</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.enableAuto"><a style="color: #f87436" href="#retry.enableAuto">enableAuto</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable retrying uploads that receive any error response.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.maxAutoAttempts"><a style="color: #f87436" href="#retry.maxAutoAttempts">maxAutoAttempts</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum number of times to attempt to retry a failed upload.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">3</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="retry.preventRetryResponseProperty"><a style="color: #f87436" href="#retry.preventRetryResponseProperty">preventRetryResponseProperty</a></h4>
+    <span class="option-description row-fluid">
+        <p>This property will be looked for in the server response and, if found and <code>true</code>, will indicate that no more retries should be attempted for this item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">preventRetry</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="request"><a style="color: #00ABC7;" href="#request">request</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="request.customHeaders"><a style="color: #f87436" href="#request.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.endpoint"><a style="color: #f87436" href="#request.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>The endpoint to send upload requests to.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">/server/upload</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
+    <span class="option-description row-fluid">
+        <p>The name of the parameter passed if the original filename has been edited or a <code>Blob</code> is being sent.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfilename</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.forceMultipart"><a style="color: #f87436" href="#request.forceMultipart">forceMultipart</a></h4>
+    <span class="option-description row-fluid">
+        <p>Force all uploads to use multipart encoding</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.inputName"><a style="color: #f87436" href="#request.inputName">inputName</a></h4>
+    <span class="option-description row-fluid">
+        <p>The attribute of the input element which will contain the file name. For non-multipart-encoded upload requests, this will be included as a parameter in the query string of the URI with a value equal to the file name.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfile</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.method"><a style="color: #f87436" href="#request.method">method</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify a method to use when sending files to a traditional endpoint.  This option is ignored in older browsers (such as IE 9 and older).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">POST</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.params"><a style="color: #f87436" href="#request.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>The parameters that shall be sent with each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.paramsInBody"><a style="color: #f87436" href="#request.paramsInBody">paramsInBody</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enable or disable sending parameters in the request body. If <code>false</code>, parameters are sent in the URL. Otherwise, parameters are sent in the request body.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.uuidName"><a style="color: #f87436" href="#request.uuidName">uuidName</a></h4>
+    <span class="option-description row-fluid">
+        <p>The name of the parameter the uniquely identifies each associated item. The value is a <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29">Level 4 UUID</a>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qquuid</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.totalFileSizeName"><a style="color: #f87436" href="#request.totalFileSizeName">totalFileSizeName</a></h4>
+    <span class="option-description row-fluid">
+        <p>The name of the parameter passed that specifies the total file size in bytes.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqtotalfilesize</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="scaling"><a style="color: #00ABC7;" href="#scaling">scaling</a></h3>
+    <span class="option-description row-fluid">
+        <p>See the <a href="../features/scaling.html">Upload Scaled Images feature page</a> for more details.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.customResizer"><a style="color: #f87436" href="#scaling.customResizer">customResizer</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate scaling library, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</p>
+<div class="codehilite"><pre><span></span>A `resizeInfo` object, which will be passed to the supplied function, contains the following properties:
+</pre></div>
+
+
+<ul>
+<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
+<li><code>height</code> - Desired height of the image after the resize operation.</li>
+<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
+<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
+<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
+<li><code>width</code> - Desired width of the image after the resize operation.</li>
+</ul>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">undefined</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.defaultQuality"><a style="color: #f87436" href="#scaling.defaultQuality">defaultQuality</a></h4>
+    <span class="option-description row-fluid">
+        <p>A value between 1 and 100 that describes the requested quality of scaled images.  Ignored unless the scaled image type target is image/jpeg.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">80</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.defaultType"><a style="color: #f87436" href="#scaling.defaultType">defaultType</a></h4>
+    <span class="option-description row-fluid">
+        <p>Scaled images will assume this image type if you don't specify a specific type in your size object, or if the type specified in the size object is not valid.  You generally should not use any value other than image/jpeg or image/png here.  The default value of <code>null</code> will ensure the scaled image type is PNG, unless the original file is a JPEG, in which case the scaled file will also be a JPEG.  The default is probably the safest option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.failureText"><a style="color: #f87436" href="#scaling.failureText">failureText</a></h4>
+    <span class="option-description row-fluid">
+        <p>Text sent to your <code>complete</code> event handler as an <code>error</code> property of the <code>response</code> param if a scaled image could not be generated.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Failed to scale</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.includeExif"><a style="color: #f87436" href="#scaling.includeExif">includeExif</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ensure the EXIF data from the reference image is inserted into the scaled image.  Only applicable when both the reference and the target are type image/jpeg.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.orient"><a style="color: #f87436" href="#scaling.orient">orient</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to <code>false</code> if you do not want scaled images to be re-oriented based on parsed EXIF data before they are uploaded.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.sendOriginal"><a style="color: #f87436" href="#scaling.sendOriginal">sendOriginal</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to <code>false</code> if you don't want to original file to be uploaded as well.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="scaling.sizes"><a style="color: #f87436" href="#scaling.sizes">sizes</a></h4>
+    <span class="option-description row-fluid">
+        <p>An array containing size objects that describe scaled versions of each submitted image that should be generated and uploaded.  A size object should usually contain a <code>name</code> String property (which will be appended to the file name of the scaled file), and must always contain a <code>maxSize</code> integer property.  A <code>type</code> MIME string property is optional.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">[]</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="session"><a style="color: #00ABC7;" href="#session">session</a></h3>
+    <span class="option-description row-fluid">
+        <p>See the <a href="../features/session.html">Initial File List feature page</a> for more details.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="session.customHeaders"><a style="color: #f87436" href="#session.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional headers you would like included with the GET request sent to your server. Ignored in IE9 and IE8 if the endpoint is cross-origin.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="session.endpoint"><a style="color: #f87436" href="#session.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>If non-null, Fine Uploader will send a GET request on startup to this endpoint, expecting a JSON response containing data about the initial file list to populate.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="session.params"><a style="color: #f87436" href="#session.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any parameters you would like passed with the associated GET request to your server.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="session.refreshOnReset"><a style="color: #f87436" href="#session.refreshOnReset">refreshOnReset</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set this to <code>false</code> if you do not want the file list to be retrieved from the server as part of a reset.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="text"><a style="color: #00ABC7;" href="#text">text</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="text.defaultResponseError"><a style="color: #f87436" href="#text.defaultResponseError">defaultResponseError</a></h4>
+    <span class="option-description row-fluid">
+        <p>In the event of non-200 response from the server sans the 'error' property, this message will be passed to the 'error' event handler.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">Upload failure reason unknown</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="text.fileInputTitle"><a style="color: #f87436" href="#text.fileInputTitle">fileInputTitle</a></h4>
+    <span class="option-description row-fluid">
+        <p>The value for the <code>title</code> attribute attached to the <code>&lt;input type="file"&gt;</code> maintained by Fine Uploader for each upload button. This is used as hover text, among other things.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">file input</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="text.sizeSymbols"><a style="color: #f87436" href="#text.sizeSymbols">sizeSymbols</a></h4>
+    <span class="option-description row-fluid">
+        <p>Symbols used to represent file size, in ascending order.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">['kB', 'MB', 'GB', 'TB', 'PB', 'EB']</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="validation"><a style="color: #00ABC7;" href="#validation">validation</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.acceptFiles"><a style="color: #f87436" href="#validation.acceptFiles">acceptFiles</a></h4>
+    <span class="option-description row-fluid">
+        <p>Used by the file selection dialog. Restrict the valid file types that appear in the selection dialog by listing valid content-type specifiers here. See docs on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input">accept attribute of the <code>&lt;input&gt;</code> element</a></p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-comma-delimited list of valid mimetypes">Comma-delimited list of valid MIMEtypes</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-comma-delimited list of valid mimetypes">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.allowedExtensions"><a style="color: #f87436" href="#validation.allowedExtensions">allowedExtensions</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify file valid file extensions here to restrict uploads to specific types.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">[]</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.allowEmpty"><a style="color: #f87436" href="#validation.allowEmpty">allowEmpty</a></h4>
+    <span class="option-description row-fluid">
+        <p>Allow file size of 0 bytes</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.itemLimit"><a style="color: #f87436" href="#validation.itemLimit">itemLimit</a></h4>
+    <span class="option-description row-fluid">
+        <p>Maximum number of items that can be potentially uploaded in this session. Will reject all items that are added or retried after this limit is reached.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.minSizeLimit"><a style="color: #f87436" href="#validation.minSizeLimit">minSizeLimit</a></h4>
+    <span class="option-description row-fluid">
+        <p>The minimum allowable size, in bytes, for an item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.sizeLimit"><a style="color: #f87436" href="#validation.sizeLimit">sizeLimit</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum allowable size, in bytes, for an item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.stopOnFirstInvalidFile"><a style="color: #f87436" href="#validation.stopOnFirstInvalidFile">stopOnFirstInvalidFile</a></h4>
+    <span class="option-description row-fluid">
+        <p>When <code>true</code> the first invalid item will stop processing further files.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.image.maxHeight"><a style="color: #f87436" href="#validation.image.maxHeight">image.maxHeight</a></h4>
+    <span class="option-description row-fluid">
+        <p>Restrict images to a maximum height in pixels (wherever possible).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.image.maxWidth"><a style="color: #f87436" href="#validation.image.maxWidth">image.maxWidth</a></h4>
+    <span class="option-description row-fluid">
+        <p>Restrict images to a maximum width in pixels (wherever possible).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.image.minHeight"><a style="color: #f87436" href="#validation.image.minHeight">image.minHeight</a></h4>
+    <span class="option-description row-fluid">
+        <p>Restrict images to a minimum height in pixels (wherever possible).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="validation.image.minWidth"><a style="color: #f87436" href="#validation.image.minWidth">image.minWidth</a></h4>
+    <span class="option-description row-fluid">
+        <p>Restrict images to a minimum width in pixels (wherever possible).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">0</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="workarounds"><a style="color: #00ABC7;" href="#workarounds">workarounds</a></h3>
+    <span class="option-description row-fluid">
+        <p>Flags that enable or disable workarounds for browser-specific bugs.</p>
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="workarounds.iosEmptyVideos"><a style="color: #f87436" href="#workarounds.iosEmptyVideos">iosEmptyVideos</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ensures all <code>&lt;input type='file'&gt;</code> elements tracked by Fine Uploader do NOT contain a <code>multiple</code> attribute to work around an issue present in iOS7 &amp; 8 that otherwise results in 0-sized uploaded videos.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="workarounds.ios8BrowserCrash"><a style="color: #f87436" href="#workarounds.ios8BrowserCrash">ios8BrowserCrash</a></h4>
+    <span class="option-description row-fluid">
+        <p>Ensures all <code>&lt;input type='file'&gt;</code> elements tracked by Fine Uploader always have a <code>multiple</code> attribute present.  This only applies to iOS8 Chrome and iOS8 UIWebView, and is put in place to work around an issue that causes the browser to crash when a file input element does not contain a <code>multiple</code> attribute inside of a UIWebView container created by an iOS8 app compiled with and iOS7 SDK.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="workarounds.ios8SafariUploads"><a style="color: #f87436" href="#workarounds.ios8SafariUploads">ios8SafariUploads</a></h4>
+    <span class="option-description row-fluid">
+        <p>Disables Fine Uploader and displays a message to the user in iOS 8.0.0 Safari.  Due to serious bugs in iOS 8.0.0 Safari, uploading is not possible.  This was apparently fixed in subsequent builds of iOS8, so this workaround only targets 8.0.0.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+</div>
+</div>
+
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/fuck-you-travis-ci/_static/js/main.js"></script>
+        <script src="/branch/fuck-you-travis-ci/_static/js/navbar.js"></script>
+
+        
+<script>
+$(document).ready(function() {
+    renderOptionsSidebarNav(['core']);
+});
+</script>
+
+
+
+    </body>
+</html>
