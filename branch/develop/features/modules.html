@@ -226,7 +226,6 @@ parsable by all browsers. There are many such tools, but the more popular option
 <li><a href="https://babeljs.io/">Babel</a> + <a href="http://webpack.github.io/">Webpack</a> v1</li>
 <li><a href="http://webpack.github.io/">Webpack</a> v2+</li>
 <li><a href="http://rollupjs.org/">Rollup</a></li>
-<li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
 </ul>
 <p>Importing your desired Fine Uploader resources is as simple as using <code>import</code> statements. For example:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader core (non-ui) for traditional endpoints</span>
@@ -284,6 +283,53 @@ and <code>lib/core/all.js</code> (respectively)</p>
 </pre></div>
 
 
+<h2 id="typescript-angular-version-2-and-higher">TypeScript + Angular version 2 and higher</h2>
+<p>Importing Fine Uploader in TypeScript is very similar to ES6 import. The only difference being the global namespace <code>qq</code> is not available for TypeScript users.
+So the ES6 import syntax changes for TypeScript users as following:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader core (non-ui) for traditional endpoints</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FineUploaderBasic</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/core&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FineUploaderBasic</span><span class="p">({...})</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader UI for traditional endpoints</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FineUploader</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FineUploader</span><span class="p">({...});</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader S3</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">s3</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/s3&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...});</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1">// use Fine Uploader Azure</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">azure</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fine-uploader/lib/azure&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({...});</span>
+</pre></div>
+
+
+<p>Generating production bundles using Rollup?
+In your <code>rollup-config.js</code> (or whatever name your are using for rollup's config file) file, add the following under plugins property</p>
+<div class="codehilite"><pre><span></span><span class="nx">commonjs</span><span class="p">({</span>
+    <span class="nx">include</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s1">&#39;node_modules/rxjs/**&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;node_modules/fine-uploader/**&#39;</span>
+    <span class="p">],</span>
+    <span class="nx">namedExports</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;node_modules/fine-uploader/lib/traditional.js&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;FineUploader&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<p>If you are not using traditional Fine Uploader flavour, remember to change <code>node_modules/fine-uploader/lib/traditional.js</code> accordingly. 
+For example: for s3 Fine Uploader this should be <code>node_modules/fine-uploader/lib/s3.js</code></p>
 <h2 id="commonjs">CommonJS</h2>
 <p>If you would like to use <a href="http://requirejs.org/">RequireJS</a> or <a href="https://babeljs.io/">Babel</a> + <a href="http://webpack.github.io/">Webpack</a> v1, or even <a href="https://gitlab.com/Rich-Harris/buble">Bublé</a>, you will want
 to import Fine Uploader using the <code>require</code> function. Importing your desired Fine Uploader resources is as simple
