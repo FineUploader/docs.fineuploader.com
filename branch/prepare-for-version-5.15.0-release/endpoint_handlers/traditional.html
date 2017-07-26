@@ -1,0 +1,378 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Traditional Endpoint | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/prepare-for-version-5.15.0-release/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/prepare-for-version-5.15.0-release/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/prepare-for-version-5.15.0-release">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/prepare-for-version-5.15.0-release/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/prepare-for-version-5.15.0-release">Current: 5.15.0</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/prepare-for-version-5.15.0-release"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.15.0</p></span>
+
+                
+
+                
+<h1 class="page-header" id="traditional-uploader-server-side-notes-requirements">Traditional Uploader Server-Side Notes &amp; Requirements</h1>
+<p>In the <a href="https://github.com/FineUploader/server-examples">FineUploader/server-examples</a> repository you will find some code examples for different server platforms. If
+you can't find the one you need, please read the following on the server-side guidelines for handling multipart form requests and XHR upload requests in your
+language of choice.</p>
+<h2 id="handling-the-upload-requests">Handling the upload requests</h2>
+<p>By default Fine Uploader will send the file in the body of a multipart encoded
+POST request. Each request contains a UUID parameter.  By default, the name of this
+parameter is <code>qquuid</code>, but <a href="../api/options.html#request.uuidName">this is configurable in the <code>request</code> option section</a>.
+This parameter value should be used to uniquely identify the file, and the
+association between this UUID and the file should be maintained
+sever-side if you want to handle <a href="../features/delete.html">DELETE requests</a>, the <a href="../features/resume.html">resume feature</a>,
+or <a href="../features/chunking.html">chunking</a>.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>If chunking is enabled, the filename in the content-disposition header of the multipart file boundary will have a
+value of 'blob' so you will need to parse the value of the 'qqfilename' parameter in this case to determine the name
+of the associated file.</p>
+
+</div>
+
+<div class="alert alert-block alert-warning">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>iOS devices use 'image.jpg' for <strong>all</strong> image file names. Ensure to save your
+files with the UUID somewhere in that file's path to ensure users are not
+overwriting each others' files.</p>
+
+</div>
+
+<h2 id="response">Response</h2>
+<p>Your server should return a <a href="http://jsonlint.com/">valid JSON</a> response to <em>all</em> requests.  The content-type must be "text/plain"
+for older versions of Internet Explorer to work around an undesired behavior in the browser's handling of JSON responses.</p>
+<h3 id="example-values">Example values</h3>
+<ul>
+<li><code>{"success":true}</code> when upload was successful.</li>
+<li><code>{"success": false}</code> if not successful, no specific reason.</li>
+<li><code>{"error": "error message to display"}</code> if not successful, with a specific reason.</li>
+<li><code>{"success": false, "error": "error message to display", "preventRetry": true}</code> to prevent Fine Uploader from making
+any further attempts to retry uploading the file</li>
+<li><code>{"success": false, "error": "error message to display", "reset": true}</code> to fail this attempt and restart with the first chunk on the next attempt.  Only applies if chunking is enabled.
+Note that, if resume is also enabled, and this is the first chunk of a resume attempt, this will result in the upload starting with the first chunk immediately.</li>
+<li><code>{"success":true, "newUuid": "abc-def-ghi"}</code> When you would like to override the UUID for this file provided by Fine Uploader.</li>
+</ul>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>You can have additional custom properties in the response, but ensure that you include the 'success': true property
+for a successful response, or it will trigger the onError callback.</p>
+
+</div>
+
+<h2 id="file-chunkingpartitioning">File Chunking/Partitioning</h2>
+<p>If you have <a href="../features/chunking.html">file chunking</a> turned on, each file will be split up into chunks that are sent,
+in order, in separate requests. Note that <a href="../browser-support.html#feature-support-matrix">this feature is only supported in modern browsers</a>.</p>
+<p>On the server-side, you must acknowledge each chunked request just as you would a non-chunked request.  If your response does
+not indicate success, Fine Uploader will declare the entire file a failure.  If you have auto and/or manual retry enabled,
+Fine Uploader will retry beginning with the last failed chunk.</p>
+<p>You must temporarily store each partition server-side and then concatenate all parts (to arrive at the complete file) after
+the last part is sent.  See <a href="../api/options.html#chunking">the <code>paramNames</code> chunking sub-option</a> to see what specific
+parameters are sent by Fine Uploader along with each chunked request.  These parameters will be necessary to ensure you
+properly parse each chunked request.  You may order Fine Uploader to restart with the first chunk on a failed attempt
+by returning a <code>reset</code> property in your server response (with a value of <code>true</code>).  This is only applicable if <code>autoRetry</code>
+or <code>manualRetry</code> is enabled.</p>
+<p>You should make use of the UUID parameter, passed with each request, that uniquely identifies each file.  This may make it easier for you
+to avoid collisions during accumulation of chunks between files with the same name. Furthermore, you should <em>also</em> set the
+<a href="../api/options.html#chunking.success.endpoint">chunking.success.endpoint option</a>. Fine Uploader will send a POST to your
+endpoint when all chunks for a file have been <em>successfully</em> uploaded. This is the perfect opportunity to combine all chunks.</p>
+<h2 id="resuming-uploads-from-a-previous-session">Resuming Uploads From A Previous Session</h2>
+<p>There isn't much you need to do, server-side, to support file resume, other than what has been discussed in the file chunking
+section above.  You can determine if a resume has been ordered by looking for a <a href="../api/options.html#resume.paramNames.resuming">"qqresume" param</a>
+with a value of true.  This parameter will be sent with the first request of the resume attempt.</p>
+<p>It is important that you keep chunks around on the server until either the entire file has been uploaded
+and all chunks have been merged, or until the number of days specified in <a href="../api/options.html#resume.recordsExpireIn">the <code>recordsExpireIn</code> property of the resume option</a>
+have passed.  If, for some reason, you receive a request that indicates a resume has been ordered, and one or more of the previously uploaded
+chunks is missing or invalid, you can return a valid JSON response containing a "reset" property with a value of "true".  This will
+let Fine Uploader know that it should start the file upload from the first chunk instead of the last failed chunk.</p>
+<h2 id="deleting-files">Deleting Files</h2>
+<p>If you have enabled <a href="../features/delete.html">this feature</a>, you will need to handle the corresponding <code>DELETE</code> or <code>POST</code> requests server-side.
+The method is configurable via the <a href="../api/options.html#deleteFile.method"><code>method</code> property of the <code>deleteFile</code> option</a>.</p>
+<p>For DELETE requests, the UUID of the file to delete will be specified as the last element of the URI path.  Any custom parameters
+specified will be added to the query string.  For POST requests, the UUID is sent as a "qquuid" parameter, and a "_method"
+parameter is sent with a value of "DELETE".  All POST request parameters are sent in the request payload.</p>
+<p>Success of the request will depend solely on the response code.  Acceptable response codes that indicate success are 200,
+202, and 204 for DELETE requests and 200-204 for POST requests.</p>
+<p>If you would like to enable the delete file feature for cross-origin environments in IE9 or older, you will need to set
+<a href="../api/options.html#cors.allowXdr">the <code>allowXdr</code> property of the <code>cors</code> client-side option</a> and adjust your server-side
+code appropriately.  Keep in mind that the Content-Type will be absent from the request header, and credentials (cookies)
+and <a href="http://www.w3.org/TR/cors/#simple-header">non-simple headers</a> cannot be sent.</p>
+<h2 id="cors-support_1">CORS Support</h2>
+<p>As of version 3.3, <strong>C</strong>ross <strong>O</strong>rigin <strong>R</strong>esource <strong>S</strong>haring is supported.  For more details on how this works,
+limitations, and how to properly configure your server, please see the <a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/">blog post on CORS support</a>,
+or the <a href="../features/CORS.html">CORS feature page</a>.</p>
+<h2 id="providing-your-own-uuid-for-files">Providing your own UUID for files</h2>
+<p>If you would like to track files with your own generated UUID, you can return the new UUID for the file at any time in
+your server's response.  If chunking is enabled, it generally would be most prudent to return this new UUID in the response
+to the first or last chunk.  Once you return the new UUID in your response, Fine Uploader will update its client-side
+records and begin to use that UUID from that point forward.  New UUIDs must be returned as the value of a <code>newUuid</code> property.
+See the <a href="#values">values</a> section above for an example.</p>
+<h2 id="handling-an-overridden-filename">Handling an Overridden Filename</h2>
+<p>This may happen, for example, if <a href="../features/filename-edit.html">your user edits the file name</a>. Simply look for a
+"qqfilename" parameter.  If this exists in the request, be sure to use this when naming your file server-side.</p>
+<h2 id="thumbnails_1">Thumbnails</h2>
+<p>If you would like to override the client-side generated preview <a href="../browser-support.html#feature-support-matrix">(where supported)</a>
+or provide a thumbnail for a non-previewable file that you have generated server-side, you can do so by providing an absolute
+or relative path (URL) to this thumbnail in your response to the upload request via a <code>thumbnailUrl</code> property in your JSON response.  The
+URL may be cross-origin as well.  See the <a href="../features/thumbnails.html">previews/thumbnails feature page</a> for more
+information on this feature.</p>
+<h2 id="post-when-all-chunks-have-successfully-uploaded">POST when all chunks have successfully uploaded</h2>
+<p>You may specify a <a href="../api/options.html#chunking.success.endpoint"><code>chunking.success.endpoint</code></a> if you'd like your server to be called when all chunks
+have been successfully uploaded. See the section on the <a href="../features/concurrent-chunking.html#server-side-implications">chunking success call</a> for more details.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            <footer>
+    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
+</footer>
+
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/prepare-for-version-5.15.0-release/_static/js/main.js"></script>
+        <script src="/branch/prepare-for-version-5.15.0-release/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
