@@ -1355,7 +1355,7 @@ progress of all files in the batch.</p>
     <span class="event row-fluid">
     <h4 id="upload"><a style="color: #f87436;" href="#upload">onUpload</a></h4>
     <span class="event-description">
-        <p>Called just before an item begins uploading to the server. In asynchronous work must be performed,
+        <p>Called just before an item begins uploading to the server. If asynchronous work must be performed,
 you may return a Promise. To fail the upload, reject the Promise. Otherwise, resolve it.
 Additionally, you can pause the upload when resolving the Promise by passing an object
 with <code>{ pause: true }</code> to the resolve function.</p>
