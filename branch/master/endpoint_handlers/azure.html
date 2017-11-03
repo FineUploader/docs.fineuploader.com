@@ -219,7 +219,7 @@ handler if the value of <code>qq.supportedFeatures.ajaxUploading</code> is <code
 must make cross-origin requests to Azure.  You can <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn535601.aspx">read more about CORS configuration on
 the Azure developer site</a>.</p>
 <p>Unfortunately, CORS can only be configured via the Azure SDK/API.  The management console does not allow you
-to configure your container in this regard at this point.  The <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">Fine Uploader Azure C# example</a> covers CORS
+to configure your container in this regard at this point.  The <a href="https://github.com/FineUploader/fine-uploader-server/tree/master/C%23/azure">Fine Uploader Azure C# example</a> covers CORS
 configuration.</p>
 <p>A simple and typical CORS configuration would look like this:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;Cors&gt;</span>
@@ -264,7 +264,7 @@ server returns a 403, Fine Uploader Azure will not send the underlying request, 
 either.</p>
 <h4 id="returning-a-sas-uri">Returning a SAS URI</h4>
 <p>At this point, the simplest way to generate a SAS URI is to use the Microsoft Windows Azure Storage SDK server-side.
-See <a href="https://github.com/Widen/fine-uploader-server/tree/master/C%23/azure">our C# server-side example</a> for details.</p>
+See <a href="https://github.com/FineUploader/fine-uploader-server/tree/master/C%23/azure">our C# server-side example</a> for details.</p>
 <p>Once the SAS URI has been generated, simply return it in your response to Fine Uploader's signature request.</p>
 <h3 id="optional-server-side-tasks">Optional server-side tasks</h3>
 <p>If you would like Fine Uploader to notify your server when any file has been successfully uploaded to Azure, you should
@@ -311,10 +311,7 @@ for more information on this feature.</p>
 
             
             </div>
-            <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
-</footer>
-
+            
         </div> <!-- /container -->
         
 

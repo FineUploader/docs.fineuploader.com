@@ -206,7 +206,7 @@
 <strong>Q</strong>: Why can't I select multiple files at once in Android?</p>
 <p><strong>A</strong>: Android doesn't officially support the multiple attribute on file input elements.  I believe
 some builds of Android unofficially supported this, but I can't recall which specific versions.
-See case <a href="https://github.com/Widen/fine-uploader/issues/840">#840</a> for more details.</p>
+See case <a href="https://github.com/FineUploader/fine-uploader/issues/840">#840</a> for more details.</p>
 <p><br/>
 <strong>Q</strong>: I'm using core mode, but I don't want to write my own code to handle dropped files and folders.  Can
 I use the DnD module used by UI mode?</p>
@@ -250,7 +250,7 @@ Chrome.</p>
 in Chrome, Safari, &amp; Opera after the last byte has been sent but the server has yet to respond?</p>
 <p><strong>A:</strong> The implementation of the onProgress notification that tells us the status of the bytes sent to the server varies from browser to browser, unfortunately.
 Webkit browsers have elected to follow the "spirit" of the W3C spec, while Firefox, and (I believe) IE10, obey the spec in the most strict sense.  I have discussed
-this in some detail <a href="https://github.com/Widen/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
+this in some detail <a href="https://github.com/FineUploader/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
 <p><br/>
 <strong>Q:</strong> When chunking and multipart encoded are both enabled, why must I determine the original file's name by parsing the qqfilename parameter?</p>
 <p><strong>A:</strong> The file data is stored in one of the multipart boundaries contained in the request payload.  Normally, the
@@ -284,10 +284,7 @@ Fine Uploader via the <a href="api/options.html#button">button</a> or <a href="a
 
             
             </div>
-            <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
-</footer>
-
+            
         </div> <!-- /container -->
         
 
