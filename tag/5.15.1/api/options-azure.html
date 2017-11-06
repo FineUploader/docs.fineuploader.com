@@ -1,0 +1,904 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Azure Options | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.15.1/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.15.1/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/tag/5.15.1/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.15.1">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.1/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.15.1/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.1">Current: 5.15.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.15.1"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.15.1</p></span>
+
+                
+
+                
+<div class="all-options">
+<div class="options-azure-core">
+<h1 class="page-header" id="options-azure">Options <small>Azure</small></h1>
+<p>If you are using the Azure uploader, many of Fine Uploader's options are still
+present, and most of them still function the same way. However, some of the
+options are slightly different. This page will list any new or different options
+for the Azure uploader. Any option not listed here can be assumed to have the same
+behavior for the Traditional or Azure uploader.</p>
+<h2 id="core_1">Core</h2>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <a href="options.html#chunking"><code>chunking.paramNames</code> option</a> does <strong>not</strong> apply to Azure.</p>
+
+</div>
+<div class="option-parent row-fluid">
+    <h3 id="chunking"><a style="color: #00ABC7;" href="#chunking">chunking</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.partSize"><a style="color: #f87436" href="#chunking.partSize">partSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>The maximum size of each part, in bytes.  It is not recommenced you increase this value, as Azure will not accept parts larger than 4 MB.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">4000000</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.minFileSize"><a style="color: #f87436" href="#chunking.minFileSize">minFileSize</a></h4>
+    <span class="option-description row-fluid">
+        <p>Files smaller than this value will not be chunked.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">4000001</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="cors"><a style="color: #00ABC7;" href="#cors">cors</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="cors.allowXdr"><a style="color: #f87436" href="#cors.allowXdr">allowXdr</a></h4>
+    <span class="option-description row-fluid">
+        <p>Enables or disables cross-domain ajax calls (if <a href="options.html#core.expected"><code>expected</code> property</a> is true) in IE9 and older.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="blobProperties"><a style="color: #00ABC7;" href="#blobProperties">blobProperties</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="blobProperties.name"><a style="color: #f87436" href="#blobProperties.name">name</a></h4>
+    <span class="option-description row-fluid">
+        <p>Describes the blob name used to identify the file in your Azure Blob Storage container. Possible values are 'uuid', 'filename' or a function.  If the value is a function, Fine Uploader Azure will pass the associated file ID as a parameter when invoking your function. If the value is a function it may return one of a <a href="../features/async-tasks-and-promises.html"><code>qq.Promise</code></a> or a <code>String</code>.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">uuid</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <a href="options.html#resume"><code>resume.paramNames</code> option</a> does <strong>not</strong> apply to Azure.</p>
+
+</div>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>The <a href="options.html#request.customHeaders"><code>request.customHeaders</code> option</a> does <strong>not</strong> apply to Azure.</p>
+
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="request"><a style="color: #00ABC7;" href="#request">request</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="request.endpoint"><a style="color: #f87436" href="#request.endpoint">containerUrl</a></h4>
+    <span class="option-description row-fluid">
+        <p>URL for your Azure Blob Storage container.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.params"><a style="color: #f87436" href="#request.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Parameters passed along with each upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.filenameParam"><a style="color: #f87436" href="#request.filenameParam">filenameParam</a></h4>
+    <span class="option-description row-fluid">
+        <p>Part of the parameter name that contains the name of the associated file which may differ from the blob name. Prefixed with 'x-ms-meta-' by Fine Uploader.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">qqfilename</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="signature"><a style="color: #00ABC7;" href="#signature">signature</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.customHeaders"><a style="color: #f87436" href="#signature.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.  If you declare a function as the value, the associated file's ID will be passed to your function when it is invoked.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label- function"> Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="signature.endpoint"><a style="color: #f87436" href="#signature.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>The endpoint that Fine Uploader can use to send GET for a SAS before sending requests off to Azure.  The blob URL and underlying method type associated with the underlying REST request will be included in the query string.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<div class="option-parent row-fluid">
+    <h3 id="uploadSuccess"><a style="color: #00ABC7;" href="#uploadSuccess">uploadSuccess</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.customHeaders"><a style="color: #f87436" href="#uploadSuccess.customHeaders">customHeaders</a></h4>
+    <span class="option-description row-fluid">
+        <p>Additional headers sent along with each signature request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.endpoint"><a style="color: #f87436" href="#uploadSuccess.endpoint">endpoint</a></h4>
+    <span class="option-description row-fluid">
+        <p>An endpoint that Fine Uploader should POST to when a file has been successfully uploaded to Azure Blob Storage.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.method"><a style="color: #f87436" href="#uploadSuccess.method">method</a></h4>
+    <span class="option-description row-fluid">
+        <p>The request method (i.e. POST/PUT).</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">POST</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="uploadSuccess.params"><a style="color: #f87436" href="#uploadSuccess.params">params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Any additional parameters to attach to upload success file requests. Note that Fine Uploader will still send the blob name, container URL, filename, and UUID as well</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-object">{}</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+</div>
+
+
+<div class="options-azure-ui">
+<h2 id="ui_1">UI</h2>
+<div class="option-parent row-fluid">
+    <h3 id="failedUploadTextDisplay"><a style="color: #00ABC7;" href="#failedUploadTextDisplay">failedUploadTextDisplay</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="failedUploadTextDisplay.mode"><a style="color: #f87436" href="#failedUploadTextDisplay.mode">mode</a></h4>
+    <span class="option-description row-fluid">
+        <p>You will most likely want to keep this at the default value of 'custom'. See the UI options documentation for more info on this option.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">custom</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+</div>
+</div>
+
+
+
+                
+                </div>
+
+            
+            </div>
+            
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.15.1/_static/js/main.js"></script>
+        <script src="/tag/5.15.1/_static/js/navbar.js"></script>
+
+        
+<script>
+$(document).ready(function() {
+    console.log('herro')
+    renderOptionsSidebarNav(['azure-core', 'azure-ui']);
+});
+</script>
+
+
+
+    </body>
+</html>
