@@ -1,0 +1,2376 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Methods | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.15.2/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.15.2/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+<script src="/tag/5.15.2/_static/js/sidebar.js"></script>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.15.2">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.2/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.15.2/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.2">Current: 5.15.2</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.15.2"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+<div id="sidebar-accordion" class="accordion">
+</div>
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.15.2</p></span>
+
+                
+
+                
+<h1 class="page-header" id="methods-traditional">Methods <small>Traditional</small></h1>
+
+<div class="all-methods" data-spy="scroll" data-target="">
+<div class="methods-core">
+<h2 id="core">Core</h2>
+
+
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If you pass a large <code>Blob</code> that was created using JavaScript in the browser into <code>addFiles</code>, you should consider calling the <a href="#removeFileRef"><code>removeFileRef</code> method</a> after the file has been successfully uploaded to free up any memory consumed by the Blob.</p>
+
+</div>
+
+
+    <span class="method row-fluid">
+    <h4 id="addFiles"><a style="color: #f87436;" href="#addFiles">addFiles (files[, params[, endpoint]])</a></h4>
+    <span class="method-description">
+        <p>Submit one or more files to the uploader.</p>
+<p>A <code>BlobWrapper</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blob</td>
+<td align="left">the bytes of the <code>Blob</code> object being uploaded</td>
+</tr>
+<tr>
+<td>name</td>
+<td align="left">the name of the <code>Blob</code></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+A <code>CanvasWrapper</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canvas</td>
+<td align="left">the <code>&lt;canvas&gt;</code> to be converted to a file &amp; then uploaded</td>
+</tr>
+<tr>
+<td>name</td>
+<td align="left">the name to assign to the created file</td>
+</tr>
+<tr>
+<td>quality</td>
+<td align="left">1-100 value indicating the desired quality of the converted file (only for image/jpeg)</td>
+</tr>
+<tr>
+<td>type</td>
+<td align="left">MIME type of the file to create from this <code>&lt;canvas&gt;</code></td>
+</tr>
+</tbody>
+</table>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>files</em></dt>
+    <dd class="method-param-description span8"><p>An array of <code>File</code>s, <code>&lt;input&gt;</code>s, <code>Blob</code>s, <code>BlobWrapper</code> objects, <code>&lt;canvas&gt;</code>es, or <code>CanvasWrapper</code> objects. You may also pass in a <code>FileList</code>.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>params</em></dt>
+    <dd class="method-param-description span8"><p>A set of parameters to send with the file to be added</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>endpoint</em></dt>
+    <dd class="method-param-description span8"><p>The endpoint to send this file to</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="addInitialFiles"><a style="color: #f87436;" href="#addInitialFiles">addInitialFiles (initialFiles)</a></h4>
+    <span class="method-description">
+        <p>Submit one or more canned/initial files to the uploader. See the <a href="../features/session.html">Initial File List feature page</a> for more details.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>initialFiles</em></dt>
+    <dd class="method-param-description span8"><p>An array of objects that describe files already on the server.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="cancel"><a style="color: #f87436;" href="#cancel">cancel (id)</a></h4>
+    <span class="method-description">
+        <p>Cancel the queued or currently uploading item which corresponds to the <code>id</code>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file's id</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="cancelAll"><a style="color: #f87436;" href="#cancelAll">cancelAll ()</a></h4>
+    <span class="method-description">
+        <p>Cancels all queued or currently uploading items.</p>
+    </span>
+    
+    </dl>
+    
+    
+    <hr/>
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="clearStoredFiles"><a style="color: #f87436;" href="#clearStoredFiles">clearStoredFiles ()</a></h4>
+    <span class="method-description">
+        <p>Clears the internal list of stored items. Only applies when <a href="options.html#autoUpload"><code>autoUpload</code></a> is <code>false</code></p>
+    </span>
+    
+    </dl>
+    
+    
+    <hr/>
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="continueUpload"><a style="color: #f87436;" href="#continueUpload">continueUpload (id)</a></h4>
+    <span class="method-description">
+        <p>Attempts to continue a paused upload.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>A file id</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dd class="method-return-description span8">`true` if attempt was successful.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="deleteFile"><a style="color: #f87436;" href="#deleteFile">deleteFile (id)</a></h4>
+    <span class="method-description">
+        
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>Send a delete request to the server for the corresponding file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="drawThumbnail"><a style="color: #f87436;" href="#drawThumbnail">drawThumbnail (id, targetContainer[, maxSize[, fromServer[, customResizer]]])</a></h4>
+    <span class="method-description">
+        <p>Draws a thumbnail.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The id of the image file.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>targetContainer</em></dt>
+    <dd class="method-param-description span8"><p>The element where the image preview will be drawn. Must be either an <code>&lt;img&gt;</code> or <code>&lt;canvas&gt;</code> element.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>maxSize</em></dt>
+    <dd class="method-param-description span8"><p>The maximum dimensions (for width and height) you will allow this image to scale to.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>fromServer</em></dt>
+    <dd class="method-param-description span8"><p><code>true</code> if the image data will come as a response from the server rather than be generated client-side.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-function">function</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>customResizer</em></dt>
+    <dd class="method-param-description span8"><p>Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</p>
+<p>A <code>resizeInfo</code> object, which will be passed to the supplied function, contains the following properties:</p>
+<ul>
+<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
+<li><code>height</code> - Desired height of the image after the resize operation.</li>
+<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
+<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
+<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
+<li><code>width</code> - Desired width of the image after the resize operation.</li>
+</ul></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-promise">promise</span>
+
+</dd>
+    <dd class="method-return-description span8">Fulfilled by passing the container back into the success callback after the thumbnail has been rendered. If the thumbnail cannot be rendered, failure callbacks will be invoked instead, passing an object with `container` and `error` properties.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+    <span class="method row-fluid">
+    <h4 id="getButton"><a style="color: #f87436;" href="#getButton">getButton (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the button container element associated with a file</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dd class="method-return-description span8">The button container element associated with a file, or `undefined` if the file was not submitted via a Fine Uploader controlled upload button.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getFile"><a style="color: #f87436;" href="#getFile">getFile (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the file identified by the id. File API browsers only.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-file">File</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-blob">Blob</span>
+
+
+            
+        
+    
+
+</dd>
+    <dd class="method-return-description span8">A `File` or `Blob` object.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getEndpoint"><a style="color: #f87436;" href="#getEndpoint">getEndpoint ([id])</a></h4>
+    <span class="method-description">
+        <p>Returns the endpoint associated with a particular file, or the current catch-all endpoint for all files (if no ID is specified).</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The ID of the associated file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getInProgress"><a style="color: #f87436;" href="#getInProgress">getInProgress ()</a></h4>
+    <span class="method-description">
+        <p>Returns the number of items that are either currently uploading or waiting for an available connection (<code>qq.status.QUEUED</code>). If called inside of <a href="events.html#cancel">a <code>cancel</code> event</a> handler, then this method will return a value that includes the upload associated with the <code>cancel</code> event handler. This is because the upload will not be canceled until the event handler returns.</p>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">The number of items that are currently uploading or queued.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getName"><a style="color: #f87436;" href="#getName">getName (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the name of the file with the associated id.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">Returns the name of the file identified by the id.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getNetUploads"><a style="color: #f87436;" href="#getNetUploads">getNetUploads ()</a></h4>
+    <span class="method-description">
+        <p>Get the number of items that have been successfully uploaded and have not been deleted.</p>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">The number of items that have been successfully uploaded and not deleted.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getParentId"><a style="color: #f87436;" href="#getParentId">getParentId (scaledFileId)</a></h4>
+    <span class="method-description">
+        <p>Get the ID of the parent file for this scaled file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The ID of a scaled image file</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">Returns the ID of the scaled image's parent file.  `null` if this is not a scaled image or a parent cannot be located.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getRemainingAllowedItems"><a style="color: #f87436;" href="#getRemainingAllowedItems">getRemainingAllowedItems ()</a></h4>
+    <span class="method-description">
+        <p>Returns the numer of remaining allowed items that may be submitted for upload based on <a href="options.html#validation.itemLimit"><code>validation.itemLimit</code></a>.</p>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">The number of items that may be submitted for upload.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getResumableFilesData"><a style="color: #f87436;" href="#getResumableFilesData">getResumableFilesData ()</a></h4>
+    <span class="method-description">
+        <p>Returns an array of potentially resumable items. Each resumable is represented by an object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td align="left">filename</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td align="left">the unique id</td>
+</tr>
+<tr>
+<td><code>partIdx</code></td>
+<td align="left">the index of the part where the resume will start from</td>
+</tr>
+</tbody>
+</table>
+    </span>
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dd class="method-return-description span8">An array of resumable items. </dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getSize"><a style="color: #f87436;" href="#getSize">getSize (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the size of the item with the associated id.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">The size of the file with the corresponding id.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getUploads"><a style="color: #f87436;" href="#getUploads">getUploads (filter)</a></h4>
+    <span class="method-description">
+        <p>Return information about all the items that have been submitted to the uploader. The objects being iterated over will have the following properties: <code>id</code>, <code>uuid</code>, <code>originalName</code>, <code>name</code>, <code>status</code>, and <code>size</code>. For information on filtering via the filter parameter, see the <a href="http://docs.fineuploader.com/branch/master/features/statistics-and-status-updates.html">upload status feature page</a>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>filter</em></dt>
+    <dd class="method-param-description span8"><p>An object which indicates which keys and values must be present in an upload to be returned.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+
+            
+        
+    
+
+</dd>
+    <dd class="method-return-description span8">A list of items or a single item that has been filtered/found.  This returns an array only when
+        there is a potential for the operation to return more than one file in the result set. This excludes queries
+        for a specific, single ID or UUID. All other queries will return an array.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getUuid"><a style="color: #f87436;" href="#getUuid">getUuid (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the UUID of the item with the associated id.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The fild id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dd class="method-return-description span8">A level 4 UUID which identifies the corresponding file.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="log"><a style="color: #f87436;" href="#log">log (message[, level])</a></h4>
+    <span class="method-description">
+        <p>Output a message to the console, if possible.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>message</em></dt>
+    <dd class="method-param-description span8"><p>The message to print</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>level</em></dt>
+    <dd class="method-param-description span8"><p>The level to output the message at.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="pauseUpload"><a style="color: #f87436;" href="#pauseUpload">pauseUpload (id)</a></h4>
+    <span class="method-description">
+        <p>Attempts to pause an in-progress upload.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+    <dd class="method-return-description span8">`true` if the attempt was successful. `false` otherwise.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="removeFileRef"><a style="color: #f87436;" href="#removeFileRef">removeFileRef (id)</a></h4>
+    <span class="method-description">
+        
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>Remove internal reference to the associated Blob/File object. For Blobs that are created via JavaScript in the browser, this will free up all consumed memory.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="reset"><a style="color: #f87436;" href="#reset">reset ()</a></h4>
+    <span class="method-description">
+        <p>Reset Fine Uploader</p>
+    </span>
+    
+    </dl>
+    
+    
+    <hr/>
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="retry"><a style="color: #f87436;" href="#retry">retry (id)</a></h4>
+    <span class="method-description">
+        <p>Attempt to upload a specific item again.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="scaleImage"><a style="color: #f87436;" href="#scaleImage">scaleImage (id, options)</a></h4>
+    <span class="method-description">
+        <p>Generates a scaled version of a submitted image file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The id of the image file.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>options</em></dt>
+    <dd class="method-param-description span8"><p>Information about the scaled image to generate.  The following properties are supported:</p>
+<ul>
+<li><code>maxSize</code> (<strong>required</strong>) (integer).</li>
+<li><code>orient</code> (boolean, defaults to true)</li>
+<li><code>type</code> (string, defaults to the type of the reference image)</li>
+<li><code>quality</code> (number between 0 and 100, defaults to 80)</li>
+<li><code>includeExif</code> (boolean, defaults to <code>false</code>).</li>
+<li><code>customResizer</code> (function) - Ignored if the current browser does not <a href="../browser-support.html">support image previews</a>. If you want to use an alternate library to resize the image, you must contribute a function for this option that returns a <code>Promise</code>. Once the resize is complete, your promise must be fulfilled. You may, of course, reject your returned <code>Promise</code> is the resize fails in some way.</li>
+</ul>
+<p>A <code>resizeInfo</code> object, which will be passed to your (optional) <code>customResizer</code> function, contains the following properties:</p>
+<ul>
+<li><code>blob</code> - The original <code>File</code> or <code>Blob</code> object, if available.</li>
+<li><code>height</code> - Desired height of the image after the resize operation.</li>
+<li><code>image</code> - The original <code>HTMLImageElement</code> object, if available.</li>
+<li><code>sourceCanvas</code> - <code>HTMLCanvasElement</code> element containing the original image data (not resized).</li>
+<li><code>targetCanvas</code> - <code>HTMLCanvasElement</code> element containing the <code>HTMLCanvasElement</code> that should contain the resized image.</li>
+<li><code>width</code> - Desired width of the image after the resize operation.</li>
+</ul></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-promise">promise</span>
+
+</dd>
+    <dd class="method-return-description span8">Fulfilled by passing the scaled image as a `Blob` back into the success callback after the original image has been scaled. If the scaled image cannot be generated, the failure callback will be invoked instead.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setCustomHeaders"><a style="color: #f87436;" href="#setCustomHeaders">setCustomHeaders (customHeaders[, id])</a></h4>
+    <span class="method-description">
+        <p>Set custom headers for an upload request. Pass in a file id to make the headers specific to that file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>customHeaders</em></dt>
+    <dd class="method-param-description span8"><p>The custom headers to include in the upload request.  Fine Uploader may also send some other required headers.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setEndpoint"><a style="color: #f87436;" href="#setEndpoint">setEndpoint (path[, identifier])</a></h4>
+    <span class="method-description">
+        <p>Modify the location where upload requests should be directed. Pass in a file id to change the endpoint for that specific item.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>path</em></dt>
+    <dd class="method-param-description span8"><p>A valid URI where upload requests will be sent.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>identifier</em></dt>
+    <dd class="method-param-description span8"><p>An integer corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setDeleteFileCustomHeaders"><a style="color: #f87436;" href="#setDeleteFileCustomHeaders">setDeleteFileCustomHeaders (customHeaders[, id])</a></h4>
+    <span class="method-description">
+        <p>Set custom headers for a delete file request. Pass in a file id to make the headers specific to that file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>customHeaders</em></dt>
+    <dd class="method-param-description span8"><p>The custom headers to include in the delete request.  Fine Uploader may also send some other required headers.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setDeleteFileEndpoint"><a style="color: #f87436;" href="#setDeleteFileEndpoint">setDeleteFileEndpoint (path[, identifier])</a></h4>
+    <span class="method-description">
+        <p>Modify the location where <a href="../features/delete.html">delete requests</a> should be directed. Pass in a file id to change the endpoint for that specific item.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>path</em></dt>
+    <dd class="method-param-description span8"><p>A valid URI where delete requests will be sent.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>identifier</em></dt>
+    <dd class="method-param-description span8"><p>An integer corresponding to a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setDeleteFileParams"><a style="color: #f87436;" href="#setDeleteFileParams">setDeleteFileParams (params[, id])</a></h4>
+    <span class="method-description">
+        <p>Set the parameters for <a href="../features/delete.html">a delete request</a>. Pass in a file id to make the parameters specific to that file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>params</em></dt>
+    <dd class="method-param-description span8"><p>The parameters to include in the delete request.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setItemLimit"><a style="color: #f87436;" href="#setItemLimit">setItemLimit (newItemLimit)</a></h4>
+    <span class="method-description">
+        <p>Change <a href="options.html#validation.itemLimit">the <code>validation.itemLimit</code> option</a> set during construction/initialization.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newItemLimit</em></dt>
+    <dd class="method-param-description span8"><p>The new file count limit.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setForm"><a style="color: #f87436;" href="#setForm">setForm (formElementOrId)</a></h4>
+    <span class="method-description">
+        <p>Bind a <code>&lt;form&gt;</code> to Fine Uploader dynamically. See the <a href="../features/forms.html">form support feature page</a> for more details.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-htmlformelement">HTMLFormElement</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+            
+        
+    
+
+</dd>
+    <dt class="method-param-name span2"><em>formElementOrId</em></dt>
+    <dd class="method-param-description span8"><p>A form element or a form element's ID.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setName"><a style="color: #f87436;" href="#setName">setName (id, name)</a></h4>
+    <span class="method-description">
+        <p>Change the name of a file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>name</em></dt>
+    <dd class="method-param-description span8"><p>The new file name.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setParams"><a style="color: #f87436;" href="#setParams">setParams (params[, id])</a></h4>
+    <span class="method-description">
+        <p>Set the parameters for an upload request. Pass in a file id to make the parameters specific to that file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>params</em></dt>
+    <dd class="method-param-description span8"><p>The parameters to include in the upload request.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setUuid"><a style="color: #f87436;" href="#setUuid">setUuid (id, uuid)</a></h4>
+    <span class="method-description">
+        <p>Change the UUID of a file.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>uuid</em></dt>
+    <dd class="method-param-description span8"><p>The new file UUID.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="setStatus"><a style="color: #f87436;" href="#setStatus">setStatus (id, newStatus)</a></h4>
+    <span class="method-description">
+        <p>Modify the status of an file.</p>
+<p>The status values correspond to those found in the <code>qq.status</code> object. Currently, the following status values may be set via this method:</p>
+<ul>
+<li><code>qq.status.DELETED</code></li>
+<li><code>qq.status.DELETE_FAILED</code></li>
+</ul>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>newStatus</em></dt>
+    <dd class="method-param-description span8"><p>The new <code>qq.status</code> value.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="uploadStoredFiles"><a style="color: #f87436;" href="#uploadStoredFiles">uploadStoredFiles ()</a></h4>
+    <span class="method-description">
+        <p>Begin uploading all queued items. Throws a <code>NoFilesError</code> of there are no items to upload.</p>
+    </span>
+    
+    </dl>
+    
+    
+    <hr/>
+    
+</span>
+
+</div>
+
+<div class="methods-ui">
+<h2 id="ui">UI</h2>
+
+
+    <span class="method row-fluid">
+    <h4 id="addExtraDropzone"><a style="color: #f87436;" href="#addExtraDropzone">addExtraDropzone (element)</a></h4>
+    <span class="method-description">
+        <p>Mark <code>element</code> as a drop zone.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>element</em></dt>
+    <dd class="method-param-description span8"><p>The element to mark as a drop zone.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getDropTarget"><a style="color: #f87436;" href="#getDropTarget">getDropTarget (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the (drop zone) element where the file was dropped. Undefined if drop event was not involved.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The id of a file.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dd class="method-return-description span8">The drop zone element where the file as dropped.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getId"><a style="color: #f87436;" href="#getId">getId (element)</a></h4>
+    <span class="method-description">
+        <p>Returns the file <code>id</code> associated with an <code>HTMLElement</code>.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>element</em></dt>
+    <dd class="method-param-description span8"><p>Returns the ID of the associated file, given a file container element or a child of a file container element.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dd class="method-return-description span8">The id of the file.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="getItemByFileId"><a style="color: #f87436;" href="#getItemByFileId">getItemByFileId (id)</a></h4>
+    <span class="method-description">
+        <p>Returns the <code>HTMLElement</code> associated with the file id.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>id</em></dt>
+    <dd class="method-param-description span8"><p>The file id.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    <dl class="method-return row-fluid">
+        
+            <span class="method-return row-fluid">
+    <dt class="span2"><b>Returns:</b></dt>
+    <dd class="method-return-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dd class="method-return-description span8">The `HTMLElement` that is associated with the file id.</dd>
+</span>
+<hr/>
+        
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="method row-fluid">
+    <h4 id="removeExtraDropzone"><a style="color: #f87436;" href="#removeExtraDropzone">removeExtraDropzone (element)</a></h4>
+    <span class="method-description">
+        <p>Used to un-mark an <code>element</code> as a drop zone.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>element</em></dt>
+    <dd class="method-param-description span8"><p>The element to un-mark as a drop zone.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+</div>
+
+</div>
+
+
+                
+                </div>
+
+            
+            </div>
+            
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.15.2/_static/js/main.js"></script>
+        <script src="/tag/5.15.2/_static/js/navbar.js"></script>
+
+        
+<script type="text/javascript">
+$(document).ready(function() {
+    renderMethodsSidebarNav(['core', 'ui']);
+});
+</script>
+
+
+
+    </body>
+</html>
