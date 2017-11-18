@@ -1,0 +1,385 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>jQuery Plugin | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.15.4/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.15.4/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.15.4">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.4/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.15.4/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.4">Current: 5.15.4</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.15.4"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.15.4</p></span>
+
+                
+
+                
+<h1 class="page-header" id="jquery-plugin-wrapper">jQuery Plugin Wrapper</h1>
+<p><strong>While Fine Uploader provides wrapper code that integrates with jQuery while still allowing the integrator to choose
+between Core and UI modes, <a href="https://github.com/FineUploader/fine-uploader/issues/1310">there is no common benefit to using jQuery in the context of Fine Uploader</a>.</strong>
+However, if you prefer to use the jQuery wrapper, this page will serve as a guide, explaining the syntax differences between
+the jQuery wrapper and the core library (sans jQuery).</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>You must include jQuery and the jQuery wrapped version of Fine Uploader on your page if you wish to use jQuery-wrapped Fine Uploader.</p>
+
+</div>
+
+<p>The Fine Uploader jQuery wrapper has a couple of syntactical differences compared to the the unwrapped library.
+Also, some of the options are defined differently.  Note that all conventions commonly associated with jQuery
+plug-ins are followed faithfully here, so if you have worked with jQuery plug-ins before, this should all be quite intuitive.</p>
+<h2 id="working-with-html-elements">Working With HTML elements</h2>
+<p>When using the Fine Uploader jQuery plugin there is no need to specify <a href="../api/options-ui.html#element">the <code>element</code> option</a>. Instead,
+using the jQuery plugin syntax, you simply provide the element (or elements) you would like to associate with your
+Fine Uploader instance, like so:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// This will instantiate an instance of Fine Uploader on the page element</span>
+<span class="c1">// that has an `id` of &quot;fine-uploader&quot;.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="cm">/* options go here */</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>Fine Uploader's jQuery wrapper is smart enough to know you are using jQuery and allows you to
+pass in <code>jQuery</code> objects instead of <code>HTMLElement</code>s or <code>Node</code>s. In fact, the wrapper intercepts these jQuery objects
+and converts them to HTML <code>Element</code>s for use by the library.</p>
+<p>For example, if you specify <a href="../api/options.html#button">the <code>button</code> option</a>, the value can be <code>$("#myButton")</code>
+rather than <code>$("#myButton")[0]</code> or <code>document.getElementById("button")</code>.</p>
+<p>If the option takes an array of <code>HTMLElements</code>, any item in the array that is a jQuery object will be evaluated and
+all <code>HTMLElements</code> associated with that jQuery object will be added to the array when it is passed to Fine Uploader.
+For instance, if you specify a value for <a href="../api/options-ui.html#dragAndDrop.extraDropzones"><code>extraDropzones</code></a> which is <code>[$(".myExtraDropzone")]</code>, and the element
+contains three child elements, then the plugin will pass all three elements to Fine Uploader.</p>
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="cm">/* ... */</span>
+    <span class="nx">button</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#button&quot;</span><span class="p">),</span>
+    <span class="nx">dragAndDrop</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">extraDropzones</span><span class="o">:</span> <span class="p">[</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.dropzones&quot;</span><span class="p">)]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="uploader-type">Uploader Type</h2>
+<p>The Fine Uploader jQuery wrapper still provides integrators with a way to specify whether they are using core or
+UI mode by specifying an <code>uploaderType</code> option on instantiation. When the type is <code>'basic'</code> then core/basic mode
+is used, otherwise UI mode is assumed.</p>
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">uploaderType</span><span class="o">:</span> <span class="s1">&#39;basic&#39;</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="callbacks-and-events">Callbacks and Events</h2>
+<p>The biggest syntactical difference between the jQuery and non-jQuery plugin is the callback syntax.
+All callbacks defined in Fine Uploader are available to jQuery plugin users.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>When using the jQuery plugin, <strong>all</strong> event function handlers are passed an <code>event</code> parameter
+ as the <strong>first</strong> argument to your callback function.</p>
+
+</div>
+
+<div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s1">&#39;/upload/endpoint&#39;</span>
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">responseJSON</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>You may use traditional callback handler functions with the jQuery plug-in if you wish.
+If you do contribute traditional callback functions via <a href="../api/events.html">the <code>callbacks</code> option</a>, you should disregard everything on this
+page when writing code inside of your callback functions as this will bypass the jQuery plug-in entirely.
+Also, while it is possible to contribute two callbacks of the same type via a jQuery event handler and a <code>callbacks</code>
+option, you should be aware that the <code>callbacks</code> function will always be evaluated first, and the return value from
+the <code>callbacks</code> function will be accepted instead of the return value from the jQuery event handler if the return
+value of the <code>callbacks</code> function is non-null.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note:</h4>
+
+<p>When passing a jQuery object as the value for an option or API method parameter, all elements represented by the selector will
+be resolved IFF the expected data type is an array. Otherwise, only the first element matched by the selector will be used.
+For an example of the latter situation please see <a href="https://github.com/FineUploader/fine-uploader/issues/1375">case #1375 in the issue tracker</a>.</p>
+
+</div>
+
+<h2 id="api-methods">API Methods</h2>
+<p>All public API methods are also accessible when using the jQuery plugin, but, as with callbacks,
+there are a few syntactical differences.</p>
+<div class="codehilite"><pre><span></span><span class="c1">// To call a method on Fine Uploader, refer to it&#39;s jQuery object:</span>
+<span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;getStoredFiles&#39;</span><span class="p">)</span><span class="o">:</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cancel-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Trivial example to check if the 1st file registered with the uploader</span>
+    <span class="kd">var</span> <span class="nx">exists</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">(</span><span class="s1">&#39;doesExist&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="endpoint-handlers">Endpoint Handlers</h2>
+<p>The jQuery plugin cares not about what your endpoint is, but if you plan to use
+the S3 uploader rather than the traditional uploader, ensure that you are using
+the right plugin name:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Fine Uploader</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploader</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+
+<span class="c1">// Fine Uploader S3</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderS3</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+
+<span class="c1">// Fine Uploader Azure</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#fine-uploader&quot;</span><span class="p">).</span><span class="nx">fineUploaderAzure</span><span class="p">({</span> <span class="cm">/* options ... */</span> <span class="p">});</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.15.4/_static/js/main.js"></script>
+        <script src="/tag/5.15.4/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
