@@ -141,7 +141,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/feature_flexible-upload-support">Current: 5.16.0-beta.0</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/feature_flexible-upload-support">Current: 5.16.0-RC1</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -194,7 +194,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.16.0-beta.0</p></span>
+                    <span class="pull-right version-number"><p>5.16.0-RC1</p></span>
 
                 
 
@@ -252,12 +252,12 @@ query string of this request URI:</p>
 <ul>
 <li><code>_method</code>: The verb that will be used by Fine Uploader when it sends the associated request to Azure.
 Possible values are "DELETE" and "PUT" at this time.</li>
-<li><code>_bloburi</code>: The fully-qualified URI for the blob associated with the request that Fine Uploader will send to Azure.</li>
+<li><code>bloburi</code>: The fully-qualified URI for the blob associated with the request that Fine Uploader will send to Azure.</li>
 <li><code>qqtimestamp</code>: You can ignore this parameter.  It is simply used to ensure that the browser requests a fresh
 SAS URI from your server every time.</li>
 </ul>
 <h4 id="verification-before-returning-a-sas-uri">Verification before returning a SAS URI</h4>
-<p>Before you return a SAS URI, you might want to verify the <code>_bloburi</code> and <code>_method</code> to ensure that the associated
+<p>Before you return a SAS URI, you might want to verify the <code>bloburi</code> and <code>_method</code> to ensure that the associated
 user is allowed to perform the requested action on the associated blob.  If there is an issue, and your server
 does not want the requested operation to occur, your server should respond with a <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 status code</a>.  If your
 server returns a 403, Fine Uploader Azure will not send the underlying request, and will not attempt an auto-retry
