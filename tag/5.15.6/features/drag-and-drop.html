@@ -1,0 +1,735 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Drag and Drop | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/tag/5.15.6/_static/css/main.css" />
+        <link rel="stylesheet" href="/tag/5.15.6/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/tag/5.15.6">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/tag/5.15.6/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/tag/5.15.6/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/tag/5.15.6">Current: 5.15.6</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/tag/5.15.6"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-ui.html#dragAndDrop">dragAndDrop (UI)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#addExtraDropzone">addExtraDropzone</a></li>
+            
+        
+            
+                    <li><a href="../api/methods.html#removeExtraDropzone">removeExtraDropzone</a></li>
+            
+        
+            
+                
+                
+                    
+                    <li><a href="../api/methods.html#getDropTarget">getDropTarget (UI)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.15.6</p></span>
+
+                
+
+                
+<h1 class="page-header" id="drag-and-drop">Drag and Drop</h1>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If you want the contents of any drop zone to be invisible until an item enters the drop zone,
+simply ensure a <code>qq-hide-dropzone</code> attribute is present on the drop zone container.</p>
+
+</div>
+
+<p>Fine Uploader's UI mode has drag &amp; drop support built in.  The following contains information about the standalone
+support.  Here, you can find instructions that will allow you to easily integrate Fine Uploader's
+standalone drag &amp; drop module into your project if you are using Fine Uploader's core mode only. For more information
+about the integrated support, see the options and methods in the side nav bar of this page.</p>
+<div class="alert alert-block alert-default">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>If using the integrated drag &amp; drop feature of Fine Uploader UI, a <code>qqDropTarget</code> property is added to all <code>File</code>
+objects dropped into any drop zone. The value of this property points to the actual drop zone element.</p>
+
+</div>
+
+<div class="alert alert-block alert-default">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>While dragging and dropping of <em>files</em> is supported in many browsers,
+Dragging and dropping of <em>folders</em> is currently only supported in Chrome 21+ &amp; Opera 15+</p>
+
+</div>
+
+<h1 id="drag-and-drop-standalone-module">Drag and Drop Standalone Module</h1>
+<p>If you are integrating Fine Uploader and utilizing core mode,
+you are likely building you own UI entirely. In case you want to support drag
+and drop of folders and files, you probably don't want to re-invent the wheel, since
+Fine Uploader already has code to handle this in Fine Uploader mode.
+Fine Uploader's drag &amp; drop code has been moved into a standalone module, so
+it can be easily integrated into your Fine Uploader Core mode app
+(or even any non-Fine Uploader app). This following will explain how to utilize
+this module.</p>
+<div class="alert alert-block alert-info">
+
+<h4 class="alert-heading">Note</h4>
+
+<p>This module is aimed at Fine Uploader Core mode integrators only. If
+you are running this in UI mode, then take a look at the <code>dragAndDrop</code> Fine Uploader UI option.</p>
+
+</div>
+
+<h2 id="options">Options</h2>
+
+<div class="option row-fluid">
+    <h4 id="allowMultipleItems"><a style="color: #f87436" href="#allowMultipleItems">allowMultipleItems</a></h4>
+    <span class="option-description row-fluid">
+        <p>Set to <code>false</code> if you want to prevent the user from dropping more than one item at once.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+<div class="option row-fluid">
+    <h4 id="dropZoneElements"><a style="color: #f87436" href="#dropZoneElements">dropZoneElements</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify all container elements that should be treated as drop zones.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">[ ]</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option-parent row-fluid">
+    <h3 id="classes"><a style="color: #00ABC7;" href="#classes">classes</a></h3>
+    <span class="option-description row-fluid">
+        
+    </span>
+    
+    <div class="option row-fluid">
+    <h4 id="classes.dropActive"><a style="color: #f87436" href="#classes.dropActive">dropActive</a></h4>
+    <span class="option-description row-fluid">
+        <p>Specify a CSS class to apply to drop zone(s) when a file has entered it.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-string">''</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+</div>
+
+
+<h2 id="events_1">Events</h2>
+
+
+    <span class="event row-fluid">
+    <h4 id="processingDroppedFiles"><a style="color: #f87436;" href="#processingDroppedFiles">processingDroppedFiles</a></h4>
+    <span class="event-description">
+        <p>Invoked when the module has started processing the set of dropped files.</p>
+    </span>
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="processingDroppedFilesComplete"><a style="color: #f87436;" href="#processingDroppedFilesComplete">processingDroppedFilesComplete</a></h4>
+    <span class="event-description">
+        <p>Invoked when the module has finished processing.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>files</em></dt>
+    <dd class="method-param-description span8"><p>An array of processed files.  Note that a <code>qqPath</code> property will be added
+        to each <code>File</code> object that was dropped as part of a directory drop.  The value of this property
+        will be the path of the file starting with the dropped top-level directory.</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>dropTarget</em></dt>
+    <dd class="method-param-description span8"><p>The target where this event originated from.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="dropError"><a style="color: #f87436;" href="#dropError">dropError</a></h4>
+    <span class="event-description">
+        <p>Called when processing the drop fails for any reason.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>errorCode</em></dt>
+    <dd class="method-param-description span8"><p>The specific error code</p></dd>
+</span>
+<hr/>
+            
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>errorRelatedData</em></dt>
+    <dd class="method-param-description span8"><p>Data related to the error.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+
+    <span class="event row-fluid">
+    <h4 id="dropLog"><a style="color: #f87436;" href="#dropLog">dropLog</a></h4>
+    <span class="event-description">
+        <p>Invoked when a message is logged.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="event-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>message</em></dt>
+    <dd class="method-param-description span8"><p>The message to log.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+<h3 id="methods">Methods</h3>
+
+
+    <span class="method row-fluid">
+    <h4 id="dispose"><a style="color: #f87436;" href="#dispose">dispose</a></h4>
+    <span class="method-description">
+        <p>Tears down all drop zones associated with the dnd instance.</p>
+    </span>
+    
+    </dl>
+    
+    
+    <hr/>
+    
+</span>
+
+
+    <span class="method row-fluid">
+    <h4 id="setupExtraDropzone"><a style="color: #f87436;" href="#setupExtraDropzone">setupExtraDropzone</a></h4>
+    <span class="method-description">
+        <p>Call this to add an additional drop zone to the DnD instance. Not available if using the jQuery plug-in wrapper.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>element</em></dt>
+    <dd class="method-param-description span8"><p>THe HTMLElement where the dropzone will be rendered inside of.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+    <span class="method row-fluid">
+    <h4 id="removeDropzone"><a style="color: #f87436;" href="#removeDropzone">removeDropzone</a></h4>
+    <span class="method-description">
+        <p>Call this to remove a drop zone from the DnD instance. Not available if using the jQuery plug-in wrapper.</p>
+    </span>
+    
+    <h5>Parameters: </h5>
+    <dl class="method-params row-fluid">
+        
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-htmlelement">HTMLElement</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>element</em></dt>
+    <dd class="method-param-description span8"><p>THe HTMLElement where the dropzone will be remove from.</p></dd>
+</span>
+<hr/>
+            
+        
+    
+    </dl>
+    
+    
+</span>
+
+
+<h2 id="simple-example">Simple Example</h2>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">dragAndDropModule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">DragAndDrop</span><span class="p">({</span>
+        <span class="nx">dropZoneElements</span><span class="o">:</span> <span class="p">[</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myDropZone&#39;</span><span class="p">)],</span>
+        <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">dropActive</span><span class="o">:</span> <span class="s2">&quot;cssClassToAddToDropZoneOnEnter&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">processingDroppedFiles</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//TODO: display some sort of a &quot;processing&quot; or spinner graphic</span>
+          <span class="p">},</span>
+          <span class="nx">processingDroppedFilesComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">dropTarget</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//TODO: hide spinner/processing graphic</span>
+
+            <span class="nx">fineUploaderBasicInstance</span><span class="p">.</span><span class="nx">addFiles</span><span class="p">(</span><span class="nx">files</span><span class="p">);</span> <span class="c1">//this submits the dropped files to Fine Uploader</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}),</span>
+
+    <span class="nx">fineUploaderBasicInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploaderBasic</span><span class="p">({</span>
+    <span class="nx">request</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&quot;server/uploadHandler&quot;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</pre></div>
+
+
+                
+                </div>
+
+            
+            </div>
+            
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/tag/5.15.6/_static/js/main.js"></script>
+        <script src="/tag/5.15.6/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
