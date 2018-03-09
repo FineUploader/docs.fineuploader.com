@@ -143,7 +143,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.15.7</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.16.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -199,7 +199,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.15.7</p></span>
+                    <span class="pull-right version-number"><p>5.16.0</p></span>
 
                 
 
@@ -210,7 +210,7 @@
 <p>Fine Uploader has a <strong>plethora</strong> of options. Many of these options change meaning
 depending on what sort of uploader you are using. Pay close attention to the
 mode you are in and keep that in mind when determining the meaning of a particular option.</p>
-<h2 id="core_3">Core</h2>
+<h2 id="core_2">Core</h2>
 
 <div class="option row-fluid">
     <h4 id="autoUpload"><a style="color: #f87436" href="#autoUpload">autoUpload</a></h4>
@@ -414,6 +414,39 @@ mode you are in and keep that in mind when determining the meaning of a particul
     <h4 id="multiple"><a style="color: #f87436" href="#multiple">multiple</a></h4>
     <span class="option-description row-fluid">
         <p>When false this will prevent the user from simultaneously selecting or dropping more than one item.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+
+<div class="option row-fluid">
+    <h4 id="warnBeforeUnload"><a style="color: #f87436" href="#warnBeforeUnload">warnBeforeUnload</a></h4>
+    <span class="option-description row-fluid">
+        <p>When true Fine Uploader will ensure a modal confirmation dialog appears whenever a user tries to navigate away from the page with uploads in progress.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -676,7 +709,7 @@ mode you are in and keep that in mind when determining the meaning of a particul
     <div class="option row-fluid">
     <h4 id="chunking.partSize"><a style="color: #f87436" href="#chunking.partSize">partSize</a></h4>
     <span class="option-description row-fluid">
-        <p>The maximum size of each chunk, in bytes.</p>
+        <p>The maximum size of each chunk, in bytes. If a function value is provided, the file's ID will be passed when invoking the function (which should only be called once per file).</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -686,7 +719,31 @@ mode you are in and keep that in mind when determining the meaning of a particul
 
     
     
+        
+            
+                
+
+
+    
+    
     <span class="label label-integer">Integer</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+
+            
+        
+    
 
 </dd>
         </div>
@@ -698,7 +755,15 @@ mode you are in and keep that in mind when determining the meaning of a particul
 
     
     
+        
+
+
+    
+    
     <span class="label label-integer">2000000</span>
+
+
+    
 
 </dd>
         </div>
@@ -841,7 +906,138 @@ mode you are in and keep that in mind when determining the meaning of a particul
     <div class="option row-fluid">
     <h4 id="chunking.success.endpoint"><a style="color: #f87436" href="#chunking.success.endpoint">success.endpoint</a></h4>
     <span class="option-description row-fluid">
-        <p>Endpoint to send a POST after all chunks have been successfully uploaded for each file.  Required if the <a href="#chunking.concurrent.enabled"><code>concurrent.enabled</code> option</a> is set.</p>
+        <p>Endpoint to send a POST after all chunks have been successfully uploaded for each file.  Required if the <a href="#chunking.concurrent.enabled"><code>concurrent.enabled</code> option</a> is set. If a function value is provided, the file's ID will be passed when invoking the function.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+        
+            
+                
+
+
+    
+    
+    <span class="label label-string">String</span>
+
+
+                or
+            
+        
+            
+                
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+
+            
+        
+    
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+        
+
+
+    
+    
+    <span class="label label-string">null</span>
+
+
+    
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.headers"><a style="color: #f87436" href="#chunking.success.headers">success.headers</a></h4>
+    <span class="option-description row-fluid">
+        <p>Headers to send to with chunking success request. The file's ID will be passed to your provided function.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">function(fileId) { return null }</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.jsonPayload"><a style="color: #f87436" href="#chunking.success.jsonPayload">success.jsonPayload</a></h4>
+    <span class="option-description row-fluid">
+        <p>Send all parameters in the request body JSON-encoded. Otherwise params will be sent application/x-www-form-urlencoded.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.method"><a style="color: #f87436" href="#chunking.success.method">success.method</a></h4>
+    <span class="option-description row-fluid">
+        <p>HTTP method used when sending the success request.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -863,7 +1059,73 @@ mode you are in and keep that in mind when determining the meaning of a particul
 
     
     
-    <span class="label label-string">null</span>
+    <span class="label label-string">POST</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.params"><a style="color: #f87436" href="#chunking.success.params">success.params</a></h4>
+    <span class="option-description row-fluid">
+        <p>Parameters to send in the message body of the success request.  The file's ID will be passed to your provided function.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-function">Function</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-function">function(fileId) { return null }</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="chunking.success.resetOnStatus"><a style="color: #f87436" href="#chunking.success.resetOnStatus">success.resetOnStatus</a></h4>
+    <span class="option-description row-fluid">
+        <p>Fine Uploader will reset the file such that a retry will start at chunk 0 if the success response status matches any of the provided status codes.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-array">Array</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-array">[]</span>
 
 </dd>
         </div>
@@ -1990,9 +2252,9 @@ mode you are in and keep that in mind when determining the meaning of a particul
     </span>
     
     <div class="option row-fluid">
-    <h4 id="resume.recordsExpireIn"><a style="color: #f87436" href="#resume.recordsExpireIn">recordsExpireIn</a></h4>
+    <h4 id="resume.customKeys"><a style="color: #f87436" href="#resume.customKeys">customKeys</a></h4>
     <span class="option-description row-fluid">
-        <p>The number of days before a persistent resume record will expire.</p>
+        <p>Define custom keys used to identify this file among other resume records. The file's ID will be passed to your provided function.</p>
     </span>
     <dl>
         <div class="row-fluid">
@@ -2002,7 +2264,7 @@ mode you are in and keep that in mind when determining the meaning of a particul
 
     
     
-    <span class="label label-integer">Integer</span>
+    <span class="label label-function">Function</span>
 
 </dd>
         </div>
@@ -2014,7 +2276,7 @@ mode you are in and keep that in mind when determining the meaning of a particul
 
     
     
-    <span class="label label-integer">7</span>
+    <span class="label label-function">function(fileId) { return [] }</span>
 
 </dd>
         </div>
@@ -2081,6 +2343,39 @@ mode you are in and keep that in mind when determining the meaning of a particul
     
     
     <span class="label label-string">qqresume</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="resume.recordsExpireIn"><a style="color: #f87436" href="#resume.recordsExpireIn">recordsExpireIn</a></h4>
+    <span class="option-description row-fluid">
+        <p>The number of days before a persistent resume record will expire.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-integer">Integer</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-integer">7</span>
 
 </dd>
         </div>
@@ -2437,6 +2732,39 @@ mode you are in and keep that in mind when determining the meaning of a particul
 </div>
     
     <div class="option row-fluid">
+    <h4 id="request.omitDefaultParams"><a style="color: #f87436" href="#request.omitDefaultParams">omitDefaultParams</a></h4>
+    <span class="option-description row-fluid">
+        <p>If set to true, any Fine Uploader created parameters (qq*) will not be sent with the upload request.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">false</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
     <h4 id="request.params"><a style="color: #f87436" href="#request.params">params</a></h4>
     <span class="option-description row-fluid">
         <p>The parameters that shall be sent with each upload request.</p>
@@ -2473,6 +2801,39 @@ mode you are in and keep that in mind when determining the meaning of a particul
     <h4 id="request.paramsInBody"><a style="color: #f87436" href="#request.paramsInBody">paramsInBody</a></h4>
     <span class="option-description row-fluid">
         <p>Enable or disable sending parameters in the request body. If <code>false</code>, parameters are sent in the URL. Otherwise, parameters are sent in the request body.</p>
+    </span>
+    <dl>
+        <div class="row-fluid">
+            <dt class="span2"><b>Type:</b></dt>
+            <dd class="span10 option-type">
+
+
+    
+    
+    <span class="label label-boolean">Boolean</span>
+
+</dd>
+        </div>
+
+        <div class="row-fluid">
+            <dt class="span2"><b>Default Value:</b></dt>
+            <dd class="span10 option-default-value">
+
+
+    
+    
+    <span class="label label-boolean">true</span>
+
+</dd>
+        </div>
+    </dl>
+<hr>
+</div>
+    
+    <div class="option row-fluid">
+    <h4 id="request.requireSuccessJson"><a style="color: #f87436" href="#request.requireSuccessJson">requireSuccessJson</a></h4>
+    <span class="option-description row-fluid">
+        <p>If set to true, each upload response MUST contain a JSON message-body with {success: true} in order to be considered a success. If set to false, the success of the request is determined by examining the response status code.</p>
     </span>
     <dl>
         <div class="row-fluid">

@@ -143,7 +143,7 @@
                     <li class="dropdown">
                         <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
-                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.15.7</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/master">Current: 5.16.0</a></li>
                             
                                 <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
                             
@@ -198,7 +198,7 @@
                 </div>
 
                 <div class="span9 content">
-                    <span class="pull-right version-number"><p>5.15.7</p></span>
+                    <span class="pull-right version-number"><p>5.16.0</p></span>
 
                 
 
@@ -957,6 +957,22 @@ called if all files in the group have been cancelled or rejected (i.e. if none o
 <hr/>
             
         
+            
+                <span class="method-param row-fluid">
+    <dd class="method-param-type span2">
+
+
+    
+    
+    <span class="label label-object">Object</span>
+
+</dd>
+    <dt class="method-param-name span2"><em>customResumeData</em></dt>
+    <dd class="method-param-description span8"><p>Any custom resume data provided for this resumable file.</p></dd>
+</span>
+<hr/>
+            
+        
     
     </dl>
     
@@ -1339,7 +1355,10 @@ progress of all files in the batch.</p>
     <span class="event row-fluid">
     <h4 id="upload"><a style="color: #f87436;" href="#upload">onUpload</a></h4>
     <span class="event-description">
-        <p>Called just before an item begins uploading to the server.</p>
+        <p>Called just before an item begins uploading to the server. If asynchronous work must be performed,
+you may return a Promise. To fail the upload, reject the Promise. Otherwise, resolve it.
+Additionally, you can pause the upload when resolving the Promise by passing an object
+with <code>{ pause: true }</code> to the resolve function.</p>
     </span>
     
     <h5>Parameters: </h5>
@@ -1395,6 +1414,17 @@ progress of all files in the batch.</p>
 <li><code>startByte</code> - the byte offset of the current chunk.</li>
 <li><code>endByte</code> - the last byte of the current chunk.</li>
 <li><code>totalParts</code> - the total number of partitions associated with the <code>File</code> or <code>Blob</code>.</li>
+</ul>
+<p>Note that you can also return a Promise from this handler. To fail the upload, simply reject the Promise.
+Otherwise, resolve the Promise. Additionally, you can order Fine Uploader to use a specific
+endpoint, parameters, method, and headers for this specific chunk upload request simply
+by passing an object to the resolve function that contains values for those four request attributes.
+The following object properties may be passed to your resolve function to influence the chunk upload request:</p>
+<ul>
+<li><code>endpoint</code> - The endpoint to send the upload chunk request.</li>
+<li><code>headers</code> - Any headers to be included with the upload chunk request.</li>
+<li><code>method</code> - The HTTP method to use for the upload chunk request.</li>
+<li><code>params</code> - Any parameters to send in either the body or the URL of the upload chunk request (depending on if this is a multipart encoded request).</li>
 </ul>
     </span>
     
