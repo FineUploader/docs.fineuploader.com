@@ -666,7 +666,7 @@ as the API documentation. Both of these items (and more) are available in the to
     <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
         <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
-            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
         <span class="p">})</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -787,7 +787,7 @@ as the API documentation. Both of these items (and more) are available in the to
     <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
         <span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
-            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;uploader&quot;</span><span class="p">)</span>
         <span class="p">})</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -921,19 +921,19 @@ as the API documentation. Both of these items (and more) are available in the to
         <span class="c1">// For a traditional endpoint instance:</span>
         <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
         <span class="kd">var</span> <span class="nx">traditionalUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
-            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;traditional-uploader&quot;</span><span class="p">)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;traditional-uploader&quot;</span><span class="p">)</span>
         <span class="p">})</span>
 
         <span class="c1">// For an S3 endpoint instance:</span>
         <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
         <span class="kd">var</span> <span class="nx">s3Uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
-            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;s3-uploader&quot;</span><span class="p">)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;s3-uploader&quot;</span><span class="p">)</span>
         <span class="p">})</span>
 
         <span class="c1">// For an Azure endpoint instance:</span>
         <span class="c1">// Some options to pass to the uploader are discussed on the next page</span>
         <span class="kd">var</span> <span class="nx">azureUploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">azure</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
-            <span class="nx">element</span><span class="o">:</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;azure-uploader&quot;</span><span class="p">)</span>
+            <span class="nx">element</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;azure-uploader&quot;</span><span class="p">)</span>
         <span class="p">})</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -958,10 +958,7 @@ as the API documentation. Both of these items (and more) are available in the to
 
             
             </div>
-            <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
-</footer>
-
+            
         </div> <!-- /container -->
         
 

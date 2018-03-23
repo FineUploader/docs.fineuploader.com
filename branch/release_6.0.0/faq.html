@@ -206,7 +206,7 @@
 <strong>Q</strong>: Why can't I select multiple files at once in Android?</p>
 <p><strong>A</strong>: Android doesn't officially support the multiple attribute on file input elements.  I believe
 some builds of Android unofficially supported this, but I can't recall which specific versions.
-See case <a href="https://github.com/Widen/fine-uploader/issues/840">#840</a> for more details.</p>
+See case <a href="https://github.com/FineUploader/fine-uploader/issues/840">#840</a> for more details.</p>
 <p><br/>
 <strong>Q</strong>: I'm using core mode, but I don't want to write my own code to handle dropped files and folders.  Can
 I use the DnD module used by UI mode?</p>
@@ -234,11 +234,6 @@ These are all required to give you the best possible experience.</p>
 <p><strong>A:</strong> There is really no reason to use Safari for Windows.   Webkit is better represented on that platform in Chrome.
 Apple doesn't appear to be interested in maintaining Safari for Windows anymore either.  Switch to Chrome.</p>
 <p><br/>
-<strong>Q:</strong> Why isn't folder drag &amp; drop uploading supported in any browser other than Chrome 21+ &amp; Opera 15+?</p>
-<p><strong>A:</strong> Chrome 21 was the first browser version to implement the HTML5 Filesystem API.  This is required to handle dropped folders.
-Currently, no other browsers support this API.  Opera 15+ is based on Chromium as well, giving it feature parity with
-Chrome.</p>
-<p><br/>
 <strong>Q:</strong> I have created a <code>&lt;button&gt;</code> element for my uploader button, but this doesn't seem to work in IE.  Why?</p>
 <p><strong>A:</strong> In IE, the button element receives the click event, instead of the child input element.  Use a <code>&lt;div&gt;</code> or a <code>&lt;span&gt;</code> or an <code>&lt;a&gt;</code> instead. Be sure to add a <code>role</code> attribute with a value of "button" to this element for accessibility reasons.</p>
 <p><br/>
@@ -246,7 +241,7 @@ Chrome.</p>
 in Chrome, Safari, &amp; Opera after the last byte has been sent but the server has yet to respond?</p>
 <p><strong>A:</strong> The implementation of the onProgress notification that tells us the status of the bytes sent to the server varies from browser to browser, unfortunately.
 Webkit browsers have elected to follow the "spirit" of the W3C spec, while Firefox, and (I believe) IE10, obey the spec in the most strict sense.  I have discussed
-this in some detail <a href="https://github.com/Widen/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
+this in some detail <a href="https://github.com/FineUploader/fine-uploader/issues/404#issuecomment-10124160">in the "processing" status message feature case</a>.</p>
 <p><br/>
 <strong>Q:</strong> When chunking and multipart encoded are both enabled, why must I determine the original file's name by parsing the qqfilename parameter?</p>
 <p><strong>A:</strong> The file data is stored in one of the multipart boundaries contained in the request payload.  Normally, the
@@ -256,15 +251,6 @@ client-side, we are sending a <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">B
 requests.  When a Blob is added to a Fo.htmlata object, the user agent sets the content-disposition header for the associated
 multipart boundary in the request to "blob" (or sometimes an empty or random string).  As a result, we must
 pass the original file name in a parameter.</p>
-<p><br/>
-<strong>Q:</strong> How can I prevent users from dropping folders into browsers that do not support folder uploading?</p>
-<p><strong>A:</strong> There is no reliable way to prevent users from dropping folders into the drop zone of any browser other than
-Chrome 21+ &amp; Opera 15+, currently.  This is due to the fact that there is no way to reliably detect if a folder has been dropped
-unless the user agent implements the <a href="http://www.w3.org/TR/file-system-api/">Filesystem API</a>. Folder dropping is only
-supported in Chrome 21+ &amp; Opera 15+, since these are the only browsers that implement the Filesystem API.  You can parse the user
-agent string to determine if folder dropping is supported, and then inform your users in your application's UI.
-Theoretically, you could check for the appropriate function on the <a href="http://www.w3.org/TR/2011/WD-html5-20110113/dnd.html#the-datatransfer-interface">DataTransfer</a>
-object prototype, but this would not work cross-browser, since webkit does not expose this interface, unfortunately.</p>
 <p><br/>
 <strong>Q:</strong> Why are <code>&lt;input type="file"&gt;</code> elements I pass into the <code>addFiles</code> method removed from the DOM in IE9 and older?</p>
 <p><strong>A:</strong> Internally, Fine Uploader must move these input elements to a <code>&lt;form&gt;</code> that targets a hidden <code>&lt;iframe&gt;</code>.  This form is then
@@ -280,10 +266,7 @@ Fine Uploader via the <a href="api/options.html#button">button</a> or <a href="a
 
             
             </div>
-            <footer>
-    <p>Fine Uploader - &copy; 2013-present, <a href="http://www.widen.com/">Widen Enterprises, Inc.</a>.</p>
-</footer>
-
+            
         </div> <!-- /container -->
         
 
