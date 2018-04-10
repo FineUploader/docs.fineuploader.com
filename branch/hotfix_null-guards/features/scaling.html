@@ -1,0 +1,496 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <title>Upload Scaled Images | Fine Uploader Documentation</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="icon" href="/favicon.ico">
+        
+
+        
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>
+        
+        
+        <link rel="stylesheet" href="/branch/hotfix_null-guards/_static/css/main.css" />
+        <link rel="stylesheet" href="/branch/hotfix_null-guards/_static/css/pygments.css" />
+        
+
+        
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        
+
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="mobile navigation menu">
+                <span class="hide">mobile navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a class="brand" href="http://fineuploader.com/"><img style="margin-top: -10px; height: 20px" src="https://fineuploader.com/img/FineUploader_logo.png" alt="Fine Uploader logo"></a></li>
+                    <li><a href="/branch/hotfix_null-guards">Docs</a></li>
+                    <li><a href="https://blog.fineuploader.com/">Blog</a></li>
+
+                    <li class="dropdown">
+                        <button id="features-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Features <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="features-menu-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/async-tasks-and-promises.html">Async Tasks & Promises</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/azure.html">Azure Blob Storage Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/cancellable-uploads.html">Cancelling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/chunking.html">Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/concurrent-chunking.html">Concurrent Chunking</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/CORS.html">CORS</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/delete.html">Delete</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/drag-and-drop.html">Drag and Drop</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/handling-errors.html">Error Handling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/modules.html">ES6 & CommonJS Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/filename-edit.html">Filename Editing</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/forms.html">Form Support</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/session.html">Initial File Lists</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/extra-buttons.html">Multiple Upload Buttons</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/no-server-uploads.html">No-Server Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/paste-to-upload.html">Paste</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/pause.html">Pause In-Progress Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/progress-bars.html">Progress Bars</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/thumbnails.html">Previews & Thumbnails</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/request-parameters.html">Request Parameters</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/resume.html">Resuming</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/retry.html">Retrying</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/s3.html">S3 Uploads</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/statistics-and-status-updates.html">Stats & Status</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/styling.html">Styling</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/upload-files.html">Uploading</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/scaling.html">Upload Scaled Images</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/upload-from-mobile-camera.html">Upload via Mobile Camera</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/validation.html">Validation</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="api-menu-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">API <b class="caret"></b></button>
+                        <ul class="dropdown-menu api" role="menu" aria-labelledby="api-menu-trigger">
+                                <li><b>Options</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/options.html">Core</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/options-ui.html">UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/options-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/options-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Methods</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/methods.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/methods-s3.html">S3</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/methods-azure.html">Azure</a></li>
+                                <li class="divider"></li>
+                                <li><b>Events</b></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/events.html">Core & UI</a></li>
+                                <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/api/events-s3.html">S3</a></li>
+                                <li class="divider"></li>
+                                <li role="presentation"><a role="menuitem" style="margin-left: -20px;" href="/branch/hotfix_null-guards/api/qq.html">Utilities</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="servers-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Servers <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="servers-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/endpoint_handlers/traditional.html">Traditional</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/endpoint_handlers/amazon-s3.html">Amazon S3</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/endpoint_handlers/azure.html">Azure Blob Storage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button id="support-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Support <b class="caret"></b></button>
+                        <ul class="dropdown-menu support" role="menu" aria-labelledby="support-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/browser-support.html">Browsers</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/faq.html">FAQ</a></li>
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards/features/handling-errors.html">Handling Errors</a></li>
+                        </ul>
+                    </li>
+
+                    
+                        
+                    
+                    
+                    <li class="dropdown">
+                        <button id="version-dropdown-trigger" class="dropdown-toggle btn btn-link" data-toggle="dropdown">Version <b class="caret"></b></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="version-dropdown-trigger">
+                            <li role="presentation"><a role="menuitem" href="/branch/hotfix_null-guards">Current: 5.16.1</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/master">Stable</a></li>
+                            
+                                <li role="presentation"><a role="menuitem" href="/branch/develop">In Progress</a></li>
+                            
+                            <li role="presentation">
+                                <form class="tag-chooser">
+                                    <input class="tag-input" name="tag" placeholder="5.4.0">
+                                    <button class="btn btn-info">Go</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-right">
+                    <input type="hidden" name="sites" value="docs.fineuploader.com/branch/hotfix_null-guards"/>
+                    <!-- Header -->
+                    <input type="hidden" name="kj" value="#0088CC"/>
+                    <!-- Background -->
+                    <input type="hidden" name="k7" value="#FFFFFF"/>
+                    <!-- Text -->
+                    <input type="hidden" name="k8" value="#444444"/>
+                    <!-- Links -->
+                    <input type="hidden" name="k9" value="#0088CC"/>
+                    <!-- Visited Links -->
+                    <input type="hidden" name="kaa" value="#0088CC"/>
+                    <!-- URLS -->
+                    <input type="hidden" name="kx" value="#F87436"/>
+                    <!-- Font -->
+                    <input type="hidden" name="kt" value="h"/>
+                    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" class="span2" title="search documentation" style="margin-top: 4px;"/>
+                    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden; width: 0;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+        <div class="container-fluid">
+            <div class='row-fluid'>
+            
+
+                <div class="span2 sidebar">
+                
+
+<div class="sidebar">
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/options.html"><b>Options</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                <li><a href="../api/options.html#scaling">scaling</a></li>
+            
+        
+            
+                
+                
+                    
+                    <li><a href="../api/options-ui.html#scaling">scaling (UI)</a></li>
+                    
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a href="../api/methods.html"><b>Methods</b></a>
+        </div>
+        <div class="accordion-body">
+            <div class="accordon-inner">
+                <ul class="nav nav-list">
+        
+            
+                    <li><a href="../api/methods.html#getParentId">getParentId</a></li>
+            
+        
+            
+                    <li><a href="../api/methods.html#scaleImage">scaleImage</a></li>
+            
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+</div>
+
+
+
+                </div>
+
+                <div class="span9 content">
+                    <span class="pull-right version-number"><p>5.16.1</p></span>
+
+                
+
+                
+<h1 class="page-header" id="generate-and-upload-scaled-images">Generate and Upload Scaled Images</h1>
+<h3 id="overview_2">Overview</h3>
+<p>The scaling feature allows your server to breathe a bit easier as image scaling efforts are handled client-side
+by Fine Uploader.  If your users submit any image files that can be rendered natively by the current browser,
+Fine Uploader will create scaled versions and upload those as well.  You can tell Fine Uploader which sizes you would
+like it to generate and upload.  You can specify size-specific text to append to each scaled image name.  The scaled
+image can be correctly oriented by Fine Uploader before it is sent to your server.  You can also ensure only scaled
+images, and not the original image, are uploaded.  Finally, you can ask Fine Uploader to magically insert the
+EXIF data from the original image into each scaled image.</p>
+<p>Generating and uploading scaled versions of each submitted
+image can be as simple as specifying an array of objects with <code>name</code> and <code>maxSize</code> properties to indicate the scaled image
+file's name and maximum size, respectively.</p>
+<h3 id="basic-operation">Basic Operation</h3>
+<p>By default, Fine Uploader will send the original image file, along with any scaled versions you have requested via
+the <a href="../api/options.html#scaling.sizes"><code>scaling.sizes</code> option</a>.  Also, by default, all scaled versions will be correctly oriented before they
+are uploaded.</p>
+<p>You must provide a <code>sizes</code> array though.  For example:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">sizes</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">100</span><span class="p">},</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">300</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>The code above will result in Fine Uploader generating and uploading 2 scaled versions of each user-submitted
+image file.  The original, along with the 2 scaled versions, will appear in the UI's file list as well.  If the
+user submits a PNG named "image.png", that will be submitted, along with another file named "image (small).png",
+and "image (medium).png".</p>
+<p>The scaled versions will be scaled proportional to the original image.  In this case, the "small" version will
+be no more than 100px high or wide, and the "medium" version will be no more than 300px wide or high.</p>
+<p>Notice that the two scaled images do not initially have file sizes displayed in the UI.  This is due to the
+fact that Fine Uploader defers generation of these scaled versions until just before the images are going to be
+actually uploaded.  After a scaled image has been uploaded, the client-side generated version of this image is
+discarded to conserve browser memory.  Calls to the <a href="../api/methods.html#getFile"><code>getFile</code> API method</a> will return the associated
+original file, not the scaled version.  This is due to the fact that, again, the scaled version is not kept around
+any longer than necessary to conserve memory.  Also, generating a scaled version is an asynchronous operation, which
+would require the <a href="../api/methods.html#getFile"><code>getFile</code> API method</a> return a <a href="async-tasks-and-promises.html">promise</a>, introducing a breaking
+change to the API.  Once a scaled image has been generated, the UI (and <a href="statistics-and-status-updates.html">upload data store</a>) will be updated
+with the generated size.</p>
+<p>Fine Uploader ensures that a group of scaled images is always uploaded in order, smallest file first.
+The original file is always sent last.</p>
+<h3 id="only-upload-scaled-files">Only Upload Scaled Files</h3>
+<p>To conserve bandwidth, you may only want to upload smaller, scaled versions of an original image.  Simply set the
+<a href="../api/options.html#scaling.sendOriginal"><code>scaling.sendOriginal</code> option</a> to <code>false</code>.  The above example would be changed to:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">sendOriginal</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="nx">sizes</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">100</span><span class="p">},</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">300</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>If you instruct Fine Uploader to NOT send the original file, it will not be uploaded, represented in the
+UI, or represented in the <a href="statistics-and-status-updates.html">upload data store</a>.  Effectively, the original file will be transformed into
+the specified number of scaled versions.  However, it will still be accessible via any <a href="../api/methods.html">API methods</a>
+that require access to the original file for your convenience.  For example, calling <a href="../api/methods.html#getFile"><code>getFile</code></a>
+on a scaled image will still return the original file.</p>
+<h3 id="hide-scaled-files-in-ui-mode">Hide Scaled Files in UI Mode</h3>
+<p>If you do not want scaled versions to be represented in Fine Uploader UI's file list, simply set the Fine Uploader
+UI <a href="../api/options-ui.html#scaling.hideScaled"><code>scaling.hideScaled</code> option</a> to <code>true</code>.  Note that this will <em>only</em> ensure the scaled versions
+are not displayed in the UI.  They will still be uploaded and represented in the <a href="statistics-and-status-updates.html">upload data store</a>.
+Since they will not be represented in the UI, this means that they cannot be deleted, canceled, or manually retried
+via Fine Uploader's default UI.  Failures of these scaled versions will obviously not be apparent to users by
+default if you elect to hide them from the UI.</p>
+<h3 id="include-exif-headers-in-scaled-images">Include EXIF Headers in Scaled Images</h3>
+<p>If you set the <a href="../api/options.html#scaling.includeExif"><code>scaling.includeExif</code> option</a> to <code>true</code>, Fine Uploader will insert the EXIF header from the
+original image into each scaled image.  This option is ignored unless the original image AND the target (scaled)
+image are both of type "image/jpeg".</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">uploader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">qq</span><span class="p">.</span><span class="nx">FineUploader</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">includeExif</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+        <span class="nx">sizes</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">100</span><span class="p">},</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="nx">maxSize</span><span class="o">:</span> <span class="mi">300</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>In the above example, EXIF data from the original image will be inserted into both of the scaled images.
+Note that, by default, the scaled images will also be re-oriented according to the parsed Orientation tag in the
+original image.  If you don't want Fine Uploader to do this, you must set the <a href="../api/options.html#scaling.orient"><code>scaling.orient</code> option</a>
+to <code>false</code>.</p>
+<h3 id="supported-file-types">Supported File Types</h3>
+<p>Scaling can occur on JPEGs, BMPs, GIFs, and PNGs.  TIFFs are also supported, but only in Safari.  The output
+type is generally limited to JPEG and PNG.  If the original file type happens to be anything other than a JPEG,
+the output type will default to PNG.  JPEG original files will be converted to scaled JPEGs by default.
+You can override this via the <a href="../api/options.html#scaling"><code>scaling</code> option</a>, but you should probably not, unless you know
+what you are doing.</p>
+<h3 id="tracking-scaled-files-server-side">Tracking Scaled Files Server-Side</h3>
+<p>Fine Uploader will send request parameters along with some scaled files to make it easy for you to connect them to
+the original/parent file server-side and group them together.  "qqparentuuid" and "qqparentsize" parameters will be sent
+with each scaled image upload request.  These parameters link the scaled image to the parent/original image.  Note that
+the parent images will include a "qquuid" request parameter instead.  If you are using <a href="s3.html">Fine Uploader S3</a> or
+<a href="azure.html">Azure</a>, these parameters will be associated with the file in your bucket or blob container.</p>
+<h3 id="using-a-third-party-library-to-resize-images">Using a third-party library to resize images</h3>
+<p>Fine Uploader's internal image resize code delegates to the <code>drawImage</code> method on the browser's native <code>CanvasRenderingContext2D</code> object.
+This object is used to manipulate a <code>&lt;canvas&gt;</code> element, which represents a submitted image <code>File</code> or <code>Blob</code>.
+Most browsers use linear interpolation when resizing images. This can lead to extreme aliasing and moire patterns
+which is a deal breaker for anyone resizing images for art/photo galleries, albums, etc.
+These kinds of artifacts are impossible to remove after the fact.</p>
+<p>If speed is most important, and precise scaled image generation is <em>not</em> paramount, you should continue to use Fine Uploader's
+internal scaling implementation. However, if you want to generate higher quality scaled images for upload, you should
+instead use a third-party library to resize submitted image files, such as <a href="https://github.com/nodeca/pica">pica</a> or <a href="https://github.com/danschumann/limby-resize">limby-resize</a>. As of version 5.10 of
+Fine Uploader, it is extremely easy to integrate such a plug-in into this library. In fact, Fine Uploader will continue
+to properly orient the submitted image file and then pass a properly sized <code>&lt;canvas&gt;</code> to the image scaling library of
+your choice to receive the resized image file, along with the original full-sized image file drawn onto a <code>&lt;canvas&gt;</code> for reference.
+The only caveat is that, due to issues with scaling larger images in iOS, you may need to continue to use
+Fine Uploader's internal scaling algorithm for that particular OS, as other third-party scaling libraries
+most likely do <em>not</em> contain logic to handle this complex case. Luckily, that is easy to account for as well.</p>
+<p>If you'd like to, for example, use pica to generate higher-quality scaled images, simply pull pica into your project,
+and contribute a <a href="../api/options.html#scaling.customResizer"><code>scaling.customResizer</code> function</a>, like so:</p>
+<div class="codehilite"><pre><span></span><span class="nx">scaling</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">customResizer</span><span class="o">:</span> <span class="o">!</span><span class="nx">qq</span><span class="p">.</span><span class="nx">ios</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="kd">function</span><span class="p">(</span><span class="nx">resizeInfo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">pica</span><span class="p">.</span><span class="nx">resizeCanvas</span><span class="p">(</span><span class="nx">resizeInfo</span><span class="p">.</span><span class="nx">sourceCanvas</span><span class="p">,</span> <span class="nx">resizeInfo</span><span class="p">.</span><span class="nx">targetCanvas</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">resolve</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>That's it! The above code will result in a higher-quality scaled image, and pica even pushes resizing logic off to a
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">web worker</a> to reduce strain on the UI thread.</p>
+<h3 id="notices">Notices</h3>
+<ul>
+<li>
+<p>Do not set the <a href="../api/options-ui.html#scaling.hideScaled"><code>scaling.hideScaled</code> option</a> to <code>true</code> AND the <a href="../api/options.html#scaling.sendOriginal"><code>scaling.sendOriginal</code> option</a>
+to <code>false</code> at the same time.  This will result in no files being represented in the UI for images that are scalable.</p>
+</li>
+<li>
+<p>Scaled files hidden from the UI when the <a href="../api/options-ui.html#scaling.hideScaled"><code>scaling.hideScaled</code> option</a> is set to <code>true</code> cannot be
+canceled, manually retried, or deleted via the UI, since they are not represented in the UI.</p>
+</li>
+<li>
+<p>Be very careful when specifying a value for <a href="../api/options.html#scaling.defaultType"><code>scaling.defaultType</code></a>, or a <code>type</code> property for one of your
+<a href="../api/options.html#scaling.sizes"><code>scaling.sizes</code> objects</a>.  The only safe values are <code>null</code> (the default), "image/jpeg", and "image/png".  Other
+target types may not be supported by all browsers.</p>
+</li>
+<li>
+<p>Be careful if you set the <a href="../api/options.html#validation.itemLimit"><code>validation.itemLimit</code> option</a>.  Each Scaled image file will count towards
+this item limit.</p>
+</li>
+<li>
+<p>Client-side scaling and EXIF header re-insertion operations can potentially be very resource-intensive.
+Please keep this in mind before you enable this feature, taking into account your user base and application goals.</p>
+</li>
+<li>
+<p>iOS limits the size of a <code>&lt;canvas&gt;</code> to  about 5 megapixels.  Any image larger than this will be rendered as a
+blank <code>&lt;canvas&gt;</code>.  This affects scaling as Fine Uploader uses <code>&lt;canvas&gt;</code> in part of the scaling process.  To
+overcome this issue, Fine Uploader will further downsample scaled images that exceed this limit.  You can check to
+see if such a limitation is known by examining the <code>qq.supportedFeatures.unlimitedScaledImageSize</code> flag.</p>
+</li>
+<li>
+<p>The scaled file names will be sent with the upload request as the <code>qqfilename</code> parameter.
+Be sure to read this parameter when naming your file server-side.</p>
+</li>
+</ul>
+<h3 id="supported-browsers">Supported Browsers</h3>
+<p>This feature is supported on all browsers other than IE9 and older, Android 2.4 or older, and Safari 5.1 or older.
+Note that Android's stock browser is also not supported, due to multiple long-standing bugs in that browser with
+Blobs and data URIs.  Chrome on Android is supported, though.</p>
+
+
+                
+                </div>
+
+            
+            </div>
+            
+        </div> <!-- /container -->
+        
+
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+            <!--
+            <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+            -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        
+
+        
+            
+            
+            <script>
+                
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g,s)}(document,'script'));
+                
+            </script>
+            
+
+            
+            <script type="text/javascript">
+                var clicky_site_ids = clicky_site_ids || [];
+                clicky_site_ids.push(100643192);
+                (function() {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//static.getclicky.com/js';
+                    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+                })();
+            </script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100643192ns.gif" /></p></noscript>
+            
+        
+
+        <script src="/branch/hotfix_null-guards/_static/js/main.js"></script>
+        <script src="/branch/hotfix_null-guards/_static/js/navbar.js"></script>
+
+        
+        
+        
+
+
+    </body>
+</html>
